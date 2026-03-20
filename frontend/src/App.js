@@ -1,0 +1,527 @@
+import React, { useEffect, useRef, useState } from "react";
+import "@/App.css";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner";
+
+// Pages
+import LandingPage from "@/pages/LandingPage";
+import LoginPage from "@/pages/LoginPage";
+import RegisterPage from "@/pages/RegisterPage";
+import Dashboard from "@/pages/Dashboard";
+import ActionsLibrary from "@/pages/ActionsLibrary";
+import ActiveSession from "@/pages/ActiveSession";
+import ProgressStats from "@/pages/ProgressStats";
+import PricingPage from "@/pages/PricingPage";
+import ProfilePage from "@/pages/ProfilePage";
+import BadgesPage from "@/pages/BadgesPage";
+import NotificationsPage from "@/pages/NotificationsPage";
+import B2BDashboard from "@/pages/B2BDashboard";
+import IntegrationsPage from "@/pages/IntegrationsPage";
+import JournalPage from "@/pages/JournalPage";
+import NotesPage from "@/pages/NotesPage";
+import OnboardingPage from "@/pages/OnboardingPage";
+import ChallengesPage from "@/pages/ChallengesPage";
+import ObjectivesPage from "@/pages/ObjectivesPage";
+import ObjectiveDetailPage from "@/pages/ObjectiveDetailPage";
+import RoutinesPage from "@/pages/RoutinesPage";
+import MyDayPage from "@/pages/MyDayPage";
+import MicroInstantsPage from "@/pages/MicroInstantsPage";
+import PrivacyPage from "@/pages/PrivacyPage";
+import CGUPage from "@/pages/CGUPage";
+import PublicSharePage from "@/pages/PublicSharePage";
+import GroupsPage from "@/pages/GroupsPage";
+import GroupDetailPage from "@/pages/GroupDetailPage";
+import NotFound from "@/pages/NotFound";
+import CoachFAB from "@/components/CoachFAB";
+import MicroInstantBanner from "@/components/MicroInstantBanner";
+import ErrorBoundary from "@/components/ErrorBoundary";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
+export const API = `${BACKEND_URL}/api`;
+
+// Helper fetch with automatic token refresh on 401.
+// If access token is expired, transparently rotates via refresh token
+// and retries the original request once.
+let _refreshPromise = null; // Deduplicate concurrent refresh calls
+
+async function _tryRefresh() {
+  const refreshToken = localStorage.getItem("infinea_refresh_token");
+  if (!refreshToken) return false;
+
+  try {
+    const res = await fetch(`${API}/auth/refresh`, {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: refreshToken }),
+    });
+    if (!res.ok) {
+      // Refresh failed — clear tokens, user must re-login
+      localStorage.removeItem("infinea_token");
+      localStorage.removeItem("infinea_refresh_token");
+      return false;
+    }
+    const data = await res.json();
+    localStorage.setItem("infinea_token", data.token);
+    localStorage.setItem("infinea_refresh_token", data.refresh_token);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export const authFetch = async (url, options = {}) => {
+  const token = localStorage.getItem("infinea_token");
+  const headers = { ...options.headers };
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+
+  const res = await fetch(url, {
+    ...options,
+    credentials: "include",
+    headers,
+  });
+
+  // If 401, attempt refresh once and retry
+  if (res.status === 401 && localStorage.getItem("infinea_refresh_token")) {
+    // Deduplicate: if a refresh is already in flight, wait for it
+    if (!_refreshPromise) {
+      _refreshPromise = _tryRefresh().finally(() => { _refreshPromise = null; });
+    }
+    const refreshed = await _refreshPromise;
+
+    if (refreshed) {
+      // Retry with new token
+      const newToken = localStorage.getItem("infinea_token");
+      const retryHeaders = { ...options.headers };
+      if (newToken) {
+        retryHeaders["Authorization"] = `Bearer ${newToken}`;
+      }
+      return fetch(url, {
+        ...options,
+        credentials: "include",
+        headers: retryHeaders,
+      });
+    }
+  }
+
+  return res;
+};
+
+// Register Service Worker for Web Push notifications
+const registerServiceWorker = async () => {
+  if ("serviceWorker" in navigator) {
+    try {
+      // Clear old caches from previous CRA service worker
+      const cacheNames = await caches.keys();
+      for (const name of cacheNames) {
+        await caches.delete(name);
+      }
+      // Register push-capable service worker
+      await navigator.serviceWorker.register("/sw.js");
+    } catch (err) {
+      console.warn("SW registration failed:", err);
+    }
+  }
+};
+
+// Auth Context
+export const AuthContext = React.createContext(null);
+
+export const useAuth = () => {
+  const context = React.useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within AuthProvider");
+  }
+  return context;
+};
+
+// Auth Callback Component - Handles Google OAuth redirect
+const AuthCallback = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const hasProcessed = useRef(false);
+  const { setUser } = useAuth();
+
+  useEffect(() => {
+    if (hasProcessed.current) return;
+    hasProcessed.current = true;
+
+    const processAuth = async () => {
+      const hash = location.hash;
+      const sessionId = new URLSearchParams(hash.substring(1)).get("session_id");
+
+      if (!sessionId) {
+        navigate("/login");
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API}/auth/session`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ session_id: sessionId }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Auth failed");
+        }
+
+        const userData = await response.json();
+
+        // Store tokens in localStorage
+        if (userData.token) {
+          localStorage.setItem("infinea_token", userData.token);
+        }
+        if (userData.refresh_token) {
+          localStorage.setItem("infinea_refresh_token", userData.refresh_token);
+        }
+
+        setUser(userData);
+        navigate("/dashboard", { state: { user: userData } });
+      } catch (error) {
+        console.error("OAuth error:", error);
+        navigate("/login");
+      }
+    };
+
+    processAuth();
+  }, [location, navigate, setUser]);
+
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-muted-foreground">Connexion en cours...</p>
+      </div>
+    </div>
+  );
+};
+
+// Protected Route — robust version handling React 19 StrictMode double-mount
+const ProtectedRoute = ({ children }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { user, setUser } = useAuth();
+  const [authState, setAuthState] = useState("checking"); // "checking" | "authenticated" | "unauthenticated"
+
+  useEffect(() => {
+    let cancelled = false;
+
+    // 1. User already in context (set by LoginPage/RegisterPage before navigate)
+    if (user) {
+      setAuthState("authenticated");
+      return;
+    }
+
+    // 2. User data passed via navigation state (from login/register navigate)
+    if (location.state?.user) {
+      setUser(location.state.user);
+      setAuthState("authenticated");
+      return;
+    }
+
+    // 3. Check localStorage token → verify with backend
+    const token = localStorage.getItem("infinea_token");
+    if (!token) {
+      if (!cancelled) {
+        setAuthState("unauthenticated");
+        navigate("/login", { replace: true });
+      }
+      return;
+    }
+
+    // Token exists, verify it with backend
+    const verifyToken = async () => {
+      try {
+        const response = await fetch(`${API}/auth/me`, {
+          credentials: "include",
+          headers: { "Authorization": `Bearer ${token}` },
+        });
+
+        if (!response.ok) throw new Error("Token invalid");
+
+        const userData = await response.json();
+        if (!cancelled) {
+          setUser(userData);
+          // Redirect new users to onboarding if they haven't completed it
+          if (!userData.user_profile && location.pathname !== "/onboarding") {
+            navigate("/onboarding", { replace: true });
+          }
+          setAuthState("authenticated");
+        }
+      } catch (error) {
+        console.error("Auth verification failed:", error);
+        localStorage.removeItem("infinea_token");
+        if (!cancelled) {
+          setAuthState("unauthenticated");
+          navigate("/login", { replace: true });
+        }
+      }
+    };
+
+    verifyToken();
+
+    return () => { cancelled = true; };
+  }, [user, location.state, location.pathname, navigate, setUser]);
+
+  // Redirect to onboarding for new users (no profile yet)
+  useEffect(() => {
+    if (user && !user.user_profile && location.pathname !== "/onboarding") {
+      navigate("/onboarding", { replace: true });
+    }
+  }, [user, location.pathname, navigate]);
+
+  if (authState === "checking") {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (authState === "unauthenticated") {
+    return null;
+  }
+
+  return (
+    <>
+      <ErrorBoundary>
+        {children}
+      </ErrorBoundary>
+      {/* Coach FAB on all protected pages except active session and onboarding */}
+      {!/^\/session\//.test(location.pathname) && location.pathname !== "/onboarding" && <CoachFAB />}
+    </>
+  );
+};
+
+// App Router
+function AppRouter() {
+  const location = useLocation();
+
+  // Check for session_id in URL hash (Google OAuth callback)
+  if (location.hash?.includes("session_id=")) {
+    return <AuthCallback />;
+  }
+
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/cgu" element={<CGUPage />} />
+      <Route path="/terms" element={<CGUPage />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/actions"
+        element={
+          <ProtectedRoute>
+            <ActionsLibrary />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/session/:sessionId"
+        element={
+          <ProtectedRoute>
+            <ActiveSession />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/progress"
+        element={
+          <ProtectedRoute>
+            <ProgressStats />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/badges"
+        element={
+          <ProtectedRoute>
+            <BadgesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/notifications"
+        element={
+          <ProtectedRoute>
+            <NotificationsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/b2b"
+        element={
+          <ProtectedRoute>
+            <B2BDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/integrations"
+        element={
+          <ProtectedRoute>
+            <IntegrationsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/journal"
+        element={
+          <ProtectedRoute>
+            <JournalPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/notes"
+        element={
+          <ProtectedRoute>
+            <NotesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/challenges"
+        element={
+          <ProtectedRoute>
+            <ChallengesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/objectives"
+        element={
+          <ProtectedRoute>
+            <ObjectivesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/objectives/:objectiveId"
+        element={
+          <ProtectedRoute>
+            <ObjectiveDetailPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/routines"
+        element={
+          <ProtectedRoute>
+            <RoutinesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/my-day"
+        element={
+          <ProtectedRoute>
+            <MyDayPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/micro-instants"
+        element={
+          <ProtectedRoute>
+            <MicroInstantsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/onboarding"
+        element={
+          <ProtectedRoute>
+            <OnboardingPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/groups"
+        element={
+          <ProtectedRoute>
+            <GroupsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/groups/:groupId"
+        element={
+          <ProtectedRoute>
+            <GroupDetailPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/p/:shareId" element={<PublicSharePage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
+// Auth Provider
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
+  const logout = async () => {
+    try {
+      const token = localStorage.getItem("infinea_token");
+      await fetch(`${API}/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+        headers: token ? { "Authorization": `Bearer ${token}` } : {},
+      });
+    } catch (e) {
+      console.error("Logout error:", e);
+    }
+    localStorage.removeItem("infinea_token");
+    localStorage.removeItem("infinea_refresh_token");
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, setUser, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    registerServiceWorker();
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <MicroInstantBanner />
+        <AppRouter />
+        <Toaster position="top-right" richColors />
+      </AuthProvider>
+    </BrowserRouter>
+  );
+}
+
+export default App;
