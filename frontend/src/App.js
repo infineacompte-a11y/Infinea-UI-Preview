@@ -36,7 +36,10 @@ import CoachFAB from "@/components/CoachFAB";
 import MicroInstantBanner from "@/components/MicroInstantBanner";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
+// In production on Vercel, REACT_APP_BACKEND_URL can be "" (empty) to use
+// same-origin /api/* calls which are proxied to the backend via vercel.json rewrites.
+// This avoids CORS issues entirely.
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL ?? "http://localhost:8000";
 export const API = `${BACKEND_URL}/api`;
 
 // Helper fetch with automatic token refresh on 401.
