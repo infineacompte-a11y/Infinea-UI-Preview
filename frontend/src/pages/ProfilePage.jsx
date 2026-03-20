@@ -69,7 +69,7 @@ export default function ProfilePage() {
                       {user?.name || "Utilisateur"}
                     </h2>
                     {user?.subscription_tier === "premium" && (
-                      <Badge className="bg-gradient-to-r from-[#E48C75] to-[#C97A3D] text-white border-0">
+                      <Badge className="bg-gradient-to-r from-[#E48C75] to-[#E48C75] text-white border-0">
                         <Crown className="w-3 h-3 mr-1 text-white" />
                         Premium
                       </Badge>

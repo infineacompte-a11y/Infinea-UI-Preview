@@ -57,8 +57,8 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
-  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  learning: "text-[#459492] bg-[#459492]/10",
+  productivity: "text-[#E48C75] bg-[#E48C75]/10",
   well_being: "text-[#5DB786] bg-[#5DB786]/10",
   creativity: "text-[#55B3AE] bg-[#55B3AE]/10",
   fitness: "text-[#E48C75] bg-[#E48C75]/10",
@@ -67,7 +67,7 @@ const categoryColors = {
   finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
   relations: "text-[#C4806E] bg-[#C4806E]/10",
   mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/10",
-  entrepreneurship: "text-[#D4956B] bg-[#D4956B]/10",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/10",
 };
 
 const categoryLabels = {
@@ -295,8 +295,8 @@ export default function Dashboard() {
                 <span className="text-sm text-muted-foreground block mb-4">Niveau d'énergie</span>
                 <div className="flex gap-3">
                   {[
-                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10", border: "border-[#2F7DBA]" },
-                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10", border: "border-[#C97A3D]" },
+                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/10", border: "border-[#459492]" },
+                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", border: "border-[#E48C75]" },
                     { value: "high", label: "Haute", icon: BatteryFull, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", border: "border-[#5DB786]" },
                   ].map((level) => (
                     <button

@@ -32,7 +32,7 @@ import { toast } from "sonner";
 
 // ─── Time of day helpers ──────────────────────────────────
 const TIME_SECTIONS = [
-  { key: "morning", label: "Matin", icon: Sunrise, color: "text-[#C97A3D]", bgColor: "bg-[#C97A3D]/10" },
+  { key: "morning", label: "Matin", icon: Sunrise, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/10" },
   { key: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/10" },
   { key: "evening", label: "Soir", icon: Moon, color: "text-[#459492]", bgColor: "bg-[#459492]/10" },
 ];
@@ -199,7 +199,7 @@ function SmartCTAs({ routines, objectives, routinesCompletedToday, todaySessions
 
 // ─── Micro-Instants Section ───────────────────────────────
 const MI_SOURCE_CONFIG = {
-  calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-[#2F7DBA]", bgColor: "bg-[#2F7DBA]/10" },
+  calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-[#459492]", bgColor: "bg-[#459492]/10" },
   routine_window: { icon: Repeat, label: "Routine", color: "text-[#5DB786]", bgColor: "bg-[#5DB786]/10" },
   behavioral_pattern: { icon: TrendingUp, label: "Pattern", color: "text-brand-secondary", bgColor: "bg-brand-secondary/10" },
 };
@@ -528,7 +528,7 @@ export default function MyDayPage() {
                 </Card>
                 <Card className="p-3 text-center">
                   <div className="flex items-center justify-center gap-1.5 mb-1">
-                    <Clock className="w-4 h-4 text-[#2F7DBA]" />
+                    <Clock className="w-4 h-4 text-[#459492]" />
                   </div>
                   <p className="text-xl font-bold tabular-nums">{todayMinutes}</p>
                   <p className="text-[10px] text-muted-foreground">Minutes</p>

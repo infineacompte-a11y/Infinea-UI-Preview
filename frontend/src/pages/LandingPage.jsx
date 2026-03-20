@@ -40,14 +40,14 @@ export default function LandingPage() {
     {
       icon: BookOpen,
       name: "Apprentissage",
-      color: "text-[#2F7DBA]",
+      color: "text-[#459492]",
       bg: "category-card-learning",
       examples: ["Vocabulaire", "Lecture", "Concepts"],
     },
     {
       icon: Target,
       name: "Productivité",
-      color: "text-[#C97A3D]",
+      color: "text-[#E48C75]",
       bg: "category-card-productivity",
       examples: ["Planning", "Emails", "Brainstorm"],
     },

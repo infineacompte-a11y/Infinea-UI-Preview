@@ -47,7 +47,7 @@ import { API, authFetch } from "@/App";
 import { toast } from "sonner";
 
 const DIFFICULTY_LABELS = ["", "Fondamental", "Débutant", "Intermédiaire", "Avancé", "Expert"];
-const DIFFICULTY_COLORS = ["", "text-[#5DB786]", "text-[#2F7DBA]", "text-[#C97A3D]", "text-[#D4956B]", "text-[#E48C75]"];
+const DIFFICULTY_COLORS = ["", "text-[#5DB786]", "text-[#459492]", "text-[#E48C75]", "text-[#E48C75]", "text-[#E48C75]"];
 
 // ─── CurriculumStep (unchanged) ───
 
@@ -84,7 +84,7 @@ function CurriculumStep({ step, index, isNext, onStart }) {
           <div className="flex items-center gap-2">
             <span className="text-[10px] font-medium text-muted-foreground">JOUR {step.day}</span>
             {step.review && (
-              <Badge variant="outline" className="text-[9px] bg-[#2F7DBA]/10 text-[#2F7DBA] border-[#2F7DBA]/20">
+              <Badge variant="outline" className="text-[9px] bg-[#459492]/10 text-[#459492] border-[#459492]/20">
                 Révision
               </Badge>
             )}
@@ -131,8 +131,8 @@ function CurriculumStep({ step, index, isNext, onStart }) {
             </div>
           )}
           {step.tip && (
-            <div className="flex items-start gap-2 bg-[#C97A3D]/5 rounded-lg px-3 py-2 border border-[#C97A3D]/10">
-              <Lightbulb className="w-3.5 h-3.5 text-[#C97A3D] shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2 bg-[#E48C75]/5 rounded-lg px-3 py-2 border border-[#E48C75]/10">
+              <Lightbulb className="w-3.5 h-3.5 text-[#E48C75] shrink-0 mt-0.5" />
               <span className="text-xs text-foreground/80">{step.tip}</span>
             </div>
           )}
@@ -158,10 +158,10 @@ function CurriculumStep({ step, index, isNext, onStart }) {
 
 const MASTERY_COLORS = {
   "Non démarré": { bar: "bg-muted", text: "text-muted-foreground", bg: "bg-muted/20" },
-  "Débutant": { bar: "bg-[#2F7DBA]", text: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10" },
+  "Débutant": { bar: "bg-[#459492]", text: "text-[#459492]", bg: "bg-[#459492]/10" },
   "En progression": { bar: "bg-[#5DB786]", text: "text-[#5DB786]", bg: "bg-[#5DB786]/10" },
-  "Intermédiaire": { bar: "bg-[#C97A3D]", text: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10" },
-  "Avancé": { bar: "bg-[#D4956B]", text: "text-[#D4956B]", bg: "bg-[#D4956B]/10" },
+  "Intermédiaire": { bar: "bg-[#E48C75]", text: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
+  "Avancé": { bar: "bg-[#E48C75]", text: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
   "Maîtrisé": { bar: "bg-primary", text: "text-primary", bg: "bg-primary/10" },
 };
 
@@ -220,8 +220,8 @@ function SkillsTab({ objectiveId }) {
             </div>
           </div>
           {review_needed > 0 && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#C97A3D]/10 border border-[#C97A3D]/20">
-              <RotateCcw className="w-3.5 h-3.5 text-[#C97A3D]" />
+            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#E48C75]/10 border border-[#E48C75]/20">
+              <RotateCcw className="w-3.5 h-3.5 text-[#E48C75]" />
               <span className="text-xs font-medium text-foreground/80">{review_needed} à réviser</span>
             </div>
           )}
@@ -234,13 +234,13 @@ function SkillsTab({ objectiveId }) {
         {skills.map((skill) => {
           const mc = MASTERY_COLORS[skill.level] || MASTERY_COLORS["Non démarré"];
           return (
-            <Card key={skill.name} className={`p-4 transition-all ${skill.needs_review ? "border-[#C97A3D]/30 bg-[#C97A3D]/3" : ""}`}>
+            <Card key={skill.name} className={`p-4 transition-all ${skill.needs_review ? "border-[#E48C75]/30 bg-[#E48C75]/3" : ""}`}>
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <h3 className="font-medium text-sm truncate">{skill.name}</h3>
                     {skill.needs_review && (
-                      <Badge variant="outline" className="text-[9px] bg-[#C97A3D]/10 text-foreground/80 border-[#C97A3D]/20 shrink-0">
+                      <Badge variant="outline" className="text-[9px] bg-[#E48C75]/10 text-foreground/80 border-[#E48C75]/20 shrink-0">
                         <RotateCcw className="w-2.5 h-2.5 mr-0.5" />
                         Révision
                       </Badge>
@@ -287,16 +287,16 @@ function SkillsTab({ objectiveId }) {
 
 const MOMENTUM_CONFIG = {
   rising: { icon: TrendingUp, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", border: "border-[#5DB786]/20" },
-  stable: { icon: Minus, color: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10", border: "border-[#2F7DBA]/20" },
-  declining: { icon: TrendingDown, color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10", border: "border-[#C97A3D]/20" },
+  stable: { icon: Minus, color: "text-[#459492]", bg: "bg-[#459492]/10", border: "border-[#459492]/20" },
+  declining: { icon: TrendingDown, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", border: "border-[#E48C75]/20" },
 };
 
 const DIFFICULTY_BAR_COLORS = [
   "",
   "bg-[#5DB786]",   // 1 — Fondamental
-  "bg-[#2F7DBA]",      // 2 — Débutant
-  "bg-[#C97A3D]",     // 3 — Intermédiaire
-  "bg-[#D4956B]",    // 4 — Avancé
+  "bg-[#459492]",      // 2 — Débutant
+  "bg-[#E48C75]",     // 3 — Intermédiaire
+  "bg-[#E48C75]",    // 4 — Avancé
   "bg-[#E48C75]",      // 5 — Expert
 ];
 
@@ -381,7 +381,7 @@ function InsightsTab({ objectiveId }) {
           {stats && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               <Card className="p-3 text-center">
-                <Activity className="w-4 h-4 text-[#2F7DBA] mx-auto mb-1" />
+                <Activity className="w-4 h-4 text-[#459492] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.completion_rate}%</div>
                 <div className="text-[10px] text-muted-foreground">Complétion</div>
               </Card>
@@ -441,15 +441,15 @@ function InsightsTab({ objectiveId }) {
                 )}
 
                 {ai_analysis.improvements?.length > 0 && (
-                  <div className="bg-[#C97A3D]/5 rounded-xl p-3 border border-[#C97A3D]/10">
+                  <div className="bg-[#E48C75]/5 rounded-xl p-3 border border-[#E48C75]/10">
                     <div className="flex items-center gap-1.5 mb-2">
-                      <AlertTriangle className="w-3.5 h-3.5 text-[#C97A3D]" />
-                      <span className="text-xs font-semibold text-[#C97A3D]">À améliorer</span>
+                      <AlertTriangle className="w-3.5 h-3.5 text-[#E48C75]" />
+                      <span className="text-xs font-semibold text-[#E48C75]">À améliorer</span>
                     </div>
                     <div className="space-y-1.5">
                       {ai_analysis.improvements.map((s, i) => (
                         <p key={i} className="text-[11px] text-foreground/70 leading-relaxed flex items-start gap-1.5">
-                          <span className="text-[#C97A3D] mt-0.5 shrink-0">•</span>
+                          <span className="text-[#E48C75] mt-0.5 shrink-0">•</span>
                           {s}
                         </p>
                       ))}
@@ -845,12 +845,12 @@ export default function ObjectiveDetailPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="text-center p-2 rounded-lg bg-muted/30">
-                <Flame className="w-4 h-4 text-[#D4956B] mx-auto mb-1" />
+                <Flame className="w-4 h-4 text-[#E48C75] mx-auto mb-1" />
                 <div className="text-lg font-bold">{objective.streak_days || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Streak</div>
               </div>
               <div className="text-center p-2 rounded-lg bg-muted/30">
-                <Clock className="w-4 h-4 text-[#2F7DBA] mx-auto mb-1" />
+                <Clock className="w-4 h-4 text-[#459492] mx-auto mb-1" />
                 <div className="text-lg font-bold">{objective.total_minutes || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Minutes</div>
               </div>
@@ -953,8 +953,8 @@ export default function ObjectiveDetailPage() {
 
               {/* Completed celebration */}
               {percent >= 100 && (
-                <Card className="p-6 mt-6 text-center border-[#C97A3D]/20 bg-gradient-to-br from-[#C97A3D]/10 to-[#C97A3D]/5">
-                  <Trophy className="w-12 h-12 text-[#C97A3D] mx-auto mb-3" />
+                <Card className="p-6 mt-6 text-center border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/10 to-[#E48C75]/5">
+                  <Trophy className="w-12 h-12 text-[#E48C75] mx-auto mb-3" />
                   <h3 className="font-heading font-bold text-lg">Parcours terminé !</h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     Tu as complété {completedSteps} sessions et investi {objective.total_minutes || 0} minutes.
@@ -988,11 +988,11 @@ export default function ObjectiveDetailPage() {
               const last = log.length > 0 ? log[log.length - 1] : null;
               if (!last) return null;
               return (
-                <div className="flex items-start gap-2 bg-[#2F7DBA]/5 rounded-lg px-3 py-2 border border-[#2F7DBA]/10">
-                  <BookOpen className="w-3.5 h-3.5 text-[#2F7DBA] shrink-0 mt-0.5" />
-                  <div className="text-xs text-[#2F7DBA]">
+                <div className="flex items-start gap-2 bg-[#459492]/5 rounded-lg px-3 py-2 border border-[#459492]/10">
+                  <BookOpen className="w-3.5 h-3.5 text-[#459492] shrink-0 mt-0.5" />
+                  <div className="text-xs text-[#459492]">
                     <span className="font-medium">Dernière session :</span> {last.step_title}
-                    {last.notes && <span className="block text-[#2F7DBA]/70 mt-0.5">"{last.notes}"</span>}
+                    {last.notes && <span className="block text-[#459492]/70 mt-0.5">"{last.notes}"</span>}
                   </div>
                 </div>
               );
@@ -1023,8 +1023,8 @@ export default function ObjectiveDetailPage() {
 
             {/* Tip */}
             {activeStep?.tip && (
-              <div className="flex items-start gap-2 bg-[#C97A3D]/5 rounded-lg px-3 py-2 border border-[#C97A3D]/10">
-                <Lightbulb className="w-3.5 h-3.5 text-[#C97A3D] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 bg-[#E48C75]/5 rounded-lg px-3 py-2 border border-[#E48C75]/10">
+                <Lightbulb className="w-3.5 h-3.5 text-[#E48C75] shrink-0 mt-0.5" />
                 <span className="text-xs text-foreground/80">{activeStep.tip}</span>
               </div>
             )}

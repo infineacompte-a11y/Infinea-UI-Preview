@@ -44,8 +44,8 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
-  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  learning: "text-[#459492] bg-[#459492]/10",
+  productivity: "text-[#E48C75] bg-[#E48C75]/10",
   well_being: "text-[#5DB786] bg-[#5DB786]/10",
   creativity: "text-[#55B3AE] bg-[#55B3AE]/10",
   fitness: "text-[#E48C75] bg-[#E48C75]/10",
@@ -54,7 +54,7 @@ const categoryColors = {
   finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
   relations: "text-[#C4806E] bg-[#C4806E]/10",
   mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/10",
-  entrepreneurship: "text-[#D4956B] bg-[#D4956B]/10",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/10",
 };
 
 const categoryLabels = {

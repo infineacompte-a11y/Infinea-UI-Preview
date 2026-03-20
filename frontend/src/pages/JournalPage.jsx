@@ -40,7 +40,7 @@ import {
 
 const moodIcons = {
   positive: { icon: Smile, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", label: "Positif" },
-  neutral: { icon: Meh, color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10", label: "Neutre" },
+  neutral: { icon: Meh, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", label: "Neutre" },
   negative: { icon: Frown, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", label: "Difficile" },
 };
 
@@ -329,13 +329,13 @@ export default function JournalPage() {
 
                       {/* Weekly Insight */}
                       {summary.summary.weekly_insight && (
-                        <Card className="p-4 border-[#C97A3D]/20 bg-gradient-to-br from-[#C97A3D]/5 to-transparent">
+                        <Card className="p-4 border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/5 to-transparent">
                           <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-[#C97A3D]/10 flex items-center justify-center shrink-0">
-                              <Lightbulb className="w-4 h-4 text-[#C97A3D]" />
+                            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center shrink-0">
+                              <Lightbulb className="w-4 h-4 text-[#E48C75]" />
                             </div>
                             <div>
-                              <span className="text-xs font-semibold text-[#C97A3D] uppercase tracking-wide">Observation clé</span>
+                              <span className="text-xs font-semibold text-[#E48C75] uppercase tracking-wide">Observation clé</span>
                               <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{summary.summary.weekly_insight}</p>
                             </div>
                           </div>
@@ -347,13 +347,13 @@ export default function JournalPage() {
                         {summary.summary.patterns_identified?.length > 0 && (
                           <Card className="p-4">
                             <div className="flex items-center gap-2 mb-3">
-                              <TrendingUp className="w-4 h-4 text-[#2F7DBA]" />
+                              <TrendingUp className="w-4 h-4 text-[#459492]" />
                               <span className="text-sm font-semibold">Patterns identifiés</span>
                             </div>
                             <div className="space-y-2">
                               {summary.summary.patterns_identified.map((p, i) => (
                                 <p key={i} className="text-xs text-foreground/70 leading-relaxed flex items-start gap-2">
-                                  <span className="text-[#2F7DBA] mt-0.5 shrink-0">•</span>
+                                  <span className="text-[#459492] mt-0.5 shrink-0">•</span>
                                   {p}
                                 </p>
                               ))}

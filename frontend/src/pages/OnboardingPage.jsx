@@ -50,8 +50,8 @@ const ENERGY_LEVELS = [
 ];
 
 const INTERESTS = [
-  { id: "learning", label: "Apprentissage", color: "text-[#2F7DBA] bg-[#2F7DBA]/10" },
-  { id: "productivity", label: "Productivité", color: "text-[#C97A3D] bg-[#C97A3D]/10" },
+  { id: "learning", label: "Apprentissage", color: "text-[#459492] bg-[#459492]/10" },
+  { id: "productivity", label: "Productivité", color: "text-[#E48C75] bg-[#E48C75]/10" },
   { id: "well_being", label: "Bien-être", color: "text-[#5DB786] bg-[#5DB786]/10" },
   { id: "creativity", label: "Créativité", color: "text-[#55B3AE] bg-[#55B3AE]/10" },
   { id: "fitness", label: "Forme physique", color: "text-[#E48C75] bg-[#E48C75]/10" },
@@ -60,7 +60,7 @@ const INTERESTS = [
   { id: "finance", label: "Finance", color: "text-[#2E9B6A] bg-[#2E9B6A]/10" },
   { id: "relations", label: "Relations", color: "text-[#C4806E] bg-[#C4806E]/10" },
   { id: "mental_health", label: "Santé mentale", color: "text-[#6EAAA8] bg-[#6EAAA8]/10" },
-  { id: "entrepreneurship", label: "Entrepreneuriat", color: "text-[#D4956B] bg-[#D4956B]/10" },
+  { id: "entrepreneurship", label: "Entrepreneuriat", color: "text-[#E48C75] bg-[#E48C75]/10" },
 ];
 
 export default function OnboardingPage() {

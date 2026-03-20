@@ -38,11 +38,11 @@
 
 /* Energy indicator — brand-aligned */
 .energy-low {
-    background: linear-gradient(90deg, #2F7DBA 0%, #2F7DBA 33%, #262626 33%);
+    background: linear-gradient(90deg, #459492 0%, #459492 33%, #262626 33%);
 }
 
 .energy-medium {
-    background: linear-gradient(90deg, #C97A3D 0%, #C97A3D 66%, #262626 66%);
+    background: linear-gradient(90deg, #E48C75 0%, #E48C75 66%, #262626 66%);
 }
 
 .energy-high {

@@ -39,8 +39,8 @@ import PremiumAnalytics from "@/components/PremiumAnalytics";
 import ShareDialog from "@/components/ShareDialog";
 
 const categoryColors = {
-  learning: "#2F7DBA",
-  productivity: "#C97A3D",
+  learning: "#459492",
+  productivity: "#E48C75",
   well_being: "#5DB786",
   creativity: "#55B3AE",
   fitness: "#E48C75",
@@ -49,7 +49,7 @@ const categoryColors = {
   finance: "#2E9B6A",
   relations: "#C4806E",
   mental_health: "#6EAAA8",
-  entrepreneurship: "#D4956B",
+  entrepreneurship: "#E48C75",
 };
 
 const categoryLabels = {
@@ -177,8 +177,8 @@ export default function ProgressStats() {
                 <Card className="stat-card">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center">
-                        <Flame className="w-6 h-6 text-[#C97A3D]" />
+                      <div className="w-12 h-12 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
+                        <Flame className="w-6 h-6 text-[#E48C75]" />
                       </div>
                       <div>
                         <p className="text-2xl font-heading font-bold" data-testid="streak-days">
@@ -193,8 +193,8 @@ export default function ProgressStats() {
                 <Card className="stat-card">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#2F7DBA]/10 flex items-center justify-center">
-                        <Sparkles className="w-6 h-6 text-[#2F7DBA]" />
+                      <div className="w-12 h-12 rounded-xl bg-[#459492]/10 flex items-center justify-center">
+                        <Sparkles className="w-6 h-6 text-[#459492]" />
                       </div>
                       <div>
                         <p className="text-2xl font-heading font-bold">
@@ -313,8 +313,8 @@ export default function ProgressStats() {
                             >
                               {(() => {
                                 const iconMap = {
-                                  learning: <BookOpen className="w-5 h-5 text-[#2F7DBA]" />,
-                                  productivity: <Target className="w-5 h-5 text-[#C97A3D]" />,
+                                  learning: <BookOpen className="w-5 h-5 text-[#459492]" />,
+                                  productivity: <Target className="w-5 h-5 text-[#E48C75]" />,
                                   well_being: <Heart className="w-5 h-5 text-[#5DB786]" />,
                                   creativity: <Palette className="w-5 h-5 text-[#55B3AE]" />,
                                   fitness: <Dumbbell className="w-5 h-5 text-[#E48C75]" />,
@@ -323,7 +323,7 @@ export default function ProgressStats() {
                                   finance: <TrendingUp className="w-5 h-5 text-[#2E9B6A]" />,
                                   relations: <MessageCircle className="w-5 h-5 text-[#C4806E]" />,
                                   mental_health: <Brain className="w-5 h-5 text-[#6EAAA8]" />,
-                                  entrepreneurship: <Rocket className="w-5 h-5 text-[#D4956B]" />,
+                                  entrepreneurship: <Rocket className="w-5 h-5 text-[#E48C75]" />,
                                 };
                                 return iconMap[session.category] || <Sparkles className="w-5 h-5 text-primary" />;
                               })()}

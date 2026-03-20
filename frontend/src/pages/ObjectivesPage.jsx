@@ -35,8 +35,8 @@ import { API, authFetch, useAuth } from "@/App";
 import { toast } from "sonner";
 
 const CATEGORY_MAP = {
-  learning: { label: "Apprentissage", color: "bg-[#2F7DBA]/10 text-[#2F7DBA] border-[#2F7DBA]/20" },
-  productivity: { label: "Productivité", color: "bg-[#C97A3D]/10 text-[#C97A3D] border-[#C97A3D]/20" },
+  learning: { label: "Apprentissage", color: "bg-[#459492]/10 text-[#459492] border-[#459492]/20" },
+  productivity: { label: "Productivité", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20" },
   well_being: { label: "Bien-être", color: "bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20" },
   creativity: { label: "Créativité", color: "bg-[#55B3AE]/10 text-[#55B3AE] border-[#55B3AE]/20" },
   fitness: { label: "Fitness", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20" },
@@ -45,7 +45,7 @@ const CATEGORY_MAP = {
   finance: { label: "Finance", color: "bg-[#2E9B6A]/10 text-[#2E9B6A] border-[#2E9B6A]/20" },
   relations: { label: "Relations", color: "bg-[#C4806E]/10 text-[#C4806E] border-[#C4806E]/20" },
   mental_health: { label: "Santé mentale", color: "bg-[#6EAAA8]/10 text-[#6EAAA8] border-[#6EAAA8]/20" },
-  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#D4956B]/10 text-[#D4956B] border-[#D4956B]/20" },
+  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20" },
 };
 
 // Duration presets: 2 weeks to 12 months
@@ -92,8 +92,8 @@ function durationValueToSlider(days) {
 
 const STATUS_MAP = {
   active: { label: "En cours", color: "bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20", icon: Play },
-  paused: { label: "En pause", color: "bg-[#C97A3D]/10 text-[#C97A3D] border-[#C97A3D]/20", icon: Pause },
-  completed: { label: "Terminé", color: "bg-[#2F7DBA]/10 text-[#2F7DBA] border-[#2F7DBA]/20", icon: CheckCircle2 },
+  paused: { label: "En pause", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20", icon: Pause },
+  completed: { label: "Terminé", color: "bg-[#459492]/10 text-[#459492] border-[#459492]/20", icon: CheckCircle2 },
   abandoned: { label: "Abandonné", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20", icon: Target },
 };
 

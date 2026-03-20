@@ -46,7 +46,7 @@ import { toast } from "sonner";
 
 // ─── Constants ──────────────────────────────────────────
 const TIME_OF_DAY = [
-  { value: "morning", label: "Matin", icon: Sunrise, color: "text-[#C97A3D] bg-[#C97A3D]/10 border-[#C97A3D]/20" },
+  { value: "morning", label: "Matin", icon: Sunrise, color: "text-[#E48C75] bg-[#E48C75]/10 border-[#E48C75]/20" },
   { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75] bg-[#E48C75]/10 border-[#E48C75]/20" },
   { value: "evening", label: "Soir", icon: Moon, color: "text-brand-teal bg-brand-teal/10 border-brand-teal/20" },
   { value: "anytime", label: "Flexible", icon: Infinity, color: "text-[#5DB786] bg-[#5DB786]/10 border-[#5DB786]/20" },

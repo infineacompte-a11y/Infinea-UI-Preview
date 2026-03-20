@@ -385,7 +385,7 @@ export default function PricingPage() {
                 { icon: Zap, name: "Finance", color: "text-[#2E9B6A]", bg: "bg-[#2E9B6A]/10" },
                 { icon: Sparkles, name: "Relations", color: "text-[#C4806E]", bg: "bg-[#C4806E]/10" },
                 { icon: Brain, name: "Santé mentale", color: "text-[#6EAAA8]", bg: "bg-[#6EAAA8]/10" },
-                { icon: Trophy, name: "Entrepreneuriat", color: "text-[#D4956B]", bg: "bg-[#D4956B]/10" },
+                { icon: Trophy, name: "Entrepreneuriat", color: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
               ].map(({ icon: Icon, name, color, bg }) => (
                 <Card key={name} className="bg-card/50 border-dashed hover:border-[#459492]/20 transition-all">
                   <CardContent className="p-4 text-center">
@@ -419,8 +419,8 @@ export default function PricingPage() {
               </Card>
               <Card className="bg-card/50 hover:border-[#459492]/20 transition-all">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-6 h-6 text-[#C97A3D]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#E48C75]/10 flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-6 h-6 text-[#E48C75]" />
                   </div>
                   <h3 className="font-heading text-lg font-medium mb-2">Bibliothèque infinie</h3>
                   <p className="text-sm text-muted-foreground">
