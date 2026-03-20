@@ -21,6 +21,7 @@ import {
   CalendarClock,
   Zap,
 } from "lucide-react";
+import InFineaLogo from "@/components/InFineaLogo";
 import { API, authFetch, useAuth } from "@/App";
 
 // ─── Lightweight poll for unread notification count ───
@@ -126,12 +127,10 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col p-6 border-r border-border bg-card/50">
-        <div className="flex items-center gap-2 mb-8">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <Timer className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <span className="font-heading text-xl font-semibold">InFinea</span>
+      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col p-6 border-r border-border bg-[#151515]/80 backdrop-blur-xl">
+        <div className="mb-8">
+          <InFineaLogo size={36} withText />
+          <div className="h-px bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent mb-4 mt-4" />
         </div>
 
         <nav className="flex flex-col gap-1 flex-1">
@@ -141,7 +140,7 @@ export default function Sidebar() {
         <div className="pt-4 border-t border-border">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-brand-teal/5 transition-colors"
             data-testid="logout-btn"
           >
             <LogOut className="w-5 h-5" />
@@ -153,12 +152,7 @@ export default function Sidebar() {
       {/* Mobile Header */}
       <header className="lg:hidden fixed top-0 left-0 right-0 z-50 glass">
         <div className="flex items-center justify-between px-4 h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Timer className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-heading text-lg font-semibold">InFinea</span>
-          </div>
+          <InFineaLogo size={28} withText />
 
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>

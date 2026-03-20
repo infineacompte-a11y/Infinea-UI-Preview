@@ -13,9 +13,9 @@ import {
   Check,
   ArrowRight,
   Sparkles,
-  Timer,
   TrendingUp,
 } from "lucide-react";
+import InFineaLogo from "@/components/InFineaLogo";
 
 export default function LandingPage() {
   const features = [
@@ -40,21 +40,21 @@ export default function LandingPage() {
     {
       icon: BookOpen,
       name: "Apprentissage",
-      color: "text-blue-500",
+      color: "text-[#2F7DBA]",
       bg: "category-card-learning",
       examples: ["Vocabulaire", "Lecture", "Concepts"],
     },
     {
       icon: Target,
       name: "Productivité",
-      color: "text-amber-500",
+      color: "text-[#C97A3D]",
       bg: "category-card-productivity",
       examples: ["Planning", "Emails", "Brainstorm"],
     },
     {
       icon: Heart,
       name: "Bien-être",
-      color: "text-emerald-500",
+      color: "text-[#5DB786]",
       bg: "category-card-well-being",
       examples: ["Respiration", "Méditation", "Étirements"],
     },
@@ -98,12 +98,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Timer className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-heading text-xl font-semibold">InFinea</span>
-            </div>
+            <InFineaLogo size={32} withText />
             <div className="hidden md:flex items-center gap-6">
               <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
                 Fonctionnalités
@@ -130,7 +125,7 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="hero-glow absolute inset-0" />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center max-w-4xl mx-auto">
@@ -138,17 +133,17 @@ export default function LandingPage() {
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm text-primary">Une IA qui apprend de vous, une bibliothèque qui grandit sans cesse</span>
             </div>
-            
+
             <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 animate-fade-in stagger-1">
               Investissez vos
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-secondary to-pink-500"> instants perdus</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#55B3AE] via-[#459492] to-[#5DB786]"> instants perdus</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in stagger-2">
               Transformez votre temps disponible en micro-victoires. Une bibliothèque de micro-actions en perpétuelle évolution,
               portée par une IA qui s'adapte à vos habitudes, votre énergie et votre rythme.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in stagger-3">
               <Link to="/register">
                 <Button size="lg" className="rounded-full px-8 h-12 text-base btn-lift" data-testid="hero-cta-btn">
@@ -183,7 +178,7 @@ export default function LandingPage() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 px-4">
+      <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -225,7 +220,7 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4">
+      <section id="features" className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
@@ -238,7 +233,7 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {features.map((feature, i) => (
-              <Card key={i} className="bg-card border-border hover:border-primary/30 transition-colors">
+              <Card key={i} className="bg-card border-border hover:border-[#459492]/25 transition-colors">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-primary" />
@@ -272,7 +267,7 @@ export default function LandingPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 px-4 bg-card/50">
+      <section className="py-24 px-4 bg-card/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
@@ -288,11 +283,11 @@ export default function LandingPage() {
               { step: "04", title: "Agissez !", desc: "L'IA vous guide" },
             ].map((item, i) => (
               <div key={i} className="relative">
-                <div className="text-5xl font-heading font-bold text-primary/20 mb-4">{item.step}</div>
+                <div className="text-5xl font-heading font-bold text-[#459492]/20 mb-4">{item.step}</div>
                 <h3 className="font-heading text-lg font-medium mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
                 {i < 3 && (
-                  <ChevronRight className="hidden md:block absolute top-10 -right-4 w-8 h-8 text-primary/30" />
+                  <ChevronRight className="hidden md:block absolute top-10 -right-4 w-8 h-8 text-[#459492]/30" />
                 )}
               </div>
             ))}
@@ -301,7 +296,7 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-4">
+      <section id="pricing" className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
@@ -316,11 +311,11 @@ export default function LandingPage() {
             {pricingPlans.map((plan, i) => (
               <Card
                 key={i}
-                className={`relative ${plan.popular ? "pricing-card-premium" : "bg-card"} border-border`}
+                className={`relative ${plan.popular ? "bg-gradient-to-br from-[#275255]/15 to-[#459492]/5 border-[#459492]/30" : "bg-card border-border"}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+                    <span className="px-4 py-1 rounded-full bg-[#E48C75] text-white text-sm font-medium">
                       Populaire
                     </span>
                   </div>
@@ -334,7 +329,7 @@ export default function LandingPage() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, j) => (
                       <li key={j} className="flex items-center gap-3">
-                        <Check className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-[#5DB786] flex-shrink-0" />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
@@ -355,9 +350,9 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-primary/10 via-brand-secondary/10 to-pink-500/10 border border-primary/20">
+          <div className="p-12 rounded-3xl bg-gradient-to-br from-[#275255]/10 via-[#459492]/10 to-[#5DB786]/10 border border-[#459492]/20">
             <Brain className="w-16 h-16 text-primary mx-auto mb-6" />
             <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
               Prêt à investir vos instants perdus ?
@@ -376,17 +371,13 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-border">
-        <div className="max-w-7xl mx-auto">
+      <footer className="py-12 px-4">
+        <div className="h-px bg-gradient-to-r from-transparent via-[#459492]/20 to-transparent" />
+        <div className="max-w-7xl mx-auto pt-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Timer className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-heading text-xl font-semibold">InFinea</span>
-            </div>
+            <InFineaLogo size={32} withText />
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <span>© 2025 InFinea</span>
+              <span>&copy; 2025 InFinea</span>
               <Link to="/privacy" className="hover:text-foreground transition-colors">Confidentialité</Link>
               <Link to="/cgu" className="hover:text-foreground transition-colors">CGU</Link>
               <a href="mailto:Infinea.compte@gmail.com" className="hover:text-foreground transition-colors">Contact</a>

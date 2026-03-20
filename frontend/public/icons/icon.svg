@@ -1,8 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="102" fill="#6366f1"/>
-  <g transform="translate(96, 96)">
-    <circle cx="160" cy="160" r="140" fill="none" stroke="white" stroke-width="24"/>
-    <path d="M160 60 L160 160 L240 160" fill="none" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="160" cy="160" r="16" fill="white"/>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#275255"/>
+      <stop offset="100%" stop-color="#459492"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#55B3AE"/>
+      <stop offset="100%" stop-color="#5DB786"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="102" fill="url(#bg)"/>
+  <!-- Hourglass -->
+  <g transform="translate(256, 256)">
+    <!-- Top triangle -->
+    <path d="M-60,-100 L60,-100 L10,-10 L-10,-10 Z" fill="white" opacity="0.95"/>
+    <!-- Bottom triangle -->
+    <path d="M-10,10 L10,10 L60,100 L-60,100 Z" fill="white" opacity="0.85"/>
+    <!-- Center pinch -->
+    <circle cx="0" cy="0" r="8" fill="white"/>
+    <!-- Decorative swirl arc -->
+    <path d="M-90,-60 A120,120 0 0,1 90,-60" fill="none" stroke="url(#teal)" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+    <path d="M90,60 A120,120 0 0,1 -90,60" fill="none" stroke="#E48C75" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
   </g>
 </svg>

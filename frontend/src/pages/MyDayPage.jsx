@@ -32,9 +32,9 @@ import { toast } from "sonner";
 
 // ─── Time of day helpers ──────────────────────────────────
 const TIME_SECTIONS = [
-  { key: "morning", label: "Matin", icon: Sunrise, color: "text-amber-500", bgColor: "bg-amber-500/10" },
-  { key: "afternoon", label: "Après-midi", icon: Sun, color: "text-orange-500", bgColor: "bg-orange-500/10" },
-  { key: "evening", label: "Soir", icon: Moon, color: "text-brand-teal", bgColor: "bg-brand-teal/10" },
+  { key: "morning", label: "Matin", icon: Sunrise, color: "text-[#C97A3D]", bgColor: "bg-[#C97A3D]/10" },
+  { key: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/10" },
+  { key: "evening", label: "Soir", icon: Moon, color: "text-[#459492]", bgColor: "bg-[#459492]/10" },
 ];
 
 function getCurrentTimeOfDay() {
@@ -93,7 +93,7 @@ function SmartCTAs({ routines, objectives, routinesCompletedToday, todaySessions
       label: "Voir ma progression",
       icon: Trophy,
       variant: "default",
-      className: "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white border-0",
+      className: "bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0",
       onClick: () => navigate("/progress"),
     });
     if (priorityObjective?.nextStep) {
@@ -199,8 +199,8 @@ function SmartCTAs({ routines, objectives, routinesCompletedToday, todaySessions
 
 // ─── Micro-Instants Section ───────────────────────────────
 const MI_SOURCE_CONFIG = {
-  calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-blue-400", bgColor: "bg-blue-500/10" },
-  routine_window: { icon: Repeat, label: "Routine", color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
+  calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-[#2F7DBA]", bgColor: "bg-[#2F7DBA]/10" },
+  routine_window: { icon: Repeat, label: "Routine", color: "text-[#5DB786]", bgColor: "bg-[#5DB786]/10" },
   behavioral_pattern: { icon: TrendingUp, label: "Pattern", color: "text-brand-secondary", bgColor: "bg-brand-secondary/10" },
 };
 
@@ -326,7 +326,7 @@ function MicroInstantsSection({ instants, onExploit, onSkip, loadingId, navigate
 
         {/* Exploited count */}
         {acted.length > 0 && (
-          <p className="text-[11px] text-emerald-500 flex items-center gap-1 pl-1 pt-1">
+          <p className="text-[11px] text-[#5DB786] flex items-center gap-1 pl-1 pt-1">
             <CheckCircle2 className="w-3 h-3" />
             {acted.length} micro-instant{acted.length > 1 ? "s" : ""} exploité{acted.length > 1 ? "s" : ""} aujourd'hui
           </p>
@@ -521,21 +521,21 @@ export default function MyDayPage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
                 <Card className="p-3 text-center">
                   <div className="flex items-center justify-center gap-1.5 mb-1">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    <CheckCircle2 className="w-4 h-4 text-[#5DB786]" />
                   </div>
                   <p className="text-xl font-bold tabular-nums">{todaySessions.length}</p>
                   <p className="text-[10px] text-muted-foreground">Sessions</p>
                 </Card>
                 <Card className="p-3 text-center">
                   <div className="flex items-center justify-center gap-1.5 mb-1">
-                    <Clock className="w-4 h-4 text-blue-500" />
+                    <Clock className="w-4 h-4 text-[#2F7DBA]" />
                   </div>
                   <p className="text-xl font-bold tabular-nums">{todayMinutes}</p>
                   <p className="text-[10px] text-muted-foreground">Minutes</p>
                 </Card>
                 <Card className="p-3 text-center">
                   <div className="flex items-center justify-center gap-1.5 mb-1">
-                    <Flame className="w-4 h-4 text-orange-500" />
+                    <Flame className="w-4 h-4 text-[#E48C75]" />
                   </div>
                   <p className="text-xl font-bold tabular-nums">{stats?.streak_days || 0}</p>
                   <p className="text-[10px] text-muted-foreground">Streak</p>
@@ -605,7 +605,7 @@ export default function MyDayPage() {
                               <div className="flex items-center justify-between">
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-center gap-2">
-                                    {isDoneToday && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />}
+                                    {isDoneToday && <CheckCircle2 className="w-4 h-4 text-[#5DB786] shrink-0" />}
                                     <h3 className={`font-medium text-sm truncate ${isDoneToday ? "line-through text-muted-foreground" : ""}`}>
                                       {routine.name}
                                     </h3>
@@ -632,7 +632,7 @@ export default function MyDayPage() {
                                     Fait
                                   </Button>
                                 ) : (
-                                  <Badge variant="outline" className="text-[10px] bg-emerald-500/10 text-emerald-500 border-emerald-500/20 shrink-0">
+                                  <Badge variant="outline" className="text-[10px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20 shrink-0">
                                     Complétée
                                   </Badge>
                                 )}
@@ -689,7 +689,7 @@ export default function MyDayPage() {
                             <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground">
                               <span>Jour {obj.current_day || 0}/{obj.target_duration_days}</span>
                               <span className="flex items-center gap-1">
-                                <Flame className="w-3 h-3 text-orange-500" />
+                                <Flame className="w-3 h-3 text-[#E48C75]" />
                                 {obj.streak_days || 0}j
                               </span>
                             </div>

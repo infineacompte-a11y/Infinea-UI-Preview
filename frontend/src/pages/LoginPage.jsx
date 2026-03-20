@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Timer, Mail, Lock, ArrowRight, Loader2 } from "lucide-react";
+import { Mail, Lock, ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { API, useAuth } from "@/App";
+import InFineaLogo from "@/components/InFineaLogo";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -74,14 +75,12 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md relative">
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <Timer className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <span className="font-heading text-2xl font-semibold">InFinea</span>
+        <Link to="/" className="flex items-center justify-center mb-8">
+          <InFineaLogo size={40} withText />
         </Link>
+        <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-[#459492]/30 to-transparent mb-6" />
 
-        <Card className="bg-card/80 backdrop-blur-xl border-white/10">
+        <Card className="bg-card/80 backdrop-blur-xl border-[#459492]/10">
           <CardHeader className="text-center">
             <CardTitle className="font-heading text-2xl">Bon retour parmi nous</CardTitle>
             <p className="text-muted-foreground mt-2">
@@ -166,7 +165,7 @@ export default function LoginPage() {
 
               <Button
                 type="submit"
-                className="w-full h-12 rounded-xl"
+                className="w-full h-12 rounded-xl hover:shadow-lg hover:shadow-[#275255]/20"
                 disabled={isLoading}
                 data-testid="login-submit-btn"
               >
@@ -183,7 +182,7 @@ export default function LoginPage() {
 
             <p className="text-center text-sm text-muted-foreground">
               Pas encore de compte ?{" "}
-              <Link to="/register" className="text-primary hover:underline" data-testid="register-link">
+              <Link to="/register" className="text-[#55B3AE] hover:underline" data-testid="register-link">
                 Créer un compte
               </Link>
             </p>

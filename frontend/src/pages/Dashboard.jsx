@@ -57,17 +57,17 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-blue-500 bg-blue-500/10",
-  productivity: "text-amber-500 bg-amber-500/10",
-  well_being: "text-emerald-500 bg-emerald-500/10",
-  creativity: "text-brand-secondary bg-brand-secondary/10",
-  fitness: "text-red-500 bg-red-500/10",
-  mindfulness: "text-cyan-500 bg-cyan-500/10",
-  leadership: "text-brand-teal bg-brand-teal/10",
-  finance: "text-green-500 bg-green-500/10",
-  relations: "text-pink-500 bg-pink-500/10",
-  mental_health: "text-teal-500 bg-teal-500/10",
-  entrepreneurship: "text-orange-500 bg-orange-500/10",
+  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
+  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  well_being: "text-[#5DB786] bg-[#5DB786]/10",
+  creativity: "text-[#55B3AE] bg-[#55B3AE]/10",
+  fitness: "text-[#E48C75] bg-[#E48C75]/10",
+  mindfulness: "text-[#459492] bg-[#459492]/10",
+  leadership: "text-[#7B8FA1] bg-[#7B8FA1]/10",
+  finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
+  relations: "text-[#C4806E] bg-[#C4806E]/10",
+  mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/10",
+  entrepreneurship: "text-[#D4956B] bg-[#D4956B]/10",
 };
 
 const categoryLabels = {
@@ -172,7 +172,7 @@ export default function Dashboard() {
                 Bonjour, {user?.name?.split(" ")[0] || "Utilisateur"} 👋
               </h1>
               {user?.subscription_tier === "premium" && (
-                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-500 text-sm font-medium">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-[#459492]/20 to-[#55B3AE]/20 text-[#55B3AE] text-sm font-medium">
                   <Crown className="w-4 h-4" />
                   Premium
                 </span>
@@ -224,14 +224,14 @@ export default function Dashboard() {
             <Card className="stat-card">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center">
-                    <Flame className="w-5 h-5 text-amber-500" />
+                  <div className="w-10 h-10 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
+                    <Flame className="w-5 h-5 text-[#E48C75]" />
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
                       <p className="text-2xl font-heading font-bold">{user?.streak_days || 0}</p>
                       {user?.subscription_tier === "premium" && (
-                        <Shield className="w-4 h-4 text-emerald-500" title="Streak Shield actif" />
+                        <Shield className="w-4 h-4 text-[#5DB786]" title="Streak Shield actif" />
                       )}
                     </div>
                     <p className="text-xs text-muted-foreground">jours streak</p>
@@ -242,8 +242,8 @@ export default function Dashboard() {
             <Card className="stat-card">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-emerald-500" />
+                  <div className="w-10 h-10 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-[#5DB786]" />
                   </div>
                   <div>
                     <p className="text-2xl font-heading font-bold">
@@ -295,17 +295,17 @@ export default function Dashboard() {
                 <span className="text-sm text-muted-foreground block mb-4">Niveau d'énergie</span>
                 <div className="flex gap-3">
                   {[
-                    { value: "low", label: "Basse", icon: BatteryLow },
-                    { value: "medium", label: "Moyenne", icon: BatteryMedium },
-                    { value: "high", label: "Haute", icon: BatteryFull },
+                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10", border: "border-[#2F7DBA]" },
+                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10", border: "border-[#C97A3D]" },
+                    { value: "high", label: "Haute", icon: BatteryFull, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", border: "border-[#5DB786]" },
                   ].map((level) => (
                     <button
                       key={level.value}
                       onClick={() => setEnergyLevel(level.value)}
                       className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border transition-colors ${
                         energyLevel === level.value
-                          ? "border-primary bg-primary/10 text-primary"
-                          : "border-border hover:border-primary/50"
+                          ? `${level.border} ${level.bg} ${level.color}`
+                          : "border-border hover:border-[#459492]/50"
                       }`}
                       data-testid={`energy-${level.value}-btn`}
                     >
@@ -328,8 +328,8 @@ export default function Dashboard() {
                         onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
                         className={`flex items-center gap-2 py-2 px-4 rounded-full border transition-colors ${
                           selectedCategory === key
-                            ? `${categoryColors[key]} border-transparent`
-                            : "border-border hover:border-primary/50"
+                            ? `${categoryColors[key]} border-[#459492] bg-[#459492]/10`
+                            : "border-border hover:border-[#459492]/50"
                         }`}
                         data-testid={`category-${key}-btn`}
                       >
@@ -379,10 +379,10 @@ export default function Dashboard() {
 
               {user?.subscription_tier !== "premium" && (
                 <Link to="/pricing" className="block">
-                  <Card className="bg-gradient-to-r from-amber-500/10 to-primary/10 border-amber-500/20 hover:border-amber-500/40 transition-colors cursor-pointer">
+                  <Card className="bg-gradient-to-r from-[#459492]/10 to-[#55B3AE]/10 border-[#459492]/20 hover:border-[#459492]/40 transition-colors cursor-pointer">
                     <CardContent className="p-3 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <Crown className="w-5 h-5 text-amber-500" />
+                        <Crown className="w-5 h-5 text-[#459492]" />
                         <p className="text-sm">
                           <span className="font-medium">Passez Premium</span>
                           <span className="text-muted-foreground"> — IA avancée qui apprend de vos habitudes</span>
@@ -420,7 +420,7 @@ export default function Dashboard() {
                                   <Badge className="text-xs bg-primary">Recommandé</Badge>
                                 )}
                                 {suggestions.scoring_metadata?.scored && (
-                                  <Badge variant="outline" className="text-xs border-amber-500/40 text-amber-600">Personnalisé</Badge>
+                                  <Badge variant="outline" className="text-xs border-[#459492]/40 text-[#459492]">Personnalisé</Badge>
                                 )}
                               </div>
                               <p className="text-sm text-muted-foreground mb-2">{action.description}</p>

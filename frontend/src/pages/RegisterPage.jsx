@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Timer, Mail, Lock, User, ArrowRight, Loader2 } from "lucide-react";
+import { Mail, Lock, User, ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { API, useAuth } from "@/App";
+import InFineaLogo from "@/components/InFineaLogo";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -91,14 +92,12 @@ export default function RegisterPage() {
 
       <div className="w-full max-w-md relative">
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <Timer className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <span className="font-heading text-2xl font-semibold">InFinea</span>
+        <Link to="/" className="flex items-center justify-center mb-8">
+          <InFineaLogo size={40} withText />
         </Link>
+        <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-[#459492]/30 to-transparent mb-6" />
 
-        <Card className="bg-card/80 backdrop-blur-xl border-white/10">
+        <Card className="bg-card/80 backdrop-blur-xl border-[#459492]/10">
           <CardHeader className="text-center">
             <CardTitle className="font-heading text-2xl">Créez votre compte</CardTitle>
             <p className="text-muted-foreground mt-2">
@@ -219,7 +218,7 @@ export default function RegisterPage() {
 
               <Button
                 type="submit"
-                className="w-full h-12 rounded-xl"
+                className="w-full h-12 rounded-xl hover:shadow-lg hover:shadow-[#275255]/20"
                 disabled={isLoading}
                 data-testid="register-submit-btn"
               >
@@ -236,7 +235,7 @@ export default function RegisterPage() {
 
             <p className="text-center text-sm text-muted-foreground">
               Déjà un compte ?{" "}
-              <Link to="/login" className="text-primary hover:underline" data-testid="login-link">
+              <Link to="/login" className="text-[#55B3AE] hover:underline" data-testid="login-link">
                 Se connecter
               </Link>
             </p>
