@@ -276,7 +276,7 @@ export default function PricingPage() {
                     className={`relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
                       plan.popular
                         ? "pricing-card-premium border-primary/30 ring-2 ring-[#459492] shadow-xl shadow-[#459492]/10 scale-[1.02] md:scale-105"
-                        : "bg-card hover:border-[#459492]/30"
+                        : "bg-white shadow-sm border border-[#E2E6EA] hover:border-[#459492]/30"
                     }`}
                   >
                     {plan.popular && (
@@ -404,7 +404,7 @@ export default function PricingPage() {
                     className="opacity-0 animate-fade-in"
                     style={{ animationDelay: `${700 + idx * 60}ms`, animationFillMode: "forwards" }}
                   >
-                    <Card className="bg-card/50 border-dashed hover:border-[#459492]/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                    <Card className="bg-white shadow-sm border border-[#E2E6EA] border-dashed hover:border-[#459492]/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                       <CardContent className="p-4 text-center">
                         <div className={`w-10 h-10 rounded-lg ${bg} flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-200`}>
                           <Icon className={`w-5 h-5 ${color}`} />
@@ -456,7 +456,7 @@ export default function PricingPage() {
                       className="opacity-0 animate-fade-in"
                       style={{ animationDelay: `${900 + idx * 100}ms`, animationFillMode: "forwards" }}
                     >
-                      <Card className="bg-card/50 hover:border-[#459492]/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                      <Card className="bg-white shadow-sm border border-[#E2E6EA] hover:border-[#459492]/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                         <CardContent className="p-6 text-center">
                           <div className={`w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
                             <FeatureIcon className={`w-6 h-6 ${item.iconColor}`} />
@@ -471,7 +471,7 @@ export default function PricingPage() {
               </div>
 
               {/* Detailed comparison table */}
-              <Card className="bg-card/50 hover:border-[#459492]/20 transition-all duration-200">
+              <Card className="bg-white shadow-sm border border-[#E2E6EA] hover:border-[#459492]/20 transition-all duration-200">
                 <CardContent className="p-0">
                   <div className="overflow-x-auto">
                     <table className="w-full">

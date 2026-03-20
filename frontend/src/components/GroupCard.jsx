@@ -33,7 +33,7 @@ export default function GroupCard({ group }) {
 
   return (
     <Link to={`/groups/${group.group_id}`} className="block group/card">
-      <Card className="bg-card hover:bg-card/80 border-border hover:border-primary/30 transition-all duration-200">
+      <Card className="bg-white shadow-sm border border-[#E2E6EA] hover:bg-card/80 hover:border-primary/30 hover:shadow-md transition-all duration-200">
         <CardContent className="p-5">
           {/* Header: name + member count */}
           <div className="flex items-start justify-between mb-4">

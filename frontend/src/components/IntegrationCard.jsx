@@ -77,7 +77,7 @@ export default function IntegrationCard({
 
   return (
     <Card
-      className={`transition-all ${isConnected ? colors.border + " border" : "hover:border-primary/50 cursor-pointer"}`}
+      className={`transition-all shadow-sm ${isConnected ? colors.border + " border" : "border border-[#E2E6EA] hover:border-primary/50 hover:shadow-md cursor-pointer"}`}
       data-testid={`integration-card-${service}`}
       onClick={!isConnected && !isLimitReached ? () => onConnect?.(service) : undefined}
     >

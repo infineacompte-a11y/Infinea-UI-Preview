@@ -235,9 +235,9 @@ export default function ProgressStats() {
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "#FFFFFF",
-                              border: "1px solid #262626",
+                              border: "1px solid #E2E6EA",
                               borderRadius: "12px",
-                              boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3)",
+                              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
                             }}
                           />
                           <Bar dataKey="minutes" radius={[4, 4, 0, 0]} />
@@ -276,9 +276,9 @@ export default function ProgressStats() {
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "#FFFFFF",
-                              border: "1px solid #262626",
+                              border: "1px solid #E2E6EA",
                               borderRadius: "12px",
-                              boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3)",
+                              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
                             }}
                           />
                         </PieChart>

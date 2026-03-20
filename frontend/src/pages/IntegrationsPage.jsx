@@ -743,7 +743,7 @@ export default function IntegrationsPage() {
             <div className="py-4">
               {selectedIntegration && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 rounded-xl bg-black/5">
+                  <div className="flex items-center justify-between p-4 rounded-xl bg-[#F8FAFB] border border-[#E2E6EA]">
                     <div>
                       <p className="text-sm text-muted-foreground">Connecté le</p>
                       <p className="font-medium">
@@ -1286,7 +1286,7 @@ export default function IntegrationsPage() {
           <div className="py-4">
             {selectedIntegration && (
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 rounded-xl bg-black/5">
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#F8FAFB] border border-[#E2E6EA]">
                   <div>
                     <p className="text-sm text-muted-foreground">Connecté le</p>
                     <p className="font-medium">

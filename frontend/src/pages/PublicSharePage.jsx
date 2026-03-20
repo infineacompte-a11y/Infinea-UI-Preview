@@ -49,7 +49,7 @@ export default function PublicSharePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8FAFB] flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-[#459492]" />
       </div>
     );
@@ -57,14 +57,14 @@ export default function PublicSharePage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 text-center animate-fade-in">
+      <div className="min-h-screen bg-[#F8FAFB] flex flex-col items-center justify-center px-4 text-center animate-fade-in">
         <div className="w-14 h-14 rounded-2xl bg-[#459492]/10 flex items-center justify-center mb-5">
           <Zap className="w-7 h-7 text-[#459492]" />
         </div>
-        <h1 className="font-heading text-foreground text-xl font-bold mb-2">
+        <h1 className="font-heading text-[#141E24] text-xl font-bold mb-2">
           {error === "expired" ? "Ce partage a expiré" : "Partage introuvable"}
         </h1>
-        <p className="text-muted-foreground text-sm mb-6 max-w-xs">
+        <p className="text-[#667085] text-sm mb-6 max-w-xs">
           {error === "expired"
             ? "Les liens de partage expirent après 90 jours."
             : "Ce lien n'existe pas ou a été supprimé."}
@@ -83,7 +83,7 @@ export default function PublicSharePage() {
   const authorName = share?.author?.name || "Un utilisateur InFinea";
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-12 animate-fade-in">
+    <div className="min-h-screen bg-[#F8FAFB] flex flex-col items-center justify-center px-4 py-12 animate-fade-in">
       {/* Brand header */}
       <div className="mb-8">
         <InFineaLogo size={40} withText animate />
@@ -96,7 +96,7 @@ export default function PublicSharePage() {
 
       {/* CTA */}
       <div className="text-center max-w-sm">
-        <p className="text-muted-foreground text-sm mb-4">
+        <p className="text-[#667085] text-sm mb-4">
           {authorName} investit ses micro-instants avec InFinea.
         </p>
         <Link to="/register">
@@ -105,7 +105,7 @@ export default function PublicSharePage() {
             <ArrowRight className="w-4 h-4" />
           </Button>
         </Link>
-        <p className="text-muted-foreground/50 text-[10px] mt-4">
+        <p className="text-[#667085]/50 text-[10px] mt-4">
           Transforme tes instants perdus en micro-victoires
         </p>
       </div>

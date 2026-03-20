@@ -160,7 +160,7 @@ export default function Dashboard() {
   const EnergyIcon = energyLevel === "low" ? BatteryLow : energyLevel === "medium" ? BatteryMedium : BatteryFull;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F8FAFB]">
       <Sidebar />
 
       {/* Main Content */}
@@ -169,17 +169,17 @@ export default function Dashboard() {
           {/* Welcome Header */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0ms" }}>
             <div className="flex items-center gap-3 mb-2">
-              <h1 className="font-heading text-3xl font-semibold" data-testid="dashboard-welcome">
+              <h1 className="font-heading text-3xl font-semibold text-[#141E24]" data-testid="dashboard-welcome">
                 Bonjour, {user?.name?.split(" ")[0] || "Utilisateur"} 👋
               </h1>
               {user?.subscription_tier === "premium" && (
-                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-[#459492]/20 to-[#55B3AE]/20 text-[#55B3AE] text-sm font-medium">
-                  <Crown className="w-4 h-4" />
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-[#459492]/15 to-[#55B3AE]/15 text-[#275255] text-sm font-medium">
+                  <Crown className="w-4 h-4 text-[#459492]" />
                   Premium
                 </span>
               )}
             </div>
-            <p className="text-muted-foreground">
+            <p className="text-[#667085]">
               Que pouvez-vous accomplir maintenant ?
             </p>
           </div>
@@ -194,58 +194,58 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* Sessions / Time card */}
             <Card
-              className="opacity-0 animate-fade-in rounded-xl border-border/50 bg-gradient-to-br from-[#5DB786]/10 to-transparent hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300"
+              className="opacity-0 animate-fade-in rounded-xl bg-white shadow-sm border border-[#E2E6EA] hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300"
               style={{ animationDelay: "100ms" }}
             >
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#5DB786]/15 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-[#5DB786]" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums">{user?.total_time_invested || 0}</p>
-                    <p className="text-xs text-muted-foreground">min investies</p>
+                    <p className="text-2xl font-heading font-bold tabular-nums text-[#141E24]">{user?.total_time_invested || 0}</p>
+                    <p className="text-xs text-[#667085]">min investies</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
             {/* Streak card */}
             <Card
-              className="opacity-0 animate-fade-in rounded-xl border-border/50 bg-gradient-to-br from-[#E48C75]/10 to-transparent hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300"
+              className="opacity-0 animate-fade-in rounded-xl bg-white shadow-sm border border-[#E2E6EA] hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300"
               style={{ animationDelay: "150ms" }}
             >
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#E48C75]/15 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
                     <Flame className="w-5 h-5 text-[#E48C75]" />
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <p className="text-2xl font-heading font-bold tabular-nums">{user?.streak_days || 0}</p>
+                      <p className="text-2xl font-heading font-bold tabular-nums text-[#141E24]">{user?.streak_days || 0}</p>
                       {user?.subscription_tier === "premium" && (
                         <Shield className="w-4 h-4 text-[#5DB786]" title="Streak Shield actif" />
                       )}
                     </div>
-                    <p className="text-xs text-muted-foreground">jours streak</p>
+                    <p className="text-xs text-[#667085]">jours streak</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
             {/* Subscription card */}
             <Card
-              className="opacity-0 animate-fade-in rounded-xl border-border/50 bg-gradient-to-br from-[#459492]/10 to-transparent hover:shadow-md hover:border-[#459492]/30 transition-all duration-300"
+              className="opacity-0 animate-fade-in rounded-xl bg-white shadow-sm border border-[#E2E6EA] hover:shadow-md hover:border-[#459492]/30 transition-all duration-300"
               style={{ animationDelay: "200ms" }}
             >
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#459492]/15 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#459492]/10 flex items-center justify-center">
                     <Sparkles className="w-5 h-5 text-[#459492]" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums">
+                    <p className="text-2xl font-heading font-bold tabular-nums text-[#141E24]">
                       {user?.subscription_tier === "premium" ? "Pro" : "Free"}
                     </p>
-                    <p className="text-xs text-muted-foreground">abonnement</p>
+                    <p className="text-xs text-[#667085]">abonnement</p>
                   </div>
                 </div>
               </CardContent>
@@ -265,7 +265,7 @@ export default function Dashboard() {
           {/* Next Slot Card */}
           {nextSlot && (
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "350ms" }}>
-              <h2 className="text-sm font-medium text-muted-foreground mb-3">
+              <h2 className="text-sm font-medium text-[#667085] mb-3">
                 📅 Prochain créneau libre détecté
               </h2>
               <SlotCard
@@ -278,12 +278,12 @@ export default function Dashboard() {
 
           {/* Main Action Card */}
           <Card
-            className="opacity-0 animate-fade-in rounded-xl border-border/50 bento-item"
+            className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm border border-[#E2E6EA]"
             style={{ animationDelay: "400ms" }}
           >
             <CardHeader>
-              <CardTitle className="font-heading text-xl flex items-center gap-2">
-                <Zap className="w-5 h-5 text-primary" />
+              <CardTitle className="font-heading text-xl flex items-center gap-2 text-[#141E24]">
+                <Zap className="w-5 h-5 text-[#459492]" />
                 Configurez votre micro-action
               </CardTitle>
             </CardHeader>
@@ -291,7 +291,7 @@ export default function Dashboard() {
               {/* Time Slider */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-heading text-sm font-semibold uppercase tracking-wider text-muted-foreground">Temps disponible</span>
+                  <span className="font-heading text-sm font-semibold uppercase tracking-wider text-[#667085]">Temps disponible</span>
                   <Badge variant="secondary" className="font-mono">
                     {availableTime} min
                   </Badge>
@@ -305,7 +305,7 @@ export default function Dashboard() {
                   className="w-full"
                   data-testid="time-slider"
                 />
-                <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                <div className="flex justify-between text-xs text-[#667085] mt-2">
                   <span>2 min</span>
                   <span>15 min</span>
                 </div>
@@ -313,7 +313,7 @@ export default function Dashboard() {
 
               {/* Energy Level */}
               <div>
-                <span className="font-heading text-sm font-semibold uppercase tracking-wider text-muted-foreground block mb-4">Niveau d'énergie</span>
+                <span className="font-heading text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Niveau d'énergie</span>
                 <div className="flex gap-3">
                   {[
                     { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/10", border: "border-[#459492]", ring: "ring-[#459492]" },
@@ -325,8 +325,8 @@ export default function Dashboard() {
                       onClick={() => setEnergyLevel(level.value)}
                       className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border hover:scale-105 active:scale-95 transition-all duration-200 ${
                         energyLevel === level.value
-                          ? `${level.border} ${level.bg} ${level.color} ring-2 ring-offset-2 ring-offset-background ${level.ring} shadow-md`
-                          : "border-border hover:border-[#459492]/50"
+                          ? `${level.border} ${level.bg} ${level.color} ring-2 ring-offset-2 ring-offset-white ${level.ring} shadow-md`
+                          : "border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F8FAFB]"
                       }`}
                       data-testid={`energy-${level.value}-btn`}
                     >
@@ -339,7 +339,7 @@ export default function Dashboard() {
 
               {/* Category Filter */}
               <div>
-                <span className="font-heading text-sm font-semibold uppercase tracking-wider text-muted-foreground block mb-4">Catégorie (optionnel)</span>
+                <span className="font-heading text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Catégorie (optionnel)</span>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                   {Object.entries(categoryLabels).map(([key, label]) => {
                     const Icon = categoryIcons[key];
@@ -349,8 +349,8 @@ export default function Dashboard() {
                         onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
                         className={`flex items-center gap-2 py-2 px-3 rounded-xl border hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 ${
                           selectedCategory === key
-                            ? `${categoryColors[key]} border-[#459492] bg-[#459492]/10 ring-2 ring-[#459492]/50 shadow-md`
-                            : "border-border hover:border-[#459492]/50"
+                            ? `${categoryColors[key]} border-[#459492] ring-2 ring-[#459492]/50 shadow-md`
+                            : "bg-[#F8FAFB] border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F0F7F7]"
                         }`}
                         data-testid={`category-${key}-btn`}
                       >
@@ -365,7 +365,7 @@ export default function Dashboard() {
               {/* Get Suggestions Button */}
               <Button
                 onClick={getSuggestions}
-                className="w-full h-12 text-base font-semibold rounded-xl bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#55B3AE] hover:to-[#459492] shadow-lg shadow-[#459492]/20 transition-all duration-300"
+                className="w-full h-12 text-base font-semibold rounded-xl bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#55B3AE] hover:to-[#459492] text-white shadow-md shadow-[#459492]/20 transition-all duration-300"
                 disabled={isLoading}
                 data-testid="get-suggestions-btn"
               >
@@ -392,31 +392,31 @@ export default function Dashboard() {
               data-testid="suggestions-container"
             >
               <div className="flex items-center justify-between">
-                <h2 className="font-heading text-xl font-semibold">Suggestions pour vous</h2>
-                <span className="text-sm text-muted-foreground">{availableTime} min • Énergie {energyLevel}</span>
+                <h2 className="font-heading text-xl font-semibold text-[#141E24]">Suggestions pour vous</h2>
+                <span className="text-sm text-[#667085]">{availableTime} min • Énergie {energyLevel}</span>
               </div>
 
               {suggestions.reasoning && (
-                <Card className="bg-primary/5 border-primary/20 rounded-xl border-border/50">
+                <Card className="bg-[#459492]/5 border-[#459492]/20 rounded-xl">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Sparkles className="w-5 h-5 text-primary mt-0.5" />
-                    <p className="text-sm">{suggestions.reasoning}</p>
+                    <Sparkles className="w-5 h-5 text-[#459492] mt-0.5" />
+                    <p className="text-sm text-[#141E24]">{suggestions.reasoning}</p>
                   </CardContent>
                 </Card>
               )}
 
               {user?.subscription_tier !== "premium" && (
                 <Link to="/pricing" className="block">
-                  <Card className="bg-gradient-to-r from-[#459492]/10 to-[#55B3AE]/10 border-[#459492]/20 hover:border-[#459492]/40 transition-colors cursor-pointer rounded-xl border-border/50">
+                  <Card className="bg-gradient-to-r from-[#459492]/5 to-[#55B3AE]/5 border-[#459492]/20 hover:border-[#459492]/40 transition-colors cursor-pointer rounded-xl">
                     <CardContent className="p-3 flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <Crown className="w-5 h-5 text-[#459492]" />
                         <p className="text-sm">
-                          <span className="font-medium">Passez Premium</span>
-                          <span className="text-muted-foreground"> — IA avancée qui apprend de vos habitudes</span>
+                          <span className="font-medium text-[#141E24]">Passez Premium</span>
+                          <span className="text-[#667085]"> — IA avancée qui apprend de vos habitudes</span>
                         </p>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                      <ChevronRight className="w-4 h-4 text-[#667085]" />
                     </CardContent>
                   </Card>
                 </Link>
@@ -428,7 +428,7 @@ export default function Dashboard() {
                   return (
                     <Card
                       key={action.action_id}
-                      className={`group cursor-pointer rounded-xl border-border/50 hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ${i === 0 ? "border-primary/30" : ""}`}
+                      className={`group cursor-pointer rounded-xl bg-white shadow-sm border border-[#E2E6EA] hover:shadow-md hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ${i === 0 ? "border-[#459492]/30 shadow-md" : ""}`}
                       onClick={() => startSession(action.action_id)}
                       data-testid={`action-card-${action.action_id}`}
                     >
@@ -440,26 +440,26 @@ export default function Dashboard() {
                             </div>
                             <div>
                               <div className="flex items-center gap-2 mb-1 flex-wrap">
-                                <h3 className="font-medium">{action.title}</h3>
+                                <h3 className="font-medium text-[#141E24]">{action.title}</h3>
                                 {action.is_premium && (
                                   <Badge variant="secondary" className="text-xs">Premium</Badge>
                                 )}
                                 {i === 0 && (
-                                  <Badge className="text-xs bg-[#459492]/20 text-[#459492] border border-[#459492]/30 shadow-sm shadow-[#459492]/10">Recommandé</Badge>
+                                  <Badge className="text-xs bg-[#459492]/10 text-[#275255] border border-[#459492]/30 shadow-sm">Recommandé</Badge>
                                 )}
                                 {suggestions.scoring_metadata?.scored && (
                                   <Badge variant="outline" className="text-xs border-[#459492]/40 text-[#459492]">Personnalisé</Badge>
                                 )}
                               </div>
-                              <p className="text-sm text-muted-foreground mb-2">{action.description}</p>
-                              <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                                <span className="bg-muted rounded-lg px-2 py-0.5">{action.duration_min}-{action.duration_max} min</span>
+                              <p className="text-sm text-[#667085] mb-2">{action.description}</p>
+                              <div className="flex items-center gap-3 text-xs text-[#667085]">
+                                <span className="bg-[#F8FAFB] border border-[#E2E6EA] rounded-lg px-2 py-0.5">{action.duration_min}-{action.duration_max} min</span>
                                 <span>•</span>
-                                <span className="bg-muted rounded-lg px-2 py-0.5">{categoryLabels[action.category]}</span>
+                                <span className="bg-[#F8FAFB] border border-[#E2E6EA] rounded-lg px-2 py-0.5">{categoryLabels[action.category]}</span>
                               </div>
                             </div>
                           </div>
-                          <ChevronRight className="w-5 h-5 text-muted-foreground shrink-0 group-hover:translate-x-1 transition-transform" />
+                          <ChevronRight className="w-5 h-5 text-[#667085] shrink-0 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </CardContent>
                     </Card>
@@ -472,14 +472,14 @@ export default function Dashboard() {
           {/* Quick Actions */}
           {!suggestions && (
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "450ms" }}>
-              <h2 className="font-heading text-lg font-semibold text-muted-foreground mb-4">Explorez nos catégories</h2>
+              <h2 className="font-heading text-lg font-semibold text-[#667085] mb-4">Explorez nos catégories</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(categoryLabels).map(([key, label]) => {
                   const Icon = categoryIcons[key];
                   return (
                     <Card
                       key={key}
-                      className={`${categoryColors[key].replace("text-", "").split(" ")[0]} bg-opacity-5 cursor-pointer rounded-xl border-border/50 hover:border-[#459492]/20 hover:shadow-md transition-all duration-200`}
+                      className="bg-white cursor-pointer rounded-xl shadow-sm border border-[#E2E6EA] hover:border-[#459492]/30 hover:shadow-md transition-all duration-200"
                       onClick={() => {
                         setSelectedCategory(key);
                         getSuggestions();
@@ -487,9 +487,11 @@ export default function Dashboard() {
                       data-testid={`quick-action-${key}`}
                     >
                       <CardContent className="p-6">
-                        <Icon className={`w-10 h-10 ${categoryColors[key].split(" ")[0]} mb-4`} />
-                        <h3 className="font-heading text-lg font-medium mb-2">{label}</h3>
-                        <p className="text-sm text-muted-foreground">
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${categoryColors[key]} mb-4`}>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-heading text-lg font-medium mb-2 text-[#141E24]">{label}</h3>
+                        <p className="text-sm text-[#667085]">
                           {key === "learning" && "Vocabulaire, lecture, concepts..."}
                           {key === "productivity" && "Planning, emails, brainstorm..."}
                           {key === "well_being" && "Respiration, méditation, étirements..."}

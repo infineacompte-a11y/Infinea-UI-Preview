@@ -108,7 +108,7 @@ export default function SmartPredictionCard() {
 
   if (isLoading) {
     return (
-      <Card className="mb-8 border-brand-teal/20 bg-gradient-to-br from-brand-teal/5 to-brand-secondary/5">
+      <Card className="mb-8 border-brand-teal/20 bg-gradient-to-br from-brand-teal/5 to-brand-secondary/5 shadow-sm">
         <CardContent className="p-5 flex items-center gap-3">
           <Loader2 className="w-5 h-5 animate-spin text-brand-teal" />
           <span className="text-sm text-muted-foreground">Analyse de votre agenda...</span>
@@ -126,7 +126,7 @@ export default function SmartPredictionCard() {
   // No integrations connected — show CTA
   if (!hasIntegrations) {
     return (
-      <Card className="mb-8 border-dashed border-muted-foreground/30" data-testid="smart-predict-empty">
+      <Card className="mb-8 border-dashed border-muted-foreground/30 shadow-sm" data-testid="smart-predict-empty">
         <CardContent className="p-5">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center shrink-0">
@@ -153,7 +153,7 @@ export default function SmartPredictionCard() {
   // No predictions but integrations exist — waiting for sync
   if (!hasPredictions) {
     return (
-      <Card className="mb-8 border-brand-teal/20 bg-gradient-to-br from-brand-teal/5 to-brand-secondary/5" data-testid="smart-predict-waiting">
+      <Card className="mb-8 border-brand-teal/20 bg-gradient-to-br from-brand-teal/5 to-brand-secondary/5 shadow-sm" data-testid="smart-predict-waiting">
         <CardContent className="p-5">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center shrink-0">
@@ -186,7 +186,7 @@ export default function SmartPredictionCard() {
 
   // Main card: predictions available
   return (
-    <Card className="mb-8 border-brand-teal/20 bg-gradient-to-br from-brand-teal/5 to-brand-secondary/5" data-testid="smart-predict-card">
+    <Card className="mb-8 border-brand-teal/20 bg-gradient-to-br from-brand-teal/5 to-brand-secondary/5 shadow-sm" data-testid="smart-predict-card">
       <CardContent className="p-5">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">

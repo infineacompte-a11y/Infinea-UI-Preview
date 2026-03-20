@@ -90,10 +90,10 @@ function NavLinks({ mobile = false, onNavigate, unreadCount = 0 }) {
           <Link
             key={to}
             to={to}
-            className={`nav-item flex items-center gap-3 px-4 py-3 rounded-xl opacity-0 animate-fade-in transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121212] focus-visible:outline-none ${
+            className={`nav-item flex items-center gap-3 px-4 py-3 rounded-xl opacity-0 animate-fade-in transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492] focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none ${
               isActive
-                ? "active border-l-2 border-l-[#459492] bg-[#459492]/10 text-foreground shadow-[inset_0_0_12px_rgba(69,148,146,0.08)]"
-                : "text-muted-foreground hover:text-foreground hover:bg-[#459492]/5"
+                ? "active border-l-2 border-l-[#459492] bg-[#F0F7F7] text-[#275255] font-medium"
+                : "text-[#667085] hover:text-[#275255] hover:bg-[#F0F7F7]"
             }`}
             style={{ animationDelay: `${index * 30}ms`, animationFillMode: "forwards" }}
             onClick={() => mobile && onNavigate?.()}
@@ -128,20 +128,20 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col p-6 border-r border-border bg-[#151515]/80 backdrop-blur-xl">
+      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col p-6 bg-white border-r border-[#E2E6EA] shadow-sm">
         <div className="mb-8">
           <InFineaLogo size={36} withText />
-          <div className="h-px bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent mb-4 mt-4" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#459492]/20 to-transparent mb-4 mt-4" />
         </div>
 
         <nav className="flex flex-col gap-1 flex-1 overflow-y-auto">
           <NavLinks unreadCount={unreadCount} />
         </nav>
 
-        <div className="pt-4 border-t border-border">
+        <div className="pt-4 border-t border-[#E2E6EA]">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-brand-teal/5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121212] focus-visible:outline-none active:scale-[0.97]"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#667085] hover:text-[#275255] hover:bg-[#F0F7F7] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492] focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none active:scale-[0.97]"
             data-testid="logout-btn"
           >
             <LogOut className="w-5 h-5" />
@@ -151,27 +151,27 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 glass">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E2E6EA] shadow-sm">
         <div className="flex items-center justify-between px-4 h-16">
           <InFineaLogo size={28} withText />
 
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" data-testid="mobile-menu-btn" className="relative">
+              <Button variant="ghost" size="icon" data-testid="mobile-menu-btn" className="relative text-[#667085] hover:text-[#275255] hover:bg-[#F0F7F7]">
                 <Menu className="w-6 h-6" />
                 {unreadCount > 0 && (
-                  <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#E48C75] ring-2 ring-background" />
+                  <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#E48C75] ring-2 ring-white" />
                 )}
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72 bg-card p-6">
+            <SheetContent side="right" className="w-72 bg-white border-l border-[#E2E6EA] shadow-xl p-6">
               <nav className="flex flex-col gap-1 mt-8">
                 <NavLinks mobile onNavigate={() => setMobileMenuOpen(false)} unreadCount={unreadCount} />
               </nav>
-              <div className="mt-auto pt-4 border-t border-border absolute bottom-6 left-6 right-6">
+              <div className="mt-auto pt-4 border-t border-[#E2E6EA] absolute bottom-6 left-6 right-6">
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground transition-all duration-200 active:scale-[0.97]"
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#667085] hover:text-[#275255] hover:bg-[#F0F7F7] transition-all duration-200 active:scale-[0.97]"
                 >
                   <LogOut className="w-5 h-5" />
                   <span>Déconnexion</span>

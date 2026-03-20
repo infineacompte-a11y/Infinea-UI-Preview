@@ -52,7 +52,7 @@ export default function RecapCard() {
 
   if (isLoading) {
     return (
-      <Card className="p-6 mb-6">
+      <Card className="p-6 mb-6 shadow-sm border border-[#E2E6EA]">
         <div className="flex items-center justify-center py-4">
           <Loader2 className="w-5 h-5 animate-spin text-muted-foreground" />
         </div>
@@ -82,7 +82,7 @@ export default function RecapCard() {
   const maxMin = Math.max(...weekDays.map((d) => d.minutes), 1);
 
   return (
-    <Card className="p-5 mb-6">
+    <Card className="p-5 mb-6 shadow-sm border border-[#E2E6EA]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-heading font-semibold text-base flex items-center gap-2">

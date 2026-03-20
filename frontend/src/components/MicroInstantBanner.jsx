@@ -133,8 +133,8 @@ export default function MicroInstantBanner() {
       <div
         className={`${
           isNow
-            ? "bg-gradient-to-r from-primary/95 to-primary/85"
-            : "bg-gradient-to-r from-card/95 to-card/90 border-b border-primary/20"
+            ? "bg-gradient-to-r from-[#459492] to-[#55B3AE]"
+            : "bg-white shadow-md border-b border-[#E2E6EA]"
         } backdrop-blur-md shadow-lg`}
       >
         <div className="max-w-4xl mx-auto px-4 py-2.5 flex items-center gap-3">
@@ -155,7 +155,7 @@ export default function MicroInstantBanner() {
           <div className="flex-1 min-w-0">
             <p
               className={`text-sm font-medium leading-tight truncate ${
-                isNow ? "text-white" : "text-foreground"
+                isNow ? "text-white" : "text-[#141E24]"
               }`}
             >
               {isNow ? "Micro-instant disponible" : "Micro-instant dans"}
@@ -166,7 +166,7 @@ export default function MicroInstantBanner() {
             {action.title && (
               <p
                 className={`text-xs truncate mt-0.5 ${
-                  isNow ? "text-white/70" : "text-muted-foreground"
+                  isNow ? "text-white/70" : "text-[#667085]"
                 }`}
               >
                 {action.title}
@@ -205,8 +205,8 @@ export default function MicroInstantBanner() {
             onClick={handleDismiss}
             className={`p-1 rounded-md transition-all duration-200 shrink-0 ${
               isNow
-                ? "text-white/50 hover:text-white hover:bg-black/5"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                ? "text-white/50 hover:text-white hover:bg-white/10"
+                : "text-[#667085] hover:text-[#141E24] hover:bg-[#F8FAFB]"
             }`}
           >
             <X className="w-4 h-4" />

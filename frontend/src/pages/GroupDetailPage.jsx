@@ -241,7 +241,7 @@ export default function GroupDetailPage() {
                                 ? "bg-[#9A9A9A]/20 text-muted-foreground"
                                 : i === 2
                                   ? "bg-[#E48C75]/20 text-[#E48C75]"
-                                  : "bg-black/5 text-white/40"
+                                  : "bg-muted text-muted-foreground"
                           }`}
                         >
                           {i + 1}

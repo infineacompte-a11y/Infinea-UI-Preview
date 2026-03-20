@@ -142,20 +142,23 @@ export default function OnboardingPage() {
   // Welcome screen after onboarding complete
   if (welcomeMessage) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-[#F8FAFB] via-white to-[#F0F7F7] flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center animate-fade-in">
           <div className="w-20 h-20 rounded-full bg-[#459492]/10 flex items-center justify-center mx-auto mb-6">
             <Sparkles className="w-10 h-10 text-[#459492]" />
           </div>
-          <h1 className="font-heading text-3xl font-bold mb-4">
+          <h1 className="font-heading text-3xl font-bold text-[#141E24] mb-4">
             Bienvenue, {user?.name?.split(" ")[0] || "Utilisateur"} !
           </h1>
-          <Card className="mb-8 text-left rounded-2xl shadow-xl">
+          <Card className="mb-8 text-left rounded-2xl shadow-xl bg-white border border-[#E2E6EA]/50">
             <CardContent className="p-6">
-              <p className="text-sm leading-relaxed">{welcomeMessage}</p>
+              <p className="text-sm leading-relaxed text-[#141E24]">{welcomeMessage}</p>
             </CardContent>
           </Card>
-          <Button onClick={handleFinish} className="w-full h-12 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+          <Button
+            onClick={handleFinish}
+            className="w-full h-12 rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 active:scale-[0.97]"
+          >
             Commencer mes micro-actions
             <ChevronRight className="w-5 h-5 ml-2" />
           </Button>
@@ -165,21 +168,26 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-[#F8FAFB] flex flex-col">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 glass">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-[#E2E6EA]">
         <div className="flex items-center justify-between px-4 h-16">
           <InFineaLogo size={32} withText animate />
-          <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")} className="rounded-xl transition-all duration-200">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => navigate("/dashboard")}
+            className="rounded-xl text-[#667085] hover:text-[#459492] hover:bg-[#F0F7F7] transition-all duration-200"
+          >
             Passer
           </Button>
         </div>
       </header>
 
       {/* Progress Bar */}
-      <div className="fixed top-16 left-0 right-0 z-40 h-2 bg-border rounded-full overflow-hidden">
+      <div className="fixed top-16 left-0 right-0 z-40 h-1.5 bg-[#E2E6EA] overflow-hidden">
         <div
-          className="h-full bg-[#459492] rounded-full transition-all duration-500"
+          className="h-full bg-gradient-to-r from-[#459492] to-[#55B3AE] rounded-full transition-all duration-500 ease-out"
           style={{ width: `${((currentStep + 1) / STEPS.length) * 100}%` }}
         />
       </div>
@@ -189,13 +197,13 @@ export default function OnboardingPage() {
         <div className="max-w-lg w-full animate-fade-in" key={currentStep}>
           {/* Step Header */}
           <div className="text-center mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
-            <Badge variant="secondary" className="mb-4">
+            <Badge className="mb-4 bg-[#F0F7F7] text-[#459492] border-[#459492]/20 hover:bg-[#F0F7F7] font-medium">
               {currentStep + 1} / {STEPS.length}
             </Badge>
-            <h1 className="font-heading text-2xl font-bold mb-2">
+            <h1 className="font-heading text-2xl font-bold text-[#141E24] mb-2">
               {STEPS[currentStep].title}
             </h1>
-            <p className="text-muted-foreground">{STEPS[currentStep].subtitle}</p>
+            <p className="text-[#667085]">{STEPS[currentStep].subtitle}</p>
           </div>
 
           {/* Step Content */}
@@ -207,19 +215,21 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={goal.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                      selected
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("goals", goal.id)}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
-                        selected ? "bg-[#459492] text-white" : "bg-muted"
+                        selected ? "bg-[#459492] text-white" : "bg-[#F0F7F7] text-[#459492]"
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="flex-1 font-medium">{goal.label}</span>
+                      <span className="flex-1 font-medium text-[#141E24]">{goal.label}</span>
                       {selected && <Check className="w-5 h-5 text-[#459492]" />}
                     </CardContent>
                   </Card>
@@ -236,21 +246,23 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={slot.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                      selected
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("preferred_times", slot.id)}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
-                        selected ? "bg-[#459492] text-white" : "bg-muted"
+                        selected ? "bg-[#459492] text-white" : "bg-[#F0F7F7] text-[#459492]"
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-medium">{slot.label}</p>
-                        <p className="text-sm text-muted-foreground">{slot.sublabel}</p>
+                        <p className="font-medium text-[#141E24]">{slot.label}</p>
+                        <p className="text-sm text-[#667085]">{slot.sublabel}</p>
                       </div>
                       {selected && <Check className="w-5 h-5 text-[#459492]" />}
                     </CardContent>
@@ -268,21 +280,23 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={level.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                      selected
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => setProfile((p) => ({ ...p, energy_level: level.id }))}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
-                        selected ? "bg-[#459492] text-white" : "bg-muted"
+                        selected ? "bg-[#459492] text-white" : "bg-[#F0F7F7] text-[#459492]"
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-medium">{level.label}</p>
-                        <p className="text-sm text-muted-foreground">{level.description}</p>
+                        <p className="font-medium text-[#141E24]">{level.label}</p>
+                        <p className="text-sm text-[#667085]">{level.description}</p>
                       </div>
                       {selected && <Check className="w-5 h-5 text-[#459492]" />}
                     </CardContent>
@@ -299,8 +313,10 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={interest.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                      selected
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("interests", interest.id)}
@@ -309,7 +325,7 @@ export default function OnboardingPage() {
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-2 transition-all duration-200 ${interest.color}`}>
                         {selected ? <Check className="w-5 h-5" /> : <Sparkles className="w-5 h-5" />}
                       </div>
-                      <p className="text-sm font-medium">{interest.label}</p>
+                      <p className="text-sm font-medium text-[#141E24]">{interest.label}</p>
                     </CardContent>
                   </Card>
                 );
@@ -320,17 +336,21 @@ export default function OnboardingPage() {
       </main>
 
       {/* Footer Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 glass p-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md border-t border-[#E2E6EA] p-4">
         <div className="max-w-lg mx-auto flex gap-3">
           {currentStep > 0 && (
-            <Button variant="outline" onClick={handleBack} className="h-12 rounded-xl px-6 shadow-md transition-all duration-200 active:scale-[0.97]">
+            <Button
+              variant="outline"
+              onClick={handleBack}
+              className="h-12 rounded-xl px-6 bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 active:scale-[0.97]"
+            >
               <ChevronLeft className="w-5 h-5 mr-1" />
               Retour
             </Button>
           )}
           <Button
             onClick={handleNext}
-            className="flex-1 h-12 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+            className="flex-1 h-12 rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 active:scale-[0.97]"
             disabled={!canAdvance() || isSubmitting}
           >
             {isSubmitting ? (
