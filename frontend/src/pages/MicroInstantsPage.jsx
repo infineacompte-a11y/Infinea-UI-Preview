@@ -122,7 +122,7 @@ function ConfidenceBadge({ score }) {
     className = "text-[#E48C75] border-[#E48C75]/30";
   }
   return (
-    <Badge variant={variant} className={`text-[10px] ${className}`}>
+    <Badge variant={variant} className={`text-[10px] tabular-nums ${className}`}>
       {pct}% confiance
     </Badge>
   );
@@ -162,7 +162,7 @@ function SkipDialog({ open, onOpenChange, onConfirm, isLoading }) {
               <button
                 key={r.value}
                 onClick={() => setReason(r.value)}
-                className={`flex items-center gap-2 p-2.5 rounded-lg border text-left text-sm transition-all ${
+                className={`flex items-center gap-2 p-2.5 rounded-lg border text-left text-sm transition-all duration-200 active:scale-[0.97] ${
                   selected
                     ? "border-primary bg-primary/10 text-foreground"
                     : "border-border/40 text-muted-foreground hover:border-border hover:text-foreground"
@@ -177,14 +177,14 @@ function SkipDialog({ open, onOpenChange, onConfirm, isLoading }) {
         <div className="flex gap-2 mt-3">
           <Button
             variant="ghost"
-            className="flex-1"
+            className="flex-1 rounded-xl transition-all duration-200"
             onClick={() => onOpenChange(false)}
           >
             Annuler
           </Button>
           <Button
             variant="default"
-            className="flex-1"
+            className="flex-1 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
             disabled={isLoading}
             onClick={handleConfirm}
           >
@@ -223,7 +223,7 @@ function CountdownBadge({ windowEnd }) {
   if (!remaining) return null;
 
   return (
-    <Badge variant="outline" className="text-[10px] text-[#E48C75] border-[#E48C75]/30 animate-pulse gap-1">
+    <Badge variant="outline" className="text-[10px] tabular-nums text-[#E48C75] border-[#E48C75]/30 animate-pulse gap-1">
       <Timer className="w-3 h-3" />
       {remaining}
     </Badge>
@@ -242,6 +242,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
   const SourceIcon = source.icon;
   const now = isInstantNow(instant);
   const past = isInstantPast(instant);
+  const future = isInstantFuture(instant);
   const exploited = instant._exploited;
   const skipped = instant._skipped;
 
@@ -288,11 +289,13 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
   return (
     <>
       <Card
-        className={`transition-all duration-300 ${
+        className={`transition-all duration-300 group ${
           now
-            ? "border-primary/50 shadow-lg shadow-primary/5 ring-1 ring-primary/20"
+            ? "ring-2 ring-[#459492]/50 shadow-xl shadow-[#459492]/10 border-primary/50"
             : past
             ? "opacity-50"
+            : future
+            ? "border-border/30 hover:border-[#459492]/30 hover:shadow-lg hover:-translate-y-0.5"
             : "border-border/30"
         } ${exploited ? "border-[#5DB786]/40 bg-[#5DB786]/5" : ""} ${
           skipped ? "border-muted/40 bg-muted/5" : ""
@@ -307,7 +310,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-medium text-foreground">
+                  <span className="text-sm font-medium text-foreground tabular-nums">
                     {startTime} – {endTime}
                   </span>
                   {now && (
@@ -323,7 +326,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
             <div className="flex items-center gap-1.5 flex-wrap">
               {/* Countdown for active instants */}
               {now && <CountdownBadge windowEnd={instant.window_end} />}
-              <Badge variant="outline" className="text-[10px] text-muted-foreground border-border/50">
+              <Badge variant="outline" className="text-[10px] tabular-nums text-muted-foreground border-border/50">
                 <Clock className="w-3 h-3 mr-1" />
                 {formatDuration(duration)}
               </Badge>
@@ -346,7 +349,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
                     <p className="text-[11px] text-muted-foreground mt-0.5 capitalize">
                       {action.category.replace("_", " ")}
                       {action.duration_min && action.duration_max && (
-                        <span> · {action.duration_min}–{action.duration_max} min</span>
+                        <span className="tabular-nums"> · {action.duration_min}–{action.duration_max} min</span>
                       )}
                     </p>
                   )}
@@ -359,9 +362,9 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
           {!exploited && !skipped && !past && (
             <div className="flex gap-2">
               <Button
-                className={`flex-1 gap-2 ${
+                className={`flex-1 gap-2 rounded-xl transition-all duration-200 active:scale-[0.97] ${
                   now
-                    ? "bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md"
+                    ? "bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] shadow-lg hover:shadow-xl text-white border-0"
                     : ""
                 }`}
                 variant={now ? "default" : "outline"}
@@ -378,7 +381,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-muted-foreground hover:text-foreground shrink-0"
+                className="text-muted-foreground hover:text-foreground shrink-0 rounded-xl transition-all duration-200 active:scale-[0.97]"
                 disabled={isLoading}
                 onClick={() => setSkipDialogOpen(true)}
               >
@@ -420,11 +423,11 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-xs text-primary hover:text-primary gap-1.5 shrink-0"
+                  className="text-xs text-primary hover:text-primary gap-1.5 shrink-0 rounded-xl"
                   onClick={handleUndo}
                 >
                   <Undo2 className="w-3.5 h-3.5" />
-                  Annuler ({undoCountdown}s)
+                  Annuler (<span className="tabular-nums">{undoCountdown}</span>s)
                 </Button>
               )}
             </div>
@@ -455,7 +458,7 @@ function HeroInstant({ instant, onExploit, isLoading }) {
   const startTime = formatTime(instant.window_start);
 
   return (
-    <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 shadow-xl shadow-primary/5 overflow-hidden">
+    <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 shadow-xl shadow-primary/5 overflow-hidden ring-2 ring-[#459492]/30">
       <CardContent className="p-6">
         <div className="flex items-center gap-2 mb-1">
           <Zap className="w-5 h-5 text-primary" />
@@ -468,14 +471,14 @@ function HeroInstant({ instant, onExploit, isLoading }) {
           {action.title || "Action recommandée"}
         </h2>
 
-        <p className="text-sm text-muted-foreground mb-4">
+        <p className="text-sm text-muted-foreground mb-4 tabular-nums">
           {duration > 0 && `${duration} min`}
           {action.category && ` · ${action.category.replace("_", " ")}`}
         </p>
 
         <Button
           size="lg"
-          className="w-full gap-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg text-base h-12"
+          className="w-full gap-2 bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] shadow-lg hover:shadow-xl text-white border-0 text-base h-12 rounded-xl transition-all duration-200 active:scale-[0.97]"
           disabled={isLoading || !action.action_id}
           onClick={() => onExploit(instant.instant_id, action.action_id)}
         >
@@ -501,16 +504,16 @@ function StatsSummary({ instants, stats }) {
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-      <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-        <p className="text-2xl font-bold text-foreground">{total}</p>
+      <div className="text-center p-3 rounded-xl bg-card border border-border/20 hover:shadow-md transition-all duration-200">
+        <p className="text-2xl font-bold text-foreground tabular-nums">{total}</p>
         <p className="text-[11px] text-muted-foreground">Détectés</p>
       </div>
-      <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-        <p className="text-2xl font-bold text-[#5DB786]">{exploited}</p>
+      <div className="text-center p-3 rounded-xl bg-card border border-border/20 hover:shadow-md transition-all duration-200">
+        <p className="text-2xl font-bold text-[#5DB786] tabular-nums">{exploited}</p>
         <p className="text-[11px] text-muted-foreground">Exploités</p>
       </div>
-      <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-        <p className="text-2xl font-bold text-primary">{available}</p>
+      <div className="text-center p-3 rounded-xl bg-card border border-border/20 hover:shadow-md transition-all duration-200">
+        <p className="text-2xl font-bold text-primary tabular-nums">{available}</p>
         <p className="text-[11px] text-muted-foreground">Disponibles</p>
       </div>
     </div>
@@ -524,7 +527,7 @@ function EmptyState() {
   return (
     <Card className="border-dashed border-border/50">
       <CardContent className="p-8 text-center">
-        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mx-auto mb-4 ring-1 ring-primary/10">
           <Zap className="w-7 h-7 text-primary/60" />
         </div>
         <h3 className="text-lg font-medium text-foreground mb-2">
@@ -564,7 +567,7 @@ function WeeklyTrendBadge({ trend, thisWeekRate, lastWeekRate }) {
     : "text-[#E48C75] bg-[#E48C75]/10";
 
   return (
-    <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${color}`}>
+    <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium tabular-nums ${color}`}>
       <Icon className="w-3 h-3" />
       {isUp ? "+" : ""}
       {pct}% vs semaine dernière
@@ -579,7 +582,7 @@ function DailyChart({ dailyChart }) {
   const dayNames = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
 
   return (
-    <Card className="border-border/30">
+    <Card className="border-border/30 hover:shadow-md transition-all duration-200">
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-4">
           <BarChart3 className="w-4 h-4 text-primary" />
@@ -597,7 +600,7 @@ function DailyChart({ dailyChart }) {
             return (
               <div key={day.date} className="flex-1 flex flex-col items-center gap-1 group relative">
                 {/* Tooltip */}
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-popover border border-border rounded-md px-2 py-1 text-[10px] text-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-md">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-popover border border-border rounded-md px-2 py-1 text-[10px] text-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-md tabular-nums">
                   {day.exploited}/{day.total} · {rate}%
                 </div>
                 {/* Bars */}
@@ -622,7 +625,7 @@ function DailyChart({ dailyChart }) {
                 {/* Label */}
                 <div className="text-center">
                   <p className="text-[10px] font-medium text-muted-foreground">{dayName}</p>
-                  <p className="text-[9px] text-muted-foreground/60">{dayNum}</p>
+                  <p className="text-[9px] text-muted-foreground/60 tabular-nums">{dayNum}</p>
                 </div>
               </div>
             );
@@ -655,7 +658,7 @@ function HourlyHeatmap({ hourlyRates }) {
   ];
 
   return (
-    <Card className="border-border/30">
+    <Card className="border-border/30 hover:shadow-md transition-all duration-200">
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-4">
           <Clock className="w-4 h-4 text-primary" />
@@ -691,9 +694,9 @@ function HourlyHeatmap({ hourlyRates }) {
                         key={h}
                         className={`group relative h-7 rounded-md ${bg} flex items-center justify-center transition-all hover:ring-1 hover:ring-primary/30 cursor-default`}
                       >
-                        <span className="text-[9px] font-medium text-foreground/60">{h}h</span>
+                        <span className="text-[9px] font-medium text-foreground/60 tabular-nums">{h}h</span>
                         {total > 0 && (
-                          <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-popover border border-border rounded-md px-2 py-0.5 text-[10px] text-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-md">
+                          <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-popover border border-border rounded-md px-2 py-0.5 text-[10px] text-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-md tabular-nums">
                             {Math.round(rate * 100)}% ({data.exploited}/{total})
                           </div>
                         )}
@@ -707,14 +710,14 @@ function HourlyHeatmap({ hourlyRates }) {
         </div>
         {/* Heatmap legend */}
         <div className="flex items-center gap-1.5 mt-3 justify-center">
-          <span className="text-[9px] text-muted-foreground">0%</span>
+          <span className="text-[9px] text-muted-foreground tabular-nums">0%</span>
           <div className="flex gap-0.5">
             <div className="w-4 h-2.5 rounded-sm bg-muted/20" />
             <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/20" />
             <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/40" />
             <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/70" />
           </div>
-          <span className="text-[9px] text-muted-foreground">100%</span>
+          <span className="text-[9px] text-muted-foreground tabular-nums">100%</span>
         </div>
       </CardContent>
     </Card>
@@ -727,7 +730,7 @@ function BestSlotsCard({ bestSlots }) {
   const medals = ["🥇", "🥈", "🥉"];
 
   return (
-    <Card className="border-border/30">
+    <Card className="border-border/30 hover:shadow-md transition-all duration-200">
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-3">
           <Award className="w-4 h-4 text-[#E48C75]" />
@@ -737,17 +740,17 @@ function BestSlotsCard({ bestSlots }) {
           {bestSlots.map((slot, i) => (
             <div
               key={slot.hour}
-              className="flex items-center gap-3 p-2.5 rounded-lg bg-card/50 border border-border/20"
+              className="flex items-center gap-3 p-2.5 rounded-lg bg-card/50 border border-border/20 hover:border-[#459492]/20 transition-all duration-200"
             >
               <span className="text-lg">{medals[i]}</span>
               <div className="flex-1">
                 <p className="text-sm font-medium text-foreground">{slot.label}</p>
-                <p className="text-[11px] text-muted-foreground">
+                <p className="text-[11px] text-muted-foreground tabular-nums">
                   {slot.exploited_count}/{slot.total_outcomes} exploités
                 </p>
               </div>
               <Badge
-                className={`text-xs ${
+                className={`text-xs tabular-nums ${
                   slot.exploitation_rate >= 0.7
                     ? "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30"
                     : slot.exploitation_rate >= 0.4
@@ -774,7 +777,7 @@ function SourceBreakdown({ sourceDistribution }) {
   const totalAll = sources.reduce((s, [, d]) => s + d.total, 0);
 
   return (
-    <Card className="border-border/30">
+    <Card className="border-border/30 hover:shadow-md transition-all duration-200">
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-3">
           <Sparkles className="w-4 h-4 text-primary" />
@@ -797,8 +800,8 @@ function SourceBreakdown({ sourceDistribution }) {
                     <span className="text-sm text-foreground">{config.label}</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-xs text-muted-foreground">{pct}%</span>
-                    <span className="text-[10px] text-muted-foreground/60 ml-1">
+                    <span className="text-xs text-muted-foreground tabular-nums">{pct}%</span>
+                    <span className="text-[10px] text-muted-foreground/60 ml-1 tabular-nums">
                       ({rate}% exploités)
                     </span>
                   </div>
@@ -826,27 +829,27 @@ function SourceBreakdown({ sourceDistribution }) {
 
 function StreakConsistencyCard({ streak, avgPerDay, activeDays, totalMinutes }) {
   return (
-    <Card className="border-border/30">
+    <Card className="border-border/30 hover:shadow-md transition-all duration-200">
       <CardContent className="p-4">
         <div className="grid grid-cols-2 gap-3">
           <div className="text-center p-3 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-[#E48C75]/5 border border-[#E48C75]/20">
             <Flame className="w-5 h-5 text-[#E48C75] mx-auto mb-1" />
-            <p className="text-2xl font-bold text-foreground">{streak}</p>
+            <p className="text-2xl font-bold text-foreground tabular-nums">{streak}</p>
             <p className="text-[10px] text-muted-foreground">Jours consécutifs</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-card border border-border/20">
             <Target className="w-5 h-5 text-primary mx-auto mb-1" />
-            <p className="text-2xl font-bold text-foreground">{avgPerDay}</p>
+            <p className="text-2xl font-bold text-foreground tabular-nums">{avgPerDay}</p>
             <p className="text-[10px] text-muted-foreground">Moy. / jour actif</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-card border border-border/20">
             <Calendar className="w-5 h-5 text-[#55B3AE] mx-auto mb-1" />
-            <p className="text-2xl font-bold text-foreground">{activeDays}</p>
+            <p className="text-2xl font-bold text-foreground tabular-nums">{activeDays}</p>
             <p className="text-[10px] text-muted-foreground">Jours actifs (30j)</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-card border border-border/20">
             <Clock className="w-5 h-5 text-[#5DB786] mx-auto mb-1" />
-            <p className="text-2xl font-bold text-foreground">{formatDuration(totalMinutes)}</p>
+            <p className="text-2xl font-bold text-foreground tabular-nums">{formatDuration(totalMinutes)}</p>
             <p className="text-[10px] text-muted-foreground">Temps investi</p>
           </div>
         </div>
@@ -892,7 +895,7 @@ function AnalyticsDashboard() {
       {/* Analytics header + toggle */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full flex items-center justify-between p-3 rounded-xl bg-card border border-border/30 hover:border-primary/20 transition-colors group"
+        className="w-full flex items-center justify-between p-3 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-200 group"
       >
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -901,7 +904,7 @@ function AnalyticsDashboard() {
           <div className="text-left">
             <p className="text-sm font-medium text-foreground">Analytics (30 jours)</p>
             <div className="flex items-center gap-2 mt-0.5">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs text-muted-foreground tabular-nums">
                 {dashboard.total_instants} instants · {summaryRate}% exploités
               </span>
               <WeeklyTrendBadge
@@ -913,7 +916,7 @@ function AnalyticsDashboard() {
           </div>
         </div>
         <ChevronRight
-          className={`w-4 h-4 text-muted-foreground transition-transform ${
+          className={`w-4 h-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5 ${
             expanded ? "rotate-90" : ""
           }`}
         />
@@ -1084,9 +1087,9 @@ export default function MicroInstantsPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 pb-8 px-4 lg:px-8">
-        <div className="max-w-2xl mx-auto space-y-6 animate-fade-in">
+        <div className="max-w-2xl mx-auto space-y-6">
           {/* Header */}
-          <div>
+          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
             <h1 className="font-heading text-2xl font-bold text-foreground">
               {getGreeting(user?.name)}
             </h1>
@@ -1096,7 +1099,7 @@ export default function MicroInstantsPage() {
               {exploitRate !== null && (
                 <Badge
                   variant="outline"
-                  className="text-[10px] ml-1 text-primary border-primary/30"
+                  className="text-[10px] ml-1 text-primary border-primary/30 tabular-nums"
                 >
                   <Flame className="w-3 h-3 mr-1" />
                   {exploitRate}% exploités
@@ -1106,46 +1109,61 @@ export default function MicroInstantsPage() {
           </div>
 
           {loading ? (
-            <CardsSkeleton count={3} />
+            <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+              <CardsSkeleton count={3} />
+            </div>
           ) : instants.length === 0 ? (
-            <EmptyState />
+            <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+              <EmptyState />
+            </div>
           ) : (
             <>
               {/* Stats summary */}
-              <StatsSummary instants={instants} stats={stats} />
+              <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+                <StatsSummary instants={instants} stats={stats} />
+              </div>
 
               {/* Hero CTA */}
               {heroInstant && (
-                <HeroInstant
-                  instant={heroInstant}
-                  onExploit={handleExploit}
-                  isLoading={actionLoading === heroInstant.instant_id}
-                />
+                <div className="opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
+                  <HeroInstant
+                    instant={heroInstant}
+                    onExploit={handleExploit}
+                    isLoading={actionLoading === heroInstant.instant_id}
+                  />
+                </div>
               )}
 
               {/* All instants list */}
-              <div>
+              <div className="opacity-0 animate-fade-in" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                 <h3 className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-3">
                   Tous les instants
                 </h3>
                 <div className="space-y-3">
                   {[heroInstant, ...otherInstants]
                     .filter(Boolean)
-                    .map((instant) => (
-                      <InstantCard
+                    .map((instant, idx) => (
+                      <div
                         key={instant.instant_id}
-                        instant={instant}
-                        onExploit={handleExploit}
-                        onSkip={handleSkip}
-                        onUndoSkip={handleUndoSkip}
-                        isLoading={actionLoading === instant.instant_id}
-                      />
+                        className="opacity-0 animate-fade-in"
+                        style={{ animationDelay: `${500 + idx * 80}ms`, animationFillMode: "forwards" }}
+                      >
+                        <InstantCard
+                          instant={instant}
+                          onExploit={handleExploit}
+                          onSkip={handleSkip}
+                          onUndoSkip={handleUndoSkip}
+                          isLoading={actionLoading === instant.instant_id}
+                        />
+                      </div>
                     ))}
                 </div>
               </div>
 
               {/* Analytics Dashboard — G.3 */}
-              <AnalyticsDashboard />
+              <div className="opacity-0 animate-fade-in" style={{ animationDelay: "600ms", animationFillMode: "forwards" }}>
+                <AnalyticsDashboard />
+              </div>
             </>
           )}
         </div>

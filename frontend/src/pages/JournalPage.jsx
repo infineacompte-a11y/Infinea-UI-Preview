@@ -179,25 +179,25 @@ export default function JournalPage() {
       <Sidebar />
 
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="opacity-0 animate-fade-in flex items-center justify-between mb-8" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
             <div>
               <h1 className="font-heading text-3xl font-semibold mb-1" data-testid="journal-title">
                 Mon Journal
               </h1>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground mt-1">
                 Suivi de tes réflexions et analyse intelligente
               </p>
             </div>
-            <Button onClick={() => setShowNewReflection(true)} data-testid="new-reflection-btn">
+            <Button onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" data-testid="new-reflection-btn">
               <Plus className="w-4 h-4 mr-2" />
               Nouvelle réflexion
             </Button>
           </div>
 
           {/* ── Tab Switcher ── */}
-          <div className="flex gap-1 p-1 mb-6 bg-muted/30 rounded-xl">
+          <div className="opacity-0 animate-fade-in flex gap-1 p-1 mb-6 bg-muted/30 rounded-xl" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
             {JOURNAL_TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.key;
@@ -205,7 +205,7 @@ export default function JournalPage() {
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? "bg-background shadow-sm text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -214,7 +214,7 @@ export default function JournalPage() {
                   <Icon className="w-4 h-4" />
                   {tab.label}
                   {tab.key === "reflexions" && reflections.length > 0 && (
-                    <span className="text-[10px] bg-muted rounded-full px-1.5 py-0.5">{reflections.length}</span>
+                    <span className="text-[10px] bg-muted rounded-full px-1.5 py-0.5 tabular-nums">{reflections.length}</span>
                   )}
                   {tab.key === "analyse" && summary?.summary && (
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -225,27 +225,30 @@ export default function JournalPage() {
           </div>
 
           {isLoading ? (
-            <div className="flex items-center justify-center py-20">
+            <div className="opacity-0 animate-fade-in flex flex-col items-center justify-center py-20 gap-3" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
               <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              <p className="text-sm text-muted-foreground">Chargement...</p>
             </div>
           ) : (
             <>
-              {/* ══════════ RÉFLEXIONS TAB ══════════ */}
+              {/* REFLEXIONS TAB */}
               {activeTab === "reflexions" && (
-                <div className="space-y-4">
+                <div className="opacity-0 animate-fade-in space-y-4" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
                   <div className="flex items-center justify-between">
                     <h2 className="font-heading text-lg font-semibold">Mes réflexions</h2>
-                    <Badge variant="secondary">{reflections.length} entrées</Badge>
+                    <Badge variant="secondary" className="rounded-lg tabular-nums">{reflections.length} entrées</Badge>
                   </div>
 
                   {reflections.length === 0 ? (
                     <Card className="py-12">
                       <div className="text-center">
-                        <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
+                        <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                          <BookOpen className="w-8 h-8 text-[#459492]" />
+                        </div>
                         <p className="text-muted-foreground mb-4">
                           Aucune réflexion pour le moment
                         </p>
-                        <Button variant="outline" onClick={() => setShowNewReflection(true)}>
+                        <Button variant="outline" onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
                           <Plus className="w-4 h-4 mr-2" />
                           Ajouter ma première réflexion
                         </Button>
@@ -253,12 +256,12 @@ export default function JournalPage() {
                     </Card>
                   ) : (
                     <div className="space-y-3">
-                      {reflections.map((reflection) => {
+                      {reflections.map((reflection, index) => {
                         const MoodIcon = moodIcons[reflection.mood]?.icon || Meh;
                         const moodStyle = moodIcons[reflection.mood] || moodIcons.neutral;
 
                         return (
-                          <Card key={reflection.reflection_id} className="group transition-all hover:border-border" data-testid={`reflection-${reflection.reflection_id}`}>
+                          <Card key={reflection.reflection_id} className="opacity-0 animate-fade-in group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200" style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }} data-testid={`reflection-${reflection.reflection_id}`}>
                             <CardContent className="p-4">
                               <div className="flex items-start justify-between gap-4">
                                 <div className="flex items-start gap-3 flex-1">
@@ -272,7 +275,7 @@ export default function JournalPage() {
                                       {reflection.related_category && (
                                         <>
                                           <span>•</span>
-                                          <Badge variant="outline" className="text-xs">
+                                          <Badge variant="outline" className="text-xs rounded-lg">
                                             {categoryLabels[reflection.related_category] || reflection.related_category}
                                           </Badge>
                                         </>
@@ -283,7 +286,7 @@ export default function JournalPage() {
                                 <Button
                                   variant="ghost"
                                   size="icon"
-                                  className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                                  className="opacity-0 group-hover:opacity-100 transition-all duration-200 shrink-0 hover:bg-muted/80 rounded-xl"
                                   onClick={() => handleDeleteReflection(reflection.reflection_id)}
                                 >
                                   <Trash2 className="w-4 h-4 text-[#E48C75]" />
@@ -298,9 +301,9 @@ export default function JournalPage() {
                 </div>
               )}
 
-              {/* ══════════ ANALYSE IA TAB ══════════ */}
+              {/* ANALYSE IA TAB */}
               {activeTab === "analyse" && (
-                <div className="space-y-4">
+                <div className="opacity-0 animate-fade-in space-y-4" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
                   {/* Generate button */}
                   <div className="flex items-center justify-between">
                     <h2 className="font-heading text-lg font-semibold">Analyse IA</h2>
@@ -309,6 +312,7 @@ export default function JournalPage() {
                       size="sm"
                       onClick={handleGenerateSummary}
                       disabled={isGeneratingSummary}
+                      className="rounded-xl transition-all duration-200 hover:bg-muted/80 active:scale-[0.97]"
                       data-testid="generate-summary-btn"
                     >
                       {isGeneratingSummary ? (
@@ -329,23 +333,25 @@ export default function JournalPage() {
 
                       {/* Weekly Insight */}
                       {summary.summary.weekly_insight && (
-                        <Card className="p-4 border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/5 to-transparent">
-                          <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center shrink-0">
-                              <Lightbulb className="w-4 h-4 text-[#E48C75]" />
+                        <div className="opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
+                          <Card className="p-4 border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/5 to-transparent hover:shadow-lg hover:border-[#E48C75]/30 transition-all duration-200">
+                            <div className="flex items-start gap-3">
+                              <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center shrink-0">
+                                <Lightbulb className="w-4 h-4 text-[#E48C75]" />
+                              </div>
+                              <div>
+                                <span className="text-xs font-semibold text-[#E48C75] uppercase tracking-wide">Observation clé</span>
+                                <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{summary.summary.weekly_insight}</p>
+                              </div>
                             </div>
-                            <div>
-                              <span className="text-xs font-semibold text-[#E48C75] uppercase tracking-wide">Observation clé</span>
-                              <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{summary.summary.weekly_insight}</p>
-                            </div>
-                          </div>
-                        </Card>
+                          </Card>
+                        </div>
                       )}
 
                       {/* Patterns + Strengths side-by-side */}
-                      <div className="grid md:grid-cols-2 gap-3">
+                      <div className="opacity-0 animate-fade-in grid md:grid-cols-2 gap-3" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                         {summary.summary.patterns_identified?.length > 0 && (
-                          <Card className="p-4">
+                          <Card className="p-4 hover:shadow-lg hover:border-[#459492]/30 transition-all duration-200">
                             <div className="flex items-center gap-2 mb-3">
                               <TrendingUp className="w-4 h-4 text-[#459492]" />
                               <span className="text-sm font-semibold">Patterns identifiés</span>
@@ -362,7 +368,7 @@ export default function JournalPage() {
                         )}
 
                         {summary.summary.strengths?.length > 0 && (
-                          <Card className="p-4 border-[#5DB786]/10">
+                          <Card className="p-4 border-[#5DB786]/10 hover:shadow-lg hover:border-[#5DB786]/30 transition-all duration-200">
                             <div className="flex items-center gap-2 mb-3">
                               <Zap className="w-4 h-4 text-[#5DB786]" />
                               <span className="text-sm font-semibold text-[#5DB786]">Points forts</span>
@@ -381,40 +387,46 @@ export default function JournalPage() {
 
                       {/* Personalized Tip */}
                       {summary.summary.personalized_tip && (
-                        <Card className="p-4 border-primary/15 bg-gradient-to-br from-primary/5 to-transparent">
-                          <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                              <Target className="w-4 h-4 text-primary" />
+                        <div className="opacity-0 animate-fade-in" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
+                          <Card className="p-4 border-primary/15 bg-gradient-to-br from-primary/5 to-transparent hover:shadow-lg hover:border-primary/30 transition-all duration-200">
+                            <div className="flex items-start gap-3">
+                              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <Target className="w-4 h-4 text-primary" />
+                              </div>
+                              <div>
+                                <span className="text-xs font-semibold text-primary uppercase tracking-wide">Conseil personnalisé</span>
+                                <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{summary.summary.personalized_tip}</p>
+                              </div>
                             </div>
-                            <div>
-                              <span className="text-xs font-semibold text-primary uppercase tracking-wide">Conseil personnalisé</span>
-                              <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{summary.summary.personalized_tip}</p>
-                            </div>
-                          </div>
-                        </Card>
+                          </Card>
+                        </div>
                       )}
 
                       {/* Mood Trend */}
                       {summary.summary.mood_trend && (
-                        <Card className="p-4">
-                          <div className="flex items-center gap-3">
-                            <Heart className="w-4 h-4 text-[#E48C75]" />
-                            <span className="text-sm text-muted-foreground">
-                              Tendance d'humeur :
-                            </span>
-                            <Badge variant="secondary">{summary.summary.mood_trend}</Badge>
-                          </div>
-                        </Card>
+                        <div className="opacity-0 animate-fade-in" style={{ animationDelay: "600ms", animationFillMode: "forwards" }}>
+                          <Card className="p-4 hover:shadow-lg hover:border-[#459492]/30 transition-all duration-200">
+                            <div className="flex items-center gap-3">
+                              <Heart className="w-4 h-4 text-[#E48C75]" />
+                              <span className="text-sm text-muted-foreground">
+                                Tendance d'humeur :
+                              </span>
+                              <Badge variant="secondary" className="rounded-lg">{summary.summary.mood_trend}</Badge>
+                            </div>
+                          </Card>
+                        </div>
                       )}
                     </div>
                   ) : (
                     <Card className="p-12 text-center border-dashed">
-                      <Brain className="w-12 h-12 text-muted-foreground/20 mx-auto mb-4" />
+                      <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <Brain className="w-8 h-8 text-[#459492]" />
+                      </div>
                       <h3 className="font-heading font-semibold text-sm mb-2">Analyse non disponible</h3>
                       <p className="text-xs text-muted-foreground mb-4 max-w-sm mx-auto">
                         Ajoute quelques réflexions dans l'onglet "Réflexions" puis clique sur "Générer l'analyse" pour obtenir des insights personnalisés.
                       </p>
-                      <Button variant="outline" size="sm" onClick={handleGenerateSummary} disabled={isGeneratingSummary}>
+                      <Button variant="outline" size="sm" onClick={handleGenerateSummary} disabled={isGeneratingSummary} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
                         {isGeneratingSummary ? (
                           <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         ) : (
@@ -461,7 +473,7 @@ export default function JournalPage() {
                     <button
                       key={key}
                       onClick={() => setNewReflection({ ...newReflection, mood: key })}
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border transition-all ${
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border transition-all duration-200 ${
                         newReflection.mood === key
                           ? `${mood.bg} border-[#459492]/20 ${mood.color}`
                           : "border-border hover:border-[#459492]/30"
@@ -496,10 +508,10 @@ export default function JournalPage() {
           </div>
 
           <DialogFooter>
-            <Button variant="outline" onClick={() => setShowNewReflection(false)}>
+            <Button variant="outline" onClick={() => setShowNewReflection(false)} className="rounded-xl transition-all duration-200 hover:bg-muted/80">
               Annuler
             </Button>
-            <Button onClick={handleCreateReflection} data-testid="save-reflection-btn">
+            <Button onClick={handleCreateReflection} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" data-testid="save-reflection-btn">
               Enregistrer
             </Button>
           </DialogFooter>

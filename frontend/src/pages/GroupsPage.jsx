@@ -43,51 +43,73 @@ export default function GroupsPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto animate-fade-in">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-2xl font-heading font-bold text-foreground flex items-center gap-2">
-                <Users className="w-6 h-6 text-primary" />
-                Mes Groupes
-              </h1>
-              <p className="text-muted-foreground text-sm mt-1">
-                Progresse avec tes proches, duo ou en équipe.
-              </p>
+          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h1 className="text-2xl font-heading font-bold text-foreground flex items-center gap-2">
+                  <Users className="w-6 h-6 text-primary" />
+                  Mes Groupes
+                </h1>
+                <p className="text-muted-foreground text-sm mt-1">
+                  Progresse avec tes proches, duo ou en équipe.
+                </p>
+              </div>
+              <Button
+                onClick={() => setCreateOpen(true)}
+                className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 active:scale-[0.97]"
+              >
+                <Plus className="w-4 h-4" />
+                <span className="hidden sm:inline">Créer un groupe</span>
+              </Button>
             </div>
-            <Button onClick={() => setCreateOpen(true)} className="gap-2">
-              <Plus className="w-4 h-4" />
-              <span className="hidden sm:inline">Créer un groupe</span>
-            </Button>
           </div>
 
           {/* Content */}
           {isLoading ? (
-            <div className="flex justify-center py-20">
-              <Loader2 className="w-6 h-6 animate-spin text-primary" />
+            <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="h-40 rounded-xl bg-card border border-border/30 animate-pulse" />
+                ))}
+              </div>
             </div>
           ) : groups.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-20 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                <UsersRound className="w-8 h-8 text-primary" />
+            <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+              <div className="flex flex-col items-center justify-center py-20 text-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 ring-1 ring-primary/10">
+                  <UsersRound className="w-8 h-8 text-primary" />
+                </div>
+                <h2 className="text-lg font-heading font-semibold text-foreground mb-2">
+                  Aucun groupe pour l'instant
+                </h2>
+                <p className="text-muted-foreground text-sm max-w-sm mb-6">
+                  Crée un duo ou un groupe pour progresser ensemble.
+                  Invite tes amis et suivez vos progressions mutuelles.
+                </p>
+                <Button
+                  onClick={() => setCreateOpen(true)}
+                  className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 active:scale-[0.97]"
+                >
+                  <Plus className="w-4 h-4" />
+                  Créer mon premier groupe
+                </Button>
               </div>
-              <h2 className="text-lg font-heading font-semibold text-foreground mb-2">
-                Aucun groupe pour l'instant
-              </h2>
-              <p className="text-muted-foreground text-sm max-w-sm mb-6">
-                Crée un duo ou un groupe pour progresser ensemble.
-                Invite tes amis et suivez vos progressions mutuelles.
-              </p>
-              <Button onClick={() => setCreateOpen(true)} className="gap-2">
-                <Plus className="w-4 h-4" />
-                Créer mon premier groupe
-              </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {groups.map((group) => (
-                <GroupCard key={group.group_id} group={group} />
-              ))}
+            <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {groups.map((group, index) => (
+                  <div
+                    key={group.group_id}
+                    className="opacity-0 animate-fade-in hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    style={{ animationDelay: `${300 + index * 80}ms`, animationFillMode: "forwards" }}
+                  >
+                    <GroupCard group={group} />
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
