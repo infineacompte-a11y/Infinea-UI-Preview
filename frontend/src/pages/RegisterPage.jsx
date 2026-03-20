@@ -75,14 +75,8 @@ export default function RegisterPage() {
     }
   };
 
-  const handleGoogleSignup = async () => {
-    try {
-      const response = await fetch(`${API}/auth/google`);
-      const data = await response.json();
-      window.location.href = data.auth_url;
-    } catch (error) {
-      toast.error("Erreur lors de l'inscription avec Google");
-    }
+  const handleGoogleSignup = () => {
+    toast.info("Google OAuth n'est pas disponible sur cette version preview. Utilisez email + mot de passe.");
   };
 
   return (

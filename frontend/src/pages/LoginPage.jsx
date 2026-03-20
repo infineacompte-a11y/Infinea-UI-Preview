@@ -58,14 +58,8 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-      const response = await fetch(`${API}/auth/google`);
-      const data = await response.json();
-      window.location.href = data.auth_url;
-    } catch (error) {
-      toast.error("Erreur lors de la connexion avec Google");
-    }
+  const handleGoogleLogin = () => {
+    toast.info("Google OAuth n'est pas disponible sur cette version preview. Utilisez email + mot de passe.");
   };
 
   return (
