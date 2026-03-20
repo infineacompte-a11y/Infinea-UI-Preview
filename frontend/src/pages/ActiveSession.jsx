@@ -29,8 +29,8 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
-  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  learning: "text-[#55B3AE] bg-[#55B3AE]/10",
+  productivity: "text-[#E48C75] bg-[#E48C75]/10",
   well_being: "text-[#5DB786] bg-[#5DB786]/10",
 };
 
@@ -152,7 +152,7 @@ export default function ActiveSession() {
             </Card>
             <Card className="stat-card">
               <CardContent className="p-4 text-center">
-                <p className="text-2xl font-heading font-bold text-[#C97A3D]">
+                <p className="text-2xl font-heading font-bold text-[#E48C75]">
                   {completionData?.new_streak || 1}
                 </p>
                 <p className="text-xs text-muted-foreground">jours de streak</p>
@@ -243,7 +243,8 @@ export default function ActiveSession() {
                 cx="96"
                 cy="96"
                 r="45"
-                className="fill-none stroke-primary"
+                className="fill-none"
+                stroke="#459492"
                 strokeWidth="8"
                 strokeLinecap="round"
                 style={{
@@ -254,7 +255,7 @@ export default function ActiveSession() {
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="font-mono text-4xl font-bold" data-testid="timer-display">
+              <span className="font-mono text-4xl font-bold text-foreground" data-testid="timer-display">
                 {formatTime(elapsedTime)}
               </span>
               <span className="text-sm text-muted-foreground">
@@ -264,7 +265,7 @@ export default function ActiveSession() {
           </div>
 
           {/* Action Info */}
-          <Card className="mb-6">
+          <Card className="mb-6 rounded-xl bg-card border-border">
             <CardContent className="p-4">
               <div className="flex items-center gap-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${categoryColors[action.category]}`}>
@@ -279,7 +280,7 @@ export default function ActiveSession() {
           </Card>
 
           {/* Instructions */}
-          <Card className="mb-6">
+          <Card className="mb-6 rounded-xl bg-card border-border">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm text-muted-foreground">Instructions</CardTitle>
             </CardHeader>
@@ -287,16 +288,16 @@ export default function ActiveSession() {
               {action.instructions.map((instruction, i) => (
                 <div
                   key={i}
-                  className={`flex items-start gap-3 p-3 rounded-lg transition-colors ${
-                    i === currentStep ? "bg-primary/10 border border-primary/30" : ""
+                  className={`flex items-start gap-3 p-3 rounded-lg transition-all ${
+                    i === currentStep ? "bg-[#459492]/10 border border-[#459492]/30" : ""
                   } ${i < currentStep ? "opacity-50" : ""}`}
                   onClick={() => setCurrentStep(i)}
                 >
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium transition-all ${
                     i < currentStep
                       ? "bg-[#5DB786] text-white"
                       : i === currentStep
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-[#459492] text-white"
                       : "bg-muted text-muted-foreground"
                   }`}>
                     {i < currentStep ? <Check className="w-4 h-4" /> : i + 1}
@@ -310,7 +311,7 @@ export default function ActiveSession() {
           </Card>
 
           {/* Notes */}
-          <Card className="mb-6">
+          <Card className="mb-6 rounded-xl bg-card border-border">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm text-muted-foreground">Notes (optionnel)</CardTitle>
             </CardHeader>

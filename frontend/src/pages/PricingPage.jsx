@@ -246,12 +246,12 @@ export default function PricingPage() {
 
       {/* Main Content */}
       <main className="pt-32 pb-20 px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Crown className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary">Investissez dans votre temps</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E48C75]/10 border border-[#E48C75]/20 mb-6">
+              <Crown className="w-4 h-4 text-[#E48C75]" />
+              <span className="text-sm text-[#E48C75]">Investissez dans votre temps</span>
             </div>
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4" data-testid="pricing-title">
               Choisissez votre plan
@@ -378,16 +378,16 @@ export default function PricingPage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: Palette, name: "Créativité", color: "text-[#C4806E]", bg: "bg-[#C4806E]/10" },
-                { icon: Dumbbell, name: "Fitness", color: "text-[#D4956B]", bg: "bg-[#D4956B]/10" },
-                { icon: Leaf, name: "Mindfulness", color: "text-[#2E9B6A]", bg: "bg-[#2E9B6A]/10" },
-                { icon: Crown, name: "Leadership", color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10" },
-                { icon: Zap, name: "Finance", color: "text-[#5DB786]", bg: "bg-[#5DB786]/10" },
-                { icon: Sparkles, name: "Relations", color: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10" },
-                { icon: Brain, name: "Santé mentale", color: "text-brand-secondary", bg: "bg-brand-secondary/10" },
-                { icon: Trophy, name: "Entrepreneuriat", color: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
+                { icon: Palette, name: "Créativité", color: "text-[#55B3AE]", bg: "bg-[#55B3AE]/10" },
+                { icon: Dumbbell, name: "Fitness", color: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
+                { icon: Leaf, name: "Mindfulness", color: "text-[#459492]", bg: "bg-[#459492]/10" },
+                { icon: Crown, name: "Leadership", color: "text-[#7B8FA1]", bg: "bg-[#7B8FA1]/10" },
+                { icon: Zap, name: "Finance", color: "text-[#2E9B6A]", bg: "bg-[#2E9B6A]/10" },
+                { icon: Sparkles, name: "Relations", color: "text-[#C4806E]", bg: "bg-[#C4806E]/10" },
+                { icon: Brain, name: "Santé mentale", color: "text-[#6EAAA8]", bg: "bg-[#6EAAA8]/10" },
+                { icon: Trophy, name: "Entrepreneuriat", color: "text-[#D4956B]", bg: "bg-[#D4956B]/10" },
               ].map(({ icon: Icon, name, color, bg }) => (
-                <Card key={name} className="bg-card/50 border-dashed">
+                <Card key={name} className="bg-card/50 border-dashed hover:border-[#459492]/20 transition-all">
                   <CardContent className="p-4 text-center">
                     <div className={`w-10 h-10 rounded-lg ${bg} flex items-center justify-center mx-auto mb-2`}>
                       <Icon className={`w-5 h-5 ${color}`} />
@@ -406,7 +406,7 @@ export default function PricingPage() {
               Pourquoi passer à Premium ?
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="bg-card/50">
+              <Card className="bg-card/50 hover:border-[#459492]/20 transition-all">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <Sparkles className="w-6 h-6 text-primary" />
@@ -417,7 +417,7 @@ export default function PricingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-card/50">
+              <Card className="bg-card/50 hover:border-[#459492]/20 transition-all">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center mx-auto mb-4">
                     <Zap className="w-6 h-6 text-[#C97A3D]" />
@@ -428,7 +428,7 @@ export default function PricingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-card/50">
+              <Card className="bg-card/50 hover:border-[#459492]/20 transition-all">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center mx-auto mb-4">
                     <Shield className="w-6 h-6 text-[#5DB786]" />
@@ -442,7 +442,7 @@ export default function PricingPage() {
             </div>
 
             {/* Detailed comparison table */}
-            <Card className="bg-card/50">
+            <Card className="bg-card/50 hover:border-[#459492]/20 transition-all">
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
                   <table className="w-full">
@@ -450,9 +450,9 @@ export default function PricingPage() {
                       <tr className="border-b">
                         <th className="text-left p-4 font-heading font-semibold">Fonctionnalité</th>
                         <th className="text-center p-4 font-heading font-semibold">Gratuit</th>
-                        <th className="text-center p-4 font-heading font-semibold text-primary">
+                        <th className="text-center p-4 font-heading font-semibold text-[#E48C75]">
                           <div className="flex items-center justify-center gap-1">
-                            <Crown className="w-4 h-4" /> Premium
+                            <Crown className="w-4 h-4 text-[#E48C75]" /> Premium
                           </div>
                         </th>
                       </tr>

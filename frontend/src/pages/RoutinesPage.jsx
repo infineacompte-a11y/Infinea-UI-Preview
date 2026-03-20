@@ -27,6 +27,7 @@ import {
   GripVertical,
   X,
   Trophy,
+  Crown,
   Flame,
   Play,
   Repeat,
@@ -46,7 +47,7 @@ import { toast } from "sonner";
 // ─── Constants ──────────────────────────────────────────
 const TIME_OF_DAY = [
   { value: "morning", label: "Matin", icon: Sunrise, color: "text-[#C97A3D] bg-[#C97A3D]/10 border-[#C97A3D]/20" },
-  { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#D4956B] bg-[#D4956B]/10 border-[#D4956B]/20" },
+  { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75] bg-[#E48C75]/10 border-[#E48C75]/20" },
   { value: "evening", label: "Soir", icon: Moon, color: "text-brand-teal bg-brand-teal/10 border-brand-teal/20" },
   { value: "anytime", label: "Flexible", icon: Infinity, color: "text-[#5DB786] bg-[#5DB786]/10 border-[#5DB786]/20" },
 ];
@@ -215,10 +216,10 @@ function ExecutionDialog({ routine, open, onClose, onComplete }) {
 
           {/* Timer */}
           <div className="text-center mb-4">
-            <p className={`text-4xl font-bold tabular-nums ${isOvertime ? "text-[#D4956B]" : "text-foreground"}`}>
+            <p className={`text-4xl font-bold tabular-nums ${isOvertime ? "text-[#E48C75]" : "text-foreground"}`}>
               {formatTime(timer)}
             </p>
-            <Progress value={progress} className={`h-2 mt-3 ${isOvertime ? "[&>div]:bg-[#D4956B]" : ""}`} />
+            <Progress value={progress} className={`h-2 mt-3 ${isOvertime ? "[&>div]:bg-[#E48C75]" : ""}`} />
           </div>
 
           {/* Controls */}
@@ -332,7 +333,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
         <div className="flex items-center gap-3">
           {streak > 0 && (
             <div className="flex items-center gap-1">
-              <Flame className={`w-4 h-4 ${streak >= 7 ? "text-[#D4956B]" : "text-[#D4956B]"}`} />
+              <Flame className={`w-4 h-4 ${streak >= 7 ? "text-[#E48C75]" : "text-[#E48C75]"}`} />
               <span className="text-sm font-bold tabular-nums">{streak}</span>
               <span className="text-[10px] text-muted-foreground">jours</span>
             </div>
@@ -376,7 +377,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
           </div>
           {routine.times_completed > 0 && (
             <div className="flex items-center gap-1">
-              <Trophy className="w-3 h-3 text-[#C97A3D]" />
+              <Trophy className="w-3 h-3 text-[#5DB786]" />
               <span>{routine.times_completed}x</span>
             </div>
           )}
@@ -593,7 +594,7 @@ export default function RoutinesPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div>
@@ -623,7 +624,7 @@ export default function RoutinesPage() {
                 </div>
                 {totalStreak > 0 && (
                   <div className="flex items-center gap-1.5 text-sm">
-                    <Flame className="w-4 h-4 text-[#D4956B]" />
+                    <Flame className="w-4 h-4 text-[#E48C75]" />
                     <span className="font-medium tabular-nums">{totalStreak}</span>
                     <span className="text-xs text-muted-foreground">meilleur streak</span>
                   </div>
@@ -692,12 +693,12 @@ export default function RoutinesPage() {
               )}
 
               {!canCreate && !isPremium && (
-                <Card className="p-4 mt-4 border-[#C97A3D]/20 bg-[#C97A3D]/5 text-center">
-                  <p className="text-sm text-[#275255] mb-2">Limite de {maxRoutines} habitudes atteinte</p>
+                <Card className="p-4 mt-4 border-[#E48C75]/20 bg-[#E48C75]/5 text-center">
+                  <p className="text-sm text-muted-foreground mb-2">Limite de {maxRoutines} habitudes atteinte</p>
                   <Button variant="outline" size="sm"
-                    className="border-[#C97A3D]/30 text-[#275255] hover:bg-[#C97A3D]/10"
+                    className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10"
                     onClick={() => window.location.href = "/pricing"}>
-                    <Trophy className="w-3.5 h-3.5 mr-1.5" />
+                    <Crown className="w-3.5 h-3.5 mr-1.5 text-[#E48C75]" />
                     Passer en Premium
                   </Button>
                 </Card>
@@ -863,7 +864,7 @@ export default function RoutinesPage() {
 
               <DialogFooter className="flex-col sm:flex-row gap-2">
                 {editingRoutine && (
-                  <Button variant="outline" className="text-[#E48C75] border-red-500/30 hover:bg-[#E48C75]/10 sm:mr-auto"
+                  <Button variant="outline" className="text-[#E48C75] border-[#E48C75]/30 hover:bg-[#E48C75]/10 sm:mr-auto"
                     onClick={() => { setDeleteConfirm(editingRoutine.routine_id); setShowDialog(false); }}>
                     <Trash2 className="w-4 h-4 mr-1.5" />
                     Supprimer

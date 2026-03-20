@@ -53,17 +53,17 @@ const categoryLabels = {
 };
 
 const categoryColors = {
-  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
-  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  learning: "text-[#55B3AE] bg-[#55B3AE]/10",
+  productivity: "text-[#E48C75] bg-[#E48C75]/10",
   well_being: "text-[#5DB786] bg-[#5DB786]/10",
-  creativity: "text-brand-secondary bg-brand-secondary/10",
+  creativity: "text-[#55B3AE] bg-[#55B3AE]/10",
   fitness: "text-[#E48C75] bg-[#E48C75]/10",
   mindfulness: "text-[#459492] bg-[#459492]/10",
-  leadership: "text-brand-teal bg-brand-teal/10",
-  finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
-  relations: "text-[#C4806E] bg-[#C4806E]/10",
+  leadership: "text-[#459492] bg-[#459492]/10",
+  finance: "text-[#5DB786] bg-[#5DB786]/10",
+  relations: "text-[#E48C75] bg-[#E48C75]/10",
   mental_health: "text-[#55B3AE] bg-[#55B3AE]/10",
-  entrepreneurship: "text-[#D4956B] bg-[#D4956B]/10",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/10",
 };
 
 const NOTES_TABS = [
@@ -210,7 +210,7 @@ export default function NotesPage() {
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="mb-6">
+          <div className="mb-6 animate-fade-in">
             <h1 className="font-heading text-3xl font-bold mb-1">Mes Notes</h1>
             <p className="text-sm text-muted-foreground">
               Retrouve et exploite toutes les notes de tes sessions
@@ -220,18 +220,18 @@ export default function NotesPage() {
           {/* Stats Cards — always visible */}
           {!isLoading && stats && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-              <Card className="p-3 text-center">
-                <FileText className="w-4 h-4 text-primary mx-auto mb-1" />
+              <Card className="p-3 text-center bg-card border-border rounded-xl">
+                <FileText className="w-4 h-4 text-[#459492] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.total_notes || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Notes totales</div>
               </Card>
-              <Card className="p-3 text-center">
+              <Card className="p-3 text-center bg-card border-border rounded-xl">
                 <TrendingUp className="w-4 h-4 text-[#5DB786] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.notes_this_week || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Cette semaine</div>
               </Card>
-              <Card className="p-3 text-center">
-                <Sparkles className="w-4 h-4 text-[#C97A3D] mx-auto mb-1" />
+              <Card className="p-3 text-center bg-card border-border rounded-xl">
+                <Sparkles className="w-4 h-4 text-[#E48C75] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.avg_note_length || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Car. moyens</div>
               </Card>
@@ -297,7 +297,7 @@ export default function NotesPage() {
                   {notes.length > 0 ? (
                     <div className="space-y-3">
                       {notes.map((note) => (
-                        <Card key={note.session_id} className="group hover:border-primary/30 transition-colors">
+                        <Card key={note.session_id} className="group hover:border-[#459492]/30 transition-all rounded-xl bg-card border-border">
                           <CardContent className="p-4">
                             <div className="flex items-start gap-3">
                               <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${categoryColors[note.category] || "bg-primary/10 text-primary"}`}>
@@ -397,13 +397,13 @@ export default function NotesPage() {
                     <div className="space-y-4">
                       {/* Key Insight */}
                       {analysis.analysis.key_insight && (
-                        <Card className="p-4 border-[#C97A3D]/20 bg-gradient-to-br from-[#C97A3D]/5 to-transparent">
+                        <Card className="p-4 border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/5 to-transparent rounded-xl">
                           <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-[#C97A3D]/10 flex items-center justify-center shrink-0">
-                              <Lightbulb className="w-4 h-4 text-[#C97A3D]" />
+                            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center shrink-0">
+                              <Lightbulb className="w-4 h-4 text-[#E48C75]" />
                             </div>
                             <div>
-                              <span className="text-xs font-semibold text-[#C97A3D] uppercase tracking-wide">Observation clé</span>
+                              <span className="text-xs font-semibold text-[#E48C75] uppercase tracking-wide">Observation clé</span>
                               <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{analysis.analysis.key_insight}</p>
                             </div>
                           </div>
@@ -415,13 +415,13 @@ export default function NotesPage() {
                         {analysis.analysis.patterns?.length > 0 && (
                           <Card className="p-4">
                             <div className="flex items-center gap-2 mb-3">
-                              <TrendingUp className="w-4 h-4 text-[#2F7DBA]" />
+                              <TrendingUp className="w-4 h-4 text-[#459492]" />
                               <span className="text-sm font-semibold">Patterns identifiés</span>
                             </div>
                             <div className="space-y-2">
                               {analysis.analysis.patterns.map((p, i) => (
                                 <p key={i} className="text-xs text-foreground/70 leading-relaxed flex items-start gap-2">
-                                  <span className="text-[#2F7DBA] mt-0.5 shrink-0">•</span>
+                                  <span className="text-[#459492] mt-0.5 shrink-0">•</span>
                                   {p}
                                 </p>
                               ))}
@@ -451,13 +451,13 @@ export default function NotesPage() {
                       {analysis.analysis.growth_areas?.length > 0 && (
                         <Card className="p-4">
                           <div className="flex items-center gap-2 mb-3">
-                            <Target className="w-4 h-4 text-[#D4956B]" />
-                            <span className="text-sm font-semibold text-[#D4956B]">Axes de progression</span>
+                            <Target className="w-4 h-4 text-[#E48C75]" />
+                            <span className="text-sm font-semibold text-[#E48C75]">Axes de progression</span>
                           </div>
                           <div className="space-y-2">
                             {analysis.analysis.growth_areas.map((g, i) => (
                               <p key={i} className="text-xs text-foreground/70 leading-relaxed flex items-start gap-2">
-                                <span className="text-[#D4956B] mt-0.5 shrink-0">→</span>
+                                <span className="text-[#E48C75] mt-0.5 shrink-0">→</span>
                                 {g}
                               </p>
                             ))}
@@ -484,7 +484,7 @@ export default function NotesPage() {
                       {analysis.analysis.emotional_trends && (
                         <Card className="p-4">
                           <div className="flex items-start gap-3">
-                            <Heart className="w-4 h-4 text-rose-500 mt-0.5 shrink-0" />
+                            <Heart className="w-4 h-4 text-[#E48C75] mt-0.5 shrink-0" />
                             <p className="text-sm text-foreground/70 leading-relaxed">{analysis.analysis.emotional_trends}</p>
                           </div>
                         </Card>

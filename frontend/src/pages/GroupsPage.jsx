@@ -43,7 +43,7 @@ export default function GroupsPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>

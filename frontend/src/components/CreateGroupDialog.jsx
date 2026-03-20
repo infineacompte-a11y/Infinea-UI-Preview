@@ -92,7 +92,7 @@ export default function CreateGroupDialog({ open, onOpenChange, onCreated }) {
 
           <div>
             <label className="text-sm text-muted-foreground mb-1.5 block">
-              Description <span className="text-white/30">(optionnel)</span>
+              Description <span className="text-muted-foreground/50">(optionnel)</span>
             </label>
             <Input
               value={description}

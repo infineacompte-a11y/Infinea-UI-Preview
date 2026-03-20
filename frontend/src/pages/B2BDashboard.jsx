@@ -56,8 +56,8 @@ import {
 } from "recharts";
 
 const categoryColors = {
-  learning: "#2F7DBA",
-  productivity: "#C97A3D",
+  learning: "#459492",
+  productivity: "#E48C75",
   well_being: "#5DB786",
 };
 
@@ -266,7 +266,7 @@ export default function B2BDashboard() {
 
       {/* Main Content */}
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <div>
@@ -274,7 +274,7 @@ export default function B2BDashboard() {
                 <h1 className="font-heading text-2xl sm:text-3xl font-semibold" data-testid="b2b-title">
                   {company?.name || "Dashboard Entreprise"}
                 </h1>
-                <Badge className="bg-primary/20 text-primary border-primary/30">Manager</Badge>
+                <Badge className="bg-gradient-to-r from-[#275255] to-[#459492] text-white border-[#459492]/30">Manager</Badge>
               </div>
               <p className="text-muted-foreground">
                 Analytics d'équipe & ROI bien-être
@@ -355,8 +355,8 @@ export default function B2BDashboard() {
             <Card className="stat-card">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-[#C97A3D]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-[#E48C75]" />
                   </div>
                   <div>
                     <p className="text-2xl font-heading font-bold">
@@ -386,7 +386,7 @@ export default function B2BDashboard() {
           </div>
 
           {/* ROI Card */}
-          <Card className="mb-8 bg-gradient-to-br from-[#5DB786]/5 to-[#2F7DBA]/5 border-[#5DB786]/20">
+          <Card className="mb-8 bg-gradient-to-br from-[#5DB786]/5 to-[#459492]/5 border-[#5DB786]/20">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
@@ -406,13 +406,13 @@ export default function B2BDashboard() {
                   <p className="text-sm text-muted-foreground">en bien-être ce mois</p>
                 </div>
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <TrendingUp className="w-8 h-8 text-[#2F7DBA] mx-auto mb-2" />
-                  <p className="text-3xl font-heading font-bold text-[#2F7DBA]">+{roi.estimatedProductivityGain}%</p>
+                  <TrendingUp className="w-8 h-8 text-[#459492] mx-auto mb-2" />
+                  <p className="text-3xl font-heading font-bold text-[#459492]">+{roi.estimatedProductivityGain}%</p>
                   <p className="text-sm text-muted-foreground">productivité estimée</p>
                 </div>
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <Trophy className="w-8 h-8 text-[#C97A3D] mx-auto mb-2" />
-                  <p className="text-3xl font-heading font-bold text-[#C97A3D]">{dashboard?.total_sessions || 0}</p>
+                  <Trophy className="w-8 h-8 text-[#E48C75] mx-auto mb-2" />
+                  <p className="text-3xl font-heading font-bold text-[#E48C75]">{dashboard?.total_sessions || 0}</p>
                   <p className="text-sm text-muted-foreground">sessions complétées</p>
                 </div>
               </div>
@@ -444,17 +444,17 @@ export default function B2BDashboard() {
                             <stop offset="95%" stopColor="#459492" stopOpacity={0}/>
                           </linearGradient>
                         </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
                         <XAxis
                           dataKey="_id"
-                          tick={{ fill: "#a1a1aa", fontSize: 10 }}
+                          tick={{ fill: "#9A9A9A", fontSize: 10 }}
                           tickFormatter={(v) => v.slice(5)}
                         />
-                        <YAxis tick={{ fill: "#a1a1aa", fontSize: 12 }} />
+                        <YAxis tick={{ fill: "#9A9A9A", fontSize: 12 }} />
                         <Tooltip
                           contentStyle={{
                             backgroundColor: "#121212",
-                            border: "1px solid #27272a",
+                            border: "1px solid #262626",
                             borderRadius: "8px",
                           }}
                         />
@@ -501,7 +501,7 @@ export default function B2BDashboard() {
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "#121212",
-                              border: "1px solid #27272a",
+                              border: "1px solid #262626",
                               borderRadius: "8px",
                             }}
                           />
@@ -540,7 +540,7 @@ export default function B2BDashboard() {
             <TabsContent value="team" className="space-y-6">
               {/* Leaderboard Toggle */}
               <div className="flex items-center justify-between">
-                <h2 className="font-heading text-lg font-semibold">Classement de l'équipe</h2>
+                <h2 className="font-heading text-lg font-semibold text-foreground">Classement de l'équipe</h2>
                 <div className="flex items-center gap-2">
                   <Label htmlFor="leaderboard-toggle" className="text-sm text-muted-foreground">
                     Classement gamifié
@@ -561,9 +561,9 @@ export default function B2BDashboard() {
                     const medals = ["🥇", "🥈", "🥉"];
                     
                     return (
-                      <Card 
-                        key={i} 
-                        className={`transition-all ${isTop3 ? "border-[#C97A3D]/30 bg-[#C97A3D]/5" : ""}`}
+                      <Card
+                        key={i}
+                        className={`transition-all ${isTop3 ? "border-[#E48C75]/30 bg-[#E48C75]/5" : "hover:border-[#459492]/20"}`}
                         data-testid={`employee-card-${i}`}
                       >
                         <CardContent className="p-4">
@@ -571,7 +571,7 @@ export default function B2BDashboard() {
                             <div className="flex items-center gap-4">
                               <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                                 isTop3 
-                                  ? "bg-[#C97A3D]/20 text-2xl" 
+                                  ? "bg-[#E48C75]/20 text-2xl" 
                                   : "bg-primary/10"
                               }`}>
                                 {isTop3 ? medals[i] : <span className="font-medium text-muted-foreground">#{i + 1}</span>}
@@ -596,7 +596,7 @@ export default function B2BDashboard() {
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="flex items-center gap-1 text-[#C97A3D]">
+                              <div className="flex items-center gap-1 text-[#E48C75]">
                                 <Flame className="w-4 h-4" />
                                 <span className="font-bold">{emp.streak_days}</span>
                               </div>

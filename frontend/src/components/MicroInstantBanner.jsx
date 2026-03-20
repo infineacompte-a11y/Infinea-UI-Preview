@@ -20,7 +20,7 @@ const SOURCE_ICON = {
 };
 
 const SOURCE_COLOR = {
-  calendar_gap: "text-[#2F7DBA]",
+  calendar_gap: "text-[#459492]",
   routine_window: "text-[#5DB786]",
   behavioral_pattern: "text-brand-secondary",
 };

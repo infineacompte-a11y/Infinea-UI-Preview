@@ -275,7 +275,7 @@ export default function CoachFAB() {
 
           {/* Listening indicator */}
           {voiceListening && (
-            <div className="px-3 py-1.5 border-t border-red-500/10 bg-[#E48C75]/5 flex items-center gap-2">
+            <div className="px-3 py-1.5 border-t border-[#E48C75]/10 bg-[#E48C75]/5 flex items-center gap-2">
               <div className="flex items-center gap-0.5">
                 <span className="w-0.5 h-2 bg-[#E48C75]/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
                 <span className="w-0.5 h-3 bg-[#E48C75]/80 rounded-full animate-pulse" style={{ animationDelay: "150ms" }} />
@@ -287,7 +287,7 @@ export default function CoachFAB() {
           )}
 
           {/* Input area */}
-          <div className={`px-3 py-3 border-t bg-card/90 ${voiceListening ? "border-red-500/20" : "border-border/50"}`}>
+          <div className={`px-3 py-3 border-t bg-card/90 ${voiceListening ? "border-[#E48C75]/20" : "border-border/50"}`}>
             <div className="flex items-end gap-2">
               <div className="flex-1 relative">
                 <textarea
@@ -299,7 +299,7 @@ export default function CoachFAB() {
                   rows={1}
                   maxLength={500}
                   className={`w-full resize-none rounded-xl border bg-muted/30 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 placeholder:text-muted-foreground/50 max-h-24 transition-colors ${
-                    voiceListening ? "border-red-500/30" : "border-border/50"
+                    voiceListening ? "border-[#E48C75]/30" : "border-border/50"
                   }`}
                   style={{ minHeight: "40px" }}
                 />
@@ -330,7 +330,7 @@ export default function CoachFAB() {
         className={`fixed z-50 bottom-6 right-6 w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center transition-all duration-300 ${
           isOpen
             ? "bg-muted text-muted-foreground rotate-0 scale-90"
-            : "bg-primary text-primary-foreground hover:shadow-xl hover:scale-105 active:scale-95"
+            : "bg-[#459492] text-white hover:bg-[#55B3AE] hover:shadow-xl hover:scale-105 active:scale-95"
         }`}
       >
         {isOpen ? (
@@ -339,7 +339,7 @@ export default function CoachFAB() {
           <>
             <MessageCircle className="w-6 h-6" />
             {hasNewMessage && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 border-2 border-background animate-pulse" />
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E48C75] border-2 border-background animate-pulse" />
             )}
           </>
         )}

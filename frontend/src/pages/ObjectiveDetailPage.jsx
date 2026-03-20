@@ -47,7 +47,7 @@ import { API, authFetch } from "@/App";
 import { toast } from "sonner";
 
 const DIFFICULTY_LABELS = ["", "Fondamental", "Débutant", "Intermédiaire", "Avancé", "Expert"];
-const DIFFICULTY_COLORS = ["", "text-[#5DB786]", "text-[#2F7DBA]", "text-[#C97A3D]", "text-[#D4956B]", "text-rose-500"];
+const DIFFICULTY_COLORS = ["", "text-[#5DB786]", "text-[#2F7DBA]", "text-[#C97A3D]", "text-[#D4956B]", "text-[#E48C75]"];
 
 // ─── CurriculumStep (unchanged) ───
 
@@ -84,7 +84,7 @@ function CurriculumStep({ step, index, isNext, onStart }) {
           <div className="flex items-center gap-2">
             <span className="text-[10px] font-medium text-muted-foreground">JOUR {step.day}</span>
             {step.review && (
-              <Badge variant="outline" className="text-[9px] bg-sky-500/10 text-sky-500 border-sky-500/20">
+              <Badge variant="outline" className="text-[9px] bg-[#2F7DBA]/10 text-[#2F7DBA] border-[#2F7DBA]/20">
                 Révision
               </Badge>
             )}
@@ -133,7 +133,7 @@ function CurriculumStep({ step, index, isNext, onStart }) {
           {step.tip && (
             <div className="flex items-start gap-2 bg-[#C97A3D]/5 rounded-lg px-3 py-2 border border-[#C97A3D]/10">
               <Lightbulb className="w-3.5 h-3.5 text-[#C97A3D] shrink-0 mt-0.5" />
-              <span className="text-xs text-[#275255]">{step.tip}</span>
+              <span className="text-xs text-foreground/80">{step.tip}</span>
             </div>
           )}
           {completed && step.actual_duration && (
@@ -222,7 +222,7 @@ function SkillsTab({ objectiveId }) {
           {review_needed > 0 && (
             <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#C97A3D]/10 border border-[#C97A3D]/20">
               <RotateCcw className="w-3.5 h-3.5 text-[#C97A3D]" />
-              <span className="text-xs font-medium text-[#275255]">{review_needed} à réviser</span>
+              <span className="text-xs font-medium text-foreground/80">{review_needed} à réviser</span>
             </div>
           )}
         </div>
@@ -240,7 +240,7 @@ function SkillsTab({ objectiveId }) {
                   <div className="flex items-center gap-2">
                     <h3 className="font-medium text-sm truncate">{skill.name}</h3>
                     {skill.needs_review && (
-                      <Badge variant="outline" className="text-[9px] bg-[#C97A3D]/10 text-[#275255] border-[#C97A3D]/20 shrink-0">
+                      <Badge variant="outline" className="text-[9px] bg-[#C97A3D]/10 text-foreground/80 border-[#C97A3D]/20 shrink-0">
                         <RotateCcw className="w-2.5 h-2.5 mr-0.5" />
                         Révision
                       </Badge>
@@ -297,7 +297,7 @@ const DIFFICULTY_BAR_COLORS = [
   "bg-[#2F7DBA]",      // 2 — Débutant
   "bg-[#C97A3D]",     // 3 — Intermédiaire
   "bg-[#D4956B]",    // 4 — Avancé
-  "bg-rose-500",      // 5 — Expert
+  "bg-[#E48C75]",      // 5 — Expert
 ];
 
 const INSIGHT_TABS = [
@@ -570,7 +570,7 @@ function InsightsTab({ objectiveId }) {
                     {entry.completed ? (
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#5DB786] shrink-0" />
                     ) : (
-                      <AlertTriangle className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                      <AlertTriangle className="w-3.5 h-3.5 text-destructive shrink-0" />
                     )}
                     <span className="font-semibold text-muted-foreground w-8 shrink-0">J{entry.day}</span>
                     <span className="flex-1 truncate">{entry.step_title}</span>
@@ -1025,7 +1025,7 @@ export default function ObjectiveDetailPage() {
             {activeStep?.tip && (
               <div className="flex items-start gap-2 bg-[#C97A3D]/5 rounded-lg px-3 py-2 border border-[#C97A3D]/10">
                 <Lightbulb className="w-3.5 h-3.5 text-[#C97A3D] shrink-0 mt-0.5" />
-                <span className="text-xs text-[#275255]">{activeStep.tip}</span>
+                <span className="text-xs text-foreground/80">{activeStep.tip}</span>
               </div>
             )}
 

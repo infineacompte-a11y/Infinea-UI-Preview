@@ -23,8 +23,8 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
-  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  learning: "text-[#459492] bg-[#459492]/10",
+  productivity: "text-[#E48C75] bg-[#E48C75]/10",
   well_being: "text-[#5DB786] bg-[#5DB786]/10",
 };
 

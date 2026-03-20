@@ -25,29 +25,29 @@ const statusConfig = {
   error: {
     label: "Erreur",
     color: "bg-[#E48C75]",
-    badgeClass: "bg-[#E48C75]/20 text-[#E48C75] border-red-500/30",
+    badgeClass: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/30",
     Icon: AlertCircle,
   },
   disconnected: {
     label: "Non connecte",
-    color: "bg-zinc-500",
-    badgeClass: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30",
+    color: "bg-muted-foreground",
+    badgeClass: "bg-muted-foreground/20 text-muted-foreground border-muted-foreground/30",
     Icon: WifiOff,
   },
   syncing: {
     label: "Sync...",
-    color: "bg-[#2F7DBA]",
-    badgeClass: "bg-[#2F7DBA]/20 text-[#2F7DBA] border-[#2F7DBA]/30",
+    color: "bg-[#459492]",
+    badgeClass: "bg-[#459492]/20 text-[#459492] border-[#459492]/30",
     Icon: Loader2,
   },
 };
 
 const colorClasses = {
-  blue: { bg: "bg-[#2F7DBA]/10", text: "text-[#2F7DBA]", border: "border-[#2F7DBA]/30" },
-  gray: { bg: "bg-zinc-500/10", text: "text-zinc-400", border: "border-zinc-500/30" },
-  red: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-red-500/30" },
+  blue: { bg: "bg-[#459492]/10", text: "text-[#459492]", border: "border-[#459492]/30" },
+  gray: { bg: "bg-muted-foreground/10", text: "text-muted-foreground", border: "border-muted-foreground/30" },
+  red: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
   purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
-  orange: { bg: "bg-[#D4956B]/10", text: "text-[#D4956B]", border: "border-[#D4956B]/30" },
+  orange: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
 };
 
 export default function IntegrationCard({
@@ -110,7 +110,7 @@ export default function IntegrationCard({
             </Button>
           )}
           {!isConnected && isLimitReached && (
-            <Button size="sm" variant="outline" className="text-[#C97A3D] border-[#C97A3D]/30 shrink-0" disabled>
+            <Button size="sm" variant="outline" className="text-[#E48C75] border-[#E48C75]/30 shrink-0" disabled>
               <Lock className="w-4 h-4 sm:mr-1" />
               <span className="hidden sm:inline">Premium</span>
             </Button>
@@ -131,7 +131,7 @@ export default function IntegrationCard({
                 )}
               </p>
               {lastError && (
-                <p className="text-xs text-red-400 flex items-center gap-1">
+                <p className="text-xs text-[#E48C75] flex items-center gap-1">
                   <AlertCircle className="w-3 h-3 shrink-0" />
                   <span className="truncate">{lastError}</span>
                 </p>

@@ -115,8 +115,8 @@ export default function AppleCalendarGuide({ open, onOpenChange, onConnected }) 
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#D4956B]/10 flex items-center justify-center">
-              <Link2 className="w-4 h-4 text-[#D4956B]" />
+            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center">
+              <Link2 className="w-4 h-4 text-[#E48C75]" />
             </div>
             Connecter Apple Calendar
           </DialogTitle>
@@ -183,7 +183,7 @@ export default function AppleCalendarGuide({ open, onOpenChange, onConnected }) 
                     data-testid="ical-guide-url-input"
                   />
                   {url && !isValidUrl && (
-                    <p className="text-xs text-red-400">
+                    <p className="text-xs text-[#E48C75]">
                       L'URL doit commencer par webcal://, https:// ou http://
                     </p>
                   )}

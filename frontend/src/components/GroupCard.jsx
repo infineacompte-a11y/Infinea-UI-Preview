@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const statusColors = {
   active: "bg-[#5DB786]/15 text-[#5DB786]",
-  archived: "bg-white/10 text-white/40",
+  archived: "bg-muted text-muted-foreground",
 };
 
 function formatMinutes(min) {
@@ -38,7 +38,7 @@ export default function GroupCard({ group }) {
           {/* Header: name + member count */}
           <div className="flex items-start justify-between mb-4">
             <div className="flex-1 min-w-0">
-              <h3 className="text-white font-heading font-semibold text-base truncate">
+              <h3 className="text-foreground font-heading font-semibold text-base truncate">
                 {group.name}
               </h3>
               {group.description && (
@@ -71,7 +71,7 @@ export default function GroupCard({ group }) {
                 </div>
               ))}
               {members.length > 5 && (
-                <div className="w-7 h-7 rounded-full border-2 border-card bg-white/10 flex items-center justify-center text-[10px] text-white/60 font-medium">
+                <div className="w-7 h-7 rounded-full border-2 border-card bg-muted flex items-center justify-center text-[10px] text-muted-foreground font-medium">
                   +{members.length - 5}
                 </div>
               )}
@@ -83,19 +83,19 @@ export default function GroupCard({ group }) {
 
           {/* Week stats */}
           <div className="grid grid-cols-2 gap-3">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.04]">
-              <Clock className="w-3.5 h-3.5 text-[#2F7DBA] shrink-0" />
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/30">
+              <Clock className="w-3.5 h-3.5 text-[#459492] shrink-0" />
               <div>
-                <div className="text-white text-sm font-semibold tabular-nums">
+                <div className="text-foreground text-sm font-semibold tabular-nums">
                   {formatMinutes(totalWeekMinutes)}
                 </div>
                 <div className="text-muted-foreground text-[10px]">cette semaine</div>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.04]">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/30">
               <TrendingUp className="w-3.5 h-3.5 text-[#5DB786] shrink-0" />
               <div>
-                <div className="text-white text-sm font-semibold tabular-nums">
+                <div className="text-foreground text-sm font-semibold tabular-nums">
                   {totalWeekSessions}
                 </div>
                 <div className="text-muted-foreground text-[10px]">sessions</div>

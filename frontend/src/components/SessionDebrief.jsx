@@ -100,7 +100,7 @@ export default function SessionDebrief({ sessionId, duration, notes, onStartActi
           {/* Encouragement */}
           {debrief.encouragement && (
             <div className="flex items-center gap-2 mb-4 px-1">
-              <Heart className="w-3 h-3 text-rose-400 shrink-0" />
+              <Heart className="w-3 h-3 text-[#E48C75] shrink-0" />
               <p className="text-xs text-muted-foreground italic">{debrief.encouragement}</p>
             </div>
           )}

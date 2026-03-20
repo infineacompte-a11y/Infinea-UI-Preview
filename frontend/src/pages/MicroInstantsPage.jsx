@@ -49,8 +49,8 @@ const SOURCE_CONFIG = {
   calendar_gap: {
     icon: Calendar,
     label: "Calendrier",
-    color: "text-[#2F7DBA]",
-    bgColor: "bg-[#2F7DBA]/10",
+    color: "text-[#55B3AE]",
+    bgColor: "bg-[#55B3AE]/10",
   },
   routine_window: {
     icon: Repeat,
@@ -61,8 +61,8 @@ const SOURCE_CONFIG = {
   behavioral_pattern: {
     icon: TrendingUp,
     label: "Pattern détecté",
-    color: "text-brand-secondary",
-    bgColor: "bg-brand-secondary/10",
+    color: "text-[#459492]",
+    bgColor: "bg-[#459492]/10",
   },
 };
 
@@ -119,7 +119,7 @@ function ConfidenceBadge({ score }) {
     variant = "default";
     className = "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30";
   } else if (pct >= 50) {
-    className = "text-[#C97A3D] border-[#C97A3D]/30";
+    className = "text-[#E48C75] border-[#E48C75]/30";
   }
   return (
     <Badge variant={variant} className={`text-[10px] ${className}`}>
@@ -223,7 +223,7 @@ function CountdownBadge({ windowEnd }) {
   if (!remaining) return null;
 
   return (
-    <Badge variant="outline" className="text-[10px] text-[#C97A3D] border-[#C97A3D]/30 animate-pulse gap-1">
+    <Badge variant="outline" className="text-[10px] text-[#E48C75] border-[#E48C75]/30 animate-pulse gap-1">
       <Timer className="w-3 h-3" />
       {remaining}
     </Badge>
@@ -561,7 +561,7 @@ function WeeklyTrendBadge({ trend, thisWeekRate, lastWeekRate }) {
     ? "text-[#5DB786] bg-[#5DB786]/10"
     : isFlat
     ? "text-muted-foreground bg-muted/10"
-    : "text-red-400 bg-[#E48C75]/10";
+    : "text-[#E48C75] bg-[#E48C75]/10";
 
   return (
     <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${color}`}>
@@ -730,7 +730,7 @@ function BestSlotsCard({ bestSlots }) {
     <Card className="border-border/30">
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-3">
-          <Award className="w-4 h-4 text-[#C97A3D]" />
+          <Award className="w-4 h-4 text-[#E48C75]" />
           <span className="text-sm font-medium text-foreground">Meilleurs créneaux</span>
         </div>
         <div className="space-y-2">
@@ -751,7 +751,7 @@ function BestSlotsCard({ bestSlots }) {
                   slot.exploitation_rate >= 0.7
                     ? "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30"
                     : slot.exploitation_rate >= 0.4
-                    ? "bg-[#C97A3D]/20 text-[#C97A3D] border-[#C97A3D]/30"
+                    ? "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/30"
                     : "text-muted-foreground border-border/50"
                 }`}
                 variant="outline"
@@ -807,10 +807,10 @@ function SourceBreakdown({ sourceDistribution }) {
                   <div
                     className={`h-full rounded-full transition-all ${
                       src === "calendar_gap"
-                        ? "bg-[#2F7DBA]/60"
+                        ? "bg-[#55B3AE]/60"
                         : src === "routine_window"
                         ? "bg-[#5DB786]/60"
-                        : "bg-brand-secondary/60"
+                        : "bg-[#459492]/60"
                     }`}
                     style={{ width: `${pct}%` }}
                   />
@@ -829,8 +829,8 @@ function StreakConsistencyCard({ streak, avgPerDay, activeDays, totalMinutes }) 
     <Card className="border-border/30">
       <CardContent className="p-4">
         <div className="grid grid-cols-2 gap-3">
-          <div className="text-center p-3 rounded-xl bg-gradient-to-br from-[#C97A3D]/10 to-[#E48C75]/10 border border-[#C97A3D]/20">
-            <Flame className="w-5 h-5 text-[#C97A3D] mx-auto mb-1" />
+          <div className="text-center p-3 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-[#E48C75]/5 border border-[#E48C75]/20">
+            <Flame className="w-5 h-5 text-[#E48C75] mx-auto mb-1" />
             <p className="text-2xl font-bold text-foreground">{streak}</p>
             <p className="text-[10px] text-muted-foreground">Jours consécutifs</p>
           </div>
@@ -840,7 +840,7 @@ function StreakConsistencyCard({ streak, avgPerDay, activeDays, totalMinutes }) 
             <p className="text-[10px] text-muted-foreground">Moy. / jour actif</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-            <Calendar className="w-5 h-5 text-[#2F7DBA] mx-auto mb-1" />
+            <Calendar className="w-5 h-5 text-[#55B3AE] mx-auto mb-1" />
             <p className="text-2xl font-bold text-foreground">{activeDays}</p>
             <p className="text-[10px] text-muted-foreground">Jours actifs (30j)</p>
           </div>
@@ -1084,10 +1084,10 @@ export default function MicroInstantsPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 pb-8 px-4 lg:px-8">
-        <div className="max-w-2xl mx-auto space-y-6">
+        <div className="max-w-2xl mx-auto space-y-6 animate-fade-in">
           {/* Header */}
           <div>
-            <h1 className="text-2xl font-bold text-foreground">
+            <h1 className="font-heading text-2xl font-bold text-foreground">
               {getGreeting(user?.name)}
             </h1>
             <p className="text-sm text-muted-foreground mt-1 flex items-center gap-2">

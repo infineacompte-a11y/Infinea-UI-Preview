@@ -93,7 +93,7 @@ export default function ChallengesPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div>
@@ -128,7 +128,7 @@ export default function ChallengesPage() {
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className={`w-4 h-4 ${tab.key === "premium" && isActive ? "text-[#E48C75]" : ""}`} />
                   {tab.label}
                 </button>
               );
@@ -160,7 +160,7 @@ export default function ChallengesPage() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
-                              <h3 className="font-medium text-sm">{ch.title}</h3>
+                              <h3 className="font-heading font-medium text-sm">{ch.title}</h3>
                               {ch.completed && (
                                 <Badge variant="outline" className="text-[9px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20">
                                   Complété
@@ -174,7 +174,7 @@ export default function ChallengesPage() {
                         <div className="space-y-1.5">
                           <div className="flex items-center justify-between text-xs">
                             <span className="text-muted-foreground">{ch.progress}/{ch.target}</span>
-                            <span className="font-medium">{pct}%</span>
+                            <span className="font-medium text-[#459492]">{pct}%</span>
                           </div>
                           <Progress value={pct} className="h-2" />
                         </div>
@@ -203,9 +203,9 @@ export default function ChallengesPage() {
           {activeTab === "premium" && (
             <div>
               {!isPremium ? (
-                <Card className="p-8 text-center border-[#C97A3D]/20">
-                  <div className="w-16 h-16 rounded-2xl bg-[#C97A3D]/10 flex items-center justify-center mx-auto mb-4">
-                    <Lock className="w-8 h-8 text-[#C97A3D]" />
+                <Card className="p-8 text-center border-[#E48C75]/20">
+                  <div className="w-16 h-16 rounded-2xl bg-[#E48C75]/10 flex items-center justify-center mx-auto mb-4">
+                    <Lock className="w-8 h-8 text-[#E48C75]" />
                   </div>
                   <h3 className="font-heading font-semibold text-lg mb-2">Défis Premium</h3>
                   <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto">
@@ -213,7 +213,7 @@ export default function ChallengesPage() {
                   </p>
                   <Link to="/pricing">
                     <Button className="gap-2">
-                      <Crown className="w-4 h-4" />
+                      <Crown className="w-4 h-4 text-[#E48C75]" />
                       Découvrir Premium
                     </Button>
                   </Link>
@@ -230,19 +230,19 @@ export default function ChallengesPage() {
                     return (
                       <Card
                         key={ch.challenge_id}
-                        className={`p-4 transition-all ${ch.completed ? "border-[#C97A3D]/30 bg-[#C97A3D]/3" : ""}`}
+                        className={`p-4 transition-all ${ch.completed ? "border-[#5DB786]/30 bg-[#5DB786]/3" : ""}`}
                       >
                         <div className="flex items-start gap-3 mb-3">
                           <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
-                            ch.completed ? "bg-[#C97A3D]/10" : "bg-primary/10"
+                            ch.completed ? "bg-[#5DB786]/10" : "bg-primary/10"
                           }`}>
-                            <Icon className={`w-5 h-5 ${ch.completed ? "text-[#C97A3D]" : "text-primary"}`} />
+                            <Icon className={`w-5 h-5 ${ch.completed ? "text-[#5DB786]" : "text-primary"}`} />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
-                              <h3 className="font-medium text-sm">{ch.title}</h3>
+                              <h3 className="font-heading font-medium text-sm">{ch.title}</h3>
                               {ch.completed && (
-                                <Badge className="text-[9px] bg-[#C97A3D]/20 text-[#C97A3D]">Complété</Badge>
+                                <Badge className="text-[9px] bg-[#5DB786]/20 text-[#5DB786]">Complété</Badge>
                               )}
                             </div>
                             <p className="text-xs text-muted-foreground mt-0.5">{ch.description}</p>
@@ -251,7 +251,7 @@ export default function ChallengesPage() {
                         <div className="space-y-1.5">
                           <div className="flex items-center justify-between text-xs">
                             <span className="text-muted-foreground">{ch.progress}/{ch.target}</span>
-                            <span className="font-medium">{pct}%</span>
+                            <span className="font-medium text-[#459492]">{pct}%</span>
                           </div>
                           <Progress value={pct} className="h-2" />
                         </div>

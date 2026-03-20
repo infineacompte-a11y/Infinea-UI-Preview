@@ -113,8 +113,8 @@ export default function GoogleCalendarGuide({ open, onOpenChange, onConnected })
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#2F7DBA]/10 flex items-center justify-center">
-              <Calendar className="w-4 h-4 text-[#2F7DBA]" />
+            <div className="w-8 h-8 rounded-lg bg-[#459492]/10 flex items-center justify-center">
+              <Calendar className="w-4 h-4 text-[#459492]" />
             </div>
             Connecter Google Calendar
           </DialogTitle>
@@ -181,7 +181,7 @@ export default function GoogleCalendarGuide({ open, onOpenChange, onConnected })
                     data-testid="gcal-guide-url-input"
                   />
                   {url && !isValidUrl && (
-                    <p className="text-xs text-red-400">
+                    <p className="text-xs text-[#E48C75]">
                       L'URL doit provenir de calendar.google.com ou googleapis.com
                     </p>
                   )}

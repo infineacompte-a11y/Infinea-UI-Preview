@@ -112,8 +112,8 @@ export default function NotionGuide({ open, onOpenChange, onConnected }) {
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-zinc-500/10 flex items-center justify-center">
-              <FileText className="w-4 h-4 text-zinc-400" />
+            <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
+              <FileText className="w-4 h-4 text-muted-foreground" />
             </div>
             Connecter Notion
           </DialogTitle>
@@ -180,7 +180,7 @@ export default function NotionGuide({ open, onOpenChange, onConnected }) {
                     data-testid="notion-guide-token-input"
                   />
                   {token && !isValidToken && (
-                    <p className="text-xs text-red-400">
+                    <p className="text-xs text-[#E48C75]">
                       Le token doit commencer par « secret_ » ou « ntn_ »
                     </p>
                   )}

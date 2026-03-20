@@ -179,7 +179,7 @@ export default function JournalPage() {
       <Sidebar />
 
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -258,7 +258,7 @@ export default function JournalPage() {
                         const moodStyle = moodIcons[reflection.mood] || moodIcons.neutral;
 
                         return (
-                          <Card key={reflection.reflection_id} className="group" data-testid={`reflection-${reflection.reflection_id}`}>
+                          <Card key={reflection.reflection_id} className="group transition-all hover:border-border" data-testid={`reflection-${reflection.reflection_id}`}>
                             <CardContent className="p-4">
                               <div className="flex items-start justify-between gap-4">
                                 <div className="flex items-start gap-3 flex-1">
@@ -286,7 +286,7 @@ export default function JournalPage() {
                                   className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
                                   onClick={() => handleDeleteReflection(reflection.reflection_id)}
                                 >
-                                  <Trash2 className="w-4 h-4 text-destructive" />
+                                  <Trash2 className="w-4 h-4 text-[#E48C75]" />
                                 </Button>
                               </div>
                             </CardContent>
@@ -398,7 +398,7 @@ export default function JournalPage() {
                       {summary.summary.mood_trend && (
                         <Card className="p-4">
                           <div className="flex items-center gap-3">
-                            <Heart className="w-4 h-4 text-rose-500" />
+                            <Heart className="w-4 h-4 text-[#E48C75]" />
                             <span className="text-sm text-muted-foreground">
                               Tendance d'humeur :
                             </span>
@@ -410,7 +410,7 @@ export default function JournalPage() {
                   ) : (
                     <Card className="p-12 text-center border-dashed">
                       <Brain className="w-12 h-12 text-muted-foreground/20 mx-auto mb-4" />
-                      <h4 className="font-heading font-semibold text-sm mb-2">Analyse non disponible</h4>
+                      <h3 className="font-heading font-semibold text-sm mb-2">Analyse non disponible</h3>
                       <p className="text-xs text-muted-foreground mb-4 max-w-sm mx-auto">
                         Ajoute quelques réflexions dans l'onglet "Réflexions" puis clique sur "Générer l'analyse" pour obtenir des insights personnalisés.
                       </p>
@@ -461,10 +461,10 @@ export default function JournalPage() {
                     <button
                       key={key}
                       onClick={() => setNewReflection({ ...newReflection, mood: key })}
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border transition-colors ${
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border transition-all ${
                         newReflection.mood === key
-                          ? `${mood.bg} border-transparent ${mood.color}`
-                          : "border-border hover:border-primary/50"
+                          ? `${mood.bg} border-[#459492]/20 ${mood.color}`
+                          : "border-border hover:border-[#459492]/30"
                       }`}
                       data-testid={`mood-${key}-btn`}
                     >

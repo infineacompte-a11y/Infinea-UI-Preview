@@ -180,7 +180,7 @@ export default function SlackGuide({ open, onOpenChange, onConnected }) {
                     data-testid="slack-guide-url-input"
                   />
                   {url && !isValidUrl && (
-                    <p className="text-xs text-red-400">
+                    <p className="text-xs text-[#E48C75]">
                       L'URL doit commencer par « https://hooks.slack.com/services/ »
                     </p>
                   )}

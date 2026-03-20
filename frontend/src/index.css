@@ -50,10 +50,10 @@
 
         --radius: 0.75rem;
 
-        /* Category semantic colors */
-        --learning: 206 60% 46%;         /* #2F7DBA — calm info blue */
-        --productivity: 26 56% 51%;      /* #C97A3D — warm earth */
-        --well-being: 147 38% 54%;       /* #5DB786 — support green */
+        /* Category semantic colors — brand-aligned */
+        --learning: 178 36% 43%;         /* #459492 — Brand Teal */
+        --productivity: 12 67% 68%;      /* #E48C75 — Accent Coral */
+        --well-being: 147 38% 54%;       /* #5DB786 — Support Green */
     }
 }
 
@@ -143,13 +143,13 @@ select:-webkit-autofill {
     animation: shimmer 2s infinite;
 }
 
-/* Category colors — design-system aligned */
+/* Category colors — brand-aligned */
 .category-learning {
-    --category-color: #2F7DBA;
+    --category-color: #459492;
 }
 
 .category-productivity {
-    --category-color: #C97A3D;
+    --category-color: #E48C75;
 }
 
 .category-well-being {

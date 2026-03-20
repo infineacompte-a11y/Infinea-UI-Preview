@@ -24,9 +24,9 @@ const HIGHLIGHT_ICONS = {
 };
 
 const HIGHLIGHT_COLORS = {
-  streak: "text-[#D4956B] bg-[#D4956B]/10",
+  streak: "text-[#E48C75] bg-[#E48C75]/10",
   productive: "text-[#5DB786] bg-[#5DB786]/10",
-  milestone: "text-[#2F7DBA] bg-[#2F7DBA]/10",
+  milestone: "text-[#459492] bg-[#459492]/10",
   focus: "text-primary bg-primary/10",
 };
 
@@ -90,7 +90,7 @@ export default function RecapCard() {
           Mon récap
         </h2>
         <Badge variant="outline" className="text-[10px]">
-          <Flame className="w-2.5 h-2.5 mr-0.5 text-[#D4956B]" />
+          <Flame className="w-2.5 h-2.5 mr-0.5 text-[#E48C75]" />
           {streak}j streak
         </Badge>
       </div>
@@ -103,7 +103,7 @@ export default function RecapCard() {
           <div className="text-[10px] text-muted-foreground">Sessions</div>
         </div>
         <div className="text-center p-2.5 rounded-lg bg-muted/30">
-          <Clock className="w-4 h-4 text-[#2F7DBA] mx-auto mb-1" />
+          <Clock className="w-4 h-4 text-[#459492] mx-auto mb-1" />
           <div className="text-lg font-bold tabular-nums">{today.minutes}</div>
           <div className="text-[10px] text-muted-foreground">Minutes</div>
         </div>

@@ -94,7 +94,7 @@ export default function BadgesPage() {
 
       {/* Main Content */}
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="mb-8">
             <h1 className="font-heading text-3xl font-semibold mb-2" data-testid="badges-title">
@@ -110,8 +110,8 @@ export default function BadgesPage() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center">
-                    <Trophy className="w-6 h-6 text-[#C97A3D]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                    <Trophy className="w-6 h-6 text-[#5DB786]" />
                   </div>
                   <div>
                     <p className="font-heading text-2xl font-bold">
@@ -141,9 +141,9 @@ export default function BadgesPage() {
               return (
                 <Card
                   key={badge.badge_id}
-                  className={`relative ${
+                  className={`relative transition-all ${
                     isEarned
-                      ? "bg-gradient-to-br from-[#C97A3D]/10 to-[#E48C75]/10 border-[#C97A3D]/30"
+                      ? "bg-gradient-to-br from-[#5DB786]/10 to-[#459492]/10 border-[#5DB786]/30"
                       : "opacity-60"
                   }`}
                   data-testid={`badge-${badge.badge_id}`}
@@ -151,16 +151,16 @@ export default function BadgesPage() {
                   <CardContent className="p-4 text-center">
                     <div
                       className={`w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center ${
-                        isEarned ? "bg-[#C97A3D]/20" : "bg-muted"
+                        isEarned ? "bg-[#5DB786]/20" : "bg-muted"
                       }`}
                     >
                       {isEarned ? (
-                        <Icon className="w-8 h-8 text-[#C97A3D]" />
+                        <Icon className="w-8 h-8 text-[#5DB786]" />
                       ) : (
                         <Lock className="w-6 h-6 text-muted-foreground" />
                       )}
                     </div>
-                    <h3 className="font-medium mb-1">{badge.name}</h3>
+                    <h3 className="font-heading font-medium mb-1">{badge.name}</h3>
                     <p className="text-xs text-muted-foreground mb-2">{badge.description}</p>
                     {isEarned && earnedData?.earned_at && (
                       <Badge variant="secondary" className="text-xs">
@@ -181,8 +181,8 @@ export default function BadgesPage() {
                 {premiumBadges.length > 0 && (
                   <div className="mt-10">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#C97A3D]/20 to-[#E48C75]/20 flex items-center justify-center">
-                        <Crown className="w-5 h-5 text-[#459492]" />
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-[#E48C75]/10 flex items-center justify-center">
+                        <Crown className="w-5 h-5 text-[#E48C75]" />
                       </div>
                       <div>
                         <h2 className="font-heading text-xl font-semibold">Badges Premium</h2>

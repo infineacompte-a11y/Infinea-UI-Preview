@@ -71,10 +71,10 @@ export default function PremiumAnalytics() {
 
   if (!isPremium) {
     return (
-      <Card className="border-[#C97A3D]/30 bg-gradient-to-br from-[#C97A3D]/5 to-[#E48C75]/5">
+      <Card className="border-[#E48C75]/30 bg-gradient-to-br from-[#E48C75]/5 to-[#E48C75]/5">
         <CardContent className="p-6 text-center">
-          <div className="w-14 h-14 rounded-full bg-[#C97A3D]/10 flex items-center justify-center mx-auto mb-4">
-            <Lock className="w-7 h-7 text-[#C97A3D]" />
+          <div className="w-14 h-14 rounded-full bg-[#E48C75]/10 flex items-center justify-center mx-auto mb-4">
+            <Lock className="w-7 h-7 text-[#E48C75]" />
           </div>
           <h3 className="font-heading text-lg font-semibold mb-2">
             Analytics Avancées
@@ -84,7 +84,7 @@ export default function PremiumAnalytics() {
             et des insights personnalisés avec Premium.
           </p>
           <Link to="/pricing">
-            <Button variant="outline" className="border-[#C97A3D]/30 text-[#C97A3D] hover:bg-[#C97A3D]/10">
+            <Button variant="outline" className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10">
               <Crown className="w-4 h-4 mr-2" />
               Découvrir Premium
             </Button>
@@ -111,7 +111,7 @@ export default function PremiumAnalytics() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#C97A3D]/20 to-[#E48C75]/20 flex items-center justify-center">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-[#E48C75]/20 flex items-center justify-center">
           <Crown className="w-5 h-5 text-[#459492]" />
         </div>
         <div>
@@ -158,8 +158,8 @@ export default function PremiumAnalytics() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-[#C97A3D]" />
+                <div className="w-10 h-10 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
+                  <Target className="w-5 h-5 text-[#E48C75]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Prochain palier</p>
@@ -181,7 +181,7 @@ export default function PremiumAnalytics() {
         <Card>
           <CardHeader>
             <CardTitle className="font-heading text-lg flex items-center gap-2">
-              <Flame className="w-5 h-5 text-[#C97A3D]" />
+              <Flame className="w-5 h-5 text-[#E48C75]" />
               Activité des 30 derniers jours
             </CardTitle>
           </CardHeader>
@@ -237,10 +237,10 @@ export default function PremiumAnalytics() {
               {analytics.streak_history.slice(0, 5).map((streak, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between p-3 rounded-lg bg-white/5"
+                  className="flex items-center justify-between p-3 rounded-lg bg-muted/30"
                 >
                   <div className="flex items-center gap-3">
-                    <Flame className={`w-5 h-5 ${i === 0 ? "text-[#C97A3D]" : "text-muted-foreground"}`} />
+                    <Flame className={`w-5 h-5 ${i === 0 ? "text-[#E48C75]" : "text-muted-foreground"}`} />
                     <div>
                       <p className="font-medium">{streak.days} jours</p>
                       <p className="text-xs text-muted-foreground">
@@ -250,7 +250,7 @@ export default function PremiumAnalytics() {
                     </div>
                   </div>
                   {i === 0 && (
-                    <Badge className="bg-[#C97A3D]/20 text-[#C97A3D] text-xs">Meilleur</Badge>
+                    <Badge className="bg-[#E48C75]/20 text-[#E48C75] text-xs">Meilleur</Badge>
                   )}
                 </div>
               ))}

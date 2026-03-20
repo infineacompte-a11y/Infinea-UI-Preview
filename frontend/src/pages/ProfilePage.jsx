@@ -42,7 +42,7 @@ export default function ProfilePage() {
 
       {/* Main Content */}
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="mb-8">
             <h1 className="font-heading text-3xl font-semibold mb-2" data-testid="profile-title">
@@ -54,7 +54,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Profile Card */}
-          <Card className="mb-6">
+          <Card className="mb-6 hover:border-[#459492]/20 transition-all">
             <CardContent className="p-6">
               <div className="flex items-center gap-6">
                 <Avatar className="w-20 h-20">
@@ -69,8 +69,8 @@ export default function ProfilePage() {
                       {user?.name || "Utilisateur"}
                     </h2>
                     {user?.subscription_tier === "premium" && (
-                      <Badge className="bg-gradient-to-r from-[#C97A3D] to-[#E48C75] text-white">
-                        <Crown className="w-3 h-3 mr-1" />
+                      <Badge className="bg-gradient-to-r from-[#E48C75] to-[#C97A3D] text-white border-0">
+                        <Crown className="w-3 h-3 mr-1 text-white" />
                         Premium
                       </Badge>
                     )}
@@ -85,7 +85,7 @@ export default function ProfilePage() {
           </Card>
 
           {/* Subscription Card */}
-          <Card className="mb-6">
+          <Card className="mb-6 hover:border-[#459492]/20 transition-all">
             <CardHeader>
               <CardTitle className="font-heading text-lg flex items-center gap-2">
                 <CreditCard className="w-5 h-5" />
@@ -93,7 +93,7 @@ export default function ProfilePage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 mb-4">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50 mb-4">
                 <div>
                   <p className="font-medium mb-1">
                     {user?.subscription_tier === "premium" ? "Plan Premium" : "Plan Gratuit"}
@@ -143,20 +143,20 @@ export default function ProfilePage() {
           </Card>
 
           {/* Stats Summary */}
-          <Card className="mb-6">
+          <Card className="mb-6 hover:border-[#459492]/20 transition-all">
             <CardHeader>
               <CardTitle className="font-heading text-lg">Résumé</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-white/5">
+                <div className="p-4 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50">
                   <p className="text-2xl font-heading font-bold text-primary">
                     {user?.total_time_invested || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">minutes investies</p>
                 </div>
-                <div className="p-4 rounded-xl bg-white/5">
-                  <p className="text-2xl font-heading font-bold text-[#C97A3D]">
+                <div className="p-4 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50">
+                  <p className="text-2xl font-heading font-bold text-[#E48C75]">
                     {user?.streak_days || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">jours de streak</p>
@@ -166,13 +166,13 @@ export default function ProfilePage() {
           </Card>
 
           {/* Actions */}
-          <Card>
+          <Card className="hover:border-[#459492]/20 transition-all">
             <CardHeader>
               <CardTitle className="font-heading text-lg">Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <Link to="/progress">
-                <button className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-colors">
+                <button className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-[#1A1A1A]/80 transition-all hover:border-[#459492]/10">
                   <div className="flex items-center gap-3">
                     <BarChart3 className="w-5 h-5 text-muted-foreground" />
                     <span>Voir mes statistiques</span>
@@ -183,7 +183,7 @@ export default function ProfilePage() {
               
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-colors text-destructive"
+                className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-[#1A1A1A]/80 transition-all hover:border-[#459492]/10 text-destructive"
                 data-testid="profile-logout-btn"
               >
                 <div className="flex items-center gap-3">

@@ -170,7 +170,7 @@ export default function TodoistGuide({ open, onOpenChange, onConnected }) {
                     data-testid="todoist-guide-token-input"
                   />
                   {token && !isValidToken && (
-                    <p className="text-xs text-red-400">
+                    <p className="text-xs text-[#E48C75]">
                       Le token semble trop court
                     </p>
                   )}

@@ -37,19 +37,19 @@ const SMART_ICON_MAP = {
 };
 
 const SMART_COLOR_MAP = {
-  streak_alert: "border-[#D4956B]/30 bg-[#D4956B]/5",
-  objective_nudge: "border-[#2F7DBA]/30 bg-[#2F7DBA]/5",
+  streak_alert: "border-[#E48C75]/30 bg-[#E48C75]/5",
+  objective_nudge: "border-[#55B3AE]/30 bg-[#55B3AE]/5",
   routine_reminder: "border-primary/30 bg-primary/5",
-  milestone: "border-[#C97A3D]/30 bg-[#C97A3D]/5",
-  coach_tip: "border-[#5DB786]/30 bg-[#5DB786]/5",
+  milestone: "border-[#5DB786]/30 bg-[#5DB786]/5",
+  coach_tip: "border-[#459492]/30 bg-[#459492]/5",
 };
 
 const SMART_ICON_COLOR_MAP = {
-  streak_alert: "text-[#D4956B] bg-[#D4956B]/10",
-  objective_nudge: "text-[#2F7DBA] bg-[#2F7DBA]/10",
+  streak_alert: "text-[#E48C75] bg-[#E48C75]/10",
+  objective_nudge: "text-[#55B3AE] bg-[#55B3AE]/10",
   routine_reminder: "text-primary bg-primary/10",
-  milestone: "text-[#C97A3D] bg-[#C97A3D]/10",
-  coach_tip: "text-[#5DB786] bg-[#5DB786]/10",
+  milestone: "text-[#5DB786] bg-[#5DB786]/10",
+  coach_tip: "text-[#459492] bg-[#459492]/10",
 };
 
 export default function NotificationsPage() {
@@ -209,12 +209,12 @@ export default function NotificationsPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="font-heading text-2xl font-bold flex items-center gap-2">
-                <Bell className="w-6 h-6 text-primary" />
+                <Bell className="w-6 h-6 text-[#459492]" />
                 Notifications
               </h1>
               <p className="text-sm text-muted-foreground mt-0.5">
@@ -241,7 +241,7 @@ export default function NotificationsPage() {
                   <Icon className="w-4 h-4" />
                   {tab.label}
                   {tab.badge && (
-                    <Badge className="h-4 px-1.5 text-[9px] bg-primary/10 text-primary border-primary/20 ml-0.5">
+                    <Badge className="h-4 px-1.5 text-[9px] bg-[#459492]/10 text-[#459492] border-[#459492]/20 ml-0.5">
                       {tab.badge}
                     </Badge>
                   )}
@@ -283,7 +283,7 @@ export default function NotificationsPage() {
                     return (
                       <Card
                         key={notif.id}
-                        className={`p-4 border cursor-pointer hover:shadow-md transition-all ${colorClass}`}
+                        className={`p-4 border cursor-pointer hover:shadow-md transition-all rounded-xl ${colorClass}`}
                         onClick={() => notif.action_url && navigate(notif.action_url)}
                       >
                         <div className="flex items-start gap-3">
@@ -352,15 +352,15 @@ export default function NotificationsPage() {
                     return (
                       <Card
                         key={i}
-                        className={`p-4 transition-all ${
-                          notif.read ? "opacity-60" : "border-primary/20 bg-primary/5"
+                        className={`p-4 transition-all rounded-xl border-border hover:shadow-md ${
+                          notif.read ? "opacity-60" : "border-[#E48C75]/20 bg-[#E48C75]/5"
                         }`}
                       >
                         <div className="flex items-start gap-3">
                           <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                            notif.read ? "bg-muted" : "bg-primary/10"
+                            notif.read ? "bg-muted" : "bg-[#E48C75]/10"
                           }`}>
-                            <Icon className={`w-4 h-4 ${notif.read ? "text-muted-foreground" : "text-primary"}`} />
+                            <Icon className={`w-4 h-4 ${notif.read ? "text-muted-foreground" : "text-[#E48C75]"}`} />
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="font-medium text-sm">{notif.title}</p>
@@ -370,7 +370,7 @@ export default function NotificationsPage() {
                             </p>
                           </div>
                           {!notif.read && (
-                            <div className="w-2 h-2 rounded-full bg-primary shrink-0 mt-2" />
+                            <div className="w-2 h-2 rounded-full bg-[#E48C75] shrink-0 mt-2" />
                           )}
                         </div>
                       </Card>

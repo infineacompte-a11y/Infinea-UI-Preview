@@ -117,12 +117,12 @@ const AVAILABLE_INTEGRATIONS = [
 ];
 
 const colorClasses = {
-  blue: { bg: "bg-[#2F7DBA]/10", text: "text-[#2F7DBA]", border: "border-[#2F7DBA]/30" },
-  gray: { bg: "bg-zinc-500/10", text: "text-zinc-400", border: "border-zinc-500/30" },
-  red: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-red-500/30" },
+  blue: { bg: "bg-[#459492]/10", text: "text-[#459492]", border: "border-[#459492]/30" },
+  gray: { bg: "bg-[#9A9A9A]/10", text: "text-[#9A9A9A]", border: "border-[#9A9A9A]/30" },
+  red: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
   purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
   green: { bg: "bg-[#5DB786]/10", text: "text-[#5DB786]", border: "border-[#5DB786]/30" },
-  orange: { bg: "bg-[#D4956B]/10", text: "text-[#D4956B]", border: "border-[#D4956B]/30" },
+  orange: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
 };
 
 // Icon and color maps for backend-driven rendering
@@ -513,7 +513,7 @@ export default function IntegrationsPage() {
       <div className="min-h-screen bg-background">
         <Sidebar />
         <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto animate-fade-in">
             {/* Header */}
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-2">
@@ -545,10 +545,10 @@ export default function IntegrationsPage() {
               <div className="space-y-8">
                 {/* Free tier limit banner */}
                 {isLimitReached && (
-                  <Card className="border-[#C97A3D]/30 bg-[#C97A3D]/5">
+                  <Card className="border-[#E48C75]/30 bg-[#E48C75]/5">
                     <CardContent className="p-4 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <Lock className="w-5 h-5 text-[#C97A3D]" />
+                        <Lock className="w-5 h-5 text-[#E48C75]" />
                         <p className="text-sm">
                           Plan gratuit : 1 intégration max. Passez à Premium pour connecter tous vos outils.
                         </p>
@@ -565,7 +565,7 @@ export default function IntegrationsPage() {
                 {/* Integration cards by category */}
                 {Object.entries(categories).map(([category, services]) => (
                   <div key={category}>
-                    <h2 className="text-sm font-medium text-muted-foreground mb-4 capitalize">
+                    <h2 className="text-sm font-heading font-medium text-muted-foreground mb-4 capitalize">
                       {category}
                     </h2>
                     <div className="grid gap-4">
@@ -876,7 +876,7 @@ export default function IntegrationsPage() {
 
       {/* Main Content */}
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto animate-fade-in">
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-2">
@@ -906,10 +906,10 @@ export default function IntegrationsPage() {
                   (a) => integrations[a.id]?.connected
                 ).length;
                 return connectedCount >= 1 ? (
-                  <Card className="border-[#C97A3D]/30 bg-[#C97A3D]/5">
+                  <Card className="border-[#E48C75]/30 bg-[#E48C75]/5">
                     <CardContent className="p-4 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <Lock className="w-5 h-5 text-[#C97A3D]" />
+                        <Lock className="w-5 h-5 text-[#E48C75]" />
                         <p className="text-sm">
                           Plan gratuit : 1 intégration max. Passez à Premium pour connecter tous vos outils.
                         </p>
@@ -933,7 +933,7 @@ export default function IntegrationsPage() {
 
                 return (
                   <div>
-                    <h2 className="text-sm font-medium text-muted-foreground mb-4 flex items-center gap-2">
+                    <h2 className="text-sm font-heading font-medium text-muted-foreground mb-4 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#5DB786]" />
                       Connectés ({connectedServices.length})
                     </h2>
@@ -1014,7 +1014,7 @@ export default function IntegrationsPage() {
 
                   return (
                     <div key={category}>
-                      <h2 className="text-sm font-medium text-muted-foreground mb-4 capitalize">
+                      <h2 className="text-sm font-heading font-medium text-muted-foreground mb-4 capitalize">
                         {category}
                       </h2>
                       <div className="grid md:grid-cols-2 gap-4">
@@ -1027,7 +1027,7 @@ export default function IntegrationsPage() {
                             <Card
                               key={int.id}
                               className={`transition-all ${
-                                int.status === "coming_soon" || isLimitReached ? "opacity-60" : "hover:border-primary/50"
+                                int.status === "coming_soon" || isLimitReached ? "opacity-60" : "hover:border-[#459492]/20"
                               }`}
                               data-testid={`integration-${int.id}`}
                             >
@@ -1045,7 +1045,7 @@ export default function IntegrationsPage() {
                                         </Badge>
                                       )}
                                       {int.status === "premium" && (
-                                        <Badge className="bg-[#C97A3D]/20 text-[#C97A3D] text-xs">
+                                        <Badge className="bg-[#E48C75]/20 text-[#E48C75] text-xs">
                                           Premium
                                         </Badge>
                                       )}
@@ -1055,7 +1055,7 @@ export default function IntegrationsPage() {
                                     </p>
                                     {isLimitReached ? (
                                       <Link to="/pricing">
-                                        <Button size="sm" variant="outline" className="text-[#C97A3D] border-[#C97A3D]/30">
+                                        <Button size="sm" variant="outline" className="text-[#E48C75] border-[#E48C75]/30">
                                           <Lock className="w-4 h-4 mr-2" />
                                           Premium requis
                                         </Button>
@@ -1075,7 +1075,7 @@ export default function IntegrationsPage() {
                                           <ChevronRight className="w-4 h-4 ml-1" />
                                         </Button>
                                       ) : (
-                                        <div className="flex items-center gap-2 text-[#C97A3D] text-sm">
+                                        <div className="flex items-center gap-2 text-[#E48C75] text-sm">
                                           <AlertCircle className="w-4 h-4" />
                                           <span>Non configuré sur ce serveur</span>
                                         </div>

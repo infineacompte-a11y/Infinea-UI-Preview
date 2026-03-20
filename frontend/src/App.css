@@ -136,3 +136,92 @@
 .stagger-3 { animation-delay: 0.3s; }
 .stagger-4 { animation-delay: 0.4s; }
 .stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* Empty state illustration area */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.empty-state-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(69, 148, 146, 0.08);
+    margin-bottom: 1.5rem;
+}
+
+/* Skeleton loading — brand shimmer */
+.skeleton {
+    background: linear-gradient(90deg, #1A1A1A 25%, #262626 50%, #1A1A1A 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+    border-radius: 0.75rem;
+}
+
+/* Card interactive — base hover lift */
+.card-interactive {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(69, 148, 146, 0.15);
+}
+
+/* Page enter transition */
+.page-enter {
+    animation: fadeIn 0.35s ease-out;
+}
+
+/* Selection color — brand teal */
+::selection {
+    background: rgba(69, 148, 146, 0.3);
+    color: #F2F2F2;
+}
+
+/* Focus ring — brand teal */
+*:focus-visible {
+    outline: 2px solid rgba(69, 148, 146, 0.5);
+    outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Brand gradient text utility */
+.text-brand-gradient {
+    background: linear-gradient(135deg, #459492, #55B3AE, #5DB786);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Premium badge shimmer */
+.premium-badge {
+    background: linear-gradient(135deg, #275255, #459492);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-badge::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s linear infinite;
+    background-size: 200% 100%;
+}

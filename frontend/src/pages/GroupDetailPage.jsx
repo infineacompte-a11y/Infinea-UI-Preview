@@ -146,7 +146,7 @@ export default function GroupDetailPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto animate-fade-in">
           {/* Back + header */}
           <div className="mb-6">
             <Link
@@ -204,7 +204,7 @@ export default function GroupDetailPage() {
 
           {/* Leaderboard */}
           <div className="mb-6">
-            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+            <h2 className="text-sm font-heading font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
               <Users className="w-4 h-4" />
               Classement cette semaine
             </h2>
@@ -212,10 +212,10 @@ export default function GroupDetailPage() {
               {leaderboard.map((member, i) => (
                 <Card
                   key={member.user_id}
-                  className={`border-border ${
+                  className={`border-border transition-all ${
                     member.user_id === currentUserId
-                      ? "bg-primary/5 border-primary/20"
-                      : "bg-card"
+                      ? "bg-[#459492]/5 border-[#459492]/20"
+                      : "bg-card hover:border-[#459492]/20"
                   }`}
                 >
                   <CardContent className="p-4 flex items-center gap-4">
@@ -223,11 +223,11 @@ export default function GroupDetailPage() {
                     <div
                       className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                         i === 0
-                          ? "bg-[#C97A3D]/20 text-[#C97A3D]"
+                          ? "bg-[#E48C75]/20 text-[#E48C75]"
                           : i === 1
-                            ? "bg-gray-400/20 text-gray-300"
+                            ? "bg-[#9A9A9A]/20 text-[#9A9A9A]"
                             : i === 2
-                              ? "bg-[#D4956B]/20 text-[#D4956B]"
+                              ? "bg-[#E48C75]/20 text-[#E48C75]"
                               : "bg-white/5 text-white/40"
                       }`}
                     >
@@ -237,7 +237,7 @@ export default function GroupDetailPage() {
                     {/* Avatar */}
                     <div
                       className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-                      style={{ background: `hsl(${(i * 67 + 200) % 360}, 60%, 45%)` }}
+                      style={{ background: ["#275255", "#459492", "#55B3AE", "#5DB786", "#E48C75"][i % 5] }}
                     >
                       {member.role === "owner" ? (
                         <Crown className="w-4 h-4 text-white" />
@@ -259,7 +259,7 @@ export default function GroupDetailPage() {
                       <div className="flex items-center gap-3 text-muted-foreground text-xs mt-0.5">
                         {member.stats?.streak_days > 0 && (
                           <span className="flex items-center gap-1">
-                            <Flame className="w-3 h-3 text-[#D4956B]" />
+                            <Flame className="w-3 h-3 text-[#E48C75]" />
                             {member.stats.streak_days}j
                           </span>
                         )}
@@ -286,7 +286,7 @@ export default function GroupDetailPage() {
           {/* Activity feed */}
           {feed.length > 0 && (
             <div>
-              <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+              <h2 className="text-sm font-heading font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
                 <Activity className="w-4 h-4" />
                 Activité récente
               </h2>
@@ -294,12 +294,12 @@ export default function GroupDetailPage() {
                 {feed.map((entry, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-card border border-border"
+                    className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-card border border-border hover:border-[#459492]/20 transition-all"
                   >
                     <div
                       className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0"
                       style={{
-                        background: `hsl(${(entry.user_name?.charCodeAt(0) * 37 || 200) % 360}, 60%, 45%)`,
+                        background: ["#275255", "#459492", "#55B3AE", "#5DB786", "#E48C75"][(entry.user_name?.charCodeAt(0) || 0) % 5],
                       }}
                     >
                       <span className="text-white">

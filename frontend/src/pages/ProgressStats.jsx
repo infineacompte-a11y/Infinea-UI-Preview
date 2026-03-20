@@ -42,14 +42,14 @@ const categoryColors = {
   learning: "#2F7DBA",
   productivity: "#C97A3D",
   well_being: "#5DB786",
-  creativity: "#a855f7",
-  fitness: "#ef4444",
-  mindfulness: "#06b6d4",
-  leadership: "#459492",
-  finance: "#22c55e",
-  relations: "#ec4899",
-  mental_health: "#14b8a6",
-  entrepreneurship: "#f97316",
+  creativity: "#55B3AE",
+  fitness: "#E48C75",
+  mindfulness: "#459492",
+  leadership: "#7B8FA1",
+  finance: "#2E9B6A",
+  relations: "#C4806E",
+  mental_health: "#6EAAA8",
+  entrepreneurship: "#D4956B",
 };
 
 const categoryLabels = {
@@ -139,7 +139,7 @@ export default function ProgressStats() {
               <Loader2 className="w-8 h-8 animate-spin text-primary" />
             </div>
           ) : (
-            <>
+            <div className="animate-fade-in">
               {/* Stats Overview */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <Card className="stat-card">
@@ -210,7 +210,7 @@ export default function ProgressStats() {
               {/* Charts */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 {/* Time by Category */}
-                <Card>
+                <Card className="hover:border-[#459492]/20 transition-all">
                   <CardHeader>
                     <CardTitle className="font-heading text-lg">Temps par catégorie</CardTitle>
                   </CardHeader>
@@ -218,13 +218,13 @@ export default function ProgressStats() {
                     {barData.length > 0 ? (
                       <ResponsiveContainer width="100%" height={250}>
                         <BarChart data={barData}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-                          <XAxis dataKey="name" tick={{ fill: "#a1a1aa", fontSize: 12 }} />
-                          <YAxis tick={{ fill: "#a1a1aa", fontSize: 12 }} />
+                          <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
+                          <XAxis dataKey="name" tick={{ fill: "#9A9A9A", fontSize: 12 }} />
+                          <YAxis tick={{ fill: "#9A9A9A", fontSize: 12 }} />
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "#121212",
-                              border: "1px solid #27272a",
+                              border: "1px solid #262626",
                               borderRadius: "8px",
                             }}
                           />
@@ -240,7 +240,7 @@ export default function ProgressStats() {
                 </Card>
 
                 {/* Sessions Distribution */}
-                <Card>
+                <Card className="hover:border-[#459492]/20 transition-all">
                   <CardHeader>
                     <CardTitle className="font-heading text-lg">Répartition des sessions</CardTitle>
                   </CardHeader>
@@ -264,7 +264,7 @@ export default function ProgressStats() {
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "#121212",
-                              border: "1px solid #27272a",
+                              border: "1px solid #262626",
                               borderRadius: "8px",
                             }}
                           />
@@ -294,7 +294,7 @@ export default function ProgressStats() {
               <PremiumAnalytics />
 
               {/* Recent Sessions */}
-              <Card>
+              <Card className="hover:border-[#459492]/20 transition-all">
                 <CardHeader>
                   <CardTitle className="font-heading text-lg">Sessions récentes</CardTitle>
                 </CardHeader>
@@ -304,7 +304,7 @@ export default function ProgressStats() {
                       {stats.recent_sessions.map((session, i) => (
                         <div
                           key={i}
-                          className="flex items-center justify-between p-3 rounded-lg bg-white/5"
+                          className="flex items-center justify-between p-3 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50 hover:border-[#459492]/20 transition-all"
                         >
                           <div className="flex items-center gap-3">
                             <div
@@ -316,13 +316,13 @@ export default function ProgressStats() {
                                   learning: <BookOpen className="w-5 h-5 text-[#2F7DBA]" />,
                                   productivity: <Target className="w-5 h-5 text-[#C97A3D]" />,
                                   well_being: <Heart className="w-5 h-5 text-[#5DB786]" />,
-                                  creativity: <Palette className="w-5 h-5 text-brand-secondary" />,
+                                  creativity: <Palette className="w-5 h-5 text-[#55B3AE]" />,
                                   fitness: <Dumbbell className="w-5 h-5 text-[#E48C75]" />,
                                   mindfulness: <Leaf className="w-5 h-5 text-[#459492]" />,
-                                  leadership: <Users className="w-5 h-5 text-brand-teal" />,
+                                  leadership: <Users className="w-5 h-5 text-[#7B8FA1]" />,
                                   finance: <TrendingUp className="w-5 h-5 text-[#2E9B6A]" />,
                                   relations: <MessageCircle className="w-5 h-5 text-[#C4806E]" />,
-                                  mental_health: <Brain className="w-5 h-5 text-[#55B3AE]" />,
+                                  mental_health: <Brain className="w-5 h-5 text-[#6EAAA8]" />,
                                   entrepreneurship: <Rocket className="w-5 h-5 text-[#D4956B]" />,
                                 };
                                 return iconMap[session.category] || <Sparkles className="w-5 h-5 text-primary" />;
@@ -354,7 +354,7 @@ export default function ProgressStats() {
                   )}
                 </CardContent>
               </Card>
-            </>
+            </div>
           )}
         </div>
       </main>

@@ -66,14 +66,14 @@ module.exports = {
                     green: '#5DB786',
                     coral: '#E48C75',
                 },
-                /* Category tokens — desaturated, calm */
-                learning: '#2F7DBA',
-                productivity: '#C97A3D',
+                /* Category tokens — brand-aligned */
+                learning: '#459492',
+                productivity: '#E48C75',
                 'well-being': '#5DB786',
                 /* State tokens */
-                success: '#2E9B6A',
-                warning: '#C97A3D',
-                info: '#2F7DBA',
+                success: '#5DB786',
+                warning: '#E48C75',
+                info: '#459492',
             },
             keyframes: {
                 'accordion-down': {
@@ -95,6 +95,22 @@ module.exports = {
                 'pulse-glow': {
                     '0%, 100%': { boxShadow: '0 0 20px rgba(69, 148, 146, 0.2)' },
                     '50%': { boxShadow: '0 0 40px rgba(69, 148, 146, 0.35)' }
+                },
+                'scale-in': {
+                    from: { opacity: '0', transform: 'scale(0.95)' },
+                    to: { opacity: '1', transform: 'scale(1)' }
+                },
+                'slide-up': {
+                    from: { opacity: '0', transform: 'translateY(16px)' },
+                    to: { opacity: '1', transform: 'translateY(0)' }
+                },
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-6px)' }
+                },
+                'shimmer': {
+                    from: { backgroundPosition: '-200% 0' },
+                    to: { backgroundPosition: '200% 0' }
                 }
             },
             animation: {
@@ -102,7 +118,11 @@ module.exports = {
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'fade-in': 'fade-in 0.4s ease-out forwards',
                 'slide-in': 'slide-in 0.3s ease-out',
-                'pulse-glow': 'pulse-glow 3s ease-in-out infinite'
+                'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+                'scale-in': 'scale-in 0.2s ease-out',
+                'slide-up': 'slide-up 0.4s ease-out forwards',
+                'float': 'float 4s ease-in-out infinite',
+                'shimmer': 'shimmer 2s linear infinite'
             }
         }
     },
