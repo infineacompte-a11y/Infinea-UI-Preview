@@ -190,7 +190,7 @@ export default function ShareDialog({ open, onOpenChange, shareType = "weekly_re
                     onClick={handleCopyLink}
                   >
                     {linkCopied ? (
-                      <Check className="w-4 h-4 text-emerald-500" />
+                      <Check className="w-4 h-4 text-[#5DB786]" />
                     ) : (
                       <Link2 className="w-4 h-4" />
                     )}

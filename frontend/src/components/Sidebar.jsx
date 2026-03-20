@@ -100,7 +100,7 @@ function NavLinks({ mobile = false, onNavigate, unreadCount = 0 }) {
             <div className="relative">
               <Icon className="w-5 h-5" />
               {isNotif && unreadCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 min-w-[16px] h-4 px-1 flex items-center justify-center rounded-full bg-red-500 text-white text-[9px] font-bold leading-none">
+                <span className="absolute -top-1.5 -right-1.5 min-w-[16px] h-4 px-1 flex items-center justify-center rounded-full bg-[#E48C75] text-white text-[9px] font-bold leading-none">
                   {unreadCount > 99 ? "99+" : unreadCount}
                 </span>
               )}
@@ -159,7 +159,7 @@ export default function Sidebar() {
               <Button variant="ghost" size="icon" data-testid="mobile-menu-btn" className="relative">
                 <Menu className="w-6 h-6" />
                 {unreadCount > 0 && (
-                  <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-red-500 ring-2 ring-background" />
+                  <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#E48C75] ring-2 ring-background" />
                 )}
               </Button>
             </SheetTrigger>

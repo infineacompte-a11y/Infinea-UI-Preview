@@ -171,7 +171,7 @@ export default function CoachFAB() {
               <div>
                 <h3 className="font-heading font-semibold text-sm">Coach IA</h3>
                 <div className="flex items-center gap-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#5DB786] animate-pulse" />
                   <span className="text-[10px] text-muted-foreground">En ligne</span>
                 </div>
               </div>
@@ -275,14 +275,14 @@ export default function CoachFAB() {
 
           {/* Listening indicator */}
           {voiceListening && (
-            <div className="px-3 py-1.5 border-t border-red-500/10 bg-red-500/5 flex items-center gap-2">
+            <div className="px-3 py-1.5 border-t border-red-500/10 bg-[#E48C75]/5 flex items-center gap-2">
               <div className="flex items-center gap-0.5">
-                <span className="w-0.5 h-2 bg-red-500/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
-                <span className="w-0.5 h-3 bg-red-500/80 rounded-full animate-pulse" style={{ animationDelay: "150ms" }} />
-                <span className="w-0.5 h-1.5 bg-red-500/50 rounded-full animate-pulse" style={{ animationDelay: "300ms" }} />
-                <span className="w-0.5 h-2.5 bg-red-500/70 rounded-full animate-pulse" style={{ animationDelay: "100ms" }} />
+                <span className="w-0.5 h-2 bg-[#E48C75]/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
+                <span className="w-0.5 h-3 bg-[#E48C75]/80 rounded-full animate-pulse" style={{ animationDelay: "150ms" }} />
+                <span className="w-0.5 h-1.5 bg-[#E48C75]/50 rounded-full animate-pulse" style={{ animationDelay: "300ms" }} />
+                <span className="w-0.5 h-2.5 bg-[#E48C75]/70 rounded-full animate-pulse" style={{ animationDelay: "100ms" }} />
               </div>
-              <span className="text-[11px] text-red-500/80 font-medium">Écoute en cours...</span>
+              <span className="text-[11px] text-[#E48C75]/80 font-medium">Écoute en cours...</span>
             </div>
           )}
 

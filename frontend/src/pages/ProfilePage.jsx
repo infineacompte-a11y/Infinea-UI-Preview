@@ -69,7 +69,7 @@ export default function ProfilePage() {
                       {user?.name || "Utilisateur"}
                     </h2>
                     {user?.subscription_tier === "premium" && (
-                      <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+                      <Badge className="bg-gradient-to-r from-[#C97A3D] to-[#E48C75] text-white">
                         <Crown className="w-3 h-3 mr-1" />
                         Premium
                       </Badge>
@@ -156,7 +156,7 @@ export default function ProfilePage() {
                   <p className="text-sm text-muted-foreground">minutes investies</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5">
-                  <p className="text-2xl font-heading font-bold text-amber-500">
+                  <p className="text-2xl font-heading font-bold text-[#C97A3D]">
                     {user?.streak_days || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">jours de streak</p>

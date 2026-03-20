@@ -29,9 +29,9 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-blue-500 bg-blue-500/10",
-  productivity: "text-amber-500 bg-amber-500/10",
-  well_being: "text-emerald-500 bg-emerald-500/10",
+  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
+  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  well_being: "text-[#5DB786] bg-[#5DB786]/10",
 };
 
 export default function ActiveSession() {
@@ -131,8 +131,8 @@ export default function ActiveSession() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center animate-fade-in">
-          <div className="w-24 h-24 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-6">
-            <Trophy className="w-12 h-12 text-emerald-500" />
+          <div className="w-24 h-24 rounded-full bg-[#5DB786]/10 flex items-center justify-center mx-auto mb-6">
+            <Trophy className="w-12 h-12 text-[#5DB786]" />
           </div>
           <h1 className="font-heading text-3xl font-bold mb-2" data-testid="completion-title">
             Félicitations ! 🎉
@@ -152,7 +152,7 @@ export default function ActiveSession() {
             </Card>
             <Card className="stat-card">
               <CardContent className="p-4 text-center">
-                <p className="text-2xl font-heading font-bold text-amber-500">
+                <p className="text-2xl font-heading font-bold text-[#C97A3D]">
                   {completionData?.new_streak || 1}
                 </p>
                 <p className="text-xs text-muted-foreground">jours de streak</p>
@@ -294,7 +294,7 @@ export default function ActiveSession() {
                 >
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
                     i < currentStep
-                      ? "bg-emerald-500 text-white"
+                      ? "bg-[#5DB786] text-white"
                       : i === currentStep
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted text-muted-foreground"

@@ -113,8 +113,8 @@ export default function GoogleCalendarGuide({ open, onOpenChange, onConnected })
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
-              <Calendar className="w-4 h-4 text-blue-500" />
+            <div className="w-8 h-8 rounded-lg bg-[#2F7DBA]/10 flex items-center justify-center">
+              <Calendar className="w-4 h-4 text-[#2F7DBA]" />
             </div>
             Connecter Google Calendar
           </DialogTitle>
@@ -130,7 +130,7 @@ export default function GoogleCalendarGuide({ open, onOpenChange, onConnected })
               key={i}
               className={`h-1.5 flex-1 rounded-full transition-colors ${
                 i < currentStep
-                  ? "bg-emerald-500"
+                  ? "bg-[#5DB786]"
                   : i === currentStep
                   ? "bg-primary"
                   : "bg-muted"
@@ -186,7 +186,7 @@ export default function GoogleCalendarGuide({ open, onOpenChange, onConnected })
                     </p>
                   )}
                   {isValidUrl && (
-                    <p className="text-xs text-emerald-500 flex items-center gap-1">
+                    <p className="text-xs text-[#5DB786] flex items-center gap-1">
                       <CheckCircle2 className="w-3 h-3" />
                       Format valide
                     </p>

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
  */
 
 const statusColors = {
-  active: "bg-emerald-500/15 text-emerald-400",
+  active: "bg-[#5DB786]/15 text-[#5DB786]",
   archived: "bg-white/10 text-white/40",
 };
 
@@ -84,7 +84,7 @@ export default function GroupCard({ group }) {
           {/* Week stats */}
           <div className="grid grid-cols-2 gap-3">
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.04]">
-              <Clock className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+              <Clock className="w-3.5 h-3.5 text-[#2F7DBA] shrink-0" />
               <div>
                 <div className="text-white text-sm font-semibold tabular-nums">
                   {formatMinutes(totalWeekMinutes)}
@@ -93,7 +93,7 @@ export default function GroupCard({ group }) {
               </div>
             </div>
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.04]">
-              <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <TrendingUp className="w-3.5 h-3.5 text-[#5DB786] shrink-0" />
               <div>
                 <div className="text-white text-sm font-semibold tabular-nums">
                   {totalWeekSessions}

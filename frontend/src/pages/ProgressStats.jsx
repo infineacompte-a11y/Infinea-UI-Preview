@@ -161,8 +161,8 @@ export default function ProgressStats() {
                 <Card className="stat-card">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                        <TrendingUp className="w-6 h-6 text-emerald-500" />
+                      <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-[#5DB786]" />
                       </div>
                       <div>
                         <p className="text-2xl font-heading font-bold" data-testid="total-sessions">
@@ -177,8 +177,8 @@ export default function ProgressStats() {
                 <Card className="stat-card">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center">
-                        <Flame className="w-6 h-6 text-amber-500" />
+                      <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center">
+                        <Flame className="w-6 h-6 text-[#C97A3D]" />
                       </div>
                       <div>
                         <p className="text-2xl font-heading font-bold" data-testid="streak-days">
@@ -193,8 +193,8 @@ export default function ProgressStats() {
                 <Card className="stat-card">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                        <Sparkles className="w-6 h-6 text-blue-500" />
+                      <div className="w-12 h-12 rounded-xl bg-[#2F7DBA]/10 flex items-center justify-center">
+                        <Sparkles className="w-6 h-6 text-[#2F7DBA]" />
                       </div>
                       <div>
                         <p className="text-2xl font-heading font-bold">
@@ -313,17 +313,17 @@ export default function ProgressStats() {
                             >
                               {(() => {
                                 const iconMap = {
-                                  learning: <BookOpen className="w-5 h-5 text-blue-500" />,
-                                  productivity: <Target className="w-5 h-5 text-amber-500" />,
-                                  well_being: <Heart className="w-5 h-5 text-emerald-500" />,
+                                  learning: <BookOpen className="w-5 h-5 text-[#2F7DBA]" />,
+                                  productivity: <Target className="w-5 h-5 text-[#C97A3D]" />,
+                                  well_being: <Heart className="w-5 h-5 text-[#5DB786]" />,
                                   creativity: <Palette className="w-5 h-5 text-brand-secondary" />,
-                                  fitness: <Dumbbell className="w-5 h-5 text-red-500" />,
-                                  mindfulness: <Leaf className="w-5 h-5 text-cyan-500" />,
+                                  fitness: <Dumbbell className="w-5 h-5 text-[#E48C75]" />,
+                                  mindfulness: <Leaf className="w-5 h-5 text-[#459492]" />,
                                   leadership: <Users className="w-5 h-5 text-brand-teal" />,
-                                  finance: <TrendingUp className="w-5 h-5 text-green-500" />,
-                                  relations: <MessageCircle className="w-5 h-5 text-pink-500" />,
-                                  mental_health: <Brain className="w-5 h-5 text-teal-500" />,
-                                  entrepreneurship: <Rocket className="w-5 h-5 text-orange-500" />,
+                                  finance: <TrendingUp className="w-5 h-5 text-[#2E9B6A]" />,
+                                  relations: <MessageCircle className="w-5 h-5 text-[#C4806E]" />,
+                                  mental_health: <Brain className="w-5 h-5 text-[#55B3AE]" />,
+                                  entrepreneurship: <Rocket className="w-5 h-5 text-[#D4956B]" />,
                                 };
                                 return iconMap[session.category] || <Sparkles className="w-5 h-5 text-primary" />;
                               })()}

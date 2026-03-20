@@ -37,19 +37,19 @@ const SMART_ICON_MAP = {
 };
 
 const SMART_COLOR_MAP = {
-  streak_alert: "border-orange-500/30 bg-orange-500/5",
-  objective_nudge: "border-blue-500/30 bg-blue-500/5",
+  streak_alert: "border-[#D4956B]/30 bg-[#D4956B]/5",
+  objective_nudge: "border-[#2F7DBA]/30 bg-[#2F7DBA]/5",
   routine_reminder: "border-primary/30 bg-primary/5",
-  milestone: "border-amber-500/30 bg-amber-500/5",
-  coach_tip: "border-emerald-500/30 bg-emerald-500/5",
+  milestone: "border-[#C97A3D]/30 bg-[#C97A3D]/5",
+  coach_tip: "border-[#5DB786]/30 bg-[#5DB786]/5",
 };
 
 const SMART_ICON_COLOR_MAP = {
-  streak_alert: "text-orange-500 bg-orange-500/10",
-  objective_nudge: "text-blue-500 bg-blue-500/10",
+  streak_alert: "text-[#D4956B] bg-[#D4956B]/10",
+  objective_nudge: "text-[#2F7DBA] bg-[#2F7DBA]/10",
   routine_reminder: "text-primary bg-primary/10",
-  milestone: "text-amber-500 bg-amber-500/10",
-  coach_tip: "text-emerald-500 bg-emerald-500/10",
+  milestone: "text-[#C97A3D] bg-[#C97A3D]/10",
+  coach_tip: "text-[#5DB786] bg-[#5DB786]/10",
 };
 
 export default function NotificationsPage() {
@@ -317,8 +317,8 @@ export default function NotificationsPage() {
                 </div>
               ) : (
                 <Card className="p-8 text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center mx-auto mb-3">
-                    <Check className="w-8 h-8 text-emerald-500" />
+                  <div className="w-16 h-16 rounded-2xl bg-[#5DB786]/10 flex items-center justify-center mx-auto mb-3">
+                    <Check className="w-8 h-8 text-[#5DB786]" />
                   </div>
                   <h3 className="font-heading font-semibold mb-1">Tout est en ordre !</h3>
                   <p className="text-sm text-muted-foreground">

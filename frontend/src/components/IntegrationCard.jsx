@@ -18,14 +18,14 @@ import {
 const statusConfig = {
   connected: {
     label: "Connecte",
-    color: "bg-emerald-500",
-    badgeClass: "bg-emerald-500/20 text-emerald-500 border-emerald-500/30",
+    color: "bg-[#5DB786]",
+    badgeClass: "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30",
     Icon: CheckCircle2,
   },
   error: {
     label: "Erreur",
-    color: "bg-red-500",
-    badgeClass: "bg-red-500/20 text-red-500 border-red-500/30",
+    color: "bg-[#E48C75]",
+    badgeClass: "bg-[#E48C75]/20 text-[#E48C75] border-red-500/30",
     Icon: AlertCircle,
   },
   disconnected: {
@@ -36,18 +36,18 @@ const statusConfig = {
   },
   syncing: {
     label: "Sync...",
-    color: "bg-blue-500",
-    badgeClass: "bg-blue-500/20 text-blue-500 border-blue-500/30",
+    color: "bg-[#2F7DBA]",
+    badgeClass: "bg-[#2F7DBA]/20 text-[#2F7DBA] border-[#2F7DBA]/30",
     Icon: Loader2,
   },
 };
 
 const colorClasses = {
-  blue: { bg: "bg-blue-500/10", text: "text-blue-500", border: "border-blue-500/30" },
+  blue: { bg: "bg-[#2F7DBA]/10", text: "text-[#2F7DBA]", border: "border-[#2F7DBA]/30" },
   gray: { bg: "bg-zinc-500/10", text: "text-zinc-400", border: "border-zinc-500/30" },
-  red: { bg: "bg-red-500/10", text: "text-red-500", border: "border-red-500/30" },
+  red: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-red-500/30" },
   purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
-  orange: { bg: "bg-orange-500/10", text: "text-orange-500", border: "border-orange-500/30" },
+  orange: { bg: "bg-[#D4956B]/10", text: "text-[#D4956B]", border: "border-[#D4956B]/30" },
 };
 
 export default function IntegrationCard({
@@ -110,7 +110,7 @@ export default function IntegrationCard({
             </Button>
           )}
           {!isConnected && isLimitReached && (
-            <Button size="sm" variant="outline" className="text-amber-500 border-amber-500/30 shrink-0" disabled>
+            <Button size="sm" variant="outline" className="text-[#C97A3D] border-[#C97A3D]/30 shrink-0" disabled>
               <Lock className="w-4 h-4 sm:mr-1" />
               <span className="hidden sm:inline">Premium</span>
             </Button>

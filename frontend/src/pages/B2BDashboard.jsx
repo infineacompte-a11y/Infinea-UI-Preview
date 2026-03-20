@@ -339,8 +339,8 @@ export default function B2BDashboard() {
             <Card className="stat-card">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                    <Activity className="w-6 h-6 text-emerald-500" />
+                  <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                    <Activity className="w-6 h-6 text-[#5DB786]" />
                   </div>
                   <div>
                     <p className="text-2xl font-heading font-bold">
@@ -355,8 +355,8 @@ export default function B2BDashboard() {
             <Card className="stat-card">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-amber-500" />
+                  <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-[#C97A3D]" />
                   </div>
                   <div>
                     <p className="text-2xl font-heading font-bold">
@@ -386,11 +386,11 @@ export default function B2BDashboard() {
           </div>
 
           {/* ROI Card */}
-          <Card className="mb-8 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 border-emerald-500/20">
+          <Card className="mb-8 bg-gradient-to-br from-[#5DB786]/5 to-[#2F7DBA]/5 border-[#5DB786]/20">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-emerald-500" />
+                <div className="w-10 h-10 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-[#5DB786]" />
                 </div>
                 <div>
                   <CardTitle className="font-heading text-lg">ROI Bien-être</CardTitle>
@@ -401,18 +401,18 @@ export default function B2BDashboard() {
             <CardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <Heart className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
-                  <p className="text-3xl font-heading font-bold text-emerald-500">{roi.wellbeingHours}h</p>
+                  <Heart className="w-8 h-8 text-[#5DB786] mx-auto mb-2" />
+                  <p className="text-3xl font-heading font-bold text-[#5DB786]">{roi.wellbeingHours}h</p>
                   <p className="text-sm text-muted-foreground">en bien-être ce mois</p>
                 </div>
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <TrendingUp className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                  <p className="text-3xl font-heading font-bold text-blue-500">+{roi.estimatedProductivityGain}%</p>
+                  <TrendingUp className="w-8 h-8 text-[#2F7DBA] mx-auto mb-2" />
+                  <p className="text-3xl font-heading font-bold text-[#2F7DBA]">+{roi.estimatedProductivityGain}%</p>
                   <p className="text-sm text-muted-foreground">productivité estimée</p>
                 </div>
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <Trophy className="w-8 h-8 text-amber-500 mx-auto mb-2" />
-                  <p className="text-3xl font-heading font-bold text-amber-500">{dashboard?.total_sessions || 0}</p>
+                  <Trophy className="w-8 h-8 text-[#C97A3D] mx-auto mb-2" />
+                  <p className="text-3xl font-heading font-bold text-[#C97A3D]">{dashboard?.total_sessions || 0}</p>
                   <p className="text-sm text-muted-foreground">sessions complétées</p>
                 </div>
               </div>
@@ -563,7 +563,7 @@ export default function B2BDashboard() {
                     return (
                       <Card 
                         key={i} 
-                        className={`transition-all ${isTop3 ? "border-amber-500/30 bg-amber-500/5" : ""}`}
+                        className={`transition-all ${isTop3 ? "border-[#C97A3D]/30 bg-[#C97A3D]/5" : ""}`}
                         data-testid={`employee-card-${i}`}
                       >
                         <CardContent className="p-4">
@@ -571,7 +571,7 @@ export default function B2BDashboard() {
                             <div className="flex items-center gap-4">
                               <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                                 isTop3 
-                                  ? "bg-amber-500/20 text-2xl" 
+                                  ? "bg-[#C97A3D]/20 text-2xl" 
                                   : "bg-primary/10"
                               }`}>
                                 {isTop3 ? medals[i] : <span className="font-medium text-muted-foreground">#{i + 1}</span>}
@@ -596,7 +596,7 @@ export default function B2BDashboard() {
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="flex items-center gap-1 text-amber-500">
+                              <div className="flex items-center gap-1 text-[#C97A3D]">
                                 <Flame className="w-4 h-4" />
                                 <span className="font-bold">{emp.streak_days}</span>
                               </div>

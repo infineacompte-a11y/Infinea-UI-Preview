@@ -90,9 +90,9 @@ const ShareCard = forwardRef(function ShareCard({ snapshot, shareType = "weekly_
             </div>
           </div>
           {streak_days > 0 && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-500/15">
-              <Flame className="w-3.5 h-3.5 text-orange-400" />
-              <span className="text-orange-300 text-xs font-bold tabular-nums">{streak_days}j</span>
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#D4956B]/15">
+              <Flame className="w-3.5 h-3.5 text-[#D4956B]" />
+              <span className="text-[#E48C75] text-xs font-bold tabular-nums">{streak_days}j</span>
             </div>
           )}
         </div>
@@ -108,21 +108,21 @@ const ShareCard = forwardRef(function ShareCard({ snapshot, shareType = "weekly_
         {/* ── Key stats row ── */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-5">
           <div className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <Clock className="w-4 h-4 text-blue-400 mx-auto mb-1.5" />
+            <Clock className="w-4 h-4 text-[#2F7DBA] mx-auto mb-1.5" />
             <div className="text-white text-xl font-bold tabular-nums leading-none">
               {formatMinutes(total_time_invested || 0)}
             </div>
             <div className="text-white/40 text-[10px] mt-1">investies</div>
           </div>
           <div className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <TrendingUp className="w-4 h-4 text-emerald-400 mx-auto mb-1.5" />
+            <TrendingUp className="w-4 h-4 text-[#5DB786] mx-auto mb-1.5" />
             <div className="text-white text-xl font-bold tabular-nums leading-none">
               {total_sessions || 0}
             </div>
             <div className="text-white/40 text-[10px] mt-1">sessions</div>
           </div>
           <div className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <Award className="w-4 h-4 text-amber-400 mx-auto mb-1.5" />
+            <Award className="w-4 h-4 text-[#C97A3D] mx-auto mb-1.5" />
             <div className="text-white text-xl font-bold tabular-nums leading-none">
               {badges_count || 0}
             </div>

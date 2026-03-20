@@ -289,7 +289,7 @@ export default function PricingPage() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, j) => (
                       <li key={j} className="flex items-center gap-3">
-                        <Check className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-[#5DB786] flex-shrink-0" />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
@@ -378,14 +378,14 @@ export default function PricingPage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: Palette, name: "Créativité", color: "text-pink-500", bg: "bg-pink-500/10" },
-                { icon: Dumbbell, name: "Fitness", color: "text-orange-500", bg: "bg-orange-500/10" },
-                { icon: Leaf, name: "Mindfulness", color: "text-green-500", bg: "bg-green-500/10" },
-                { icon: Crown, name: "Leadership", color: "text-amber-500", bg: "bg-amber-500/10" },
-                { icon: Zap, name: "Finance", color: "text-emerald-500", bg: "bg-emerald-500/10" },
-                { icon: Sparkles, name: "Relations", color: "text-blue-500", bg: "bg-blue-500/10" },
+                { icon: Palette, name: "Créativité", color: "text-[#C4806E]", bg: "bg-[#C4806E]/10" },
+                { icon: Dumbbell, name: "Fitness", color: "text-[#D4956B]", bg: "bg-[#D4956B]/10" },
+                { icon: Leaf, name: "Mindfulness", color: "text-[#2E9B6A]", bg: "bg-[#2E9B6A]/10" },
+                { icon: Crown, name: "Leadership", color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10" },
+                { icon: Zap, name: "Finance", color: "text-[#5DB786]", bg: "bg-[#5DB786]/10" },
+                { icon: Sparkles, name: "Relations", color: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10" },
                 { icon: Brain, name: "Santé mentale", color: "text-brand-secondary", bg: "bg-brand-secondary/10" },
-                { icon: Trophy, name: "Entrepreneuriat", color: "text-red-500", bg: "bg-red-500/10" },
+                { icon: Trophy, name: "Entrepreneuriat", color: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
               ].map(({ icon: Icon, name, color, bg }) => (
                 <Card key={name} className="bg-card/50 border-dashed">
                   <CardContent className="p-4 text-center">
@@ -419,8 +419,8 @@ export default function PricingPage() {
               </Card>
               <Card className="bg-card/50">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-6 h-6 text-amber-500" />
+                  <div className="w-12 h-12 rounded-xl bg-[#C97A3D]/10 flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-6 h-6 text-[#C97A3D]" />
                   </div>
                   <h3 className="font-heading text-lg font-medium mb-2">Bibliothèque infinie</h3>
                   <p className="text-sm text-muted-foreground">
@@ -430,8 +430,8 @@ export default function PricingPage() {
               </Card>
               <Card className="bg-card/50">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-6 h-6 text-emerald-500" />
+                  <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-6 h-6 text-[#5DB786]" />
                   </div>
                   <h3 className="font-heading text-lg font-medium mb-2">Bouclier de Streak</h3>
                   <p className="text-sm text-muted-foreground">
@@ -464,7 +464,7 @@ export default function PricingPage() {
                           <td className="p-4 text-center text-sm">
                             {typeof feature.free === "boolean" ? (
                               feature.free ? (
-                                <Check className="w-5 h-5 text-emerald-500 mx-auto" />
+                                <Check className="w-5 h-5 text-[#5DB786] mx-auto" />
                               ) : (
                                 <X className="w-5 h-5 text-muted-foreground/40 mx-auto" />
                               )

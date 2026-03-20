@@ -34,17 +34,17 @@ import { API, authFetch, useAuth } from "@/App";
 import { toast } from "sonner";
 
 const CATEGORY_MAP = {
-  learning: { label: "Apprentissage", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
-  productivity: { label: "Productivité", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
+  learning: { label: "Apprentissage", color: "bg-[#2F7DBA]/10 text-[#2F7DBA] border-[#2F7DBA]/20" },
+  productivity: { label: "Productivité", color: "bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20" },
   well_being: { label: "Bien-être", color: "bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20" },
-  creativity: { label: "Créativité", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
+  creativity: { label: "Créativité", color: "bg-[#C97A3D]/10 text-[#C97A3D] border-[#C97A3D]/20" },
   fitness: { label: "Fitness", color: "bg-rose-500/10 text-rose-500 border-rose-500/20" },
   mindfulness: { label: "Pleine conscience", color: "bg-sky-500/10 text-sky-500 border-sky-500/20" },
   leadership: { label: "Leadership", color: "bg-brand-teal/10 text-brand-teal border-brand-teal/20" },
-  finance: { label: "Finance", color: "bg-teal-500/10 text-teal-500 border-teal-500/20" },
-  relations: { label: "Relations", color: "bg-pink-500/10 text-pink-500 border-pink-500/20" },
-  mental_health: { label: "Santé mentale", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
-  entrepreneurship: { label: "Entrepreneuriat", color: "bg-orange-500/10 text-orange-500 border-orange-500/20" },
+  finance: { label: "Finance", color: "bg-[#55B3AE]/10 text-[#55B3AE] border-[#55B3AE]/20" },
+  relations: { label: "Relations", color: "bg-[#C4806E]/10 text-[#C4806E] border-[#C4806E]/20" },
+  mental_health: { label: "Santé mentale", color: "bg-[#459492]/10 text-[#459492] border-[#459492]/20" },
+  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#D4956B]/10 text-[#D4956B] border-[#D4956B]/20" },
 };
 
 // Duration presets: 2 weeks to 12 months
@@ -90,10 +90,10 @@ function durationValueToSlider(days) {
 }
 
 const STATUS_MAP = {
-  active: { label: "En cours", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20", icon: Play },
-  paused: { label: "En pause", color: "bg-amber-500/10 text-amber-500 border-amber-500/20", icon: Pause },
-  completed: { label: "Terminé", color: "bg-blue-500/10 text-blue-500 border-blue-500/20", icon: CheckCircle2 },
-  abandoned: { label: "Abandonné", color: "bg-red-500/10 text-red-500 border-red-500/20", icon: Target },
+  active: { label: "En cours", color: "bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20", icon: Play },
+  paused: { label: "En pause", color: "bg-[#C97A3D]/10 text-[#C97A3D] border-[#C97A3D]/20", icon: Pause },
+  completed: { label: "Terminé", color: "bg-[#2F7DBA]/10 text-[#2F7DBA] border-[#2F7DBA]/20", icon: CheckCircle2 },
+  abandoned: { label: "Abandonné", color: "bg-[#E48C75]/10 text-[#E48C75] border-red-500/20", icon: Target },
 };
 
 function ObjectiveCard({ objective, onClick }) {
@@ -146,7 +146,7 @@ function ObjectiveCard({ objective, onClick }) {
       {/* Stats row */}
       <div className="flex items-center gap-4 text-xs text-muted-foreground">
         <div className="flex items-center gap-1">
-          <Flame className="w-3 h-3 text-orange-500" />
+          <Flame className="w-3 h-3 text-[#D4956B]" />
           <span>{objective.streak_days || 0}j streak</span>
         </div>
         <div className="flex items-center gap-1">
@@ -312,15 +312,15 @@ export default function ObjectivesPage() {
 
               {/* Premium upsell if at limit */}
               {!canCreate && !isPremium && (
-                <Card className="p-4 mt-4 border-amber-500/20 bg-amber-500/5 text-center">
-                  <p className="text-sm text-amber-600 mb-2">
+                <Card className="p-4 mt-4 border-[#C97A3D]/20 bg-[#C97A3D]/5 text-center">
+                  <p className="text-sm text-[#275255] mb-2">
                     Tu as atteint la limite de 2 objectifs actifs
                   </p>
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => navigate("/pricing")}
-                    className="border-amber-500/30 text-amber-600 hover:bg-amber-500/10"
+                    className="border-[#C97A3D]/30 text-[#275255] hover:bg-[#C97A3D]/10"
                   >
                     <Trophy className="w-3.5 h-3.5 mr-1.5" />
                     Passer en Premium

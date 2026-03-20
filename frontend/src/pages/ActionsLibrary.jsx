@@ -44,17 +44,17 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-blue-500 bg-blue-500/10",
-  productivity: "text-amber-500 bg-amber-500/10",
-  well_being: "text-emerald-500 bg-emerald-500/10",
+  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
+  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  well_being: "text-[#5DB786] bg-[#5DB786]/10",
   creativity: "text-brand-secondary bg-brand-secondary/10",
-  fitness: "text-red-500 bg-red-500/10",
-  mindfulness: "text-cyan-500 bg-cyan-500/10",
+  fitness: "text-[#E48C75] bg-[#E48C75]/10",
+  mindfulness: "text-[#459492] bg-[#459492]/10",
   leadership: "text-brand-teal bg-brand-teal/10",
-  finance: "text-green-500 bg-green-500/10",
-  relations: "text-pink-500 bg-pink-500/10",
-  mental_health: "text-teal-500 bg-teal-500/10",
-  entrepreneurship: "text-orange-500 bg-orange-500/10",
+  finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
+  relations: "text-[#C4806E] bg-[#C4806E]/10",
+  mental_health: "text-[#55B3AE] bg-[#55B3AE]/10",
+  entrepreneurship: "text-[#D4956B] bg-[#D4956B]/10",
 };
 
 const categoryLabels = {
@@ -210,7 +210,7 @@ export default function ActionsLibrary() {
                     {isPremium ? (
                       <Lock className="w-3 h-3" />
                     ) : (
-                      <Crown className="w-3 h-3 text-amber-500" />
+                      <Crown className="w-5 h-5 text-[#459492]" />
                     )}
                     {label}
                   </TabsTrigger>

@@ -49,14 +49,14 @@ const SOURCE_CONFIG = {
   calendar_gap: {
     icon: Calendar,
     label: "Calendrier",
-    color: "text-blue-400",
-    bgColor: "bg-blue-500/10",
+    color: "text-[#2F7DBA]",
+    bgColor: "bg-[#2F7DBA]/10",
   },
   routine_window: {
     icon: Repeat,
     label: "Routine",
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/10",
+    color: "text-[#5DB786]",
+    bgColor: "bg-[#5DB786]/10",
   },
   behavioral_pattern: {
     icon: TrendingUp,
@@ -117,9 +117,9 @@ function ConfidenceBadge({ score }) {
   let className = "text-muted-foreground border-border/50";
   if (pct >= 70) {
     variant = "default";
-    className = "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
+    className = "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30";
   } else if (pct >= 50) {
-    className = "text-amber-400 border-amber-500/30";
+    className = "text-[#C97A3D] border-[#C97A3D]/30";
   }
   return (
     <Badge variant={variant} className={`text-[10px] ${className}`}>
@@ -223,7 +223,7 @@ function CountdownBadge({ windowEnd }) {
   if (!remaining) return null;
 
   return (
-    <Badge variant="outline" className="text-[10px] text-amber-400 border-amber-500/30 animate-pulse gap-1">
+    <Badge variant="outline" className="text-[10px] text-[#C97A3D] border-[#C97A3D]/30 animate-pulse gap-1">
       <Timer className="w-3 h-3" />
       {remaining}
     </Badge>
@@ -294,7 +294,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
             : past
             ? "opacity-50"
             : "border-border/30"
-        } ${exploited ? "border-emerald-500/40 bg-emerald-500/5" : ""} ${
+        } ${exploited ? "border-[#5DB786]/40 bg-[#5DB786]/5" : ""} ${
           skipped ? "border-muted/40 bg-muted/5" : ""
         }`}
       >
@@ -389,12 +389,12 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
 
           {/* Exploited state — enriched feedback */}
           {exploited && (
-            <div className="flex items-center gap-3 p-2.5 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <div className="flex items-center gap-3 p-2.5 rounded-lg bg-[#5DB786]/5 border border-[#5DB786]/20">
+              <div className="w-8 h-8 rounded-full bg-[#5DB786]/20 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-4 h-4 text-[#5DB786]" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-emerald-400">Exploité</p>
+                <p className="text-sm font-medium text-[#5DB786]">Exploité</p>
                 {action.title && (
                   <p className="text-[11px] text-muted-foreground">{action.title}</p>
                 )}
@@ -506,7 +506,7 @@ function StatsSummary({ instants, stats }) {
         <p className="text-[11px] text-muted-foreground">Détectés</p>
       </div>
       <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-        <p className="text-2xl font-bold text-emerald-400">{exploited}</p>
+        <p className="text-2xl font-bold text-[#5DB786]">{exploited}</p>
         <p className="text-[11px] text-muted-foreground">Exploités</p>
       </div>
       <div className="text-center p-3 rounded-xl bg-card border border-border/20">
@@ -558,10 +558,10 @@ function WeeklyTrendBadge({ trend, thisWeekRate, lastWeekRate }) {
   const isFlat = pct === 0;
   const Icon = isUp ? ArrowUpRight : isFlat ? Minus : ArrowDownRight;
   const color = isUp
-    ? "text-emerald-400 bg-emerald-500/10"
+    ? "text-[#5DB786] bg-[#5DB786]/10"
     : isFlat
     ? "text-muted-foreground bg-muted/10"
-    : "text-red-400 bg-red-500/10";
+    : "text-red-400 bg-[#E48C75]/10";
 
   return (
     <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${color}`}>
@@ -607,7 +607,7 @@ function DailyChart({ dailyChart }) {
                   ) : (
                     <>
                       <div
-                        className="w-full rounded-t-sm bg-emerald-500/70 transition-all"
+                        className="w-full rounded-t-sm bg-[#5DB786]/70 transition-all"
                         style={{ height: `${Math.max(exploitedH, 4)}%` }}
                       />
                       {skippedH > 0 && (
@@ -631,7 +631,7 @@ function DailyChart({ dailyChart }) {
         {/* Legend */}
         <div className="flex items-center gap-4 mt-3 justify-center">
           <div className="flex items-center gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-sm bg-emerald-500/70" />
+            <div className="w-2.5 h-2.5 rounded-sm bg-[#5DB786]/70" />
             <span className="text-[10px] text-muted-foreground">Exploités</span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -680,10 +680,10 @@ function HourlyHeatmap({ hourlyRates }) {
                     // Intensity based on rate
                     let bg = "bg-muted/20";
                     if (total > 0) {
-                      if (rate >= 0.7) bg = "bg-emerald-500/70";
-                      else if (rate >= 0.4) bg = "bg-emerald-500/40";
-                      else if (rate > 0) bg = "bg-emerald-500/20";
-                      else bg = "bg-red-500/15";
+                      if (rate >= 0.7) bg = "bg-[#5DB786]/70";
+                      else if (rate >= 0.4) bg = "bg-[#5DB786]/40";
+                      else if (rate > 0) bg = "bg-[#5DB786]/20";
+                      else bg = "bg-[#E48C75]/15";
                     }
 
                     return (
@@ -710,9 +710,9 @@ function HourlyHeatmap({ hourlyRates }) {
           <span className="text-[9px] text-muted-foreground">0%</span>
           <div className="flex gap-0.5">
             <div className="w-4 h-2.5 rounded-sm bg-muted/20" />
-            <div className="w-4 h-2.5 rounded-sm bg-emerald-500/20" />
-            <div className="w-4 h-2.5 rounded-sm bg-emerald-500/40" />
-            <div className="w-4 h-2.5 rounded-sm bg-emerald-500/70" />
+            <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/20" />
+            <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/40" />
+            <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/70" />
           </div>
           <span className="text-[9px] text-muted-foreground">100%</span>
         </div>
@@ -730,7 +730,7 @@ function BestSlotsCard({ bestSlots }) {
     <Card className="border-border/30">
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-3">
-          <Award className="w-4 h-4 text-amber-400" />
+          <Award className="w-4 h-4 text-[#C97A3D]" />
           <span className="text-sm font-medium text-foreground">Meilleurs créneaux</span>
         </div>
         <div className="space-y-2">
@@ -749,9 +749,9 @@ function BestSlotsCard({ bestSlots }) {
               <Badge
                 className={`text-xs ${
                   slot.exploitation_rate >= 0.7
-                    ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30"
+                    ? "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30"
                     : slot.exploitation_rate >= 0.4
-                    ? "bg-amber-500/20 text-amber-400 border-amber-500/30"
+                    ? "bg-[#C97A3D]/20 text-[#C97A3D] border-[#C97A3D]/30"
                     : "text-muted-foreground border-border/50"
                 }`}
                 variant="outline"
@@ -807,9 +807,9 @@ function SourceBreakdown({ sourceDistribution }) {
                   <div
                     className={`h-full rounded-full transition-all ${
                       src === "calendar_gap"
-                        ? "bg-blue-500/60"
+                        ? "bg-[#2F7DBA]/60"
                         : src === "routine_window"
-                        ? "bg-emerald-500/60"
+                        ? "bg-[#5DB786]/60"
                         : "bg-brand-secondary/60"
                     }`}
                     style={{ width: `${pct}%` }}
@@ -829,8 +829,8 @@ function StreakConsistencyCard({ streak, avgPerDay, activeDays, totalMinutes }) 
     <Card className="border-border/30">
       <CardContent className="p-4">
         <div className="grid grid-cols-2 gap-3">
-          <div className="text-center p-3 rounded-xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20">
-            <Flame className="w-5 h-5 text-amber-400 mx-auto mb-1" />
+          <div className="text-center p-3 rounded-xl bg-gradient-to-br from-[#C97A3D]/10 to-[#E48C75]/10 border border-[#C97A3D]/20">
+            <Flame className="w-5 h-5 text-[#C97A3D] mx-auto mb-1" />
             <p className="text-2xl font-bold text-foreground">{streak}</p>
             <p className="text-[10px] text-muted-foreground">Jours consécutifs</p>
           </div>
@@ -840,12 +840,12 @@ function StreakConsistencyCard({ streak, avgPerDay, activeDays, totalMinutes }) 
             <p className="text-[10px] text-muted-foreground">Moy. / jour actif</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-            <Calendar className="w-5 h-5 text-blue-400 mx-auto mb-1" />
+            <Calendar className="w-5 h-5 text-[#2F7DBA] mx-auto mb-1" />
             <p className="text-2xl font-bold text-foreground">{activeDays}</p>
             <p className="text-[10px] text-muted-foreground">Jours actifs (30j)</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-card border border-border/20">
-            <Clock className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
+            <Clock className="w-5 h-5 text-[#5DB786] mx-auto mb-1" />
             <p className="text-2xl font-bold text-foreground">{formatDuration(totalMinutes)}</p>
             <p className="text-[10px] text-muted-foreground">Temps investi</p>
           </div>

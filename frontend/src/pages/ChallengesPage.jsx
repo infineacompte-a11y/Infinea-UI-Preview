@@ -106,7 +106,7 @@ export default function ChallengesPage() {
               </p>
             </div>
             {communityCompleted > 0 && (
-              <Badge variant="outline" className="text-[10px] bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+              <Badge variant="outline" className="text-[10px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20">
                 <CheckCircle2 className="w-2.5 h-2.5 mr-0.5" />
                 {communityCompleted}/{communityTotal}
               </Badge>
@@ -150,19 +150,19 @@ export default function ChallengesPage() {
                     return (
                       <Card
                         key={ch.id}
-                        className={`p-4 transition-all ${ch.completed ? "border-emerald-500/30 bg-emerald-500/3" : ""}`}
+                        className={`p-4 transition-all ${ch.completed ? "border-[#5DB786]/30 bg-[#5DB786]/3" : ""}`}
                       >
                         <div className="flex items-start gap-3 mb-3">
                           <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
-                            ch.completed ? "bg-emerald-500/10" : "bg-primary/10"
+                            ch.completed ? "bg-[#5DB786]/10" : "bg-primary/10"
                           }`}>
-                            <Icon className={`w-5 h-5 ${ch.completed ? "text-emerald-500" : "text-primary"}`} />
+                            <Icon className={`w-5 h-5 ${ch.completed ? "text-[#5DB786]" : "text-primary"}`} />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
                               <h3 className="font-medium text-sm">{ch.title}</h3>
                               {ch.completed && (
-                                <Badge variant="outline" className="text-[9px] bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                                <Badge variant="outline" className="text-[9px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20">
                                   Complété
                                 </Badge>
                               )}
@@ -203,9 +203,9 @@ export default function ChallengesPage() {
           {activeTab === "premium" && (
             <div>
               {!isPremium ? (
-                <Card className="p-8 text-center border-amber-500/20">
-                  <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
-                    <Lock className="w-8 h-8 text-amber-500" />
+                <Card className="p-8 text-center border-[#C97A3D]/20">
+                  <div className="w-16 h-16 rounded-2xl bg-[#C97A3D]/10 flex items-center justify-center mx-auto mb-4">
+                    <Lock className="w-8 h-8 text-[#C97A3D]" />
                   </div>
                   <h3 className="font-heading font-semibold text-lg mb-2">Défis Premium</h3>
                   <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto">
@@ -230,19 +230,19 @@ export default function ChallengesPage() {
                     return (
                       <Card
                         key={ch.challenge_id}
-                        className={`p-4 transition-all ${ch.completed ? "border-amber-500/30 bg-amber-500/3" : ""}`}
+                        className={`p-4 transition-all ${ch.completed ? "border-[#C97A3D]/30 bg-[#C97A3D]/3" : ""}`}
                       >
                         <div className="flex items-start gap-3 mb-3">
                           <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
-                            ch.completed ? "bg-amber-500/10" : "bg-primary/10"
+                            ch.completed ? "bg-[#C97A3D]/10" : "bg-primary/10"
                           }`}>
-                            <Icon className={`w-5 h-5 ${ch.completed ? "text-amber-500" : "text-primary"}`} />
+                            <Icon className={`w-5 h-5 ${ch.completed ? "text-[#C97A3D]" : "text-primary"}`} />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
                               <h3 className="font-medium text-sm">{ch.title}</h3>
                               {ch.completed && (
-                                <Badge className="text-[9px] bg-amber-500/20 text-amber-500">Complété</Badge>
+                                <Badge className="text-[9px] bg-[#C97A3D]/20 text-[#C97A3D]">Complété</Badge>
                               )}
                             </div>
                             <p className="text-xs text-muted-foreground mt-0.5">{ch.description}</p>

@@ -129,7 +129,7 @@ export default function SlackGuide({ open, onOpenChange, onConnected }) {
               key={i}
               className={`h-1.5 flex-1 rounded-full transition-colors ${
                 i < currentStep
-                  ? "bg-emerald-500"
+                  ? "bg-[#5DB786]"
                   : i === currentStep
                   ? "bg-primary"
                   : "bg-muted"
@@ -185,7 +185,7 @@ export default function SlackGuide({ open, onOpenChange, onConnected }) {
                     </p>
                   )}
                   {isValidUrl && (
-                    <p className="text-xs text-emerald-500 flex items-center gap-1">
+                    <p className="text-xs text-[#5DB786] flex items-center gap-1">
                       <CheckCircle2 className="w-3 h-3" />
                       Format valide
                     </p>

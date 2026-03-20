@@ -47,7 +47,7 @@ import { API, authFetch } from "@/App";
 import { toast } from "sonner";
 
 const DIFFICULTY_LABELS = ["", "Fondamental", "Débutant", "Intermédiaire", "Avancé", "Expert"];
-const DIFFICULTY_COLORS = ["", "text-emerald-500", "text-blue-500", "text-amber-500", "text-orange-500", "text-rose-500"];
+const DIFFICULTY_COLORS = ["", "text-[#5DB786]", "text-[#2F7DBA]", "text-[#C97A3D]", "text-[#D4956B]", "text-rose-500"];
 
 // ─── CurriculumStep (unchanged) ───
 
@@ -71,7 +71,7 @@ function CurriculumStep({ step, index, isNext, onStart }) {
       >
         <div className="shrink-0">
           {completed ? (
-            <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+            <CheckCircle2 className="w-5 h-5 text-[#5DB786]" />
           ) : isNext ? (
             <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
               <Play className="w-2.5 h-2.5 text-primary-foreground ml-0.5" />
@@ -131,9 +131,9 @@ function CurriculumStep({ step, index, isNext, onStart }) {
             </div>
           )}
           {step.tip && (
-            <div className="flex items-start gap-2 bg-amber-500/5 rounded-lg px-3 py-2 border border-amber-500/10">
-              <Lightbulb className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
-              <span className="text-xs text-amber-600">{step.tip}</span>
+            <div className="flex items-start gap-2 bg-[#C97A3D]/5 rounded-lg px-3 py-2 border border-[#C97A3D]/10">
+              <Lightbulb className="w-3.5 h-3.5 text-[#C97A3D] shrink-0 mt-0.5" />
+              <span className="text-xs text-[#275255]">{step.tip}</span>
             </div>
           )}
           {completed && step.actual_duration && (
@@ -158,10 +158,10 @@ function CurriculumStep({ step, index, isNext, onStart }) {
 
 const MASTERY_COLORS = {
   "Non démarré": { bar: "bg-muted", text: "text-muted-foreground", bg: "bg-muted/20" },
-  "Débutant": { bar: "bg-blue-500", text: "text-blue-500", bg: "bg-blue-500/10" },
-  "En progression": { bar: "bg-emerald-500", text: "text-emerald-500", bg: "bg-emerald-500/10" },
-  "Intermédiaire": { bar: "bg-amber-500", text: "text-amber-500", bg: "bg-amber-500/10" },
-  "Avancé": { bar: "bg-orange-500", text: "text-orange-500", bg: "bg-orange-500/10" },
+  "Débutant": { bar: "bg-[#2F7DBA]", text: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10" },
+  "En progression": { bar: "bg-[#5DB786]", text: "text-[#5DB786]", bg: "bg-[#5DB786]/10" },
+  "Intermédiaire": { bar: "bg-[#C97A3D]", text: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10" },
+  "Avancé": { bar: "bg-[#D4956B]", text: "text-[#D4956B]", bg: "bg-[#D4956B]/10" },
   "Maîtrisé": { bar: "bg-primary", text: "text-primary", bg: "bg-primary/10" },
 };
 
@@ -220,9 +220,9 @@ function SkillsTab({ objectiveId }) {
             </div>
           </div>
           {review_needed > 0 && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
-              <RotateCcw className="w-3.5 h-3.5 text-amber-500" />
-              <span className="text-xs font-medium text-amber-600">{review_needed} à réviser</span>
+            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#C97A3D]/10 border border-[#C97A3D]/20">
+              <RotateCcw className="w-3.5 h-3.5 text-[#C97A3D]" />
+              <span className="text-xs font-medium text-[#275255]">{review_needed} à réviser</span>
             </div>
           )}
         </div>
@@ -234,13 +234,13 @@ function SkillsTab({ objectiveId }) {
         {skills.map((skill) => {
           const mc = MASTERY_COLORS[skill.level] || MASTERY_COLORS["Non démarré"];
           return (
-            <Card key={skill.name} className={`p-4 transition-all ${skill.needs_review ? "border-amber-500/30 bg-amber-500/3" : ""}`}>
+            <Card key={skill.name} className={`p-4 transition-all ${skill.needs_review ? "border-[#C97A3D]/30 bg-[#C97A3D]/3" : ""}`}>
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <h3 className="font-medium text-sm truncate">{skill.name}</h3>
                     {skill.needs_review && (
-                      <Badge variant="outline" className="text-[9px] bg-amber-500/10 text-amber-600 border-amber-500/20 shrink-0">
+                      <Badge variant="outline" className="text-[9px] bg-[#C97A3D]/10 text-[#275255] border-[#C97A3D]/20 shrink-0">
                         <RotateCcw className="w-2.5 h-2.5 mr-0.5" />
                         Révision
                       </Badge>
@@ -286,17 +286,17 @@ function SkillsTab({ objectiveId }) {
 // ─── InsightsTab ───
 
 const MOMENTUM_CONFIG = {
-  rising: { icon: TrendingUp, color: "text-emerald-500", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-  stable: { icon: Minus, color: "text-blue-500", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-  declining: { icon: TrendingDown, color: "text-amber-500", bg: "bg-amber-500/10", border: "border-amber-500/20" },
+  rising: { icon: TrendingUp, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", border: "border-[#5DB786]/20" },
+  stable: { icon: Minus, color: "text-[#2F7DBA]", bg: "bg-[#2F7DBA]/10", border: "border-[#2F7DBA]/20" },
+  declining: { icon: TrendingDown, color: "text-[#C97A3D]", bg: "bg-[#C97A3D]/10", border: "border-[#C97A3D]/20" },
 };
 
 const DIFFICULTY_BAR_COLORS = [
   "",
-  "bg-emerald-500",   // 1 — Fondamental
-  "bg-blue-500",      // 2 — Débutant
-  "bg-amber-500",     // 3 — Intermédiaire
-  "bg-orange-500",    // 4 — Avancé
+  "bg-[#5DB786]",   // 1 — Fondamental
+  "bg-[#2F7DBA]",      // 2 — Débutant
+  "bg-[#C97A3D]",     // 3 — Intermédiaire
+  "bg-[#D4956B]",    // 4 — Avancé
   "bg-rose-500",      // 5 — Expert
 ];
 
@@ -381,7 +381,7 @@ function InsightsTab({ objectiveId }) {
           {stats && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               <Card className="p-3 text-center">
-                <Activity className="w-4 h-4 text-blue-500 mx-auto mb-1" />
+                <Activity className="w-4 h-4 text-[#2F7DBA] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.completion_rate}%</div>
                 <div className="text-[10px] text-muted-foreground">Complétion</div>
               </Card>
@@ -391,7 +391,7 @@ function InsightsTab({ objectiveId }) {
                 <div className="text-[10px] text-muted-foreground">Moy. / session</div>
               </Card>
               <Card className="p-3 text-center">
-                <Calendar className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
+                <Calendar className="w-4 h-4 text-[#5DB786] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.active_days}</div>
                 <div className="text-[10px] text-muted-foreground">Jours actifs</div>
               </Card>
@@ -424,15 +424,15 @@ function InsightsTab({ objectiveId }) {
 
               <div className="grid grid-cols-2 gap-3 mb-3">
                 {ai_analysis.strengths?.length > 0 && (
-                  <div className="bg-emerald-500/5 rounded-xl p-3 border border-emerald-500/10">
+                  <div className="bg-[#5DB786]/5 rounded-xl p-3 border border-[#5DB786]/10">
                     <div className="flex items-center gap-1.5 mb-2">
-                      <Zap className="w-3.5 h-3.5 text-emerald-500" />
-                      <span className="text-xs font-semibold text-emerald-500">Points forts</span>
+                      <Zap className="w-3.5 h-3.5 text-[#5DB786]" />
+                      <span className="text-xs font-semibold text-[#5DB786]">Points forts</span>
                     </div>
                     <div className="space-y-1.5">
                       {ai_analysis.strengths.map((s, i) => (
                         <p key={i} className="text-[11px] text-foreground/70 leading-relaxed flex items-start gap-1.5">
-                          <span className="text-emerald-500 mt-0.5 shrink-0">•</span>
+                          <span className="text-[#5DB786] mt-0.5 shrink-0">•</span>
                           {s}
                         </p>
                       ))}
@@ -441,15 +441,15 @@ function InsightsTab({ objectiveId }) {
                 )}
 
                 {ai_analysis.improvements?.length > 0 && (
-                  <div className="bg-amber-500/5 rounded-xl p-3 border border-amber-500/10">
+                  <div className="bg-[#C97A3D]/5 rounded-xl p-3 border border-[#C97A3D]/10">
                     <div className="flex items-center gap-1.5 mb-2">
-                      <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
-                      <span className="text-xs font-semibold text-amber-500">À améliorer</span>
+                      <AlertTriangle className="w-3.5 h-3.5 text-[#C97A3D]" />
+                      <span className="text-xs font-semibold text-[#C97A3D]">À améliorer</span>
                     </div>
                     <div className="space-y-1.5">
                       {ai_analysis.improvements.map((s, i) => (
                         <p key={i} className="text-[11px] text-foreground/70 leading-relaxed flex items-start gap-1.5">
-                          <span className="text-amber-500 mt-0.5 shrink-0">•</span>
+                          <span className="text-[#C97A3D] mt-0.5 shrink-0">•</span>
                           {s}
                         </p>
                       ))}
@@ -565,10 +565,10 @@ function InsightsTab({ objectiveId }) {
               <div className="space-y-1.5 max-h-[350px] overflow-y-auto pr-1">
                 {insights.timeline.slice().reverse().map((entry, i) => (
                   <div key={i} className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs ${
-                    entry.completed ? "bg-muted/20" : "bg-red-500/5"
+                    entry.completed ? "bg-muted/20" : "bg-[#E48C75]/5"
                   }`}>
                     {entry.completed ? (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#5DB786] shrink-0" />
                     ) : (
                       <AlertTriangle className="w-3.5 h-3.5 text-red-400 shrink-0" />
                     )}
@@ -845,17 +845,17 @@ export default function ObjectiveDetailPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="text-center p-2 rounded-lg bg-muted/30">
-                <Flame className="w-4 h-4 text-orange-500 mx-auto mb-1" />
+                <Flame className="w-4 h-4 text-[#D4956B] mx-auto mb-1" />
                 <div className="text-lg font-bold">{objective.streak_days || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Streak</div>
               </div>
               <div className="text-center p-2 rounded-lg bg-muted/30">
-                <Clock className="w-4 h-4 text-blue-500 mx-auto mb-1" />
+                <Clock className="w-4 h-4 text-[#2F7DBA] mx-auto mb-1" />
                 <div className="text-lg font-bold">{objective.total_minutes || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Minutes</div>
               </div>
               <div className="text-center p-2 rounded-lg bg-muted/30">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
+                <CheckCircle2 className="w-4 h-4 text-[#5DB786] mx-auto mb-1" />
                 <div className="text-lg font-bold">{completedSteps}</div>
                 <div className="text-[10px] text-muted-foreground">Sessions</div>
               </div>
@@ -953,8 +953,8 @@ export default function ObjectiveDetailPage() {
 
               {/* Completed celebration */}
               {percent >= 100 && (
-                <Card className="p-6 mt-6 text-center border-amber-500/20 bg-gradient-to-br from-amber-500/10 to-amber-500/5">
-                  <Trophy className="w-12 h-12 text-amber-500 mx-auto mb-3" />
+                <Card className="p-6 mt-6 text-center border-[#C97A3D]/20 bg-gradient-to-br from-[#C97A3D]/10 to-[#C97A3D]/5">
+                  <Trophy className="w-12 h-12 text-[#C97A3D] mx-auto mb-3" />
                   <h3 className="font-heading font-bold text-lg">Parcours terminé !</h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     Tu as complété {completedSteps} sessions et investi {objective.total_minutes || 0} minutes.
@@ -988,11 +988,11 @@ export default function ObjectiveDetailPage() {
               const last = log.length > 0 ? log[log.length - 1] : null;
               if (!last) return null;
               return (
-                <div className="flex items-start gap-2 bg-blue-500/5 rounded-lg px-3 py-2 border border-blue-500/10">
-                  <BookOpen className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
-                  <div className="text-xs text-blue-400">
+                <div className="flex items-start gap-2 bg-[#2F7DBA]/5 rounded-lg px-3 py-2 border border-[#2F7DBA]/10">
+                  <BookOpen className="w-3.5 h-3.5 text-[#2F7DBA] shrink-0 mt-0.5" />
+                  <div className="text-xs text-[#2F7DBA]">
                     <span className="font-medium">Dernière session :</span> {last.step_title}
-                    {last.notes && <span className="block text-blue-400/70 mt-0.5">"{last.notes}"</span>}
+                    {last.notes && <span className="block text-[#2F7DBA]/70 mt-0.5">"{last.notes}"</span>}
                   </div>
                 </div>
               );
@@ -1023,9 +1023,9 @@ export default function ObjectiveDetailPage() {
 
             {/* Tip */}
             {activeStep?.tip && (
-              <div className="flex items-start gap-2 bg-amber-500/5 rounded-lg px-3 py-2 border border-amber-500/10">
-                <Lightbulb className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
-                <span className="text-xs text-amber-600">{activeStep.tip}</span>
+              <div className="flex items-start gap-2 bg-[#C97A3D]/5 rounded-lg px-3 py-2 border border-[#C97A3D]/10">
+                <Lightbulb className="w-3.5 h-3.5 text-[#C97A3D] shrink-0 mt-0.5" />
+                <span className="text-xs text-[#275255]">{activeStep.tip}</span>
               </div>
             )}
 

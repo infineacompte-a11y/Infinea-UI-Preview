@@ -45,10 +45,10 @@ import { toast } from "sonner";
 
 // ─── Constants ──────────────────────────────────────────
 const TIME_OF_DAY = [
-  { value: "morning", label: "Matin", icon: Sunrise, color: "text-amber-500 bg-amber-500/10 border-amber-500/20" },
-  { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-orange-500 bg-orange-500/10 border-orange-500/20" },
+  { value: "morning", label: "Matin", icon: Sunrise, color: "text-[#C97A3D] bg-[#C97A3D]/10 border-[#C97A3D]/20" },
+  { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#D4956B] bg-[#D4956B]/10 border-[#D4956B]/20" },
   { value: "evening", label: "Soir", icon: Moon, color: "text-brand-teal bg-brand-teal/10 border-brand-teal/20" },
-  { value: "anytime", label: "Flexible", icon: Infinity, color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20" },
+  { value: "anytime", label: "Flexible", icon: Infinity, color: "text-[#5DB786] bg-[#5DB786]/10 border-[#5DB786]/20" },
 ];
 
 const FREQUENCY_OPTIONS = [
@@ -124,7 +124,7 @@ function WeekHeatmap({ completionLog = [] }) {
       {days.map((day) => (
         <div key={day.key} className="flex flex-col items-center gap-0.5">
           <div className={`w-4 h-4 rounded-sm transition-colors ${
-            day.done ? "bg-emerald-500" : day.isToday ? "bg-muted border border-border" : "bg-muted/50"
+            day.done ? "bg-[#5DB786]" : day.isToday ? "bg-muted border border-border" : "bg-muted/50"
           }`} />
           <span className={`text-[8px] ${day.isToday ? "text-foreground font-bold" : "text-muted-foreground/50"}`}>
             {day.label}
@@ -199,7 +199,7 @@ function ExecutionDialog({ routine, open, onClose, onComplete }) {
           <div className="flex items-center gap-1.5 mb-4">
             {items.map((_, i) => (
               <div key={i} className={`flex-1 h-1.5 rounded-full transition-colors ${
-                i < currentStep ? "bg-emerald-500" : i === currentStep ? "bg-primary" : "bg-muted"
+                i < currentStep ? "bg-[#5DB786]" : i === currentStep ? "bg-primary" : "bg-muted"
               }`} />
             ))}
           </div>
@@ -215,10 +215,10 @@ function ExecutionDialog({ routine, open, onClose, onComplete }) {
 
           {/* Timer */}
           <div className="text-center mb-4">
-            <p className={`text-4xl font-bold tabular-nums ${isOvertime ? "text-orange-500" : "text-foreground"}`}>
+            <p className={`text-4xl font-bold tabular-nums ${isOvertime ? "text-[#D4956B]" : "text-foreground"}`}>
               {formatTime(timer)}
             </p>
-            <Progress value={progress} className={`h-2 mt-3 ${isOvertime ? "[&>div]:bg-orange-500" : ""}`} />
+            <Progress value={progress} className={`h-2 mt-3 ${isOvertime ? "[&>div]:bg-[#D4956B]" : ""}`} />
           </div>
 
           {/* Controls */}
@@ -278,7 +278,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
 
   return (
     <Card className={`p-5 transition-all ${
-      isDoneToday ? "border-emerald-500/30 bg-emerald-500/3" :
+      isDoneToday ? "border-[#5DB786]/30 bg-[#5DB786]/3" :
       routine.is_active ? "hover:border-primary/30" : "opacity-60"
     }`}>
       {/* Header row */}
@@ -294,7 +294,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
               {freqLabel(routine.frequency)}
             </Badge>
             {isDoneToday && (
-              <Badge variant="outline" className="text-[10px] bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+              <Badge variant="outline" className="text-[10px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20">
                 <CheckCircle2 className="w-2.5 h-2.5 mr-0.5" />
                 Fait
               </Badge>
@@ -317,7 +317,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
             className="p-1.5 rounded-lg hover:bg-muted/50 transition-colors"
             title={routine.is_active ? "Mettre en pause" : "Activer"}>
             {routine.is_active
-              ? <ToggleRight className="w-5 h-5 text-emerald-500" />
+              ? <ToggleRight className="w-5 h-5 text-[#5DB786]" />
               : <ToggleLeft className="w-5 h-5 text-muted-foreground" />}
           </button>
           <button onClick={(e) => { e.stopPropagation(); onEdit(); }}
@@ -332,7 +332,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
         <div className="flex items-center gap-3">
           {streak > 0 && (
             <div className="flex items-center gap-1">
-              <Flame className={`w-4 h-4 ${streak >= 7 ? "text-orange-500" : "text-orange-400"}`} />
+              <Flame className={`w-4 h-4 ${streak >= 7 ? "text-[#D4956B]" : "text-[#D4956B]"}`} />
               <span className="text-sm font-bold tabular-nums">{streak}</span>
               <span className="text-[10px] text-muted-foreground">jours</span>
             </div>
@@ -376,7 +376,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
           </div>
           {routine.times_completed > 0 && (
             <div className="flex items-center gap-1">
-              <Trophy className="w-3 h-3 text-amber-500" />
+              <Trophy className="w-3 h-3 text-[#C97A3D]" />
               <span>{routine.times_completed}x</span>
             </div>
           )}
@@ -392,7 +392,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch }) {
           )}
           {!isDoneToday && routine.is_active && (
             <Button size="sm" variant="outline"
-              className="h-7 text-xs gap-1 border-emerald-500/30 text-emerald-600 hover:bg-emerald-500/10"
+              className="h-7 text-xs gap-1 border-[#5DB786]/30 text-[#5DB786] hover:bg-[#5DB786]/10"
               onClick={(e) => { e.stopPropagation(); onComplete(); }}>
               <CheckCircle2 className="w-3 h-3" />
               Fait
@@ -617,20 +617,20 @@ export default function RoutinesPage() {
             <Card className="p-3 mb-5 flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5 text-sm">
-                  <CheckCircle2 className={`w-4 h-4 ${doneToday === activeRoutines.length ? "text-emerald-500" : "text-muted-foreground"}`} />
+                  <CheckCircle2 className={`w-4 h-4 ${doneToday === activeRoutines.length ? "text-[#5DB786]" : "text-muted-foreground"}`} />
                   <span className="font-medium tabular-nums">{doneToday}/{activeRoutines.length}</span>
                   <span className="text-xs text-muted-foreground">aujourd'hui</span>
                 </div>
                 {totalStreak > 0 && (
                   <div className="flex items-center gap-1.5 text-sm">
-                    <Flame className="w-4 h-4 text-orange-500" />
+                    <Flame className="w-4 h-4 text-[#D4956B]" />
                     <span className="font-medium tabular-nums">{totalStreak}</span>
                     <span className="text-xs text-muted-foreground">meilleur streak</span>
                   </div>
                 )}
               </div>
               {doneToday === activeRoutines.length && activeRoutines.length > 0 && (
-                <Badge className="text-[10px] bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                <Badge className="text-[10px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20">
                   <Sparkles className="w-2.5 h-2.5 mr-0.5" />
                   Journée parfaite
                 </Badge>
@@ -692,10 +692,10 @@ export default function RoutinesPage() {
               )}
 
               {!canCreate && !isPremium && (
-                <Card className="p-4 mt-4 border-amber-500/20 bg-amber-500/5 text-center">
-                  <p className="text-sm text-amber-600 mb-2">Limite de {maxRoutines} habitudes atteinte</p>
+                <Card className="p-4 mt-4 border-[#C97A3D]/20 bg-[#C97A3D]/5 text-center">
+                  <p className="text-sm text-[#275255] mb-2">Limite de {maxRoutines} habitudes atteinte</p>
                   <Button variant="outline" size="sm"
-                    className="border-amber-500/30 text-amber-600 hover:bg-amber-500/10"
+                    className="border-[#C97A3D]/30 text-[#275255] hover:bg-[#C97A3D]/10"
                     onClick={() => window.location.href = "/pricing"}>
                     <Trophy className="w-3.5 h-3.5 mr-1.5" />
                     Passer en Premium
@@ -831,7 +831,7 @@ export default function RoutinesPage() {
                           <span className="flex-1 text-sm truncate">{item.title}</span>
                           <span className="text-xs text-muted-foreground shrink-0">{item.duration_minutes} min</span>
                           <button type="button" onClick={() => removeItem(idx)}
-                            className="p-1 rounded hover:bg-red-500/10 text-muted-foreground hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100">
+                            className="p-1 rounded hover:bg-[#E48C75]/10 text-muted-foreground hover:text-[#E48C75] transition-colors opacity-0 group-hover:opacity-100">
                             <X className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -863,7 +863,7 @@ export default function RoutinesPage() {
 
               <DialogFooter className="flex-col sm:flex-row gap-2">
                 {editingRoutine && (
-                  <Button variant="outline" className="text-red-500 border-red-500/30 hover:bg-red-500/10 sm:mr-auto"
+                  <Button variant="outline" className="text-[#E48C75] border-red-500/30 hover:bg-[#E48C75]/10 sm:mr-auto"
                     onClick={() => { setDeleteConfirm(editingRoutine.routine_id); setShowDialog(false); }}>
                     <Trash2 className="w-4 h-4 mr-1.5" />
                     Supprimer

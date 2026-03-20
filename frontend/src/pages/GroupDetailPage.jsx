@@ -223,11 +223,11 @@ export default function GroupDetailPage() {
                     <div
                       className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                         i === 0
-                          ? "bg-amber-500/20 text-amber-400"
+                          ? "bg-[#C97A3D]/20 text-[#C97A3D]"
                           : i === 1
                             ? "bg-gray-400/20 text-gray-300"
                             : i === 2
-                              ? "bg-orange-600/20 text-orange-400"
+                              ? "bg-[#D4956B]/20 text-[#D4956B]"
                               : "bg-white/5 text-white/40"
                       }`}
                     >
@@ -253,13 +253,13 @@ export default function GroupDetailPage() {
                       <div className="text-foreground text-sm font-medium truncate flex items-center gap-1.5">
                         {member.name || "Membre"}
                         {member.role === "owner" && (
-                          <Crown className="w-3 h-3 text-amber-400" />
+                          <Crown className="w-5 h-5 text-[#459492]" />
                         )}
                       </div>
                       <div className="flex items-center gap-3 text-muted-foreground text-xs mt-0.5">
                         {member.stats?.streak_days > 0 && (
                           <span className="flex items-center gap-1">
-                            <Flame className="w-3 h-3 text-orange-400" />
+                            <Flame className="w-3 h-3 text-[#D4956B]" />
                             {member.stats.streak_days}j
                           </span>
                         )}

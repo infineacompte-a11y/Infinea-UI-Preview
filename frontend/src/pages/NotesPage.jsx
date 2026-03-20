@@ -53,17 +53,17 @@ const categoryLabels = {
 };
 
 const categoryColors = {
-  learning: "text-blue-500 bg-blue-500/10",
-  productivity: "text-amber-500 bg-amber-500/10",
-  well_being: "text-emerald-500 bg-emerald-500/10",
+  learning: "text-[#2F7DBA] bg-[#2F7DBA]/10",
+  productivity: "text-[#C97A3D] bg-[#C97A3D]/10",
+  well_being: "text-[#5DB786] bg-[#5DB786]/10",
   creativity: "text-brand-secondary bg-brand-secondary/10",
-  fitness: "text-red-500 bg-red-500/10",
-  mindfulness: "text-cyan-500 bg-cyan-500/10",
+  fitness: "text-[#E48C75] bg-[#E48C75]/10",
+  mindfulness: "text-[#459492] bg-[#459492]/10",
   leadership: "text-brand-teal bg-brand-teal/10",
-  finance: "text-green-500 bg-green-500/10",
-  relations: "text-pink-500 bg-pink-500/10",
-  mental_health: "text-teal-500 bg-teal-500/10",
-  entrepreneurship: "text-orange-500 bg-orange-500/10",
+  finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
+  relations: "text-[#C4806E] bg-[#C4806E]/10",
+  mental_health: "text-[#55B3AE] bg-[#55B3AE]/10",
+  entrepreneurship: "text-[#D4956B] bg-[#D4956B]/10",
 };
 
 const NOTES_TABS = [
@@ -226,12 +226,12 @@ export default function NotesPage() {
                 <div className="text-[10px] text-muted-foreground">Notes totales</div>
               </Card>
               <Card className="p-3 text-center">
-                <TrendingUp className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
+                <TrendingUp className="w-4 h-4 text-[#5DB786] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.notes_this_week || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Cette semaine</div>
               </Card>
               <Card className="p-3 text-center">
-                <Sparkles className="w-4 h-4 text-amber-500 mx-auto mb-1" />
+                <Sparkles className="w-4 h-4 text-[#C97A3D] mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.avg_note_length || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Car. moyens</div>
               </Card>
@@ -318,7 +318,7 @@ export default function NotesPage() {
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="sm:opacity-0 sm:group-hover:opacity-100 transition-opacity shrink-0 text-muted-foreground hover:text-red-500"
+                                className="sm:opacity-0 sm:group-hover:opacity-100 transition-opacity shrink-0 text-muted-foreground hover:text-[#E48C75]"
                                 onClick={() => setDeleteTarget(note.session_id)}
                               >
                                 <Trash2 className="w-4 h-4" />
@@ -397,13 +397,13 @@ export default function NotesPage() {
                     <div className="space-y-4">
                       {/* Key Insight */}
                       {analysis.analysis.key_insight && (
-                        <Card className="p-4 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent">
+                        <Card className="p-4 border-[#C97A3D]/20 bg-gradient-to-br from-[#C97A3D]/5 to-transparent">
                           <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center shrink-0">
-                              <Lightbulb className="w-4 h-4 text-amber-500" />
+                            <div className="w-8 h-8 rounded-lg bg-[#C97A3D]/10 flex items-center justify-center shrink-0">
+                              <Lightbulb className="w-4 h-4 text-[#C97A3D]" />
                             </div>
                             <div>
-                              <span className="text-xs font-semibold text-amber-500 uppercase tracking-wide">Observation clé</span>
+                              <span className="text-xs font-semibold text-[#C97A3D] uppercase tracking-wide">Observation clé</span>
                               <p className="text-sm mt-1 text-foreground/80 leading-relaxed">{analysis.analysis.key_insight}</p>
                             </div>
                           </div>
@@ -415,13 +415,13 @@ export default function NotesPage() {
                         {analysis.analysis.patterns?.length > 0 && (
                           <Card className="p-4">
                             <div className="flex items-center gap-2 mb-3">
-                              <TrendingUp className="w-4 h-4 text-blue-500" />
+                              <TrendingUp className="w-4 h-4 text-[#2F7DBA]" />
                               <span className="text-sm font-semibold">Patterns identifiés</span>
                             </div>
                             <div className="space-y-2">
                               {analysis.analysis.patterns.map((p, i) => (
                                 <p key={i} className="text-xs text-foreground/70 leading-relaxed flex items-start gap-2">
-                                  <span className="text-blue-500 mt-0.5 shrink-0">•</span>
+                                  <span className="text-[#2F7DBA] mt-0.5 shrink-0">•</span>
                                   {p}
                                 </p>
                               ))}
@@ -430,15 +430,15 @@ export default function NotesPage() {
                         )}
 
                         {analysis.analysis.strengths?.length > 0 && (
-                          <Card className="p-4 border-emerald-500/10">
+                          <Card className="p-4 border-[#5DB786]/10">
                             <div className="flex items-center gap-2 mb-3">
-                              <Zap className="w-4 h-4 text-emerald-500" />
-                              <span className="text-sm font-semibold text-emerald-500">Points forts</span>
+                              <Zap className="w-4 h-4 text-[#5DB786]" />
+                              <span className="text-sm font-semibold text-[#5DB786]">Points forts</span>
                             </div>
                             <div className="space-y-2">
                               {analysis.analysis.strengths.map((s, i) => (
                                 <p key={i} className="text-xs text-foreground/70 leading-relaxed flex items-start gap-2">
-                                  <span className="text-emerald-500 mt-0.5 shrink-0">•</span>
+                                  <span className="text-[#5DB786] mt-0.5 shrink-0">•</span>
                                   {s}
                                 </p>
                               ))}
@@ -451,13 +451,13 @@ export default function NotesPage() {
                       {analysis.analysis.growth_areas?.length > 0 && (
                         <Card className="p-4">
                           <div className="flex items-center gap-2 mb-3">
-                            <Target className="w-4 h-4 text-orange-500" />
-                            <span className="text-sm font-semibold text-orange-500">Axes de progression</span>
+                            <Target className="w-4 h-4 text-[#D4956B]" />
+                            <span className="text-sm font-semibold text-[#D4956B]">Axes de progression</span>
                           </div>
                           <div className="space-y-2">
                             {analysis.analysis.growth_areas.map((g, i) => (
                               <p key={i} className="text-xs text-foreground/70 leading-relaxed flex items-start gap-2">
-                                <span className="text-orange-500 mt-0.5 shrink-0">→</span>
+                                <span className="text-[#D4956B] mt-0.5 shrink-0">→</span>
                                 {g}
                               </p>
                             ))}

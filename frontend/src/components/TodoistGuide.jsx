@@ -102,8 +102,8 @@ export default function TodoistGuide({ open, onOpenChange, onConnected }) {
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
-              <ListTodo className="w-4 h-4 text-red-500" />
+            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center">
+              <ListTodo className="w-4 h-4 text-[#E48C75]" />
             </div>
             Connecter Todoist
           </DialogTitle>
@@ -119,7 +119,7 @@ export default function TodoistGuide({ open, onOpenChange, onConnected }) {
               key={i}
               className={`h-1.5 flex-1 rounded-full transition-colors ${
                 i < currentStep
-                  ? "bg-emerald-500"
+                  ? "bg-[#5DB786]"
                   : i === currentStep
                   ? "bg-primary"
                   : "bg-muted"
@@ -175,7 +175,7 @@ export default function TodoistGuide({ open, onOpenChange, onConnected }) {
                     </p>
                   )}
                   {isValidToken && (
-                    <p className="text-xs text-emerald-500 flex items-center gap-1">
+                    <p className="text-xs text-[#5DB786] flex items-center gap-1">
                       <CheckCircle2 className="w-3 h-3" />
                       Format valide
                     </p>
