@@ -169,7 +169,7 @@ export default function OnboardingPage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="flex items-center justify-between px-4 h-16">
-          <InFineaLogo size={32} withText />
+          <InFineaLogo size={32} withText animate />
           <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
             Passer
           </Button>

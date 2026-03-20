@@ -93,7 +93,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md relative">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center mb-8">
-          <InFineaLogo size={40} withText />
+          <InFineaLogo size={40} withText animate />
         </Link>
         <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-[#459492]/30 to-transparent mb-6" />
 

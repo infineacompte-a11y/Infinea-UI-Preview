@@ -88,6 +88,20 @@ code {
     }
 }
 
+/* Override browser autofill yellow background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #1A1A1A inset !important;
+    -webkit-text-fill-color: #F2F2F2 !important;
+    caret-color: #F2F2F2 !important;
+    transition: background-color 5000s ease-in-out 0s;
+    border-color: rgba(69, 148, 146, 0.3) !important;
+}
+
 /* Custom scrollbar — refined dark */
 ::-webkit-scrollbar {
     width: 6px;
