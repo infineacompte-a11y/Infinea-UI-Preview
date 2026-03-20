@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Timer,
   ChevronRight,
   ChevronLeft,
   Target,
@@ -22,6 +21,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { API, useAuth, authFetch } from "@/App";
+import InFineaLogo from "@/components/InFineaLogo";
 
 const STEPS = [
   { id: "goals", title: "Vos objectifs", subtitle: "Qu'aimeriez-vous améliorer ?" },
@@ -50,17 +50,17 @@ const ENERGY_LEVELS = [
 ];
 
 const INTERESTS = [
-  { id: "learning", label: "Apprentissage", color: "text-blue-500 bg-blue-500/10" },
-  { id: "productivity", label: "Productivité", color: "text-amber-500 bg-amber-500/10" },
-  { id: "well_being", label: "Bien-être", color: "text-emerald-500 bg-emerald-500/10" },
-  { id: "creativity", label: "Créativité", color: "text-brand-secondary bg-brand-secondary/10" },
-  { id: "fitness", label: "Forme physique", color: "text-red-500 bg-red-500/10" },
-  { id: "mindfulness", label: "Pleine conscience", color: "text-cyan-500 bg-cyan-500/10" },
-  { id: "leadership", label: "Leadership", color: "text-brand-teal bg-brand-teal/10" },
-  { id: "finance", label: "Finance", color: "text-green-500 bg-green-500/10" },
-  { id: "relations", label: "Relations", color: "text-pink-500 bg-pink-500/10" },
-  { id: "mental_health", label: "Santé mentale", color: "text-teal-500 bg-teal-500/10" },
-  { id: "entrepreneurship", label: "Entrepreneuriat", color: "text-orange-500 bg-orange-500/10" },
+  { id: "learning", label: "Apprentissage", color: "text-[#2F7DBA] bg-[#2F7DBA]/10" },
+  { id: "productivity", label: "Productivité", color: "text-[#C97A3D] bg-[#C97A3D]/10" },
+  { id: "well_being", label: "Bien-être", color: "text-[#5DB786] bg-[#5DB786]/10" },
+  { id: "creativity", label: "Créativité", color: "text-[#55B3AE] bg-[#55B3AE]/10" },
+  { id: "fitness", label: "Forme physique", color: "text-[#E48C75] bg-[#E48C75]/10" },
+  { id: "mindfulness", label: "Pleine conscience", color: "text-[#459492] bg-[#459492]/10" },
+  { id: "leadership", label: "Leadership", color: "text-[#7B8FA1] bg-[#7B8FA1]/10" },
+  { id: "finance", label: "Finance", color: "text-[#2E9B6A] bg-[#2E9B6A]/10" },
+  { id: "relations", label: "Relations", color: "text-[#C4806E] bg-[#C4806E]/10" },
+  { id: "mental_health", label: "Santé mentale", color: "text-[#6EAAA8] bg-[#6EAAA8]/10" },
+  { id: "entrepreneurship", label: "Entrepreneuriat", color: "text-[#D4956B] bg-[#D4956B]/10" },
 ];
 
 export default function OnboardingPage() {
@@ -144,8 +144,8 @@ export default function OnboardingPage() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center animate-fade-in">
-          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-            <Sparkles className="w-10 h-10 text-primary" />
+          <div className="w-20 h-20 rounded-full bg-[#459492]/10 flex items-center justify-center mx-auto mb-6">
+            <Sparkles className="w-10 h-10 text-[#459492]" />
           </div>
           <h1 className="font-heading text-3xl font-bold mb-4">
             Bienvenue, {user?.name?.split(" ")[0] || "Utilisateur"} !
@@ -169,12 +169,7 @@ export default function OnboardingPage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="flex items-center justify-between px-4 h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Timer className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-heading text-lg font-semibold">InFinea</span>
-          </div>
+          <InFineaLogo size={32} withText />
           <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
             Passer
           </Button>
@@ -184,7 +179,7 @@ export default function OnboardingPage() {
       {/* Progress Bar */}
       <div className="fixed top-16 left-0 right-0 z-40 h-1 bg-border">
         <div
-          className="h-full bg-primary transition-all duration-300"
+          className="h-full bg-[#459492] transition-all duration-300"
           style={{ width: `${((currentStep + 1) / STEPS.length) * 100}%` }}
         />
       </div>
@@ -213,18 +208,18 @@ export default function OnboardingPage() {
                   <Card
                     key={goal.id}
                     className={`cursor-pointer transition-all ${
-                      selected ? "border-primary bg-primary/5" : "hover:border-primary/50"
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
                     }`}
                     onClick={() => toggleArrayItem("goals", goal.id)}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                        selected ? "bg-primary text-primary-foreground" : "bg-muted"
+                        selected ? "bg-[#459492] text-white" : "bg-muted"
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
                       <span className="flex-1 font-medium">{goal.label}</span>
-                      {selected && <Check className="w-5 h-5 text-primary" />}
+                      {selected && <Check className="w-5 h-5 text-[#459492]" />}
                     </CardContent>
                   </Card>
                 );
@@ -241,13 +236,13 @@ export default function OnboardingPage() {
                   <Card
                     key={slot.id}
                     className={`cursor-pointer transition-all ${
-                      selected ? "border-primary bg-primary/5" : "hover:border-primary/50"
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
                     }`}
                     onClick={() => toggleArrayItem("preferred_times", slot.id)}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                        selected ? "bg-primary text-primary-foreground" : "bg-muted"
+                        selected ? "bg-[#459492] text-white" : "bg-muted"
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
@@ -255,7 +250,7 @@ export default function OnboardingPage() {
                         <p className="font-medium">{slot.label}</p>
                         <p className="text-sm text-muted-foreground">{slot.sublabel}</p>
                       </div>
-                      {selected && <Check className="w-5 h-5 text-primary" />}
+                      {selected && <Check className="w-5 h-5 text-[#459492]" />}
                     </CardContent>
                   </Card>
                 );
@@ -272,13 +267,13 @@ export default function OnboardingPage() {
                   <Card
                     key={level.id}
                     className={`cursor-pointer transition-all ${
-                      selected ? "border-primary bg-primary/5" : "hover:border-primary/50"
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
                     }`}
                     onClick={() => setProfile((p) => ({ ...p, energy_level: level.id }))}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                        selected ? "bg-primary text-primary-foreground" : "bg-muted"
+                        selected ? "bg-[#459492] text-white" : "bg-muted"
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
@@ -286,7 +281,7 @@ export default function OnboardingPage() {
                         <p className="font-medium">{level.label}</p>
                         <p className="text-sm text-muted-foreground">{level.description}</p>
                       </div>
-                      {selected && <Check className="w-5 h-5 text-primary" />}
+                      {selected && <Check className="w-5 h-5 text-[#459492]" />}
                     </CardContent>
                   </Card>
                 );
@@ -302,7 +297,7 @@ export default function OnboardingPage() {
                   <Card
                     key={interest.id}
                     className={`cursor-pointer transition-all ${
-                      selected ? "border-primary bg-primary/5" : "hover:border-primary/50"
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
                     }`}
                     onClick={() => toggleArrayItem("interests", interest.id)}
                   >
