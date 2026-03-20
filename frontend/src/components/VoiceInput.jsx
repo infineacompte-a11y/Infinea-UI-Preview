@@ -230,10 +230,10 @@ export default function VoiceInput({
       {isListening ? (
         <span className="flex items-center gap-1.5">
           <span className="flex items-center gap-0.5">
-            <span className="w-1 h-3 bg-white/80 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
+            <span className="w-1 h-3 bg-black/50 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
             <span className="w-1 h-4 bg-white/90 rounded-full animate-pulse" style={{ animationDelay: "150ms" }} />
             <span className="w-1 h-2 bg-white/70 rounded-full animate-pulse" style={{ animationDelay: "300ms" }} />
-            <span className="w-1 h-3.5 bg-white/85 rounded-full animate-pulse" style={{ animationDelay: "100ms" }} />
+            <span className="w-1 h-3.5 bg-black/55 rounded-full animate-pulse" style={{ animationDelay: "100ms" }} />
           </span>
           Écoute...
         </span>

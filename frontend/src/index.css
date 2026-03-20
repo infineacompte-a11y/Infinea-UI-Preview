@@ -6,54 +6,54 @@
 
 @layer base {
     :root {
-        /* === InFinea Design System v1.0 — Dark Mode === */
+        /* === InFinea Design System v2.0 — Light Mode Premium === */
 
         /* Surfaces & Backgrounds */
-        --background: 0 0% 7%;          /* #121212 */
-        --foreground: 0 0% 95%;          /* #F2F2F2 */
-        --card: 0 0% 10%;               /* #1A1A1A */
-        --card-foreground: 0 0% 95%;     /* #F2F2F2 */
-        --popover: 0 0% 10%;            /* #1A1A1A */
-        --popover-foreground: 0 0% 95%;  /* #F2F2F2 */
+        --background: 210 20% 98%;        /* #F8FAFB — warm off-white */
+        --foreground: 200 25% 10%;         /* #141E24 — rich dark */
+        --card: 0 0% 100%;                /* #FFFFFF */
+        --card-foreground: 200 25% 10%;    /* #141E24 */
+        --popover: 0 0% 100%;             /* #FFFFFF */
+        --popover-foreground: 200 25% 10%; /* #141E24 */
 
         /* Primary — #275255 (dark teal) */
         --primary: 184 37% 24%;
         --primary-foreground: 0 0% 100%;
 
-        /* Secondary — muted surface */
-        --secondary: 180 5% 14%;
-        --secondary-foreground: 0 0% 95%;
+        /* Secondary — soft teal surface */
+        --secondary: 178 25% 95%;          /* Très léger teal */
+        --secondary-foreground: 184 37% 24%;
 
         /* Muted — subdued elements */
-        --muted: 180 3% 14%;
-        --muted-foreground: 0 0% 60%;    /* #9A9A9A */
+        --muted: 210 15% 95%;              /* #F0F2F4 */
+        --muted-foreground: 210 10% 45%;   /* #667085 */
 
         /* Accent — Brand Teal #459492 */
         --accent: 178 36% 43%;
         --accent-foreground: 0 0% 100%;
 
-        /* Destructive — #B45454 */
-        --destructive: 0 39% 52%;
-        --destructive-foreground: 0 0% 98%;
+        /* Destructive — richer red */
+        --destructive: 0 72% 51%;          /* #DC2626 */
+        --destructive-foreground: 0 0% 100%;
 
         /* Borders & Inputs */
-        --border: 0 0% 15%;             /* #262626 */
-        --input: 0 0% 15%;
-        --ring: 178 36% 43%;            /* Brand Teal focus ring */
+        --border: 210 15% 90%;             /* #E2E6EA — soft border */
+        --input: 210 15% 90%;
+        --ring: 178 36% 43%;               /* Brand Teal focus ring */
 
         /* Charts — brand-aligned palette */
-        --chart-1: 178 36% 43%;         /* Brand Teal #459492 */
-        --chart-2: 147 38% 54%;         /* Support Green #5DB786 */
-        --chart-3: 177 38% 52%;         /* Secondary Teal #55B3AE */
-        --chart-4: 12 67% 68%;          /* Accent Coral #E48C75 */
-        --chart-5: 184 37% 24%;         /* Primary UI #275255 */
+        --chart-1: 178 36% 43%;            /* Brand Teal #459492 */
+        --chart-2: 147 38% 54%;            /* Support Green #5DB786 */
+        --chart-3: 177 38% 52%;            /* Secondary Teal #55B3AE */
+        --chart-4: 12 67% 68%;             /* Accent Coral #E48C75 */
+        --chart-5: 184 37% 24%;            /* Primary UI #275255 */
 
         --radius: 0.75rem;
 
         /* Category semantic colors — brand-aligned */
-        --learning: 178 36% 43%;         /* #459492 — Brand Teal */
-        --productivity: 12 67% 68%;      /* #E48C75 — Accent Coral */
-        --well-being: 147 38% 54%;       /* #5DB786 — Support Green */
+        --learning: 178 36% 43%;
+        --productivity: 12 67% 68%;
+        --well-being: 147 38% 54%;
     }
 }
 
@@ -67,12 +67,11 @@ body {
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #121212;
-    color: #F2F2F2;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 code {
@@ -88,42 +87,42 @@ code {
     }
 }
 
-/* Override browser autofill yellow background */
+/* Override browser autofill — light mode */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #1A1A1A inset !important;
-    -webkit-text-fill-color: #F2F2F2 !important;
-    caret-color: #F2F2F2 !important;
+    -webkit-box-shadow: 0 0 0 30px #FFFFFF inset !important;
+    -webkit-text-fill-color: #141E24 !important;
+    caret-color: #141E24 !important;
     transition: background-color 5000s ease-in-out 0s;
     border-color: rgba(69, 148, 146, 0.3) !important;
 }
 
-/* Custom scrollbar — refined dark */
+/* Custom scrollbar — refined light */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #121212;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #2a2a2a;
+    background: rgba(0, 0, 0, 0.12);
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #3a3a3a;
+    background: rgba(0, 0, 0, 0.2);
 }
 
-/* Glass morphism — teal-tinted */
+/* Glass morphism — light mode */
 .glass {
-    background: rgba(18, 18, 18, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(69, 148, 146, 0.08);
@@ -175,10 +174,10 @@ select:-webkit-autofill {
 /* Pulse glow — teal */
 @keyframes pulse-glow {
     0%, 100% {
-        box-shadow: 0 0 20px rgba(69, 148, 146, 0.2);
+        box-shadow: 0 0 20px rgba(69, 148, 146, 0.15);
     }
     50% {
-        box-shadow: 0 0 40px rgba(69, 148, 146, 0.35);
+        box-shadow: 0 0 40px rgba(69, 148, 146, 0.25);
     }
 }
 

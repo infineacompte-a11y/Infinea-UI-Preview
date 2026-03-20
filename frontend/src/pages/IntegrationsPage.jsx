@@ -118,7 +118,7 @@ const AVAILABLE_INTEGRATIONS = [
 
 const colorClasses = {
   blue: { bg: "bg-[#459492]/10", text: "text-[#459492]", border: "border-[#459492]/30" },
-  gray: { bg: "bg-[#9A9A9A]/10", text: "text-[#9A9A9A]", border: "border-[#9A9A9A]/30" },
+  gray: { bg: "bg-[#9A9A9A]/10", text: "text-muted-foreground", border: "border-[#9A9A9A]/30" },
   red: { bg: "bg-[#E48C75]/10", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
   purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
   green: { bg: "bg-[#5DB786]/10", text: "text-[#5DB786]", border: "border-[#5DB786]/30" },
@@ -743,7 +743,7 @@ export default function IntegrationsPage() {
             <div className="py-4">
               {selectedIntegration && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
+                  <div className="flex items-center justify-between p-4 rounded-xl bg-black/5">
                     <div>
                       <p className="text-sm text-muted-foreground">Connecté le</p>
                       <p className="font-medium">
@@ -1286,7 +1286,7 @@ export default function IntegrationsPage() {
           <div className="py-4">
             {selectedIntegration && (
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
+                <div className="flex items-center justify-between p-4 rounded-xl bg-black/5">
                   <div>
                     <p className="text-sm text-muted-foreground">Connecté le</p>
                     <p className="font-medium">

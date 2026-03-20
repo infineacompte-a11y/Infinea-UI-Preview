@@ -6,7 +6,7 @@ import InFineaLogo from "@/components/InFineaLogo";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#121212] flex flex-col items-center justify-center px-4 animate-fade-in">
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 animate-fade-in">
       {/* Animated brand logo */}
       <div className="mb-8">
         <InFineaLogo size={64} animate />
@@ -15,15 +15,15 @@ export default function NotFound() {
       {/* 404 number with brand teal accent */}
       <h1 className="font-heading text-8xl sm:text-9xl font-bold tracking-tighter mb-2">
         <span className="text-[#459492]">4</span>
-        <span className="text-[#F2F2F2]/20">0</span>
+        <span className="text-foreground/20">0</span>
         <span className="text-[#459492]">4</span>
       </h1>
 
       {/* Message */}
-      <p className="font-heading text-xl text-[#F2F2F2] mb-2">
+      <p className="font-heading text-xl text-foreground mb-2">
         Page introuvable
       </p>
-      <p className="text-[#9A9A9A] text-sm mb-10 text-center max-w-sm leading-relaxed">
+      <p className="text-muted-foreground text-sm mb-10 text-center max-w-sm leading-relaxed">
         Cette page n'existe pas ou a été déplacée.
         Pas de temps perdu, retourne transformer tes instants.
       </p>
@@ -40,7 +40,7 @@ export default function NotFound() {
       </Link>
 
       {/* Subtle brand footer */}
-      <p className="text-[#9A9A9A]/40 text-xs mt-16">
+      <p className="text-muted-foreground/40 text-xs mt-16">
         InFinea — Chaque instant compte
       </p>
     </div>

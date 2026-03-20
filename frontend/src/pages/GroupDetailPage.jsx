@@ -238,10 +238,10 @@ export default function GroupDetailPage() {
                             i === 0
                               ? "bg-[#E48C75]/20 text-[#E48C75]"
                               : i === 1
-                                ? "bg-[#9A9A9A]/20 text-[#9A9A9A]"
+                                ? "bg-[#9A9A9A]/20 text-muted-foreground"
                                 : i === 2
                                   ? "bg-[#E48C75]/20 text-[#E48C75]"
-                                  : "bg-white/5 text-white/40"
+                                  : "bg-black/5 text-white/40"
                           }`}
                         >
                           {i + 1}

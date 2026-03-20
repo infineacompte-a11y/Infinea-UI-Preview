@@ -254,7 +254,7 @@ export default function LandingPage() {
                   <h3 className="font-heading text-xl font-medium mb-3">{cat.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.examples.map((ex, j) => (
-                      <span key={j} className="px-3 py-1 rounded-full bg-white/5 text-sm text-muted-foreground">
+                      <span key={j} className="px-3 py-1 rounded-full bg-black/5 text-sm text-muted-foreground">
                         {ex}
                       </span>
                     ))}

@@ -429,17 +429,17 @@ export default function B2BDashboard() {
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/8 transition-colors duration-200">
+                  <div className="text-center p-4 rounded-xl bg-black/5 hover:bg-black/5 transition-colors duration-200">
                     <Heart className="w-8 h-8 text-[#5DB786] mx-auto mb-2" />
                     <p className="text-3xl font-heading font-bold text-[#5DB786] tabular-nums">{roi.wellbeingHours}h</p>
                     <p className="text-sm text-muted-foreground">en bien-être ce mois</p>
                   </div>
-                  <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/8 transition-colors duration-200">
+                  <div className="text-center p-4 rounded-xl bg-black/5 hover:bg-black/5 transition-colors duration-200">
                     <TrendingUp className="w-8 h-8 text-[#459492] mx-auto mb-2" />
                     <p className="text-3xl font-heading font-bold text-[#459492] tabular-nums">+{roi.estimatedProductivityGain}%</p>
                     <p className="text-sm text-muted-foreground">productivité estimée</p>
                   </div>
-                  <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/8 transition-colors duration-200">
+                  <div className="text-center p-4 rounded-xl bg-black/5 hover:bg-black/5 transition-colors duration-200">
                     <Trophy className="w-8 h-8 text-[#E48C75] mx-auto mb-2" />
                     <p className="text-3xl font-heading font-bold text-[#E48C75] tabular-nums">{dashboard?.total_sessions || 0}</p>
                     <p className="text-sm text-muted-foreground">sessions complétées</p>
@@ -475,7 +475,7 @@ export default function B2BDashboard() {
                               <stop offset="95%" stopColor="#459492" stopOpacity={0}/>
                             </linearGradient>
                           </defs>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
+                          <CartesianGrid strokeDasharray="3 3" stroke="#E2E6EA" />
                           <XAxis
                             dataKey="_id"
                             tick={{ fill: "#9A9A9A", fontSize: 10 }}
@@ -484,7 +484,7 @@ export default function B2BDashboard() {
                           <YAxis tick={{ fill: "#9A9A9A", fontSize: 12 }} />
                           <Tooltip
                             contentStyle={{
-                              backgroundColor: "#121212",
+                              backgroundColor: "#F8FAFB",
                               border: "1px solid #262626",
                               borderRadius: "12px",
                             }}
@@ -531,7 +531,7 @@ export default function B2BDashboard() {
                             </Pie>
                             <Tooltip
                               contentStyle={{
-                                backgroundColor: "#121212",
+                                backgroundColor: "#F8FAFB",
                                 border: "1px solid #262626",
                                 borderRadius: "12px",
                               }}
@@ -542,7 +542,7 @@ export default function B2BDashboard() {
                           {pieData.map((entry, i) => {
                             const Icon = categoryIcons[Object.keys(categoryLabels).find(k => categoryLabels[k] === entry.name)] || Target;
                             return (
-                              <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-muted/30 transition-all duration-200">
+                              <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-black/5 hover:bg-muted/30 transition-all duration-200">
                                 <div className="flex items-center gap-3">
                                   <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${entry.color}20` }}>
                                     <Icon className="w-5 h-5" style={{ color: entry.color }} />

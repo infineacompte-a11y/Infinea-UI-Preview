@@ -229,12 +229,12 @@ export default function ProgressStats() {
                     {barData.length > 0 ? (
                       <ResponsiveContainer width="100%" height={250}>
                         <BarChart data={barData}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
+                          <CartesianGrid strokeDasharray="3 3" stroke="#E2E6EA" />
                           <XAxis dataKey="name" tick={{ fill: "#9A9A9A", fontSize: 12 }} />
                           <YAxis tick={{ fill: "#9A9A9A", fontSize: 12 }} />
                           <Tooltip
                             contentStyle={{
-                              backgroundColor: "#1A1A1A",
+                              backgroundColor: "#FFFFFF",
                               border: "1px solid #262626",
                               borderRadius: "12px",
                               boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3)",
@@ -275,7 +275,7 @@ export default function ProgressStats() {
                           </Pie>
                           <Tooltip
                             contentStyle={{
-                              backgroundColor: "#1A1A1A",
+                              backgroundColor: "#FFFFFF",
                               border: "1px solid #262626",
                               borderRadius: "12px",
                               boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3)",
@@ -317,7 +317,7 @@ export default function ProgressStats() {
                       {stats.recent_sessions.map((session, i) => (
                         <div
                           key={i}
-                          className="group flex items-center justify-between p-3 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50 hover:bg-muted/50 hover:shadow-sm hover:border-[#459492]/20 transition-all duration-200 opacity-0 animate-fade-in"
+                          className="group flex items-center justify-between p-3 rounded-xl bg-card/50 border border-border/50 hover:bg-muted/50 hover:shadow-sm hover:border-[#459492]/20 transition-all duration-200 opacity-0 animate-fade-in"
                           style={{ animationDelay: `${450 + i * 30}ms`, animationFillMode: "forwards" }}
                         >
                           <div className="flex items-center gap-3">

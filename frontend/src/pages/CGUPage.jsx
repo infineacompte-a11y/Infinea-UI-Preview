@@ -25,11 +25,11 @@ export default function CGUPage() {
       {/* Content */}
       <main className="pt-24 pb-16 px-4 animate-fade-in">
         <div className="max-w-3xl mx-auto prose prose-invert prose-sm">
-          <h1 className="font-heading text-3xl font-bold mb-2 text-[#F2F2F2]">Conditions Générales d'Utilisation</h1>
+          <h1 className="font-heading text-3xl font-bold mb-2 text-foreground">Conditions Générales d'Utilisation</h1>
           <p className="text-muted-foreground mb-8">Dernière mise à jour : 7 mars 2026</p>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">1. Objet</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">1. Objet</h2>
             <p className="text-muted-foreground leading-relaxed">
               Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») régissent l'accès et l'utilisation de la plateforme InFinea, accessible à l'adresse{" "}
               <a href="https://infinea.vercel.app" className="text-[#459492] hover:text-[#55B3AE] hover:underline transition-colors">infinea.vercel.app</a>.
@@ -38,14 +38,14 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">2. Acceptation des CGU</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">2. Acceptation des CGU</h2>
             <p className="text-muted-foreground leading-relaxed">
               L'inscription et l'utilisation du service impliquent l'acceptation pleine et entière des présentes CGU. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le service. InFinea se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs seront informés de toute modification substantielle par email ou notification dans l'application.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">3. Accès au service</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">3. Accès au service</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">
               L'accès au service nécessite la création d'un compte utilisateur. Pour créer un compte, vous devez :
             </p>
@@ -61,7 +61,7 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">4. Description du service</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">4. Description du service</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">InFinea propose les fonctionnalités suivantes :</p>
             <ul className="text-muted-foreground space-y-2 list-disc list-inside">
               <li><strong className="text-foreground">Micro-actions :</strong> catalogue de plus de 300 actions courtes (2-15 minutes) dans les domaines de l'apprentissage, de la productivité et du bien-être</li>
@@ -73,7 +73,7 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">5. Offres et tarifs</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">5. Offres et tarifs</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">InFinea propose deux niveaux de service :</p>
             <ul className="text-muted-foreground space-y-2 list-disc list-inside">
               <li><strong className="text-foreground">Offre Gratuite :</strong> accès aux micro-actions de base, suggestions IA limitées, suivi de progression</li>
@@ -85,7 +85,7 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">6. Obligations de l'utilisateur</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">6. Obligations de l'utilisateur</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">En utilisant InFinea, vous vous engagez à :</p>
             <ul className="text-muted-foreground space-y-2 list-disc list-inside">
               <li>Fournir des informations exactes lors de l'inscription</li>
@@ -97,7 +97,7 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">7. Propriété intellectuelle</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">7. Propriété intellectuelle</h2>
             <p className="text-muted-foreground leading-relaxed">
               L'ensemble des éléments constituant le service InFinea (textes, graphismes, logiciels, images, marques, logos) sont protégés par le droit de la propriété intellectuelle. Toute reproduction, représentation ou exploitation non autorisée est interdite.
               Les contenus générés par l'IA à destination de l'utilisateur restent à l'usage personnel de celui-ci.
@@ -105,7 +105,7 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">8. Responsabilité</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">8. Responsabilité</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">
               InFinea s'efforce d'assurer la disponibilité et le bon fonctionnement du service. Toutefois :
             </p>
@@ -118,7 +118,7 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">9. Données personnelles</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">9. Données personnelles</h2>
             <p className="text-muted-foreground leading-relaxed">
               Le traitement de vos données personnelles est détaillé dans notre{" "}
               <Link to="/privacy" className="text-[#459492] hover:text-[#55B3AE] hover:underline transition-colors">Politique de Confidentialité</Link>.
@@ -127,28 +127,28 @@ export default function CGUPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">10. Résiliation</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">10. Résiliation</h2>
             <p className="text-muted-foreground leading-relaxed">
               Vous pouvez supprimer votre compte à tout moment depuis les paramètres de votre profil. InFinea se réserve le droit de suspendre ou supprimer un compte en cas de violation des présentes CGU, après notification préalable sauf cas d'urgence.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">11. Modification des CGU</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">11. Modification des CGU</h2>
             <p className="text-muted-foreground leading-relaxed">
               InFinea se réserve le droit de modifier les présentes CGU à tout moment. Les modifications prennent effet dès leur publication. L'utilisation continue du service après modification vaut acceptation des nouvelles CGU. En cas de modification substantielle, les utilisateurs seront informés par email au moins 30 jours avant l'entrée en vigueur.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">12. Droit applicable</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">12. Droit applicable</h2>
             <p className="text-muted-foreground leading-relaxed">
               Les présentes CGU sont régies par le droit français. En cas de litige, les parties s'engagent à rechercher une solution amiable. À défaut, les tribunaux français seront seuls compétents.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#F2F2F2]">13. Contact</h2>
+            <h2 className="font-heading text-xl font-semibold mb-3 text-foreground">13. Contact</h2>
             <p className="text-muted-foreground leading-relaxed">
               Pour toute question relative aux présentes CGU, contactez-nous à{" "}
               <a href="mailto:infinea.compte@gmail.com" className="text-[#459492] hover:text-[#55B3AE] hover:underline transition-colors">infinea.compte@gmail.com</a>.
@@ -158,14 +158,14 @@ export default function CGUPage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-[#262626]">
+      <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <InFineaLogo size={28} withText />
-          <div className="flex items-center gap-6 text-sm text-[#9A9A9A]">
+          <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <span>© 2025-2026 InFinea</span>
-            <Link to="/privacy" className="hover:text-[#F2F2F2] transition-colors">Confidentialité</Link>
+            <Link to="/privacy" className="hover:text-foreground transition-colors">Confidentialité</Link>
             <span className="text-[#459492]">CGU</span>
-            <a href="mailto:infinea.compte@gmail.com" className="hover:text-[#F2F2F2] transition-colors">Contact</a>
+            <a href="mailto:infinea.compte@gmail.com" className="hover:text-foreground transition-colors">Contact</a>
           </div>
         </div>
       </footer>

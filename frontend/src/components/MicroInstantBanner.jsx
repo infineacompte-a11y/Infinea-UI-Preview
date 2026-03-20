@@ -205,7 +205,7 @@ export default function MicroInstantBanner() {
             onClick={handleDismiss}
             className={`p-1 rounded-md transition-all duration-200 shrink-0 ${
               isNow
-                ? "text-white/50 hover:text-white hover:bg-white/10"
+                ? "text-white/50 hover:text-white hover:bg-black/5"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
             }`}
           >

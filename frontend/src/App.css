@@ -1,21 +1,21 @@
-/* InFinea Design System — App Styles */
+/* InFinea Design System v2.0 — App Styles (Light Mode Premium) */
 
-/* Hero glow effect — teal brand */
+/* Hero glow effect — soft teal radiance */
 .hero-glow {
-    background: radial-gradient(ellipse at center, rgba(69, 148, 146, 0.10) 0%, rgba(18, 18, 18, 0) 70%);
+    background: radial-gradient(ellipse at center, rgba(69, 148, 146, 0.06) 0%, transparent 70%);
 }
 
-/* Category card backgrounds — desaturated, calm */
+/* Category card backgrounds */
 .category-card-learning {
-    background: linear-gradient(135deg, rgba(47, 125, 186, 0.08) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.06) 0%, transparent 100%);
 }
 
 .category-card-productivity {
-    background: linear-gradient(135deg, rgba(201, 122, 61, 0.08) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.06) 0%, transparent 100%);
 }
 
 .category-card-well-being {
-    background: linear-gradient(135deg, rgba(93, 183, 134, 0.08) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(93, 183, 134, 0.06) 0%, transparent 100%);
 }
 
 /* Timer circle */
@@ -25,31 +25,31 @@
     transition: stroke-dashoffset 1s linear;
 }
 
-/* Action card hover effect — refined lift */
+/* Action card hover effect — elegant lift */
 .action-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .action-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    border-color: rgba(69, 148, 146, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(69, 148, 146, 0.2);
 }
 
 /* Energy indicator — brand-aligned */
 .energy-low {
-    background: linear-gradient(90deg, #459492 0%, #459492 33%, #262626 33%);
+    background: linear-gradient(90deg, #459492 0%, #459492 33%, hsl(210, 15%, 90%) 33%);
 }
 
 .energy-medium {
-    background: linear-gradient(90deg, #E48C75 0%, #E48C75 66%, #262626 66%);
+    background: linear-gradient(90deg, #E48C75 0%, #E48C75 66%, hsl(210, 15%, 90%) 66%);
 }
 
 .energy-high {
     background: linear-gradient(90deg, #5DB786 0%, #5DB786 100%);
 }
 
-/* Sidebar navigation — teal accents */
+/* Sidebar navigation */
 .nav-item {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -59,13 +59,13 @@
 }
 
 .nav-item.active {
-    background-color: rgba(69, 148, 146, 0.10);
-    color: #55B3AE;
+    background-color: rgba(69, 148, 146, 0.08);
+    color: #275255;
 }
 
-/* Stat card — subtle surface variation */
+/* Stat card */
 .stat-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.03) 0%, transparent 100%);
 }
 
 /* Progress ring animation */
@@ -75,46 +75,47 @@
     }
 }
 
-/* Floating action button — teal glow */
+/* Floating action button */
 .fab {
-    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.4);
+    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .fab:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 30px rgba(69, 148, 146, 0.45);
+    box-shadow: 0 6px 30px rgba(69, 148, 146, 0.3);
 }
 
 /* Pricing card — premium teal gradient */
 .pricing-card-premium {
-    background: linear-gradient(135deg, rgba(39, 82, 85, 0.12) 0%, rgba(69, 148, 146, 0.06) 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.06) 0%, rgba(85, 179, 174, 0.03) 100%);
     border-color: rgba(69, 148, 146, 0.25);
 }
 
 /* Mobile menu overlay */
 .mobile-menu-overlay {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
 }
 
-/* Bento grid item — refined borders */
+/* Bento grid item */
 .bento-item {
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: #FFFFFF;
+    border: 1px solid hsl(210, 15%, 90%);
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .bento-item:hover {
-    border-color: rgba(69, 148, 146, 0.20);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(69, 148, 146, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Chart tooltip */
 .recharts-tooltip-wrapper {
-    background: #1A1A1A !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 8px !important;
+    background: #FFFFFF !important;
+    border: 1px solid hsl(210, 15%, 90%) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Button hover lift */
@@ -161,9 +162,9 @@
     margin-bottom: 1.5rem;
 }
 
-/* Skeleton loading — brand shimmer */
+/* Skeleton loading — light shimmer */
 .skeleton {
-    background: linear-gradient(90deg, #1A1A1A 25%, #262626 50%, #1A1A1A 75%);
+    background: linear-gradient(90deg, hsl(210, 15%, 95%) 25%, hsl(210, 15%, 90%) 50%, hsl(210, 15%, 95%) 75%);
     background-size: 200% 100%;
     animation: shimmer 2s linear infinite;
     border-radius: 0.75rem;
@@ -176,8 +177,8 @@
 
 .card-interactive:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    border-color: rgba(69, 148, 146, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    border-color: rgba(69, 148, 146, 0.2);
 }
 
 /* Page enter transition */
@@ -187,8 +188,8 @@
 
 /* Selection color — brand teal */
 ::selection {
-    background: rgba(69, 148, 146, 0.3);
-    color: #F2F2F2;
+    background: rgba(69, 148, 146, 0.2);
+    color: #141E24;
 }
 
 /* Focus ring — brand teal */
@@ -204,7 +205,7 @@ html {
 
 /* Brand gradient text utility */
 .text-brand-gradient {
-    background: linear-gradient(135deg, #459492, #55B3AE, #5DB786);
+    background: linear-gradient(135deg, #275255, #459492, #55B3AE);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -221,7 +222,7 @@ html {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     animation: shimmer 3s linear infinite;
     background-size: 200% 100%;
 }
