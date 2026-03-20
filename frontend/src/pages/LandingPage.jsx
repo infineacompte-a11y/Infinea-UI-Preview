@@ -235,13 +235,13 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {features.map((feature, i) => (
-              <Card key={i} className="bg-white shadow-md hover:shadow-lg rounded-2xl border border-[#E2E6EA]/50 transition-all duration-300">
+              <Card key={i} className="group bg-white shadow-md hover:shadow-xl rounded-2xl border border-[#E2E6EA]/50 hover:border-[#459492]/20 transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-[#275255]/10 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-[#275255]" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#459492]/10 to-[#55B3AE]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-6 h-6 text-[#459492]" />
                   </div>
-                  <h3 className="font-heading text-xl font-medium mb-2 text-[#141E24]">{feature.title}</h3>
-                  <p className="text-[#667085]">{feature.description}</p>
+                  <h3 className="font-heading text-xl font-semibold mb-2 text-[#141E24]">{feature.title}</h3>
+                  <p className="text-[#667085] leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -284,12 +284,14 @@ export default function LandingPage() {
               { step: "03", title: "Choisissez l'énergie", desc: "Basse, moyenne ou haute" },
               { step: "04", title: "Agissez !", desc: "L'IA vous guide" },
             ].map((item, i) => (
-              <div key={i} className="relative">
-                <div className="text-5xl font-heading font-bold text-[#459492] mb-4">{item.step}</div>
-                <h3 className="font-heading text-lg font-medium mb-2 text-[#141E24]">{item.title}</h3>
-                <p className="text-[#667085] text-sm">{item.desc}</p>
+              <div key={i} className="relative group">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#459492]/10 to-[#55B3AE]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl font-heading font-bold text-[#459492]">{item.step}</span>
+                </div>
+                <h3 className="font-heading text-lg font-semibold mb-2 text-[#141E24]">{item.title}</h3>
+                <p className="text-[#667085] text-sm leading-relaxed">{item.desc}</p>
                 {i < 3 && (
-                  <ChevronRight className="hidden md:block absolute top-10 -right-4 w-8 h-8 text-[#459492]/40" />
+                  <ChevronRight className="hidden md:block absolute top-6 -right-4 w-6 h-6 text-[#459492]/30" />
                 )}
               </div>
             ))}
@@ -313,11 +315,11 @@ export default function LandingPage() {
             {pricingPlans.map((plan, i) => (
               <Card
                 key={i}
-                className={`relative bg-white shadow-md hover:shadow-lg rounded-2xl transition-all duration-300 ${plan.popular ? "border-2 border-[#459492] shadow-lg" : "border border-[#E2E6EA]"}`}
+                className={`relative bg-white hover:shadow-xl rounded-2xl transition-all duration-300 ${plan.popular ? "border-2 border-[#459492] shadow-lg ring-1 ring-[#459492]/10" : "border border-[#E2E6EA] shadow-md"}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full bg-[#E48C75] text-white text-sm font-medium shadow-sm">
+                    <span className="premium-badge px-4 py-1 rounded-full text-white text-sm font-medium shadow-md">
                       Populaire
                     </span>
                   </div>
@@ -378,7 +380,7 @@ export default function LandingPage() {
       <footer className="py-12 px-4 bg-[#275255]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <InFineaLogo size={32} withText />
+            <InFineaLogo size={32} withText variant="light" />
             <div className="flex items-center gap-6 text-sm text-white/70">
               <span>&copy; 2025 InFinea</span>
               <Link to="/privacy" className="hover:text-white transition-colors">Confidentialité</Link>

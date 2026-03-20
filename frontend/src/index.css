@@ -185,6 +185,137 @@ select:-webkit-autofill {
     animation: pulse-glow 3s ease-in-out infinite;
 }
 
+/* Avatar gradient ring — teal gradient */
+.avatar-gradient-ring {
+    position: relative;
+}
+.avatar-gradient-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #459492, #55B3AE, #5DB786, #459492);
+    background-size: 300% 300%;
+    animation: gradient-rotate 4s ease infinite;
+    z-index: 0;
+    opacity: 0.7;
+}
+.avatar-gradient-ring::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    background: white;
+    z-index: 0;
+}
+.avatar-gradient-ring > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes gradient-rotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Premium button shimmer overlay */
+.btn-premium-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.btn-premium-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.25) 45%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0.25) 55%,
+        transparent 60%
+    );
+    transform: translateX(-100%);
+    animation: btn-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes btn-shimmer {
+    0% { transform: translateX(-100%); }
+    60% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Stat card colored left border */
+.stat-card-teal {
+    border-left: 3px solid #459492;
+    box-shadow: 0 1px 3px rgba(69, 148, 146, 0.08), 0 4px 12px rgba(69, 148, 146, 0.04);
+    transition: all 0.3s ease;
+}
+.stat-card-teal:hover {
+    box-shadow: 0 4px 12px rgba(69, 148, 146, 0.12), 0 8px 24px rgba(69, 148, 146, 0.06);
+}
+.stat-card-coral {
+    border-left: 3px solid #E48C75;
+    box-shadow: 0 1px 3px rgba(228, 140, 117, 0.08), 0 4px 12px rgba(228, 140, 117, 0.04);
+    transition: all 0.3s ease;
+}
+.stat-card-coral:hover {
+    box-shadow: 0 4px 12px rgba(228, 140, 117, 0.12), 0 8px 24px rgba(228, 140, 117, 0.06);
+}
+
+/* Badge progress gradient bar */
+.progress-gradient-fill [data-state="complete"],
+.progress-gradient-fill > div:first-child {
+    background: linear-gradient(90deg, #459492, #55B3AE) !important;
+}
+
+/* Badge card unlocked glow */
+.badge-unlocked-glow {
+    box-shadow: 0 0 0 1px rgba(93, 183, 134, 0.2),
+                0 2px 8px rgba(93, 183, 134, 0.1),
+                0 4px 16px rgba(69, 148, 146, 0.06);
+    transition: all 0.3s ease;
+}
+.badge-unlocked-glow:hover {
+    box-shadow: 0 0 0 1px rgba(93, 183, 134, 0.3),
+                0 4px 16px rgba(93, 183, 134, 0.15),
+                0 8px 24px rgba(69, 148, 146, 0.1);
+}
+
+/* Badge card locked state */
+.badge-locked {
+    filter: saturate(0.3);
+    transition: all 0.3s ease;
+}
+.badge-locked:hover {
+    filter: saturate(0.6);
+}
+
+/* Badge icon pulse for unlocked */
+.badge-icon-pulse {
+    animation: badge-pulse 3s ease-in-out infinite;
+}
+@keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(93, 183, 134, 0); }
+    50% { box-shadow: 0 0 16px 4px rgba(93, 183, 134, 0.15); }
+}
+
+/* Premium section gradient border */
+.premium-section-border {
+    position: relative;
+    padding: 2px;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.2), rgba(69, 148, 146, 0.15), rgba(228, 140, 117, 0.2));
+    background-size: 200% 200%;
+    animation: gradient-rotate 6s ease infinite;
+}
+.premium-section-inner {
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.03), rgba(69, 148, 146, 0.02));
+    border-radius: calc(1rem - 2px);
+    padding: 1.5rem;
+}
+
 /* Debug wrapper */
 @layer base {
     [data-debug-wrapper="true"] {

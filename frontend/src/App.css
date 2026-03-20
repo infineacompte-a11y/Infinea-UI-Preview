@@ -226,3 +226,74 @@ html {
     animation: shimmer 3s linear infinite;
     background-size: 200% 100%;
 }
+
+/* Active tab gradient — premium feel */
+.tab-active-premium {
+    background: linear-gradient(135deg, #275255 0%, #459492 100%) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(39, 82, 85, 0.25), 0 1px 3px rgba(39, 82, 85, 0.15);
+}
+
+/* Premium button — elevated CTA */
+.btn-premium {
+    background: linear-gradient(135deg, #275255 0%, #459492 100%);
+    box-shadow: 0 2px 12px rgba(39, 82, 85, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.35);
+}
+
+.btn-premium:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(39, 82, 85, 0.2);
+}
+
+/* Stat card with left accent border */
+.stat-card-accent {
+    border-left: 3px solid var(--stat-accent-color, #459492);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.stat-card-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Chart card — subtle background pattern */
+.chart-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(69, 148, 146, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(85, 179, 174, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Section header — distinctive accent bar */
+.section-header-accent {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-header-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    bottom: 0.15em;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #459492, #55B3AE);
+}

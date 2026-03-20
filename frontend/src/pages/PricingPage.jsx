@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
-  Timer,
   Check,
   X,
   ArrowRight,
@@ -24,6 +23,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { API, useAuth, authFetch } from "@/App";
+import InFineaLogo from "@/components/InFineaLogo";
 
 export default function PricingPage() {
   const { user } = useAuth();
@@ -219,10 +219,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Timer className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-heading text-xl font-semibold">InFinea</span>
+              <InFineaLogo size={32} withText />
             </Link>
             <div className="flex items-center gap-4">
               {user ? (

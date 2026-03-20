@@ -54,15 +54,17 @@ export default function ProfilePage() {
           </div>
 
           {/* Profile Card */}
-          <Card className="mb-6 hover:border-[#459492]/20 transition-all opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
+          <Card className="mb-6 hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
             <CardContent className="p-6">
               <div className="flex items-center gap-6">
-                <Avatar className="w-20 h-20 ring-2 ring-[#459492]/30 ring-offset-2 ring-offset-background hover:ring-[#459492]/50 transition-all">
-                  <AvatarImage src={user?.picture} alt={user?.name} />
-                  <AvatarFallback className="bg-primary/10 text-primary text-2xl">
-                    {getInitials(user?.name)}
-                  </AvatarFallback>
-                </Avatar>
+                <div className="avatar-gradient-ring relative flex items-center justify-center">
+                  <Avatar className="w-20 h-20 ring-offset-2 ring-offset-background">
+                    <AvatarImage src={user?.picture} alt={user?.name} />
+                    <AvatarFallback className="bg-primary/10 text-primary text-2xl">
+                      {getInitials(user?.name)}
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1">
                     <h2 className="font-heading text-2xl font-semibold" data-testid="profile-name">
@@ -85,7 +87,7 @@ export default function ProfilePage() {
           </Card>
 
           {/* Subscription Card */}
-          <Card className="mb-6 hover:border-[#459492]/20 transition-all opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
+          <Card className="mb-6 hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
             <CardHeader>
               <CardTitle className="font-heading text-lg flex items-center gap-2">
                 <CreditCard className="w-5 h-5" />
@@ -135,7 +137,7 @@ export default function ProfilePage() {
                 </Button>
               ) : (
                 <Link to="/pricing">
-                  <Button className="w-full rounded-xl shadow-md" data-testid="upgrade-btn">
+                  <Button className="btn-premium-shimmer w-full rounded-xl shadow-md hover:shadow-lg transition-shadow" data-testid="upgrade-btn">
                     <Crown className="w-5 h-5 mr-2" />
                     Passer à Premium
                     <ChevronRight className="w-5 h-5 ml-2" />
@@ -146,19 +148,19 @@ export default function ProfilePage() {
           </Card>
 
           {/* Stats Summary */}
-          <Card className="mb-6 hover:border-[#459492]/20 transition-all opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
+          <Card className="mb-6 hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
             <CardHeader>
               <CardTitle className="font-heading text-lg">Résumé</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-[#459492]/10 to-transparent border border-border/50 hover:shadow-md hover:border-[#459492]/30 transition-all duration-300">
+                <div className="stat-card-teal p-4 rounded-xl bg-gradient-to-br from-[#459492]/10 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
                   <p className="text-2xl font-heading font-bold text-primary tabular-nums">
                     {user?.total_time_invested || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">minutes investies</p>
                 </div>
-                <div className="p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-transparent border border-border/50 hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300">
+                <div className="stat-card-coral p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
                   <p className="text-2xl font-heading font-bold text-[#E48C75] tabular-nums">
                     {user?.streak_days || 0}
                   </p>
@@ -169,7 +171,7 @@ export default function ProfilePage() {
           </Card>
 
           {/* Actions */}
-          <Card className="hover:border-[#459492]/20 transition-all opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
+          <Card className="hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
             <CardHeader>
               <CardTitle className="font-heading text-lg">Actions</CardTitle>
             </CardHeader>

@@ -115,7 +115,7 @@ export default function BadgesPage() {
             <>
               {/* Progress Overview */}
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-                <Card className="mb-8 hover:shadow-lg hover:border-[#459492]/30 transition-all duration-200">
+                <Card className="mb-8 hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
@@ -133,7 +133,7 @@ export default function BadgesPage() {
                         {Math.round(progressPercentage)}%
                       </Badge>
                     </div>
-                    <Progress value={progressPercentage} className="h-3 rounded-full [&>div]:rounded-full [&>div]:transition-all [&>div]:duration-500" />
+                    <Progress value={progressPercentage} className="h-3 rounded-full [&>div]:rounded-full [&>div]:transition-all [&>div]:duration-500 [&>div]:bg-gradient-to-r [&>div]:from-[#459492] [&>div]:to-[#55B3AE]" />
                   </CardContent>
                 </Card>
               </div>
@@ -151,30 +151,32 @@ export default function BadgesPage() {
                   return (
                     <Card
                       key={badge.badge_id}
-                      className={`opacity-0 animate-fade-in relative group hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ${
+                      className={`opacity-0 animate-fade-in relative group hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 ${
                         isEarned
-                          ? "bg-gradient-to-br from-[#5DB786]/10 to-[#459492]/10 border-[#5DB786]/30 hover:border-[#5DB786]/50"
-                          : "opacity-60 hover:border-[#459492]/30"
+                          ? "badge-unlocked-glow bg-gradient-to-br from-[#5DB786]/10 to-[#459492]/10 border-[#5DB786]/30 hover:border-[#5DB786]/50"
+                          : "badge-locked opacity-60 hover:border-[#459492]/30 border-dashed"
                       }`}
                       style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }}
                       data-testid={`badge-${badge.badge_id}`}
                     >
                       <CardContent className="p-4 text-center">
                         <div
-                          className={`w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center ${
-                            isEarned ? "bg-[#5DB786]/20" : "bg-muted"
+                          className={`w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center transition-all duration-300 ${
+                            isEarned
+                              ? "badge-icon-pulse bg-[#5DB786]/20 group-hover:bg-[#5DB786]/30"
+                              : "bg-muted group-hover:bg-muted/80"
                           }`}
                         >
                           {isEarned ? (
-                            <Icon className="w-8 h-8 text-[#5DB786]" />
+                            <Icon className="w-8 h-8 text-[#5DB786] group-hover:scale-110 transition-transform duration-300" />
                           ) : (
-                            <Lock className="w-6 h-6 text-muted-foreground" />
+                            <Lock className="w-6 h-6 text-muted-foreground/60" />
                           )}
                         </div>
-                        <h3 className="font-heading font-medium mb-1">{badge.name}</h3>
+                        <h3 className={`font-heading font-medium mb-1 ${!isEarned ? "text-muted-foreground" : ""}`}>{badge.name}</h3>
                         <p className="text-xs text-muted-foreground mb-2">{badge.description}</p>
                         {isEarned && earnedData?.earned_at && (
-                          <Badge variant="secondary" className="text-xs rounded-lg">
+                          <Badge variant="secondary" className="text-xs rounded-lg bg-[#5DB786]/10 text-[#5DB786] border-0">
                             {new Date(earnedData.earned_at).toLocaleDateString("fr-FR")}
                           </Badge>
                         )}
@@ -191,19 +193,26 @@ export default function BadgesPage() {
 
                     {premiumBadges.length > 0 && (
                       <div className="opacity-0 animate-fade-in mt-10" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
-                        <div className="flex items-center gap-3 mb-6">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-[#E48C75]/10 flex items-center justify-center">
-                            <Crown className="w-5 h-5 text-[#E48C75]" />
+                        <div className="premium-section-border">
+                          <div className="premium-section-inner">
+                            <div className="flex items-center gap-3 mb-6">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-[#459492]/10 flex items-center justify-center shadow-sm">
+                                <Crown className="w-5 h-5 text-[#E48C75]" />
+                              </div>
+                              <div>
+                                <h2 className="font-heading text-xl font-semibold flex items-center gap-2">
+                                  Badges Premium
+                                  <Sparkles className="w-4 h-4 text-[#E48C75]/60" />
+                                </h2>
+                                <p className="text-sm text-muted-foreground">
+                                  Badges exclusifs pour les membres Premium
+                                </p>
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                              {premiumBadges.map((badge, index) => renderBadge(badge, index))}
+                            </div>
                           </div>
-                          <div>
-                            <h2 className="font-heading text-xl font-semibold">Badges Premium</h2>
-                            <p className="text-sm text-muted-foreground">
-                              Badges exclusifs pour les membres Premium
-                            </p>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                          {premiumBadges.map((badge, index) => renderBadge(badge, index))}
                         </div>
                       </div>
                     )}

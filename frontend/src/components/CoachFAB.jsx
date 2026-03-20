@@ -330,7 +330,7 @@ export default function CoachFAB() {
         className={`fixed z-50 bottom-6 right-6 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ${
           isOpen
             ? "bg-white text-[#667085] border border-[#E2E6EA] rotate-0 scale-90 shadow-lg"
-            : "bg-[#459492] text-white hover:bg-[#55B3AE] shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
+            : "bg-gradient-to-br from-[#459492] to-[#55B3AE] text-white shadow-[0_4px_20px_rgba(69,148,146,0.35)] hover:shadow-[0_6px_30px_rgba(69,148,146,0.45)] hover:scale-105 active:scale-95"
         }`}
       >
         {isOpen ? (

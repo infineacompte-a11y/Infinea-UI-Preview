@@ -206,7 +206,7 @@ export default function ActionsLibrary() {
             </div>
             <Button
               onClick={() => setShowCreateModal(true)}
-              className="rounded-xl shrink-0"
+              className="btn-premium rounded-xl shrink-0 text-white border-0"
               data-testid="create-action-btn"
             >
               <Sparkles className="w-4 h-4 mr-2" />
@@ -222,13 +222,13 @@ export default function ActionsLibrary() {
             >
               <TabsTrigger
                 value="all"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm rounded-lg px-4 py-2 transition-all duration-200"
+                className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 transition-all duration-200 hover:bg-muted/60"
               >
                 Toutes
               </TabsTrigger>
               <TabsTrigger
                 value="my_actions"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm rounded-lg px-4 py-2 gap-1 transition-all duration-200"
+                className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 gap-1 transition-all duration-200 hover:bg-muted/60"
                 data-testid="tab-my-actions"
               >
                 <User className="w-3.5 h-3.5" />
@@ -241,7 +241,7 @@ export default function ActionsLibrary() {
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm rounded-lg px-4 py-2 transition-all duration-200"
+                  className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 transition-all duration-200 hover:bg-muted/60"
                   data-testid={`tab-${key}`}
                 >
                   {label}
@@ -253,7 +253,7 @@ export default function ActionsLibrary() {
                   <TabsTrigger
                     key={key}
                     value={key}
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm rounded-lg px-4 py-2 gap-1 transition-all duration-200"
+                    className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 gap-1 transition-all duration-200 hover:bg-muted/60"
                     data-testid={`tab-${key}`}
                   >
                     {isPremium ? (
@@ -285,7 +285,7 @@ export default function ActionsLibrary() {
                 </p>
                 <Button
                   onClick={() => setShowCreateModal(true)}
-                  className="rounded-xl shadow-md hover:shadow-lg transition-all"
+                  className="btn-premium rounded-xl text-white border-0"
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
                   Créer une action
@@ -359,7 +359,7 @@ export default function ActionsLibrary() {
                 return (
                   <Card
                     key={action.action_id}
-                    className={`group action-card cursor-pointer border-l-[3px] ${categoryBorderColors[action.category] || "border-l-border"} hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 opacity-0 animate-fade-in ${isPremiumLocked ? "opacity-75" : ""}`}
+                    className={`group action-card cursor-pointer border-l-[3px] ${categoryBorderColors[action.category] || "border-l-border"} hover:shadow-md hover:border-border/80 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-300 ease-out opacity-0 animate-fade-in ${isPremiumLocked ? "opacity-75" : ""}`}
                     style={{ animationDelay: `${i * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => startSession(action.action_id)}
                     data-testid={`action-${action.action_id}`}
@@ -385,10 +385,10 @@ export default function ActionsLibrary() {
                               {action.is_premium && (
                                 <Badge
                                   variant="secondary"
-                                  className={`text-xs flex items-center gap-1 ${isPremiumLocked ? "bg-[#E48C75]/15 text-[#E48C75] border-[#E48C75]/30" : ""}`}
+                                  className={`text-xs flex items-center gap-1 ${isPremiumLocked ? "premium-badge text-white border-0" : ""}`}
                                 >
-                                  {isPremiumLocked && <Lock className="w-3 h-3" />}
-                                  Premium
+                                  {isPremiumLocked && <Lock className="w-3 h-3 relative z-10" />}
+                                  <span className="relative z-10">Premium</span>
                                 </Badge>
                               )}
                             </div>

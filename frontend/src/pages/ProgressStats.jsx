@@ -153,7 +153,7 @@ export default function ProgressStats() {
             <div>
               {/* Stats Overview */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <Card className="stat-card bg-gradient-to-br from-[#5DB786]/10 to-transparent hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#5DB786]/10 to-transparent hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#5DB786", animationDelay: "0ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
@@ -169,7 +169,7 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card bg-gradient-to-br from-[#459492]/10 to-transparent hover:shadow-md hover:border-[#459492]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "50ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#459492]/10 to-transparent hover:shadow-md hover:border-[#459492]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#459492", animationDelay: "50ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -185,7 +185,7 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card bg-gradient-to-br from-[#E48C75]/10 to-transparent hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#E48C75]/10 to-transparent hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#E48C75", animationDelay: "100ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
@@ -201,7 +201,7 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card bg-gradient-to-br from-[#55B3AE]/10 to-transparent hover:shadow-md hover:border-[#55B3AE]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#55B3AE]/10 to-transparent hover:shadow-md hover:border-[#55B3AE]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#55B3AE", animationDelay: "150ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-[#459492]/10 flex items-center justify-center">
@@ -221,11 +221,11 @@ export default function ProgressStats() {
               {/* Charts */}
               <div className="grid md:grid-cols-2 gap-6 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
                 {/* Time by Category */}
-                <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
+                <Card className="chart-card hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="font-heading text-lg">Temps par catégorie</CardTitle>
+                    <CardTitle className="font-heading text-lg section-header-accent">Temps par catégorie</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-[1]">
                     {barData.length > 0 ? (
                       <ResponsiveContainer width="100%" height={250}>
                         <BarChart data={barData}>
@@ -252,11 +252,11 @@ export default function ProgressStats() {
                 </Card>
 
                 {/* Sessions Distribution */}
-                <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
+                <Card className="chart-card hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="font-heading text-lg">Répartition des sessions</CardTitle>
+                    <CardTitle className="font-heading text-lg section-header-accent">Répartition des sessions</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-[1]">
                     {pieData.length > 0 ? (
                       <ResponsiveContainer width="100%" height={250}>
                         <PieChart>
@@ -309,7 +309,7 @@ export default function ProgressStats() {
               {/* Recent Sessions */}
               <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                 <CardHeader>
-                  <CardTitle className="font-heading text-lg">Sessions récentes</CardTitle>
+                  <CardTitle className="font-heading text-lg section-header-accent">Sessions récentes</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {stats?.recent_sessions?.length > 0 ? (
