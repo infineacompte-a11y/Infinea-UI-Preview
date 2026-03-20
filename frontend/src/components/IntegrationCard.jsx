@@ -46,7 +46,7 @@ const colorClasses = {
   blue: { bg: "bg-blue-500/10", text: "text-blue-500", border: "border-blue-500/30" },
   gray: { bg: "bg-zinc-500/10", text: "text-zinc-400", border: "border-zinc-500/30" },
   red: { bg: "bg-red-500/10", text: "text-red-500", border: "border-red-500/30" },
-  purple: { bg: "bg-purple-500/10", text: "text-purple-500", border: "border-purple-500/30" },
+  purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
   orange: { bg: "bg-orange-500/10", text: "text-orange-500", border: "border-orange-500/30" },
 };
 

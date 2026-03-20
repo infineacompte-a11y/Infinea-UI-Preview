@@ -39,13 +39,13 @@ import PremiumAnalytics from "@/components/PremiumAnalytics";
 import ShareDialog from "@/components/ShareDialog";
 
 const categoryColors = {
-  learning: "#3b82f6",
-  productivity: "#f59e0b",
-  well_being: "#10b981",
+  learning: "#2F7DBA",
+  productivity: "#C97A3D",
+  well_being: "#5DB786",
   creativity: "#a855f7",
   fitness: "#ef4444",
   mindfulness: "#06b6d4",
-  leadership: "#6366f1",
+  leadership: "#459492",
   finance: "#22c55e",
   relations: "#ec4899",
   mental_health: "#14b8a6",
@@ -91,7 +91,7 @@ export default function ProgressStats() {
     ? Object.entries(stats.sessions_by_category || {}).map(([key, value]) => ({
         name: categoryLabels[key] || key,
         value,
-        color: categoryColors[key] || "#6366f1",
+        color: categoryColors[key] || "#459492",
       }))
     : [];
 
@@ -99,7 +99,7 @@ export default function ProgressStats() {
     ? Object.entries(stats.time_by_category || {}).map(([key, value]) => ({
         name: categoryLabels[key] || key,
         minutes: value,
-        fill: categoryColors[key] || "#6366f1",
+        fill: categoryColors[key] || "#459492",
       }))
     : [];
 
@@ -316,10 +316,10 @@ export default function ProgressStats() {
                                   learning: <BookOpen className="w-5 h-5 text-blue-500" />,
                                   productivity: <Target className="w-5 h-5 text-amber-500" />,
                                   well_being: <Heart className="w-5 h-5 text-emerald-500" />,
-                                  creativity: <Palette className="w-5 h-5 text-purple-500" />,
+                                  creativity: <Palette className="w-5 h-5 text-brand-secondary" />,
                                   fitness: <Dumbbell className="w-5 h-5 text-red-500" />,
                                   mindfulness: <Leaf className="w-5 h-5 text-cyan-500" />,
-                                  leadership: <Users className="w-5 h-5 text-indigo-500" />,
+                                  leadership: <Users className="w-5 h-5 text-brand-teal" />,
                                   finance: <TrendingUp className="w-5 h-5 text-green-500" />,
                                   relations: <MessageCircle className="w-5 h-5 text-pink-500" />,
                                   mental_health: <Brain className="w-5 h-5 text-teal-500" />,

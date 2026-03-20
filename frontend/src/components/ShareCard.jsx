@@ -149,7 +149,7 @@ const ShareCard = forwardRef(function ShareCard({ snapshot, shareType = "weekly_
                       background: day.isToday
                         ? "hsl(239, 84%, 67%)"
                         : day.minutes > 0
-                          ? "rgba(99, 102, 241, 0.4)"
+                          ? "rgba(69, 148, 146, 0.4)"
                           : "rgba(255, 255, 255, 0.06)",
                     }}
                   />

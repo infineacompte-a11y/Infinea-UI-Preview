@@ -127,7 +127,7 @@ export default function SlotCard({ slot, onDismiss, onRefresh }) {
   const Icon = categoryIcons[category] || Sparkles;
 
   return (
-    <Card className="bg-gradient-to-br from-primary/10 to-purple-500/10 border-primary/30 animate-fade-in" data-testid="slot-card">
+    <Card className="bg-gradient-to-br from-primary/10 to-brand-secondary/10 border-primary/30 animate-fade-in" data-testid="slot-card">
       <CardContent className="p-4">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-2">

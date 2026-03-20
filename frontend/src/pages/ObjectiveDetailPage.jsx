@@ -386,7 +386,7 @@ function InsightsTab({ objectiveId }) {
                 <div className="text-[10px] text-muted-foreground">Complétion</div>
               </Card>
               <Card className="p-3 text-center">
-                <Clock className="w-4 h-4 text-purple-500 mx-auto mb-1" />
+                <Clock className="w-4 h-4 text-brand-secondary mx-auto mb-1" />
                 <div className="text-lg font-bold">{stats.avg_duration}<span className="text-xs font-normal">m</span></div>
                 <div className="text-[10px] text-muted-foreground">Moy. / session</div>
               </Card>
@@ -860,7 +860,7 @@ export default function ObjectiveDetailPage() {
                 <div className="text-[10px] text-muted-foreground">Sessions</div>
               </div>
               <div className="text-center p-2 rounded-lg bg-muted/30">
-                <Calendar className="w-4 h-4 text-purple-500 mx-auto mb-1" />
+                <Calendar className="w-4 h-4 text-brand-secondary mx-auto mb-1" />
                 <div className="text-lg font-bold">J{objective.current_day || 0}</div>
                 <div className="text-[10px] text-muted-foreground">/{objective.target_duration_days}j</div>
               </div>

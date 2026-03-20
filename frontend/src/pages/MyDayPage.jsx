@@ -34,7 +34,7 @@ import { toast } from "sonner";
 const TIME_SECTIONS = [
   { key: "morning", label: "Matin", icon: Sunrise, color: "text-amber-500", bgColor: "bg-amber-500/10" },
   { key: "afternoon", label: "Après-midi", icon: Sun, color: "text-orange-500", bgColor: "bg-orange-500/10" },
-  { key: "evening", label: "Soir", icon: Moon, color: "text-indigo-500", bgColor: "bg-indigo-500/10" },
+  { key: "evening", label: "Soir", icon: Moon, color: "text-brand-teal", bgColor: "bg-brand-teal/10" },
 ];
 
 function getCurrentTimeOfDay() {
@@ -201,7 +201,7 @@ function SmartCTAs({ routines, objectives, routinesCompletedToday, todaySessions
 const MI_SOURCE_CONFIG = {
   calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-blue-400", bgColor: "bg-blue-500/10" },
   routine_window: { icon: Repeat, label: "Routine", color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
-  behavioral_pattern: { icon: TrendingUp, label: "Pattern", color: "text-purple-400", bgColor: "bg-purple-500/10" },
+  behavioral_pattern: { icon: TrendingUp, label: "Pattern", color: "text-brand-secondary", bgColor: "bg-brand-secondary/10" },
 };
 
 function formatInstantTime(isoString) {

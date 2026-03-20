@@ -384,7 +384,7 @@ export default function PricingPage() {
                 { icon: Crown, name: "Leadership", color: "text-amber-500", bg: "bg-amber-500/10" },
                 { icon: Zap, name: "Finance", color: "text-emerald-500", bg: "bg-emerald-500/10" },
                 { icon: Sparkles, name: "Relations", color: "text-blue-500", bg: "bg-blue-500/10" },
-                { icon: Brain, name: "Santé mentale", color: "text-purple-500", bg: "bg-purple-500/10" },
+                { icon: Brain, name: "Santé mentale", color: "text-brand-secondary", bg: "bg-brand-secondary/10" },
                 { icon: Trophy, name: "Entrepreneuriat", color: "text-red-500", bg: "bg-red-500/10" },
               ].map(({ icon: Icon, name, color, bg }) => (
                 <Card key={name} className="bg-card/50 border-dashed">

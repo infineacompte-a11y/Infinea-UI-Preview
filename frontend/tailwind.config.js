@@ -58,14 +58,22 @@ module.exports = {
                     '4': 'hsl(var(--chart-4))',
                     '5': 'hsl(var(--chart-5))'
                 },
-                learning: '#3b82f6',
-                productivity: '#f59e0b',
-                'well-being': '#10b981',
-                indigo: {
-                    500: '#6366f1',
-                    600: '#4f46e5',
-                    900: '#312e81'
-                }
+                /* InFinea brand tokens */
+                brand: {
+                    primary: '#275255',
+                    teal: '#459492',
+                    secondary: '#55B3AE',
+                    green: '#5DB786',
+                    coral: '#E48C75',
+                },
+                /* Category tokens — desaturated, calm */
+                learning: '#2F7DBA',
+                productivity: '#C97A3D',
+                'well-being': '#5DB786',
+                /* State tokens */
+                success: '#2E9B6A',
+                warning: '#C97A3D',
+                info: '#2F7DBA',
             },
             keyframes: {
                 'accordion-down': {
@@ -77,7 +85,7 @@ module.exports = {
                     to: { height: '0' }
                 },
                 'fade-in': {
-                    from: { opacity: '0', transform: 'translateY(10px)' },
+                    from: { opacity: '0', transform: 'translateY(8px)' },
                     to: { opacity: '1', transform: 'translateY(0)' }
                 },
                 'slide-in': {
@@ -85,16 +93,16 @@ module.exports = {
                     to: { transform: 'translateX(0)' }
                 },
                 'pulse-glow': {
-                    '0%, 100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
-                    '50%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.5)' }
+                    '0%, 100%': { boxShadow: '0 0 20px rgba(69, 148, 146, 0.2)' },
+                    '50%': { boxShadow: '0 0 40px rgba(69, 148, 146, 0.35)' }
                 }
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
-                'fade-in': 'fade-in 0.5s ease-out forwards',
+                'fade-in': 'fade-in 0.4s ease-out forwards',
                 'slide-in': 'slide-in 0.3s ease-out',
-                'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+                'pulse-glow': 'pulse-glow 3s ease-in-out infinite'
             }
         }
     },

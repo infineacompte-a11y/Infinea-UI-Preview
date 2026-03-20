@@ -22,7 +22,7 @@ const SOURCE_ICON = {
 const SOURCE_COLOR = {
   calendar_gap: "text-blue-400",
   routine_window: "text-emerald-400",
-  behavioral_pattern: "text-purple-400",
+  behavioral_pattern: "text-brand-secondary",
 };
 
 // ─── Helpers ─────────────────────────────────────────────────

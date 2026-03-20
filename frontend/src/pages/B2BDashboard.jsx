@@ -56,9 +56,9 @@ import {
 } from "recharts";
 
 const categoryColors = {
-  learning: "#3b82f6",
-  productivity: "#f59e0b",
-  well_being: "#10b981",
+  learning: "#2F7DBA",
+  productivity: "#C97A3D",
+  well_being: "#5DB786",
 };
 
 const categoryLabels = {
@@ -186,7 +186,7 @@ export default function B2BDashboard() {
         name: categoryLabels[key] || key,
         value: value.sessions,
         time: value.time,
-        color: categoryColors[key] || "#6366f1",
+        color: categoryColors[key] || "#459492",
       }))
     : [];
 
@@ -368,7 +368,7 @@ export default function B2BDashboard() {
               </CardContent>
             </Card>
 
-            <Card className="stat-card bg-gradient-to-br from-primary/10 to-purple-500/10 border-primary/30">
+            <Card className="stat-card bg-gradient-to-br from-primary/10 to-brand-secondary/10 border-primary/30">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
@@ -440,8 +440,8 @@ export default function B2BDashboard() {
                       <AreaChart data={dashboard.daily_activity}>
                         <defs>
                           <linearGradient id="colorSessions" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3}/>
-                            <stop offset="95%" stopColor="#6366f1" stopOpacity={0}/>
+                            <stop offset="5%" stopColor="#459492" stopOpacity={0.3}/>
+                            <stop offset="95%" stopColor="#459492" stopOpacity={0}/>
                           </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
@@ -461,7 +461,7 @@ export default function B2BDashboard() {
                         <Area
                           type="monotone"
                           dataKey="sessions"
-                          stroke="#6366f1"
+                          stroke="#459492"
                           strokeWidth={2}
                           fill="url(#colorSessions)"
                         />

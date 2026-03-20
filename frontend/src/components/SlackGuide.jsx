@@ -112,8 +112,8 @@ export default function SlackGuide({ open, onOpenChange, onConnected }) {
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-              <MessageSquare className="w-4 h-4 text-purple-500" />
+            <div className="w-8 h-8 rounded-lg bg-brand-secondary/10 flex items-center justify-center">
+              <MessageSquare className="w-4 h-4 text-brand-secondary" />
             </div>
             Connecter Slack
           </DialogTitle>

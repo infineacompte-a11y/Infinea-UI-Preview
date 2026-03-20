@@ -61,8 +61,8 @@ const SOURCE_CONFIG = {
   behavioral_pattern: {
     icon: TrendingUp,
     label: "Pattern détecté",
-    color: "text-purple-400",
-    bgColor: "bg-purple-500/10",
+    color: "text-brand-secondary",
+    bgColor: "bg-brand-secondary/10",
   },
 };
 
@@ -810,7 +810,7 @@ function SourceBreakdown({ sourceDistribution }) {
                         ? "bg-blue-500/60"
                         : src === "routine_window"
                         ? "bg-emerald-500/60"
-                        : "bg-purple-500/60"
+                        : "bg-brand-secondary/60"
                     }`}
                     style={{ width: `${pct}%` }}
                   />
