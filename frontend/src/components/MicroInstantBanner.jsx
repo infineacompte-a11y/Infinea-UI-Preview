@@ -127,7 +127,7 @@ export default function MicroInstantBanner() {
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        visible ? "translate-y-0 opacity-100 animate-slide-in-down" : "-translate-y-full opacity-0"
       }`}
     >
       <div
@@ -189,7 +189,7 @@ export default function MicroInstantBanner() {
           <Button
             size="sm"
             variant={isNow ? "secondary" : "default"}
-            className={`shrink-0 gap-1.5 text-xs h-8 ${
+            className={`shrink-0 gap-1.5 text-xs h-8 rounded-xl hover:scale-105 active:scale-95 transition-all duration-200 ${
               isNow
                 ? "bg-white/20 hover:bg-white/30 text-white border-white/20"
                 : ""
@@ -203,7 +203,7 @@ export default function MicroInstantBanner() {
           {/* Dismiss */}
           <button
             onClick={handleDismiss}
-            className={`p-1 rounded-md transition-colors shrink-0 ${
+            className={`p-1 rounded-md transition-all duration-200 shrink-0 ${
               isNow
                 ? "text-white/50 hover:text-white hover:bg-white/10"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted/50"

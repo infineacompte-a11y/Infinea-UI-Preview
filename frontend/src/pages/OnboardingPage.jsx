@@ -150,12 +150,12 @@ export default function OnboardingPage() {
           <h1 className="font-heading text-3xl font-bold mb-4">
             Bienvenue, {user?.name?.split(" ")[0] || "Utilisateur"} !
           </h1>
-          <Card className="mb-8 text-left">
+          <Card className="mb-8 text-left rounded-2xl shadow-xl">
             <CardContent className="p-6">
               <p className="text-sm leading-relaxed">{welcomeMessage}</p>
             </CardContent>
           </Card>
-          <Button onClick={handleFinish} className="w-full h-12 rounded-xl">
+          <Button onClick={handleFinish} className="w-full h-12 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
             Commencer mes micro-actions
             <ChevronRight className="w-5 h-5 ml-2" />
           </Button>
@@ -170,25 +170,25 @@ export default function OnboardingPage() {
       <header className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="flex items-center justify-between px-4 h-16">
           <InFineaLogo size={32} withText animate />
-          <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
+          <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")} className="rounded-xl transition-all duration-200">
             Passer
           </Button>
         </div>
       </header>
 
       {/* Progress Bar */}
-      <div className="fixed top-16 left-0 right-0 z-40 h-1 bg-border">
+      <div className="fixed top-16 left-0 right-0 z-40 h-2 bg-border rounded-full overflow-hidden">
         <div
-          className="h-full bg-[#459492] transition-all duration-300"
+          className="h-full bg-[#459492] rounded-full transition-all duration-500"
           style={{ width: `${((currentStep + 1) / STEPS.length) * 100}%` }}
         />
       </div>
 
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center p-4 pt-24 pb-32">
-        <div className="max-w-lg w-full animate-fade-in">
+        <div className="max-w-lg w-full animate-fade-in" key={currentStep}>
           {/* Step Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
             <Badge variant="secondary" className="mb-4">
               {currentStep + 1} / {STEPS.length}
             </Badge>
@@ -201,19 +201,20 @@ export default function OnboardingPage() {
           {/* Step Content */}
           {STEPS[currentStep].id === "goals" && (
             <div className="grid gap-3">
-              {GOALS.map((goal) => {
+              {GOALS.map((goal, index) => {
                 const Icon = goal.icon;
                 const selected = profile.goals.includes(goal.id);
                 return (
                   <Card
                     key={goal.id}
-                    className={`cursor-pointer transition-all ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
                     }`}
+                    style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("goals", goal.id)}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
                         selected ? "bg-[#459492] text-white" : "bg-muted"
                       }`}>
                         <Icon className="w-5 h-5" />
@@ -229,19 +230,20 @@ export default function OnboardingPage() {
 
           {STEPS[currentStep].id === "availability" && (
             <div className="grid gap-3">
-              {TIME_SLOTS.map((slot) => {
+              {TIME_SLOTS.map((slot, index) => {
                 const Icon = slot.icon;
                 const selected = profile.preferred_times.includes(slot.id);
                 return (
                   <Card
                     key={slot.id}
-                    className={`cursor-pointer transition-all ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
                     }`}
+                    style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("preferred_times", slot.id)}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
                         selected ? "bg-[#459492] text-white" : "bg-muted"
                       }`}>
                         <Icon className="w-5 h-5" />
@@ -260,19 +262,20 @@ export default function OnboardingPage() {
 
           {STEPS[currentStep].id === "energy" && (
             <div className="grid gap-3">
-              {ENERGY_LEVELS.map((level) => {
+              {ENERGY_LEVELS.map((level, index) => {
                 const Icon = level.icon;
                 const selected = profile.energy_level === level.id;
                 return (
                   <Card
                     key={level.id}
-                    className={`cursor-pointer transition-all ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
                     }`}
+                    style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => setProfile((p) => ({ ...p, energy_level: level.id }))}
                   >
                     <CardContent className="p-4 flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
                         selected ? "bg-[#459492] text-white" : "bg-muted"
                       }`}>
                         <Icon className="w-5 h-5" />
@@ -291,18 +294,19 @@ export default function OnboardingPage() {
 
           {STEPS[currentStep].id === "interests" && (
             <div className="grid grid-cols-2 gap-3">
-              {INTERESTS.map((interest) => {
+              {INTERESTS.map((interest, index) => {
                 const selected = profile.interests.includes(interest.id);
                 return (
                   <Card
                     key={interest.id}
-                    className={`cursor-pointer transition-all ${
-                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/50"
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in hover:shadow-md ${
+                      selected ? "border-[#459492] bg-[#459492]/5" : "hover:border-[#459492]/30"
                     }`}
+                    style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("interests", interest.id)}
                   >
                     <CardContent className="p-4 text-center">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-2 ${interest.color}`}>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-2 transition-all duration-200 ${interest.color}`}>
                         {selected ? <Check className="w-5 h-5" /> : <Sparkles className="w-5 h-5" />}
                       </div>
                       <p className="text-sm font-medium">{interest.label}</p>
@@ -319,14 +323,14 @@ export default function OnboardingPage() {
       <div className="fixed bottom-0 left-0 right-0 glass p-4">
         <div className="max-w-lg mx-auto flex gap-3">
           {currentStep > 0 && (
-            <Button variant="outline" onClick={handleBack} className="h-12 rounded-xl px-6">
+            <Button variant="outline" onClick={handleBack} className="h-12 rounded-xl px-6 shadow-md transition-all duration-200 active:scale-[0.97]">
               <ChevronLeft className="w-5 h-5 mr-1" />
               Retour
             </Button>
           )}
           <Button
             onClick={handleNext}
-            className="flex-1 h-12 rounded-xl"
+            className="flex-1 h-12 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
             disabled={!canAdvance() || isSubmitting}
           >
             {isSubmitting ? (

@@ -35,17 +35,17 @@ import { API, authFetch, useAuth } from "@/App";
 import { toast } from "sonner";
 
 const CATEGORY_MAP = {
-  learning: { label: "Apprentissage", color: "bg-[#459492]/10 text-[#459492] border-[#459492]/20" },
-  productivity: { label: "Productivité", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20" },
-  well_being: { label: "Bien-être", color: "bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20" },
-  creativity: { label: "Créativité", color: "bg-[#55B3AE]/10 text-[#55B3AE] border-[#55B3AE]/20" },
-  fitness: { label: "Fitness", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20" },
-  mindfulness: { label: "Pleine conscience", color: "bg-[#459492]/10 text-[#459492] border-[#459492]/20" },
-  leadership: { label: "Leadership", color: "bg-[#7B8FA1]/10 text-[#7B8FA1] border-[#7B8FA1]/20" },
-  finance: { label: "Finance", color: "bg-[#2E9B6A]/10 text-[#2E9B6A] border-[#2E9B6A]/20" },
-  relations: { label: "Relations", color: "bg-[#C4806E]/10 text-[#C4806E] border-[#C4806E]/20" },
-  mental_health: { label: "Santé mentale", color: "bg-[#6EAAA8]/10 text-[#6EAAA8] border-[#6EAAA8]/20" },
-  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20" },
+  learning: { label: "Apprentissage", color: "bg-[#459492]/15 text-[#459492] border-[#459492]/20" },
+  productivity: { label: "Productivité", color: "bg-[#E48C75]/15 text-[#E48C75] border-[#E48C75]/20" },
+  well_being: { label: "Bien-être", color: "bg-[#5DB786]/15 text-[#5DB786] border-[#5DB786]/20" },
+  creativity: { label: "Créativité", color: "bg-[#55B3AE]/15 text-[#55B3AE] border-[#55B3AE]/20" },
+  fitness: { label: "Fitness", color: "bg-[#E48C75]/15 text-[#E48C75] border-[#E48C75]/20" },
+  mindfulness: { label: "Pleine conscience", color: "bg-[#459492]/15 text-[#459492] border-[#459492]/20" },
+  leadership: { label: "Leadership", color: "bg-[#7B8FA1]/15 text-[#7B8FA1] border-[#7B8FA1]/20" },
+  finance: { label: "Finance", color: "bg-[#2E9B6A]/15 text-[#2E9B6A] border-[#2E9B6A]/20" },
+  relations: { label: "Relations", color: "bg-[#C4806E]/15 text-[#C4806E] border-[#C4806E]/20" },
+  mental_health: { label: "Santé mentale", color: "bg-[#6EAAA8]/15 text-[#6EAAA8] border-[#6EAAA8]/20" },
+  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#E48C75]/15 text-[#E48C75] border-[#E48C75]/20" },
 };
 
 // Duration presets: 2 weeks to 12 months
@@ -91,13 +91,13 @@ function durationValueToSlider(days) {
 }
 
 const STATUS_MAP = {
-  active: { label: "En cours", color: "bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20", icon: Play },
-  paused: { label: "En pause", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20", icon: Pause },
-  completed: { label: "Terminé", color: "bg-[#459492]/10 text-[#459492] border-[#459492]/20", icon: CheckCircle2 },
-  abandoned: { label: "Abandonné", color: "bg-[#E48C75]/10 text-[#E48C75] border-[#E48C75]/20", icon: Target },
+  active: { label: "En cours", color: "bg-[#5DB786]/15 text-[#5DB786] border-[#5DB786]/20", icon: Play },
+  paused: { label: "En pause", color: "bg-[#E48C75]/15 text-[#E48C75] border-[#E48C75]/20", icon: Pause },
+  completed: { label: "Terminé", color: "bg-[#459492]/15 text-[#459492] border-[#459492]/20", icon: CheckCircle2 },
+  abandoned: { label: "Abandonné", color: "bg-[#E48C75]/15 text-[#E48C75] border-[#E48C75]/20", icon: Target },
 };
 
-function ObjectiveCard({ objective, onClick }) {
+function ObjectiveCard({ objective, onClick, index = 0 }) {
   const status = STATUS_MAP[objective.status] || STATUS_MAP.active;
   const category = CATEGORY_MAP[objective.category] || CATEGORY_MAP.learning;
   const StatusIcon = status.icon;
@@ -108,16 +108,17 @@ function ObjectiveCard({ objective, onClick }) {
 
   return (
     <Card
-      className="p-5 cursor-pointer hover:border-primary/30 transition-all group"
+      className="p-5 cursor-pointer group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 transition-all duration-200 active:scale-[0.99]"
       onClick={onClick}
+      style={{ animationDelay: `${index * 30}ms` }}
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <Badge variant="outline" className={`text-[10px] ${category.color}`}>
+            <Badge variant="outline" className={`text-[10px] rounded-lg font-medium ${category.color}`}>
               {category.label}
             </Badge>
-            <Badge variant="outline" className={`text-[10px] ${status.color}`}>
+            <Badge variant="outline" className={`text-[10px] rounded-lg font-medium ${status.color}`}>
               <StatusIcon className="w-2.5 h-2.5 mr-1" />
               {status.label}
             </Badge>
@@ -131,32 +132,32 @@ function ObjectiveCard({ objective, onClick }) {
         </div>
         <div className="flex items-center gap-1 shrink-0 ml-2">
           <AddToCalendarMenu type="objective" item={objective} className="opacity-0 group-hover:opacity-100" />
-          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
         </div>
       </div>
 
       {/* Progress bar */}
       <div className="mb-3">
         <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
-          <span>{completedSteps}/{totalSteps} sessions</span>
-          <span className="font-medium">{percent}%</span>
+          <span className="tabular-nums">{completedSteps}/{totalSteps} sessions</span>
+          <span className="font-medium tabular-nums">{percent}%</span>
         </div>
-        <Progress value={percent} className="h-2" />
+        <Progress value={percent} className="h-2 rounded-full [&>div]:rounded-full [&>div]:transition-all [&>div]:duration-500" />
       </div>
 
       {/* Stats row */}
       <div className="flex items-center gap-4 text-xs text-muted-foreground">
         <div className="flex items-center gap-1">
           <Flame className="w-3 h-3 text-[#E48C75]" />
-          <span>{objective.streak_days || 0}j streak</span>
+          <span className="tabular-nums">{objective.streak_days || 0}j streak</span>
         </div>
         <div className="flex items-center gap-1">
           <Clock className="w-3 h-3" />
-          <span>{objective.total_minutes || 0} min</span>
+          <span className="tabular-nums">{objective.total_minutes || 0} min</span>
         </div>
         <div className="flex items-center gap-1">
           <Calendar className="w-3 h-3" />
-          <span>Jour {objective.current_day || 0}/{objective.target_duration_days}</span>
+          <span className="tabular-nums">Jour {objective.current_day || 0}/{objective.target_duration_days}</span>
         </div>
       </div>
     </Card>
@@ -233,22 +234,22 @@ export default function ObjectivesPage() {
     <div className="min-h-screen bg-background">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-2xl mx-auto animate-fade-in">
+        <div className="max-w-2xl mx-auto">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-8 opacity-0 animate-fade-in">
             <div>
-              <h1 className="font-heading text-2xl font-bold flex items-center gap-2">
+              <h1 className="font-heading text-3xl font-semibold flex items-center gap-2">
                 <Target className="w-6 h-6 text-primary" />
                 Mes Objectifs
               </h1>
-              <p className="text-sm text-muted-foreground mt-0.5">
+              <p className="text-muted-foreground mt-1">
                 Tes parcours de progression personnalisés
               </p>
             </div>
             <Button
               onClick={() => setShowCreate(true)}
               disabled={!canCreate}
-              className="gap-1.5"
+              className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
               size="sm"
             >
               <Plus className="w-4 h-4" />
@@ -261,9 +262,9 @@ export default function ObjectivesPage() {
             <CardsSkeleton count={3} />
           ) : objectives.length === 0 ? (
             /* Empty state */
-            <Card className="p-8 text-center">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mx-auto mb-4 ring-1 ring-primary/10">
-                <Target className="w-10 h-10 text-primary" />
+            <Card className="p-8 text-center opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
+              <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-[#459492]" />
               </div>
               <h3 className="font-heading font-semibold text-lg mb-2">
                 Définis ton premier objectif
@@ -272,7 +273,7 @@ export default function ObjectivesPage() {
                 Apprendre une langue, jouer d'un instrument, méditer chaque jour...
                 L'IA crée un parcours progressif adapté à toi.
               </p>
-              <Button onClick={() => setShowCreate(true)} className="gap-2">
+              <Button onClick={() => setShowCreate(true)} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
                 <Sparkles className="w-4 h-4" />
                 Créer mon premier parcours
               </Button>
@@ -281,14 +282,15 @@ export default function ObjectivesPage() {
             <>
               {/* Active objectives */}
               {activeObjectives.length > 0 && (
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
                   <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     En cours ({activeObjectives.length})
                   </h2>
-                  {activeObjectives.map((obj) => (
+                  {activeObjectives.map((obj, i) => (
                     <ObjectiveCard
                       key={obj.objective_id}
                       objective={obj}
+                      index={i}
                       onClick={() => navigate(`/objectives/${obj.objective_id}`)}
                     />
                   ))}
@@ -297,14 +299,15 @@ export default function ObjectivesPage() {
 
               {/* Other objectives */}
               {otherObjectives.length > 0 && (
-                <div className="space-y-3">
+                <div className="space-y-3 opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
                   <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     Archivés ({otherObjectives.length})
                   </h2>
-                  {otherObjectives.map((obj) => (
+                  {otherObjectives.map((obj, i) => (
                     <ObjectiveCard
                       key={obj.objective_id}
                       objective={obj}
+                      index={i}
                       onClick={() => navigate(`/objectives/${obj.objective_id}`)}
                     />
                   ))}
@@ -313,7 +316,7 @@ export default function ObjectivesPage() {
 
               {/* Premium upsell if at limit */}
               {!canCreate && !isPremium && (
-                <Card className="p-4 mt-4 border-[#E48C75]/20 bg-[#E48C75]/5 text-center">
+                <Card className="p-4 mt-4 border-[#E48C75]/20 bg-[#E48C75]/5 text-center opacity-0 animate-fade-in" style={{ animationDelay: "300ms" }}>
                   <p className="text-sm text-muted-foreground mb-2">
                     Tu as atteint la limite de 2 objectifs actifs
                   </p>
@@ -321,7 +324,7 @@ export default function ObjectivesPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => navigate("/pricing")}
-                    className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10"
+                    className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10 rounded-xl transition-all duration-200"
                   >
                     <Crown className="w-3.5 h-3.5 mr-1.5 text-[#E48C75]" />
                     Passer en Premium
@@ -348,7 +351,7 @@ export default function ObjectivesPage() {
                     Quel est ton objectif ?
                   </label>
                   <input
-                    className="w-full rounded-lg border border-border bg-muted/30 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    className="w-full rounded-xl border border-border bg-muted/30 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all duration-200"
                     placeholder="Ex: Apprendre le thaï, Jouer du piano..."
                     value={form.title}
                     onChange={(e) => setForm({ ...form, title: e.target.value })}
@@ -384,7 +387,7 @@ export default function ObjectivesPage() {
                       <button
                         key={key}
                         onClick={() => setForm({ ...form, category: key })}
-                        className={`px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+                        className={`px-2.5 py-1.5 rounded-xl text-xs font-medium border transition-all duration-200 ${
                           form.category === key
                             ? "bg-primary text-primary-foreground border-primary scale-105"
                             : "bg-muted/30 border-border hover:border-primary/30"
@@ -443,10 +446,10 @@ export default function ObjectivesPage() {
               </div>
 
               <DialogFooter>
-                <Button variant="outline" onClick={() => setShowCreate(false)}>
+                <Button variant="outline" onClick={() => setShowCreate(false)} className="rounded-xl transition-all duration-200 hover:bg-muted/80">
                   Annuler
                 </Button>
-                <Button onClick={handleCreate} disabled={!form.title.trim() || isCreating} className="gap-2">
+                <Button onClick={handleCreate} disabled={!form.title.trim() || isCreating} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
                   {isCreating ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
                   ) : (

@@ -181,7 +181,7 @@ export default function CoachFAB() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-7 w-7 text-muted-foreground hover:text-destructive"
+                  className="h-7 w-7 text-muted-foreground hover:text-destructive transition-all duration-200"
                   onClick={clearHistory}
                   title="Effacer l'historique"
                 >
@@ -191,7 +191,7 @@ export default function CoachFAB() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-7 w-7 text-muted-foreground hover:text-foreground"
+                className="h-7 w-7 text-muted-foreground hover:text-foreground transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 <X className="w-4 h-4" />
@@ -224,7 +224,7 @@ export default function CoachFAB() {
                       key={qr.label}
                       onClick={() => sendMessage(qr.message)}
                       disabled={isSending}
-                      className="w-full text-left px-3.5 py-2.5 rounded-xl border border-border/50 bg-muted/30 hover:bg-primary/5 hover:border-primary/20 transition-colors text-sm text-foreground"
+                      className="w-full text-left px-3.5 py-2.5 rounded-xl border border-border/50 bg-muted/30 hover:bg-primary/5 hover:border-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-sm text-foreground"
                     >
                       <span className="text-primary mr-1.5">
                         <Sparkles className="w-3 h-3 inline-block" />
@@ -265,7 +265,7 @@ export default function CoachFAB() {
                 <button
                   key={qr.label}
                   onClick={() => sendMessage(qr.message)}
-                  className="shrink-0 px-2.5 py-1 rounded-full border border-border/50 bg-muted/30 hover:bg-primary/5 hover:border-primary/20 transition-colors text-xs text-muted-foreground hover:text-foreground"
+                  className="shrink-0 px-2.5 py-1 rounded-full border border-border/50 bg-muted/30 hover:bg-primary/5 hover:border-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-xs text-muted-foreground hover:text-foreground"
                 >
                   {qr.label}
                 </button>
@@ -313,7 +313,7 @@ export default function CoachFAB() {
               />
               <Button
                 size="icon"
-                className="h-10 w-10 rounded-xl shrink-0"
+                className="h-10 w-10 rounded-xl shrink-0 transition-all duration-200 active:scale-[0.97]"
                 onClick={() => sendMessage()}
                 disabled={!input.trim() || isSending}
               >
@@ -327,10 +327,10 @@ export default function CoachFAB() {
       {/* FAB Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed z-50 bottom-6 right-6 w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`fixed z-50 bottom-6 right-6 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ${
           isOpen
-            ? "bg-muted text-muted-foreground rotate-0 scale-90"
-            : "bg-[#459492] text-white hover:bg-[#55B3AE] hover:shadow-xl hover:scale-105 active:scale-95"
+            ? "bg-muted text-muted-foreground rotate-0 scale-90 shadow-lg"
+            : "bg-[#459492] text-white hover:bg-[#55B3AE] shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
         }`}
       >
         {isOpen ? (

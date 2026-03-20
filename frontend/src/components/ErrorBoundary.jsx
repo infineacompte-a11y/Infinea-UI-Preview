@@ -42,8 +42,8 @@ class ErrorBoundary extends React.Component {
       }
 
       return (
-        <div className="flex items-center justify-center py-16 px-4">
-          <Card className="max-w-md w-full border-destructive/20">
+        <div className="flex items-center justify-center py-16 px-4 animate-fade-in" role="alert">
+          <Card className="max-w-md w-full border-destructive/20 rounded-2xl">
             <CardContent className="p-8 text-center">
               <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center mx-auto mb-4">
                 <AlertTriangle className="w-7 h-7 text-destructive" />
@@ -54,7 +54,7 @@ class ErrorBoundary extends React.Component {
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 Cette section a rencontré un problème. Tes données sont intactes.
               </p>
-              <Button onClick={this.handleReset} variant="outline" className="gap-2">
+              <Button onClick={this.handleReset} variant="outline" className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
                 <RefreshCw className="w-4 h-4" />
                 Réessayer
               </Button>

@@ -81,7 +81,7 @@ function NavLinks({ mobile = false, onNavigate, unreadCount = 0 }) {
 
   return (
     <>
-      {navItems.map(({ to, label, icon: Icon }) => {
+      {navItems.map(({ to, label, icon: Icon }, index) => {
         const isActive = location.pathname === to ||
           (to === "/dashboard" && location.pathname === "/");
         const isNotif = to === "/notifications";
@@ -90,11 +90,12 @@ function NavLinks({ mobile = false, onNavigate, unreadCount = 0 }) {
           <Link
             key={to}
             to={to}
-            className={`nav-item flex items-center gap-3 px-4 py-3 rounded-xl ${
+            className={`nav-item flex items-center gap-3 px-4 py-3 rounded-xl opacity-0 animate-fade-in transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121212] focus-visible:outline-none ${
               isActive
-                ? "active"
-                : "text-muted-foreground hover:text-foreground"
+                ? "active border-l-2 border-l-[#459492] bg-[#459492]/10 text-foreground shadow-[inset_0_0_12px_rgba(69,148,146,0.08)]"
+                : "text-muted-foreground hover:text-foreground hover:bg-[#459492]/5"
             }`}
+            style={{ animationDelay: `${index * 30}ms`, animationFillMode: "forwards" }}
             onClick={() => mobile && onNavigate?.()}
           >
             <div className="relative">
@@ -133,14 +134,14 @@ export default function Sidebar() {
           <div className="h-px bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent mb-4 mt-4" />
         </div>
 
-        <nav className="flex flex-col gap-1 flex-1">
+        <nav className="flex flex-col gap-1 flex-1 overflow-y-auto">
           <NavLinks unreadCount={unreadCount} />
         </nav>
 
         <div className="pt-4 border-t border-border">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-brand-teal/5 transition-colors"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-brand-teal/5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121212] focus-visible:outline-none active:scale-[0.97]"
             data-testid="logout-btn"
           >
             <LogOut className="w-5 h-5" />
@@ -170,7 +171,7 @@ export default function Sidebar() {
               <div className="mt-auto pt-4 border-t border-border absolute bottom-6 left-6 right-6">
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground"
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground transition-all duration-200 active:scale-[0.97]"
                 >
                   <LogOut className="w-5 h-5" />
                   <span>Déconnexion</span>

@@ -19,6 +19,7 @@ import {
   Brain,
   Rocket,
   Share2,
+  ChevronRight,
 } from "lucide-react";
 import { toast } from "sonner";
 import { API, authFetch } from "@/App";
@@ -111,7 +112,7 @@ export default function ProgressStats() {
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="flex items-start justify-between mb-8">
+          <div className="flex items-start justify-between mb-8 opacity-0 animate-fade-in">
             <div>
               <h1 className="font-heading text-3xl font-semibold mb-2" data-testid="progress-title">
                 Votre Capital-Temps
@@ -124,7 +125,7 @@ export default function ProgressStats() {
               <Button
                 variant="outline"
                 size="sm"
-                className="gap-1.5 shrink-0"
+                className="gap-1.5 shrink-0 rounded-xl bg-card hover:bg-muted border-border hover:border-[#459492]/30 transition-all"
                 onClick={() => setShareOpen(true)}
               >
                 <Share2 className="w-4 h-4" />
@@ -135,37 +136,31 @@ export default function ProgressStats() {
           </div>
 
           {isLoading ? (
-            <div className="flex items-center justify-center py-20">
-              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            <div className="space-y-6">
+              {/* Skeleton Stats Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="animate-pulse rounded-xl bg-muted h-24" />
+                ))}
+              </div>
+              {/* Skeleton Chart Cards */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="animate-pulse rounded-xl bg-muted h-64" />
+                <div className="animate-pulse rounded-xl bg-muted h-64" />
+              </div>
             </div>
           ) : (
-            <div className="animate-fade-in">
+            <div>
               {/* Stats Overview */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <Card className="stat-card">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-heading font-bold" data-testid="total-time">
-                          {stats?.total_time_invested || 0}
-                        </p>
-                        <p className="text-xs text-muted-foreground">minutes totales</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="stat-card">
+                <Card className="stat-card bg-gradient-to-br from-[#5DB786]/10 to-transparent hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
                         <TrendingUp className="w-6 h-6 text-[#5DB786]" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold" data-testid="total-sessions">
+                        <p className="text-2xl font-heading font-bold tabular-nums" data-testid="total-sessions">
                           {stats?.total_sessions || 0}
                         </p>
                         <p className="text-xs text-muted-foreground">sessions</p>
@@ -174,14 +169,30 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card">
+                <Card className="stat-card bg-gradient-to-br from-[#459492]/10 to-transparent hover:shadow-md hover:border-[#459492]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "50ms", animationFillMode: "forwards" }}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <Clock className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-heading font-bold tabular-nums" data-testid="total-time">
+                          {stats?.total_time_invested || 0}
+                        </p>
+                        <p className="text-xs text-muted-foreground">minutes totales</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="stat-card bg-gradient-to-br from-[#E48C75]/10 to-transparent hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
                         <Flame className="w-6 h-6 text-[#E48C75]" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold" data-testid="streak-days">
+                        <p className="text-2xl font-heading font-bold tabular-nums" data-testid="streak-days">
                           {stats?.streak_days || 0}
                         </p>
                         <p className="text-xs text-muted-foreground">jours streak</p>
@@ -190,14 +201,14 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card">
+                <Card className="stat-card bg-gradient-to-br from-[#55B3AE]/10 to-transparent hover:shadow-md hover:border-[#55B3AE]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-[#459492]/10 flex items-center justify-center">
                         <Sparkles className="w-6 h-6 text-[#459492]" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold">
+                        <p className="text-2xl font-heading font-bold tabular-nums">
                           {Math.round((stats?.total_time_invested || 0) / 60)}h
                         </p>
                         <p className="text-xs text-muted-foreground">heures investies</p>
@@ -208,9 +219,9 @@ export default function ProgressStats() {
               </div>
 
               {/* Charts */}
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="grid md:grid-cols-2 gap-6 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
                 {/* Time by Category */}
-                <Card className="hover:border-[#459492]/20 transition-all">
+                <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="font-heading text-lg">Temps par catégorie</CardTitle>
                   </CardHeader>
@@ -223,9 +234,10 @@ export default function ProgressStats() {
                           <YAxis tick={{ fill: "#9A9A9A", fontSize: 12 }} />
                           <Tooltip
                             contentStyle={{
-                              backgroundColor: "#121212",
+                              backgroundColor: "#1A1A1A",
                               border: "1px solid #262626",
-                              borderRadius: "8px",
+                              borderRadius: "12px",
+                              boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3)",
                             }}
                           />
                           <Bar dataKey="minutes" radius={[4, 4, 0, 0]} />
@@ -240,7 +252,7 @@ export default function ProgressStats() {
                 </Card>
 
                 {/* Sessions Distribution */}
-                <Card className="hover:border-[#459492]/20 transition-all">
+                <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="font-heading text-lg">Répartition des sessions</CardTitle>
                   </CardHeader>
@@ -263,9 +275,10 @@ export default function ProgressStats() {
                           </Pie>
                           <Tooltip
                             contentStyle={{
-                              backgroundColor: "#121212",
+                              backgroundColor: "#1A1A1A",
                               border: "1px solid #262626",
-                              borderRadius: "8px",
+                              borderRadius: "12px",
+                              boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3)",
                             }}
                           />
                         </PieChart>
@@ -294,7 +307,7 @@ export default function ProgressStats() {
               <PremiumAnalytics />
 
               {/* Recent Sessions */}
-              <Card className="hover:border-[#459492]/20 transition-all">
+              <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                 <CardHeader>
                   <CardTitle className="font-heading text-lg">Sessions récentes</CardTitle>
                 </CardHeader>
@@ -304,7 +317,8 @@ export default function ProgressStats() {
                       {stats.recent_sessions.map((session, i) => (
                         <div
                           key={i}
-                          className="flex items-center justify-between p-3 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50 hover:border-[#459492]/20 transition-all"
+                          className="group flex items-center justify-between p-3 rounded-xl bg-[#1A1A1A]/50 border border-[#262626]/50 hover:bg-muted/50 hover:shadow-sm hover:border-[#459492]/20 transition-all duration-200 opacity-0 animate-fade-in"
+                          style={{ animationDelay: `${450 + i * 30}ms`, animationFillMode: "forwards" }}
                         >
                           <div className="flex items-center gap-3">
                             <div
@@ -335,18 +349,23 @@ export default function ProgressStats() {
                               </p>
                             </div>
                           </div>
-                          <span className="text-sm text-muted-foreground">
-                            {session.actual_duration} min
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm text-muted-foreground tabular-nums">
+                              {session.actual_duration} min
+                            </span>
+                            <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+                          </div>
                         </div>
                       ))}
                     </div>
                   ) : (
                     <div className="text-center py-8 text-muted-foreground">
-                      <Clock className="w-10 h-10 mx-auto mb-2 opacity-50" />
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#459492]/20 to-[#55B3AE]/10 flex items-center justify-center mx-auto mb-3">
+                        <Clock className="w-8 h-8 text-[#459492]" />
+                      </div>
                       <p>Aucune session complétée</p>
                       <Link to="/dashboard">
-                        <Button variant="link" className="mt-2">
+                        <Button className="mt-3 rounded-xl shadow-md">
                           Commencer une session
                         </Button>
                       </Link>
