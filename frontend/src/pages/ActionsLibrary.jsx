@@ -188,7 +188,7 @@ export default function ActionsLibrary() {
   }, {});
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       {/* Main Content */}
@@ -222,13 +222,13 @@ export default function ActionsLibrary() {
             >
               <TabsTrigger
                 value="all"
-                className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 transition-all duration-200 hover:bg-muted/60"
+                className="data-[state=active]:tab-active-premium rounded-lg px-4 py-2 transition-[background,box-shadow] duration-200 hover:bg-muted/60"
               >
                 Toutes
               </TabsTrigger>
               <TabsTrigger
                 value="my_actions"
-                className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 gap-1 transition-all duration-200 hover:bg-muted/60"
+                className="data-[state=active]:tab-active-premium rounded-lg px-4 py-2 gap-1 transition-[background,box-shadow] duration-200 hover:bg-muted/60"
                 data-testid="tab-my-actions"
               >
                 <User className="w-3.5 h-3.5" />
@@ -241,7 +241,7 @@ export default function ActionsLibrary() {
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 transition-all duration-200 hover:bg-muted/60"
+                  className="data-[state=active]:tab-active-premium rounded-lg px-4 py-2 transition-[background,box-shadow] duration-200 hover:bg-muted/60"
                   data-testid={`tab-${key}`}
                 >
                   {label}
@@ -253,7 +253,7 @@ export default function ActionsLibrary() {
                   <TabsTrigger
                     key={key}
                     value={key}
-                    className="data-[state=active]:tab-active-premium data-[state=active]:text-white rounded-lg px-4 py-2 gap-1 transition-all duration-200 hover:bg-muted/60"
+                    className="data-[state=active]:tab-active-premium rounded-lg px-4 py-2 gap-1 transition-[background,box-shadow] duration-200 hover:bg-muted/60"
                     data-testid={`tab-${key}`}
                   >
                     {isPremium ? (
@@ -311,7 +311,7 @@ export default function ActionsLibrary() {
                           return (
                             <Card
                               key={action.action_id}
-                              className={`group action-card cursor-pointer border-l-[3px] ${categoryBorderColors[action.category] || "border-l-border"} hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 opacity-0 animate-fade-in`}
+                              className={`group action-card cursor-pointer border-l-[3px] ${categoryBorderColors[action.category] || "border-l-border"} hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 opacity-0 animate-fade-in`}
                               style={{ animationDelay: `${i * 50}ms`, animationFillMode: "forwards" }}
                               onClick={() => startSession(action.action_id)}
                               data-testid={`action-${action.action_id}`}
@@ -359,7 +359,7 @@ export default function ActionsLibrary() {
                 return (
                   <Card
                     key={action.action_id}
-                    className={`group action-card cursor-pointer border-l-[3px] ${categoryBorderColors[action.category] || "border-l-border"} hover:shadow-md hover:border-border/80 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-300 ease-out opacity-0 animate-fade-in ${isPremiumLocked ? "opacity-75" : ""}`}
+                    className={`group action-card cursor-pointer border-l-[3px] ${categoryBorderColors[action.category] || "border-l-border"} hover:shadow-md hover:border-border/80 hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out opacity-0 animate-fade-in ${isPremiumLocked ? "opacity-75" : ""}`}
                     style={{ animationDelay: `${i * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => startSession(action.action_id)}
                     data-testid={`action-${action.action_id}`}

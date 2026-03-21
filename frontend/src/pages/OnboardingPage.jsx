@@ -157,7 +157,7 @@ export default function OnboardingPage() {
           </Card>
           <Button
             onClick={handleFinish}
-            className="w-full h-12 rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 active:scale-[0.97]"
+            className="w-full h-12 rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 btn-press"
           >
             Commencer mes micro-actions
             <ChevronRight className="w-5 h-5 ml-2" />
@@ -168,7 +168,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8FAFB] flex flex-col">
+    <div className="min-h-screen app-bg-mesh flex flex-col">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-[#E2E6EA]">
         <div className="flex items-center justify-between px-4 h-16">
@@ -342,7 +342,7 @@ export default function OnboardingPage() {
             <Button
               variant="outline"
               onClick={handleBack}
-              className="h-12 rounded-xl px-6 bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 active:scale-[0.97]"
+              className="h-12 rounded-xl px-6 bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 btn-press"
             >
               <ChevronLeft className="w-5 h-5 mr-1" />
               Retour
@@ -350,7 +350,7 @@ export default function OnboardingPage() {
           )}
           <Button
             onClick={handleNext}
-            className="flex-1 h-12 rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 active:scale-[0.97]"
+            className="flex-1 h-12 rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 btn-press"
             disabled={!canAdvance() || isSubmitting}
           >
             {isSubmitting ? (

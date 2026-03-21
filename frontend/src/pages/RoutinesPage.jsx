@@ -225,7 +225,7 @@ function ExecutionDialog({ routine, open, onClose, onComplete }) {
           {/* Controls */}
           <div className="flex items-center justify-center gap-3">
             {!isRunning ? (
-              <Button onClick={() => setIsRunning(true)} className="gap-2 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+              <Button onClick={() => setIsRunning(true)} className="gap-2 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                 <Play className="w-4 h-4" />
                 {timer === 0 ? "Démarrer" : "Reprendre"}
               </Button>
@@ -235,7 +235,7 @@ function ExecutionDialog({ routine, open, onClose, onComplete }) {
                   <Timer className="w-4 h-4" />
                   Pause
                 </Button>
-                <Button onClick={nextStep} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                <Button onClick={nextStep} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                   {currentStep < totalSteps - 1 ? (
                     <><SkipForward className="w-4 h-4" />Suivant</>
                   ) : (
@@ -278,7 +278,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch, index = 0 
   const weekDone = completionLog.filter((e) => e.date >= weekAgoStr).length;
 
   return (
-    <Card className={`opacity-0 animate-fade-in p-5 group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ${
+    <Card className={`opacity-0 animate-fade-in p-5 group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 ${
       isDoneToday ? "border-[#5DB786]/30 bg-[#5DB786]/3" :
       routine.is_active ? "" : "opacity-60"
     }`} style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }}>
@@ -385,7 +385,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch, index = 0 
 
         <div className="flex items-center gap-1.5">
           {!isDoneToday && routine.is_active && (
-            <Button size="sm" variant="default" className="h-7 text-xs gap-1 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+            <Button size="sm" variant="default" className="h-7 text-xs gap-1 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
               onClick={(e) => { e.stopPropagation(); onLaunch(); }}>
               <Play className="w-3 h-3" />
               Lancer
@@ -393,7 +393,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch, index = 0 
           )}
           {!isDoneToday && routine.is_active && (
             <Button size="sm" variant="outline"
-              className="h-7 text-xs gap-1 rounded-xl border-[#5DB786]/30 text-[#5DB786] hover:bg-[#5DB786]/10 transition-all duration-200 active:scale-[0.97]"
+              className="h-7 text-xs gap-1 rounded-xl border-[#5DB786]/30 text-[#5DB786] hover:bg-[#5DB786]/10 transition-all duration-200 btn-press"
               onClick={(e) => { e.stopPropagation(); onComplete(); }}>
               <CheckCircle2 className="w-3 h-3" />
               Fait
@@ -591,7 +591,7 @@ export default function RoutinesPage() {
   const totalStreak = activeRoutines.reduce((max, r) => Math.max(max, r.streak_current || 0), 0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">
@@ -607,7 +607,7 @@ export default function RoutinesPage() {
               </p>
             </div>
             <Button onClick={() => { setEditingRoutine(null); setForm(emptyForm); setNewItem({ title: "", duration_minutes: 5 }); setShowDialog(true); }}
-              disabled={!canCreate} className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" size="sm">
+              disabled={!canCreate} className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" size="sm">
               <Plus className="w-4 h-4" />
               Nouvelle
             </Button>
@@ -661,7 +661,7 @@ export default function RoutinesPage() {
                 <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto leading-relaxed">
                   Définis des micro-routines quotidiennes avec un suivi de progression et de streak. Routine matinale, pause productive, rituel du soir...
                 </p>
-                <Button onClick={() => { setEditingRoutine(null); setForm(emptyForm); setShowDialog(true); }} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                <Button onClick={() => { setEditingRoutine(null); setForm(emptyForm); setShowDialog(true); }} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                   <Plus className="w-4 h-4" />
                   Créer une habitude
                 </Button>
@@ -706,7 +706,7 @@ export default function RoutinesPage() {
                   <Card className="p-4 mt-4 border-[#E48C75]/20 bg-[#E48C75]/5 text-center">
                     <p className="text-sm text-muted-foreground mb-2">Limite de {maxRoutines} habitudes atteinte</p>
                     <Button variant="outline" size="sm"
-                      className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10 rounded-xl transition-all duration-200 active:scale-[0.97]"
+                      className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10 rounded-xl transition-all duration-200 btn-press"
                       onClick={() => window.location.href = "/pricing"}>
                       <Crown className="w-3.5 h-3.5 mr-1.5 text-[#E48C75]" />
                       Passer en Premium
@@ -882,7 +882,7 @@ export default function RoutinesPage() {
                   </Button>
                 )}
                 <Button variant="outline" onClick={() => setShowDialog(false)} className="rounded-xl transition-all duration-200 hover:bg-muted/80">Annuler</Button>
-                <Button onClick={handleSave} disabled={!form.name.trim() || form.items.length === 0 || isSaving} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                <Button onClick={handleSave} disabled={!form.name.trim() || form.items.length === 0 || isSaving} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                   {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
                   {editingRoutine ? "Enregistrer" : "Créer l'habitude"}
                 </Button>
@@ -901,7 +901,7 @@ export default function RoutinesPage() {
               </p>
               <DialogFooter>
                 <Button variant="outline" onClick={() => setDeleteConfirm(null)} className="rounded-xl transition-all duration-200 hover:bg-muted/80">Annuler</Button>
-                <Button variant="destructive" onClick={() => handleDelete(deleteConfirm)} className="gap-1.5 rounded-xl transition-all duration-200 active:scale-[0.97]">
+                <Button variant="destructive" onClick={() => handleDelete(deleteConfirm)} className="gap-1.5 rounded-xl transition-all duration-200 btn-press">
                   <Trash2 className="w-4 h-4" />
                   Supprimer
                 </Button>

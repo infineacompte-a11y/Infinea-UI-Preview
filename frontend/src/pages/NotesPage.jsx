@@ -218,7 +218,7 @@ export default function NotesPage() {
   const isPremium = user?.subscription_tier === "premium";
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
@@ -333,7 +333,7 @@ export default function NotesPage() {
                       {notes.map((note, idx) => (
                         <Card
                           key={note.session_id}
-                          className="opacity-0 animate-fade-in group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 rounded-xl bg-card border-border"
+                          className="opacity-0 animate-fade-in group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 rounded-xl bg-card border-border"
                           style={{ animationDelay: `${idx * 30}ms`, animationFillMode: "forwards" }}
                         >
                           <CardContent className="p-4">
@@ -368,7 +368,7 @@ export default function NotesPage() {
 
                       {hasMore && (
                         <div className="text-center pt-4">
-                          <Button variant="outline" onClick={loadMore} className="rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.97]">
+                          <Button variant="outline" onClick={loadMore} className="rounded-xl transition-all duration-200 shadow-md hover:shadow-lg btn-press">
                             <ChevronDown className="w-4 h-4 mr-2" />
                             Charger plus
                           </Button>
@@ -386,7 +386,7 @@ export default function NotesPage() {
                           Complète des sessions et ajoute des notes pour les retrouver ici
                         </p>
                         <Link to="/actions">
-                          <Button variant="outline" size="sm" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                          <Button variant="outline" size="sm" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                             <Sparkles className="w-4 h-4 mr-2" />
                             Commencer une action
                           </Button>
@@ -408,7 +408,7 @@ export default function NotesPage() {
                       size="sm"
                       onClick={handleGenerateAnalysis}
                       disabled={isAnalyzing}
-                      className="rounded-xl transition-all duration-200 active:scale-[0.97]"
+                      className="rounded-xl transition-all duration-200 btn-press"
                     >
                       {isAnalyzing ? (
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -430,7 +430,7 @@ export default function NotesPage() {
                       </div>
                       <p className="text-sm text-muted-foreground mb-3">{analysisError.message}</p>
                       <Link to="/pricing">
-                        <Button size="sm" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                        <Button size="sm" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                           <Crown className="w-4 h-4 mr-2" />
                           Passer Premium
                         </Button>
@@ -563,7 +563,7 @@ export default function NotesPage() {
                           ? "Clique sur \"Générer l'analyse\" pour obtenir des insights personnalisés sur tes notes."
                           : `Encore ${3 - (stats?.total_notes || 0)} note(s) avant ta première analyse.`}
                       </p>
-                      <Button variant="outline" size="sm" onClick={handleGenerateAnalysis} disabled={isAnalyzing} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                      <Button variant="outline" size="sm" onClick={handleGenerateAnalysis} disabled={isAnalyzing} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                         {isAnalyzing ? (
                           <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         ) : (

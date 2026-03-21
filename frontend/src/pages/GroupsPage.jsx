@@ -40,7 +40,7 @@ export default function GroupsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-5xl mx-auto">
@@ -58,7 +58,7 @@ export default function GroupsPage() {
               </div>
               <Button
                 onClick={() => setCreateOpen(true)}
-                className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 active:scale-[0.97]"
+                className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 btn-press"
               >
                 <Plus className="w-4 h-4" />
                 <span className="hidden sm:inline">Créer un groupe</span>
@@ -90,7 +90,7 @@ export default function GroupsPage() {
                 </p>
                 <Button
                   onClick={() => setCreateOpen(true)}
-                  className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 active:scale-[0.97]"
+                  className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 btn-press"
                 >
                   <Plus className="w-4 h-4" />
                   Créer mon premier groupe

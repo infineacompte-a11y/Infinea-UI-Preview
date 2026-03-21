@@ -160,7 +160,7 @@ export default function Dashboard() {
   const EnergyIcon = energyLevel === "low" ? BatteryLow : energyLevel === "medium" ? BatteryMedium : BatteryFull;
 
   return (
-    <div className="min-h-screen bg-[#F8FAFB]">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       {/* Main Content */}
@@ -194,7 +194,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* Sessions / Time card */}
             <Card
-              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#5DB786]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#5DB786] hover:shadow-md hover:shadow-[#5DB786]/10 hover:border-[#5DB786]/30 active:scale-[0.98] transition-all duration-300"
+              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#5DB786]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#5DB786] hover:shadow-md hover:shadow-[#5DB786]/10 hover:border-[#5DB786]/30 btn-press transition-all duration-300"
               style={{ animationDelay: "100ms" }}
             >
               <CardContent className="p-4">
@@ -211,7 +211,7 @@ export default function Dashboard() {
             </Card>
             {/* Streak card */}
             <Card
-              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#E48C75]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#E48C75] hover:shadow-md hover:shadow-[#E48C75]/10 hover:border-[#E48C75]/30 active:scale-[0.98] transition-all duration-300"
+              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#E48C75]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#E48C75] hover:shadow-md hover:shadow-[#E48C75]/10 hover:border-[#E48C75]/30 btn-press transition-all duration-300"
               style={{ animationDelay: "150ms" }}
             >
               <CardContent className="p-4">
@@ -233,7 +233,7 @@ export default function Dashboard() {
             </Card>
             {/* Subscription card */}
             <Card
-              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#459492]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#459492] hover:shadow-md hover:shadow-[#459492]/10 hover:border-[#459492]/30 active:scale-[0.98] transition-all duration-300"
+              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#459492]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#459492] hover:shadow-md hover:shadow-[#459492]/10 hover:border-[#459492]/30 btn-press transition-all duration-300"
               style={{ animationDelay: "200ms" }}
             >
               <CardContent className="p-4">
@@ -254,7 +254,7 @@ export default function Dashboard() {
 
           {/* AI Coach — first thing the user sees */}
           <div className="opacity-0 animate-fade-in relative" style={{ animationDelay: "250ms" }}>
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#459492]/10 via-[#55B3AE]/5 to-[#459492]/10 blur-xl pointer-events-none" />
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#459492]/12 via-[#55B3AE]/8 to-[#5DB786]/10 blur-2xl pointer-events-none animate-pulse-glow" />
             <div className="relative">
               <AICoachCard onStartAction={startSession} />
             </div>
@@ -327,7 +327,7 @@ export default function Dashboard() {
                     <button
                       key={level.value}
                       onClick={() => setEnergyLevel(level.value)}
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border hover:scale-105 active:scale-95 transition-all duration-200 ${
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border hover:scale-105 active:translate-y-0.5 transition-all duration-200 ${
                         energyLevel === level.value
                           ? `${level.border} ${level.bg} ${level.color} ring-2 ring-offset-2 ring-offset-white ${level.ring} shadow-md`
                           : "border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F8FAFB]"
@@ -351,7 +351,7 @@ export default function Dashboard() {
                       <button
                         key={key}
                         onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
-                        className={`flex items-center gap-2 py-2 px-3 rounded-xl border hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 ${
+                        className={`flex items-center gap-2 py-2 px-3 rounded-xl border hover:scale-[1.02] btn-press transition-all duration-200 ${
                           selectedCategory === key
                             ? `${categoryColors[key]} border-[#459492] ring-2 ring-[#459492]/50 shadow-md`
                             : "bg-[#F8FAFB] border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F0F7F7]"
@@ -369,7 +369,7 @@ export default function Dashboard() {
               {/* Get Suggestions Button */}
               <Button
                 onClick={getSuggestions}
-                className="w-full h-12 text-base font-semibold rounded-xl bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#55B3AE] hover:to-[#459492] text-white shadow-md shadow-[#459492]/20 active:scale-[0.98] transition-all duration-300"
+                className="w-full h-12 text-base font-semibold rounded-xl bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#55B3AE] hover:to-[#459492] text-white shadow-md shadow-[#459492]/20 btn-press transition-all duration-300"
                 disabled={isLoading}
                 data-testid="get-suggestions-btn"
               >
@@ -411,7 +411,7 @@ export default function Dashboard() {
 
               {user?.subscription_tier !== "premium" && (
                 <Link to="/pricing" className="block">
-                  <Card className="bg-gradient-to-r from-[#459492]/5 to-[#55B3AE]/5 border-[#459492]/20 hover:border-[#459492]/40 active:scale-[0.98] transition-all cursor-pointer rounded-2xl">
+                  <Card className="bg-gradient-to-r from-[#459492]/5 to-[#55B3AE]/5 border-[#459492]/20 hover:border-[#459492]/40 btn-press transition-all cursor-pointer rounded-2xl">
                     <CardContent className="p-3 flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <Crown className="w-5 h-5 text-[#459492]" />
@@ -432,7 +432,7 @@ export default function Dashboard() {
                   return (
                     <Card
                       key={action.action_id}
-                      className={`group cursor-pointer rounded-2xl bg-white shadow-sm border border-[#E2E6EA] border-l-[3px] border-l-transparent hover:border-l-[#459492] hover:shadow-md hover:shadow-[#459492]/8 hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 ${i === 0 ? "border-[#459492]/30 border-l-[#459492] shadow-md shadow-[#459492]/8" : ""}`}
+                      className={`group cursor-pointer rounded-2xl bg-white shadow-sm border border-[#E2E6EA] border-l-[3px] border-l-transparent hover:border-l-[#459492] hover:shadow-md hover:shadow-[#459492]/8 hover:border-[#459492]/30 hover:-translate-y-0.5 btn-press transition-all duration-200 ${i === 0 ? "border-[#459492]/30 border-l-[#459492] shadow-md shadow-[#459492]/8" : ""}`}
                       onClick={() => startSession(action.action_id)}
                       data-testid={`action-card-${action.action_id}`}
                     >
@@ -483,7 +483,7 @@ export default function Dashboard() {
                   return (
                     <Card
                       key={key}
-                      className="bg-white cursor-pointer rounded-2xl shadow-sm border border-[#E2E6EA] border-l-[3px] border-l-transparent hover:border-l-[#459492] hover:border-[#459492]/30 hover:shadow-md hover:shadow-[#459492]/5 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
+                      className="bg-white cursor-pointer rounded-2xl shadow-sm border border-[#E2E6EA] border-l-[3px] border-l-transparent hover:border-l-[#459492] hover:border-[#459492]/30 hover:shadow-md hover:shadow-[#459492]/5 hover:-translate-y-0.5 btn-press transition-all duration-200"
                       onClick={() => {
                         setSelectedCategory(key);
                         getSuggestions();

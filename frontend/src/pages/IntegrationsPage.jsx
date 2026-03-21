@@ -510,7 +510,7 @@ export default function IntegrationsPage() {
     });
 
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen app-bg-mesh">
         <Sidebar />
         <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
           <div className="max-w-4xl mx-auto">
@@ -573,7 +573,7 @@ export default function IntegrationsPage() {
                           </p>
                         </div>
                         <Link to="/pricing">
-                          <Button size="sm" variant="outline" className="shrink-0 rounded-xl transition-all duration-200 active:scale-[0.97]">
+                          <Button size="sm" variant="outline" className="shrink-0 rounded-xl transition-all duration-200 btn-press">
                             Voir Premium
                           </Button>
                         </Link>
@@ -757,7 +757,7 @@ export default function IntegrationsPage() {
                       size="sm"
                       onClick={() => handleSync(selectedIntegration.service)}
                       disabled={isSyncing}
-                      className="rounded-xl transition-all duration-200 active:scale-[0.97]"
+                      className="rounded-xl transition-all duration-200 btn-press"
                     >
                       {isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4 mr-2" />}
                       Synchroniser
@@ -809,7 +809,7 @@ export default function IntegrationsPage() {
             </div>
             <DialogFooter>
               <Button variant="outline" onClick={() => { setUrlDialogService(null); setUrlValue(""); }} className="rounded-xl">Annuler</Button>
-              <Button onClick={handleConnectUrl} disabled={isConnectingUrl || !urlValue.trim()} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+              <Button onClick={handleConnectUrl} disabled={isConnectingUrl || !urlValue.trim()} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                 {isConnectingUrl ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Link2 className="w-4 h-4 mr-2" />}
                 Connecter
               </Button>
@@ -847,7 +847,7 @@ export default function IntegrationsPage() {
             </div>
             <DialogFooter>
               <Button variant="outline" onClick={() => { setTokenDialogService(null); setTokenValue(""); }} className="rounded-xl">Annuler</Button>
-              <Button onClick={handleConnectToken} disabled={isConnectingToken || !tokenValue.trim()} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+              <Button onClick={handleConnectToken} disabled={isConnectingToken || !tokenValue.trim()} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                 {isConnectingToken ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Plug className="w-4 h-4 mr-2" />}
                 Connecter
               </Button>
@@ -895,7 +895,7 @@ export default function IntegrationsPage() {
 
   // ==================== LEGACY UI (flag off) ====================
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       {/* Main Content */}
@@ -958,7 +958,7 @@ export default function IntegrationsPage() {
                           </p>
                         </div>
                         <Link to="/pricing">
-                          <Button size="sm" variant="outline" className="shrink-0 rounded-xl transition-all duration-200 active:scale-[0.97]">
+                          <Button size="sm" variant="outline" className="shrink-0 rounded-xl transition-all duration-200 btn-press">
                             Voir Premium
                           </Button>
                         </Link>
@@ -1020,7 +1020,7 @@ export default function IntegrationsPage() {
                                     onClick={() => handleSync(config.id)}
                                     disabled={isSyncing}
                                     data-testid="sync-btn"
-                                    className="rounded-xl transition-all duration-200 active:scale-[0.97]"
+                                    className="rounded-xl transition-all duration-200 btn-press"
                                   >
                                     {isSyncing ? (
                                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -1032,7 +1032,7 @@ export default function IntegrationsPage() {
                                     variant="outline"
                                     size="sm"
                                     onClick={() => setSelectedIntegration({ service: config.id, ...info })}
-                                    className="rounded-xl transition-all duration-200 active:scale-[0.97]"
+                                    className="rounded-xl transition-all duration-200 btn-press"
                                   >
                                     <Settings className="w-4 h-4" />
                                   </Button>
@@ -1106,7 +1106,7 @@ export default function IntegrationsPage() {
                                     </p>
                                     {isLimitReached ? (
                                       <Link to="/pricing">
-                                        <Button size="sm" variant="outline" className="text-[#E48C75] border-[#E48C75]/30 rounded-xl transition-all duration-200 active:scale-[0.97]">
+                                        <Button size="sm" variant="outline" className="text-[#E48C75] border-[#E48C75]/30 rounded-xl transition-all duration-200 btn-press">
                                           <Lock className="w-4 h-4 mr-2" />
                                           Premium requis
                                         </Button>
@@ -1121,7 +1121,7 @@ export default function IntegrationsPage() {
                                             else handleConnect(int.provider);
                                           }}
                                           data-testid={`connect-${int.id}-btn`}
-                                          className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+                                          className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
                                         >
                                           Connecter
                                           <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
@@ -1300,7 +1300,7 @@ export default function IntegrationsPage() {
                     size="sm"
                     onClick={() => handleSync(selectedIntegration.service)}
                     disabled={isSyncing}
-                    className="rounded-xl transition-all duration-200 active:scale-[0.97]"
+                    className="rounded-xl transition-all duration-200 btn-press"
                   >
                     {isSyncing ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -1369,7 +1369,7 @@ export default function IntegrationsPage() {
             <Button
               onClick={handleConnectUrl}
               disabled={isConnectingUrl || !urlValue.trim()}
-              className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+              className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
             >
               {isConnectingUrl ? (
                 <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -1422,7 +1422,7 @@ export default function IntegrationsPage() {
             <Button
               onClick={handleConnectToken}
               disabled={isConnectingToken || !tokenValue.trim()}
-              className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+              className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
             >
               {isConnectingToken ? (
                 <Loader2 className="w-4 h-4 animate-spin mr-2" />

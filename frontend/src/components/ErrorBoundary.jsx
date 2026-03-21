@@ -54,7 +54,7 @@ class ErrorBoundary extends React.Component {
               <p className="text-sm text-[#667085] mb-6 leading-relaxed">
                 Cette section a rencontré un problème. Tes données sont intactes.
               </p>
-              <Button onClick={this.handleReset} variant="outline" className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+              <Button onClick={this.handleReset} variant="outline" className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                 <RefreshCw className="w-4 h-4" />
                 Réessayer
               </Button>

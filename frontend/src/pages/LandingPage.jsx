@@ -93,7 +93,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFB]">
+    <div className="min-h-screen app-bg-mesh">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-[#E2E6EA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

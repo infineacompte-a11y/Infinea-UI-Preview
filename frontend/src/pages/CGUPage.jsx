@@ -6,7 +6,7 @@ import InFineaLogo from "@/components/InFineaLogo";
 
 export default function CGUPage() {
   return (
-    <div className="min-h-screen bg-[#F8FAFB] text-[#141E24]">
+    <div className="min-h-screen app-bg-mesh text-[#141E24]">
       {/* Header */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-[#E2E6EA]">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">

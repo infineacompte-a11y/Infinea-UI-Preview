@@ -108,7 +108,7 @@ function ObjectiveCard({ objective, onClick, index = 0 }) {
 
   return (
     <Card
-      className="p-5 cursor-pointer group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 transition-all duration-200 active:scale-[0.99]"
+      className="p-5 cursor-pointer group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 transition-all duration-200 active:translate-y-px"
       onClick={onClick}
       style={{ animationDelay: `${index * 30}ms` }}
     >
@@ -231,7 +231,7 @@ export default function ObjectivesPage() {
   const canCreate = activeObjectives.length < (isPremium ? 20 : 2);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">

@@ -761,7 +761,7 @@ export default function ObjectiveDetailPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3">
+      <div className="min-h-screen app-bg-mesh flex flex-col items-center justify-center gap-3">
         <Loader2 className="w-8 h-8 animate-spin text-primary" />
         <p className="text-sm text-muted-foreground">Chargement...</p>
       </div>
@@ -780,7 +780,7 @@ export default function ObjectiveDetailPage() {
   const formatTime = (s) => `${Math.floor(s / 60).toString().padStart(2, "0")}:${(s % 60).toString().padStart(2, "0")}`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">

@@ -195,7 +195,7 @@ export default function B2BDashboard() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen app-bg-mesh">
         <Sidebar />
         <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
           <div className="max-w-6xl mx-auto space-y-8">
@@ -231,7 +231,7 @@ export default function B2BDashboard() {
 
   if (showCreateCompany && !company) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="min-h-screen app-bg-mesh flex items-center justify-center p-4">
         <Card className="max-w-md w-full rounded-xl opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
           <CardHeader className="text-center">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mx-auto mb-4">
@@ -269,7 +269,7 @@ export default function B2BDashboard() {
                   Les collaborateurs devront avoir un email @{companyForm.domain || "domaine.com"}
                 </p>
               </div>
-              <Button type="submit" className="w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" data-testid="create-company-btn">
+              <Button type="submit" className="w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="create-company-btn">
                 <Building2 className="w-4 h-4 mr-2" />
                 Créer l'espace entreprise
               </Button>
@@ -289,7 +289,7 @@ export default function B2BDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       {/* Main Content */}
@@ -309,13 +309,13 @@ export default function B2BDashboard() {
               </p>
             </div>
             <div className="flex gap-2 sm:gap-3 shrink-0">
-              <Button variant="outline" onClick={() => toast.info("Export PDF bientôt disponible")} className="rounded-xl transition-all duration-200 active:scale-[0.97]">
+              <Button variant="outline" onClick={() => toast.info("Export PDF bientôt disponible")} className="rounded-xl transition-all duration-200 btn-press">
                 <Download className="w-4 h-4 mr-2" />
                 Export
               </Button>
               <Dialog open={showInvite} onOpenChange={setShowInvite}>
                 <DialogTrigger asChild>
-                  <Button data-testid="invite-btn" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                  <Button data-testid="invite-btn" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                     <UserPlus className="w-4 h-4 mr-2" />
                     Inviter
                   </Button>
@@ -336,7 +336,7 @@ export default function B2BDashboard() {
                       required
                       data-testid="invite-email-input"
                     />
-                    <Button type="submit" className="w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" data-testid="send-invite-btn">
+                    <Button type="submit" className="w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="send-invite-btn">
                       <Send className="w-4 h-4 mr-2" />
                       Envoyer l'invitation
                     </Button>
@@ -596,7 +596,7 @@ export default function B2BDashboard() {
                       return (
                         <Card
                           key={i}
-                          className={`opacity-0 animate-fade-in group hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 rounded-xl ${isTop3 ? "border-[#E48C75]/30 bg-[#E48C75]/5" : "hover:border-[#459492]/30"}`}
+                          className={`opacity-0 animate-fade-in group hover:shadow-lg hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 rounded-xl ${isTop3 ? "border-[#E48C75]/30 bg-[#E48C75]/5" : "hover:border-[#459492]/30"}`}
                           style={{ animationDelay: `${i * 30}ms`, animationFillMode: "forwards" }}
                           data-testid={`employee-card-${i}`}
                         >
@@ -675,7 +675,7 @@ export default function B2BDashboard() {
                         <Users className="w-8 h-8 text-muted-foreground/50" />
                       </div>
                       <p className="text-muted-foreground mb-4">Aucun collaborateur pour le moment</p>
-                      <Button onClick={() => setShowInvite(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                      <Button onClick={() => setShowInvite(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                         <UserPlus className="w-4 h-4 mr-2" />
                         Inviter des collaborateurs
                       </Button>

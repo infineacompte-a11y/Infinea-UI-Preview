@@ -178,7 +178,7 @@ function SmartCTAs({ routines, objectives, routinesCompletedToday, todaySessions
             <Button
               key={i}
               variant={action.variant}
-              className={`w-full h-auto py-3 px-4 justify-start gap-3 rounded-xl transition-all duration-200 active:scale-[0.97] ${action.className || ""}`}
+              className={`w-full h-auto py-3 px-4 justify-start gap-3 rounded-xl transition-all duration-200 btn-press ${action.className || ""}`}
               onClick={action.onClick}
             >
               <div className="w-9 h-9 rounded-xl bg-background/20 flex items-center justify-center shrink-0">
@@ -299,7 +299,7 @@ function MicroInstantsSection({ instants, onExploit, onSkip, loadingId, navigate
                 <div className="flex items-center gap-1.5 shrink-0 ml-2">
                   <Button
                     size="sm"
-                    className={`h-8 text-xs gap-1 rounded-xl transition-all duration-200 active:scale-[0.97] ${isNow ? "bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white border-0 shadow-sm" : ""}`}
+                    className={`h-8 text-xs gap-1 rounded-xl transition-all duration-200 btn-press ${isNow ? "bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white border-0 shadow-sm" : ""}`}
                     variant={isNow ? "default" : "outline"}
                     disabled={loadingId === instant.instant_id || !action.action_id}
                     onClick={() => onExploit(instant.instant_id, action.action_id)}
@@ -478,7 +478,7 @@ export default function MyDayPage() {
   const hasContent = routines.length > 0 || objectives.length > 0;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">
@@ -512,11 +512,11 @@ export default function MyDayPage() {
                   Crée un objectif ou une routine pour structurer ta journée et suivre tes micro-avancements.
                 </p>
                 <div className="flex items-center justify-center gap-3">
-                  <Button onClick={() => navigate("/objectives")} variant="outline" className="gap-2 rounded-xl transition-all duration-200 active:scale-[0.97]">
+                  <Button onClick={() => navigate("/objectives")} variant="outline" className="gap-2 rounded-xl transition-all duration-200 btn-press">
                     <Target className="w-4 h-4" />
                     Objectifs
                   </Button>
-                  <Button onClick={() => navigate("/routines")} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                  <Button onClick={() => navigate("/routines")} className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                     <CalendarClock className="w-4 h-4" />
                     Routines
                   </Button>
@@ -640,7 +640,7 @@ export default function MyDayPage() {
                                   {!isDoneToday ? (
                                     <Button
                                       size="sm"
-                                      className="h-8 text-xs gap-1.5 shrink-0 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-[0.97]"
+                                      className="h-8 text-xs gap-1.5 shrink-0 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 btn-press"
                                       onClick={() => handleCompleteRoutine(routine)}
                                     >
                                       <CheckCircle2 className="w-3.5 h-3.5" />

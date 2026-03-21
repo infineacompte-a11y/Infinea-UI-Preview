@@ -50,6 +50,12 @@
 
         --radius: 0.75rem;
 
+        /* Surface elevation system — teal-tinted depths */
+        --surface-0: 210 20% 98%;       /* #F8FAFB — base */
+        --surface-1: 172 18% 96%;       /* #F4F8F8 — subtle tint */
+        --surface-2: 172 20% 94%;       /* #EFF5F5 — sections */
+        --surface-3: 172 22% 92%;       /* #E8F1F1 — elevated */
+
         /* Category semantic colors — brand-aligned */
         --learning: 178 36% 43%;
         --productivity: 12 67% 68%;
@@ -112,12 +118,12 @@ select:-webkit-autofill {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.12);
+    background: rgba(39, 82, 85, 0.15);
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(39, 82, 85, 0.25);
 }
 
 /* Glass morphism — light mode */
@@ -321,4 +327,108 @@ select:-webkit-autofill {
     [data-debug-wrapper="true"] {
         display: contents !important;
     }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   PREMIUM VISUAL SYSTEM — Depth, Mesh, Noise, Glow
+   ════════════════════════════════════════════════════════════════ */
+
+/* === Gradient mesh background — eliminates flat white === */
+.app-bg-mesh {
+    background-color: hsl(var(--surface-0));
+    background-image:
+        radial-gradient(ellipse 80% 60% at 8% 20%, rgba(69, 148, 146, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 88% 12%, rgba(85, 179, 174, 0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 50% 85%, rgba(93, 183, 134, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 92% 75%, rgba(228, 140, 117, 0.03) 0%, transparent 45%),
+        radial-gradient(ellipse 50% 50% at 30% 50%, rgba(69, 148, 146, 0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* === SVG noise texture overlay — analog grain === */
+.app-noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* === Subtle dot grid pattern === */
+.bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(39, 82, 85, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* === Premium card — inner highlight glass edge === */
+.card-premium-inner {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 0 rgba(39, 82, 85, 0.04),
+        0 1px 3px rgba(39, 82, 85, 0.06),
+        0 4px 12px rgba(39, 82, 85, 0.04);
+}
+
+.card-premium-inner:hover {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 0 rgba(39, 82, 85, 0.06),
+        0 4px 12px rgba(39, 82, 85, 0.1),
+        0 8px 24px rgba(39, 82, 85, 0.06);
+}
+
+/* === Gradient border card wrapper === */
+.card-gradient-border {
+    position: relative;
+    padding: 1px;
+    border-radius: 1rem;
+    background: linear-gradient(
+        135deg,
+        rgba(69, 148, 146, 0.25),
+        rgba(85, 179, 174, 0.12),
+        rgba(93, 183, 134, 0.18),
+        rgba(69, 148, 146, 0.25)
+    );
+}
+
+.card-gradient-border > * {
+    border-radius: calc(1rem - 1px);
+    background: white;
+}
+
+/* === Ambient glow behind key sections === */
+.ambient-glow {
+    position: relative;
+}
+
+.ambient-glow::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 2rem;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(69, 148, 146, 0.08) 0%,
+        rgba(85, 179, 174, 0.04) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+/* === Sidebar premium gradient === */
+.sidebar-premium {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(244, 248, 248, 0.95) 50%,
+        rgba(239, 245, 245, 0.92) 100%
+    );
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 }

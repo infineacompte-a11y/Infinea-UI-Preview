@@ -120,7 +120,7 @@ export default function GroupDetailPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen app-bg-mesh">
         <Sidebar />
         <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
           <div className="max-w-3xl mx-auto">
@@ -148,7 +148,7 @@ export default function GroupDetailPage() {
   );
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-3xl mx-auto">
@@ -185,13 +185,13 @@ export default function GroupDetailPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => setInviteOpen(true)}
-                    className="gap-1.5 rounded-xl transition-all duration-200 active:scale-[0.97]"
+                    className="gap-1.5 rounded-xl transition-all duration-200 btn-press"
                   >
                     <UserPlus className="w-4 h-4" />
                     <span className="hidden sm:inline">Inviter</span>
                   </Button>
                   {isOwner ? (
-                    <Button variant="ghost" size="sm" onClick={handleDelete} className="rounded-xl transition-all duration-200 active:scale-[0.97]">
+                    <Button variant="ghost" size="sm" onClick={handleDelete} className="rounded-xl transition-all duration-200 btn-press">
                       <Trash2 className="w-4 h-4 text-destructive" />
                     </Button>
                   ) : (
@@ -200,7 +200,7 @@ export default function GroupDetailPage() {
                       size="sm"
                       onClick={handleLeave}
                       disabled={isLeaving}
-                      className="rounded-xl transition-all duration-200 active:scale-[0.97]"
+                      className="rounded-xl transition-all duration-200 btn-press"
                     >
                       <LogOut className="w-4 h-4 text-muted-foreground" />
                     </Button>

@@ -519,6 +519,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <div className="app-noise-overlay" aria-hidden="true" />
         <MicroInstantBanner />
         <AppRouter />
         <Toaster position="top-right" richColors />

@@ -162,7 +162,7 @@ function SkipDialog({ open, onOpenChange, onConfirm, isLoading }) {
               <button
                 key={r.value}
                 onClick={() => setReason(r.value)}
-                className={`flex items-center gap-2 p-2.5 rounded-lg border text-left text-sm transition-all duration-200 active:scale-[0.97] ${
+                className={`flex items-center gap-2 p-2.5 rounded-lg border text-left text-sm transition-all duration-200 btn-press ${
                   selected
                     ? "border-primary bg-primary/10 text-foreground"
                     : "border-border/40 text-muted-foreground hover:border-border hover:text-foreground"
@@ -184,7 +184,7 @@ function SkipDialog({ open, onOpenChange, onConfirm, isLoading }) {
           </Button>
           <Button
             variant="default"
-            className="flex-1 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+            className="flex-1 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
             disabled={isLoading}
             onClick={handleConfirm}
           >
@@ -362,7 +362,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
           {!exploited && !skipped && !past && (
             <div className="flex gap-2">
               <Button
-                className={`flex-1 gap-2 rounded-xl transition-all duration-200 active:scale-[0.97] ${
+                className={`flex-1 gap-2 rounded-xl transition-all duration-200 btn-press ${
                   now
                     ? "bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] shadow-lg hover:shadow-xl text-white border-0"
                     : ""
@@ -381,7 +381,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-muted-foreground hover:text-foreground shrink-0 rounded-xl transition-all duration-200 active:scale-[0.97]"
+                className="text-muted-foreground hover:text-foreground shrink-0 rounded-xl transition-all duration-200 btn-press"
                 disabled={isLoading}
                 onClick={() => setSkipDialogOpen(true)}
               >
@@ -478,7 +478,7 @@ function HeroInstant({ instant, onExploit, isLoading }) {
 
         <Button
           size="lg"
-          className="w-full gap-2 bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] shadow-lg hover:shadow-xl text-white border-0 text-base h-12 rounded-xl transition-all duration-200 active:scale-[0.97]"
+          className="w-full gap-2 bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] shadow-lg hover:shadow-xl text-white border-0 text-base h-12 rounded-xl transition-all duration-200 btn-press"
           disabled={isLoading || !action.action_id}
           onClick={() => onExploit(instant.instant_id, action.action_id)}
         >
@@ -1084,7 +1084,7 @@ export default function MicroInstantsPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 pb-8 px-4 lg:px-8">
         <div className="max-w-2xl mx-auto space-y-6">

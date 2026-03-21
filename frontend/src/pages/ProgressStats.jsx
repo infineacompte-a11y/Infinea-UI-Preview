@@ -105,7 +105,7 @@ export default function ProgressStats() {
     : [];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       {/* Main Content */}

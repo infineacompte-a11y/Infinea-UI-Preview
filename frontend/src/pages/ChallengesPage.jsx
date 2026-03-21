@@ -90,7 +90,7 @@ export default function ChallengesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">
@@ -151,7 +151,7 @@ export default function ChallengesPage() {
                     return (
                       <Card
                         key={ch.id}
-                        className={`opacity-0 animate-fade-in p-4 group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ${ch.completed ? "border-[#5DB786]/30 bg-[#5DB786]/3" : ""}`}
+                        className={`opacity-0 animate-fade-in p-4 group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 ${ch.completed ? "border-[#5DB786]/30 bg-[#5DB786]/3" : ""}`}
                         style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }}
                       >
                         <div className="flex items-start gap-3 mb-3">
@@ -216,7 +216,7 @@ export default function ChallengesPage() {
                     6 défis mensuels exclusifs avec badges et récompenses. Passe en Premium pour les débloquer.
                   </p>
                   <Link to="/pricing">
-                    <Button className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                    <Button className="gap-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                       <Crown className="w-4 h-4 text-[#E48C75]" />
                       Découvrir Premium
                     </Button>
@@ -235,7 +235,7 @@ export default function ChallengesPage() {
                     return (
                       <Card
                         key={ch.challenge_id}
-                        className={`opacity-0 animate-fade-in p-4 group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ${ch.completed ? "border-[#5DB786]/30 bg-[#5DB786]/3" : ""}`}
+                        className={`opacity-0 animate-fade-in p-4 group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 ${ch.completed ? "border-[#5DB786]/30 bg-[#5DB786]/3" : ""}`}
                         style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }}
                       >
                         <div className="flex items-start gap-3 mb-3">

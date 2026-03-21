@@ -109,13 +109,13 @@ export default function ActiveSession() {
 
   if (!session) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen app-bg-mesh flex items-center justify-center">
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-muted/20 to-muted/5 flex items-center justify-center mx-auto mb-4 ring-1 ring-border/10">
             <Timer className="w-8 h-8 text-muted-foreground" />
           </div>
           <p className="text-muted-foreground mb-4">Session non trouvée</p>
-          <Button onClick={() => navigate("/dashboard")} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+          <Button onClick={() => navigate("/dashboard")} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
             Retour au dashboard
           </Button>
         </div>
@@ -131,7 +131,7 @@ export default function ActiveSession() {
 
   if (showCompletion) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="min-h-screen app-bg-mesh flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center">
           {/* Celebration icon with scale animation */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
@@ -174,7 +174,7 @@ export default function ActiveSession() {
             <div className="space-y-3">
               <Button
                 onClick={() => navigate("/dashboard")}
-                className="w-full rounded-xl h-12 shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 active:scale-[0.97]"
+                className="w-full rounded-xl h-12 shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 btn-press"
                 data-testid="back-dashboard-btn"
               >
                 Continuer ma progression
@@ -182,7 +182,7 @@ export default function ActiveSession() {
               <Button
                 variant="outline"
                 onClick={() => navigate("/actions")}
-                className="w-full rounded-xl h-12 transition-all duration-200 active:scale-[0.97]"
+                className="w-full rounded-xl h-12 transition-all duration-200 btn-press"
               >
                 Nouvelle action
               </Button>
@@ -222,7 +222,7 @@ export default function ActiveSession() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen app-bg-mesh flex flex-col">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="flex items-center justify-between px-4 h-16">
@@ -362,7 +362,7 @@ export default function ActiveSession() {
               <Button
                 variant="outline"
                 onClick={() => setIsRunning(!isRunning)}
-                className="flex-1 h-14 rounded-xl transition-all duration-200 active:scale-[0.97]"
+                className="flex-1 h-14 rounded-xl transition-all duration-200 btn-press"
                 data-testid="pause-btn"
               >
                 {isRunning ? (
@@ -379,7 +379,7 @@ export default function ActiveSession() {
               </Button>
               <Button
                 onClick={() => handleComplete(true)}
-                className="flex-1 h-14 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 active:scale-[0.97]"
+                className="flex-1 h-14 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 btn-press"
                 disabled={isCompleting}
                 data-testid="complete-btn"
               >

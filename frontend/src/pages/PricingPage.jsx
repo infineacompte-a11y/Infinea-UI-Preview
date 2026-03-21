@@ -202,7 +202,7 @@ export default function PricingPage() {
 
   if (paymentStatus === "pending") {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="min-h-screen app-bg-mesh flex items-center justify-center p-4">
         <div className="text-center">
           <Loader2 className="w-12 h-12 animate-spin text-primary mx-auto mb-4" />
           <h2 className="font-heading text-2xl mb-2">Vérification du paiement...</h2>
@@ -213,7 +213,7 @@ export default function PricingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,7 +232,7 @@ export default function PricingPage() {
                     <Button variant="ghost" className="rounded-xl transition-all duration-200">Connexion</Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">Commencer</Button>
+                    <Button className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">Commencer</Button>
                   </Link>
                 </>
               )}
@@ -301,7 +301,7 @@ export default function PricingPage() {
                       <Button
                         onClick={plan.action}
                         disabled={plan.disabled || isLoading}
-                        className={`w-full h-12 transition-all duration-200 active:scale-[0.97] ${
+                        className={`w-full h-12 transition-all duration-200 btn-press ${
                           plan.popular
                             ? "rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0"
                             : "rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -365,7 +365,7 @@ export default function PricingPage() {
                     <Button
                       onClick={handlePromoRedeem}
                       disabled={promoLoading || !promoCode.trim()}
-                      className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]"
+                      className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
                     >
                       {promoLoading ? (
                         <Loader2 className="w-4 h-4 animate-spin" />

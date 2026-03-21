@@ -208,7 +208,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col bg-white/80 backdrop-blur-xl border-r border-[#E2E6EA]/80 shadow-[0_0_40px_rgba(69,148,146,0.03)]">
+      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col sidebar-premium border-r border-[#E2E6EA]/60 shadow-[0_0_40px_rgba(39,82,85,0.06)]">
         {/* Logo */}
         <div className="px-6 pt-6 pb-4">
           <InFineaLogo size={34} withText />
@@ -225,7 +225,7 @@ export default function Sidebar() {
           <div className="h-px mb-3 bg-gradient-to-r from-transparent via-[#E2E6EA] to-transparent" />
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#667085] hover:text-[#E48C75] hover:bg-[#E48C75]/5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492]/50 focus-visible:outline-none active:scale-[0.98]"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#667085] hover:text-[#E48C75] hover:bg-[#E48C75]/5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492]/50 focus-visible:outline-none btn-press"
             data-testid="logout-btn"
           >
             <div className="flex items-center justify-center w-8 h-8 rounded-lg">
@@ -237,7 +237,7 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E2E6EA]/80 shadow-[0_1px_12px_rgba(0,0,0,0.04)]">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E2E6EA]/80 shadow-[0_1px_12px_rgba(39,82,85,0.06)]">
         <div className="flex items-center justify-between px-4 h-14">
           <InFineaLogo size={26} withText />
 
@@ -266,7 +266,7 @@ export default function Sidebar() {
               <div className="px-3 pb-5 pt-2 border-t border-[#E2E6EA]/60">
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#667085] hover:text-[#E48C75] hover:bg-[#E48C75]/5 transition-all duration-200 active:scale-[0.98]"
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#667085] hover:text-[#E48C75] hover:bg-[#E48C75]/5 transition-all duration-200 btn-press"
                 >
                   <div className="flex items-center justify-center w-8 h-8 rounded-lg">
                     <LogOut className="w-[18px] h-[18px]" />

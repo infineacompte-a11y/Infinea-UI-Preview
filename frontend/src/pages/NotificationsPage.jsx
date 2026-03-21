@@ -228,7 +228,7 @@ export default function NotificationsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">
@@ -282,7 +282,7 @@ export default function NotificationsPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-7 text-xs gap-1 text-muted-foreground rounded-xl transition-all duration-200 active:scale-[0.97]"
+                  className="h-7 text-xs gap-1 text-muted-foreground rounded-xl transition-all duration-200 btn-press"
                   onClick={fetchSmartNotifs}
                   disabled={isSmartLoading}
                 >
@@ -315,7 +315,7 @@ export default function NotificationsPage() {
                     return (
                       <Card
                         key={notif.id}
-                        className={`opacity-0 animate-fade-in group p-4 border cursor-pointer hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 rounded-xl ${colorClass}`}
+                        className={`opacity-0 animate-fade-in group p-4 border cursor-pointer hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200 rounded-xl ${colorClass}`}
                         style={{ animationDelay: `${idx * 30}ms`, animationFillMode: "forwards" }}
                         onClick={() => notif.action_url && navigate(notif.action_url)}
                       >
@@ -333,7 +333,7 @@ export default function NotificationsPage() {
                             <Button
                               size="sm"
                               variant="ghost"
-                              className="shrink-0 h-8 text-xs gap-1 rounded-xl transition-all duration-200 active:scale-[0.97]"
+                              className="shrink-0 h-8 text-xs gap-1 rounded-xl transition-all duration-200 btn-press"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 navigate(notif.action_url);
@@ -367,7 +367,7 @@ export default function NotificationsPage() {
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
               {unreadCount > 0 && (
                 <div className="flex justify-end mb-3">
-                  <Button variant="outline" size="sm" onClick={handleMarkAllRead} className="gap-1.5 text-xs rounded-xl transition-all duration-200 active:scale-[0.97]">
+                  <Button variant="outline" size="sm" onClick={handleMarkAllRead} className="gap-1.5 text-xs rounded-xl transition-all duration-200 btn-press">
                     <Check className="w-3.5 h-3.5" />
                     Tout marquer lu
                   </Button>

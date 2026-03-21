@@ -90,7 +90,7 @@ export default function BadgesPage() {
   const progressPercentage = (userBadges.earned?.length / allBadges.length) * 100 || 0;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       {/* Main Content */}
@@ -151,7 +151,7 @@ export default function BadgesPage() {
                   return (
                     <Card
                       key={badge.badge_id}
-                      className={`opacity-0 animate-fade-in relative group hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 ${
+                      className={`opacity-0 animate-fade-in relative group hover:-translate-y-1 btn-press transition-all duration-300 ${
                         isEarned
                           ? "badge-unlocked-glow bg-gradient-to-br from-[#5DB786]/10 to-[#459492]/10 border-[#5DB786]/30 hover:border-[#5DB786]/50"
                           : "badge-locked opacity-60 hover:border-[#459492]/30 border-dashed"

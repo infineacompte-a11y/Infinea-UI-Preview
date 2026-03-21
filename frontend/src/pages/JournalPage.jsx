@@ -175,7 +175,7 @@ export default function JournalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
       <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
@@ -190,7 +190,7 @@ export default function JournalPage() {
                 Suivi de tes réflexions et analyse intelligente
               </p>
             </div>
-            <Button onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" data-testid="new-reflection-btn">
+            <Button onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="new-reflection-btn">
               <Plus className="w-4 h-4 mr-2" />
               Nouvelle réflexion
             </Button>
@@ -248,7 +248,7 @@ export default function JournalPage() {
                         <p className="text-muted-foreground mb-4">
                           Aucune réflexion pour le moment
                         </p>
-                        <Button variant="outline" onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                        <Button variant="outline" onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                           <Plus className="w-4 h-4 mr-2" />
                           Ajouter ma première réflexion
                         </Button>
@@ -261,7 +261,7 @@ export default function JournalPage() {
                         const moodStyle = moodIcons[reflection.mood] || moodIcons.neutral;
 
                         return (
-                          <Card key={reflection.reflection_id} className="opacity-0 animate-fade-in group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200" style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }} data-testid={`reflection-${reflection.reflection_id}`}>
+                          <Card key={reflection.reflection_id} className="opacity-0 animate-fade-in group hover:shadow-lg hover:border-[#459492]/30 hover:-translate-y-0.5 active:translate-y-px transition-all duration-200" style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }} data-testid={`reflection-${reflection.reflection_id}`}>
                             <CardContent className="p-4">
                               <div className="flex items-start justify-between gap-4">
                                 <div className="flex items-start gap-3 flex-1">
@@ -312,7 +312,7 @@ export default function JournalPage() {
                       size="sm"
                       onClick={handleGenerateSummary}
                       disabled={isGeneratingSummary}
-                      className="rounded-xl transition-all duration-200 hover:bg-muted/80 active:scale-[0.97]"
+                      className="rounded-xl transition-all duration-200 hover:bg-muted/80 btn-press"
                       data-testid="generate-summary-btn"
                     >
                       {isGeneratingSummary ? (
@@ -426,7 +426,7 @@ export default function JournalPage() {
                       <p className="text-xs text-muted-foreground mb-4 max-w-sm mx-auto">
                         Ajoute quelques réflexions dans l'onglet "Réflexions" puis clique sur "Générer l'analyse" pour obtenir des insights personnalisés.
                       </p>
-                      <Button variant="outline" size="sm" onClick={handleGenerateSummary} disabled={isGeneratingSummary} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]">
+                      <Button variant="outline" size="sm" onClick={handleGenerateSummary} disabled={isGeneratingSummary} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
                         {isGeneratingSummary ? (
                           <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         ) : (
@@ -511,7 +511,7 @@ export default function JournalPage() {
             <Button variant="outline" onClick={() => setShowNewReflection(false)} className="rounded-xl transition-all duration-200 hover:bg-muted/80">
               Annuler
             </Button>
-            <Button onClick={handleCreateReflection} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.97]" data-testid="save-reflection-btn">
+            <Button onClick={handleCreateReflection} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="save-reflection-btn">
               Enregistrer
             </Button>
           </DialogFooter>

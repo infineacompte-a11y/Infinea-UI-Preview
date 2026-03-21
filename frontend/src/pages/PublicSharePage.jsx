@@ -49,7 +49,7 @@ export default function PublicSharePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#F8FAFB] flex items-center justify-center">
+      <div className="min-h-screen app-bg-mesh flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-[#459492]" />
       </div>
     );
@@ -57,7 +57,7 @@ export default function PublicSharePage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-[#F8FAFB] flex flex-col items-center justify-center px-4 text-center animate-fade-in">
+      <div className="min-h-screen app-bg-mesh flex flex-col items-center justify-center px-4 text-center animate-fade-in">
         <div className="w-14 h-14 rounded-2xl bg-[#459492]/10 flex items-center justify-center mb-5">
           <Zap className="w-7 h-7 text-[#459492]" />
         </div>
@@ -83,7 +83,7 @@ export default function PublicSharePage() {
   const authorName = share?.author?.name || "Un utilisateur InFinea";
 
   return (
-    <div className="min-h-screen bg-[#F8FAFB] flex flex-col items-center justify-center px-4 py-12 animate-fade-in">
+    <div className="min-h-screen app-bg-mesh flex flex-col items-center justify-center px-4 py-12 animate-fade-in">
       {/* Brand header */}
       <div className="mb-8">
         <InFineaLogo size={40} withText animate />

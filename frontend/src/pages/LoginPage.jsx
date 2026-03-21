@@ -89,7 +89,7 @@ export default function LoginPage() {
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
               <Button
                 variant="outline"
-                className="w-full h-12 rounded-xl bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 active:scale-[0.97]"
+                className="w-full h-12 rounded-xl bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 btn-press"
                 onClick={handleGoogleLogin}
                 data-testid="google-login-btn"
               >
@@ -165,7 +165,7 @@ export default function LoginPage() {
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
                 <Button
                   type="submit"
-                  className="w-full h-12 text-base font-semibold rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 active:scale-[0.97]"
+                  className="w-full h-12 text-base font-semibold rounded-xl shadow-md bg-gradient-to-r from-[#459492] to-[#55B3AE] text-white hover:shadow-lg hover:brightness-105 transition-all duration-200 btn-press"
                   disabled={isLoading}
                   data-testid="login-submit-btn"
                 >

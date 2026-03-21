@@ -147,7 +147,7 @@ export default function RecapCard() {
           {objectives.slice(0, 3).map((obj) => (
             <div
               key={obj.objective_id}
-              className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#459492]/[0.04] cursor-pointer active:scale-[0.98] transition-all duration-200"
+              className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#459492]/[0.04] cursor-pointer btn-press transition-all duration-200"
               onClick={() => navigate(`/objectives/${obj.objective_id}`)}
             >
               <Target className="w-4 h-4 text-primary shrink-0" />

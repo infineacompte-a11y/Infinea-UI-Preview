@@ -6,7 +6,7 @@ import InFineaLogo from "@/components/InFineaLogo";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#F8FAFB] flex flex-col items-center justify-center px-4 animate-fade-in">
+    <div className="min-h-screen app-bg-mesh flex flex-col items-center justify-center px-4 animate-fade-in">
       {/* Animated brand logo */}
       <div className="mb-8">
         <InFineaLogo size={64} animate />

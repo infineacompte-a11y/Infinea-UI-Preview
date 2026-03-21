@@ -224,7 +224,7 @@ export default function CoachFAB() {
                       key={qr.label}
                       onClick={() => sendMessage(qr.message)}
                       disabled={isSending}
-                      className="w-full text-left px-3.5 py-2.5 rounded-xl border border-[#E2E6EA] bg-[#F0F7F7] hover:border-[#459492]/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-sm text-[#275255]"
+                      className="w-full text-left px-3.5 py-2.5 rounded-xl border border-[#E2E6EA] bg-[#F0F7F7] hover:border-[#459492]/30 hover:scale-[1.02] btn-press transition-all duration-200 text-sm text-[#275255]"
                     >
                       <span className="text-[#459492] mr-1.5">
                         <Sparkles className="w-3 h-3 inline-block" />
@@ -265,7 +265,7 @@ export default function CoachFAB() {
                 <button
                   key={qr.label}
                   onClick={() => sendMessage(qr.message)}
-                  className="shrink-0 px-2.5 py-1 rounded-full border border-[#E2E6EA] bg-[#F0F7F7] hover:border-[#459492]/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-xs text-[#275255]"
+                  className="shrink-0 px-2.5 py-1 rounded-full border border-[#E2E6EA] bg-[#F0F7F7] hover:border-[#459492]/30 hover:scale-[1.02] btn-press transition-all duration-200 text-xs text-[#275255]"
                 >
                   {qr.label}
                 </button>
@@ -313,7 +313,7 @@ export default function CoachFAB() {
               />
               <Button
                 size="icon"
-                className="h-10 w-10 rounded-xl shrink-0 transition-all duration-200 active:scale-[0.97]"
+                className="h-10 w-10 rounded-xl shrink-0 transition-all duration-200 btn-press"
                 onClick={() => sendMessage()}
                 disabled={!input.trim() || isSending}
               >
@@ -330,7 +330,7 @@ export default function CoachFAB() {
         className={`fixed z-50 bottom-6 right-6 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ${
           isOpen
             ? "bg-white text-[#667085] border border-[#E2E6EA] rotate-0 scale-90 shadow-lg"
-            : "bg-gradient-to-br from-[#459492] to-[#55B3AE] text-white shadow-[0_4px_20px_rgba(69,148,146,0.35)] hover:shadow-[0_6px_30px_rgba(69,148,146,0.45)] hover:scale-105 active:scale-95"
+            : "bg-gradient-to-br from-[#459492] to-[#55B3AE] text-white shadow-[0_4px_20px_rgba(69,148,146,0.35)] hover:shadow-[0_6px_30px_rgba(69,148,146,0.45)] hover:scale-105 active:translate-y-0.5"
         }`}
       >
         {isOpen ? (

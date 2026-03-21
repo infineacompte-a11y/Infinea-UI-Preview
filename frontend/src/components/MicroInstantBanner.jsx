@@ -189,7 +189,7 @@ export default function MicroInstantBanner() {
           <Button
             size="sm"
             variant={isNow ? "secondary" : "default"}
-            className={`shrink-0 gap-1.5 text-xs h-8 rounded-xl hover:scale-105 active:scale-95 transition-all duration-200 ${
+            className={`shrink-0 gap-1.5 text-xs h-8 rounded-xl hover:scale-105 active:translate-y-0.5 transition-all duration-200 ${
               isNow
                 ? "bg-white/20 hover:bg-white/30 text-white border-white/20"
                 : ""

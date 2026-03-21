@@ -74,6 +74,22 @@ module.exports = {
                 success: '#5DB786',
                 warning: '#E48C75',
                 info: '#459492',
+                /* Surface elevation system */
+                surface: {
+                    0: 'hsl(var(--surface-0))',
+                    1: 'hsl(var(--surface-1))',
+                    2: 'hsl(var(--surface-2))',
+                    3: 'hsl(var(--surface-3))',
+                },
+            },
+            boxShadow: {
+                'card': '0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04)',
+                'card-hover': '0 4px 12px rgba(39,82,85,0.1), 0 8px 24px rgba(39,82,85,0.06)',
+                'card-elevated': '0 8px 30px rgba(39,82,85,0.12), 0 2px 8px rgba(39,82,85,0.08)',
+                'premium': '0 4px 20px rgba(39,82,85,0.15), 0 1px 3px rgba(39,82,85,0.1)',
+                'inner-highlight': 'inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(39,82,85,0.04), 0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04)',
+                'glow-teal': '0 0 30px rgba(69,148,146,0.15)',
+                'glow-coral': '0 0 30px rgba(228,140,117,0.15)',
             },
             keyframes: {
                 'accordion-down': {
