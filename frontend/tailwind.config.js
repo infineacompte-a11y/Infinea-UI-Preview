@@ -81,6 +81,15 @@ module.exports = {
                     2: 'hsl(var(--surface-2))',
                     3: 'hsl(var(--surface-3))',
                 },
+                /* Dark section palette — Revolut-inspired */
+                dark: {
+                    DEFAULT: '#275255',
+                    deep: '#1F3F42',
+                    deeper: '#163233',
+                    lighter: '#2F6669',
+                    muted: 'rgba(255, 255, 255, 0.7)',
+                    subtle: 'rgba(255, 255, 255, 0.5)',
+                },
             },
             boxShadow: {
                 'card': '0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04)',
@@ -90,6 +99,9 @@ module.exports = {
                 'inner-highlight': 'inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(39,82,85,0.04), 0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04)',
                 'glow-teal': '0 0 30px rgba(69,148,146,0.15)',
                 'glow-coral': '0 0 30px rgba(228,140,117,0.15)',
+                'dark-card': '0 2px 8px rgba(0,0,0,0.15), 0 8px 30px rgba(0,0,0,0.1)',
+                'stat': '0 1px 3px rgba(39,82,85,0.08), 0 6px 20px rgba(39,82,85,0.06)',
+                'stat-hover': '0 4px 12px rgba(39,82,85,0.12), 0 12px 36px rgba(39,82,85,0.08)',
             },
             keyframes: {
                 'accordion-down': {

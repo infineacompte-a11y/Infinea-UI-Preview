@@ -230,21 +230,21 @@ export default function NotificationsPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-2xl mx-auto">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in flex items-center justify-between mb-4" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <div>
-              <h1 className="font-heading text-2xl font-bold flex items-center gap-2">
-                <Bell className="w-6 h-6 text-[#459492]" />
-                Notifications
-              </h1>
-              <p className="text-sm text-muted-foreground mt-0.5">
-                Alertes intelligentes et rappels proactifs
-              </p>
-            </div>
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark Header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+              Notifications
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Restez informé de votre activité
+            </p>
           </div>
+        </div>
 
+        <div className="px-4 lg:px-8">
+        <div className="max-w-2xl mx-auto">
           {/* Tab switcher */}
           <div className="opacity-0 animate-fade-in flex gap-1 p-1 mb-5 bg-muted/30 rounded-xl" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
             {tabs.map((tab) => {
@@ -552,6 +552,7 @@ export default function NotificationsPage() {
               </Card>
             </div>
           )}
+        </div>
         </div>
       </main>
     </div>

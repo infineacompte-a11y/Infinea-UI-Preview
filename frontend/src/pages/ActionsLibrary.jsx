@@ -192,28 +192,34 @@ export default function ActionsLibrary() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Header — entrance animation */}
-          <div className="mb-8 flex items-start justify-between opacity-0 animate-fade-in">
-            <div>
-              <h1 className="font-heading text-3xl font-semibold mb-2" data-testid="library-title">
-                Bibliothèque d'actions
-              </h1>
-              <p className="text-muted-foreground">
-                Explorez toutes les micro-actions disponibles
-              </p>
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark Header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-start justify-between">
+              <div>
+                <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="library-title">
+                  Bibliothèque
+                </h1>
+                <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+                  Explorez plus de 700 micro-actions
+                </p>
+              </div>
+              <Button
+                onClick={() => setShowCreateModal(true)}
+                className="btn-premium rounded-xl shrink-0 text-white border-0 opacity-0 animate-fade-in"
+                style={{ animationDelay: "100ms" }}
+                data-testid="create-action-btn"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Créer une action
+              </Button>
             </div>
-            <Button
-              onClick={() => setShowCreateModal(true)}
-              className="btn-premium rounded-xl shrink-0 text-white border-0"
-              data-testid="create-action-btn"
-            >
-              <Sparkles className="w-4 h-4 mr-2" />
-              Créer une action
-            </Button>
           </div>
+        </div>
 
+        <div className="px-4 lg:px-8">
+          <div className="max-w-6xl mx-auto space-y-6 pt-6">
           {/* Category Tabs — entrance animation with delay */}
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="mb-8">
             <TabsList
@@ -424,6 +430,7 @@ export default function ActionsLibrary() {
               <p className="text-muted-foreground">Essayez une autre catégorie</p>
             </div>
           )}
+          </div>
         </div>
       </main>
 

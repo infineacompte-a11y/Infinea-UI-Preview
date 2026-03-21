@@ -42,29 +42,32 @@ export default function GroupsPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h1 className="text-2xl font-heading font-bold text-foreground flex items-center gap-2">
-                  <Users className="w-6 h-6 text-primary" />
-                  Mes Groupes
-                </h1>
-                <p className="text-muted-foreground text-sm mt-1">
-                  Progresse avec tes proches, duo ou en équipe.
-                </p>
-              </div>
-              <Button
-                onClick={() => setCreateOpen(true)}
-                className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-gradient-to-r from-[#459492] to-[#55B3AE] hover:from-[#275255] hover:to-[#459492] text-white border-0 transition-all duration-200 btn-press"
-              >
-                <Plus className="w-4 h-4" />
-                <span className="hidden sm:inline">Créer un groupe</span>
-              </Button>
-            </div>
+
+      {/* Dark teal header */}
+      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+              Groupes
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Progressez ensemble
+            </p>
           </div>
+          <Button
+            onClick={() => setCreateOpen(true)}
+            className="gap-2 rounded-xl shadow-md hover:shadow-lg bg-white/10 hover:bg-white/20 text-white border-0 transition-all duration-200 btn-press opacity-0 animate-fade-in"
+            style={{ animationDelay: "100ms" }}
+          >
+            <Plus className="w-4 h-4" />
+            <span className="hidden sm:inline">Créer un groupe</span>
+          </Button>
+        </div>
+      </div>
+
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto">
 
           {/* Content */}
           {isLoading ? (
@@ -112,6 +115,7 @@ export default function GroupsPage() {
               </div>
             </div>
           )}
+          </div>
         </div>
       </main>
 

@@ -94,17 +94,21 @@ export default function BadgesPage() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in mb-8" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
-            <h1 className="font-heading text-3xl font-semibold mb-1" data-testid="badges-title">
-              Vos Badges
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark Header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="badges-title">
+              Badges
             </h1>
-            <p className="text-muted-foreground mt-1">
-              Collectionnez des badges en atteignant vos objectifs
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Vos récompenses et accomplissements
             </p>
           </div>
+        </div>
+
+        <div className="px-4 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-6 pt-6">
 
           {isLoading ? (
             <div className="opacity-0 animate-fade-in flex flex-col items-center justify-center py-20 gap-3" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
@@ -221,6 +225,7 @@ export default function BadgesPage() {
               })()}
             </>
           )}
+        </div>
         </div>
       </main>
     </div>

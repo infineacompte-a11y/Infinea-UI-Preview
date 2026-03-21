@@ -164,92 +164,81 @@ export default function Dashboard() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto space-y-6">
-          {/* Welcome Header */}
-          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0ms" }}>
-            <div className="flex items-center gap-3 mb-2">
-              <h1 className="font-heading text-3xl font-semibold text-[#141E24]" data-testid="dashboard-welcome">
-                Bonjour, {user?.name?.split(" ")[0] || "Utilisateur"} 👋
-              </h1>
-              {user?.subscription_tier === "premium" && (
-                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-[#459492]/15 to-[#55B3AE]/15 text-[#275255] text-sm font-medium">
-                  <Crown className="w-4 h-4 text-[#459492]" />
-                  Premium
-                </span>
-              )}
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* === Dark Teal Header Section — Revolut-style contrast === */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-5xl mx-auto">
+            {/* Welcome */}
+            <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0ms" }}>
+              <div className="flex items-center gap-3 mb-1">
+                <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white" data-testid="dashboard-welcome">
+                  Bonjour, {user?.name?.split(" ")[0] || "Utilisateur"}
+                </h1>
+                {user?.subscription_tier === "premium" && (
+                  <span className="pill-badge bg-white/10 border border-white/20 text-white text-sm">
+                    <Crown className="w-4 h-4 text-[#55B3AE]" />
+                    Premium
+                  </span>
+                )}
+              </div>
+              <p className="text-white/60 text-sm">
+                Que pouvez-vous accomplir maintenant ?
+              </p>
             </div>
-            <p className="text-[#667085]">
-              Que pouvez-vous accomplir maintenant ?
-            </p>
+
+            {/* Stats on dark — glass cards */}
+            <div className="grid grid-cols-3 gap-3 mt-6">
+              <div className="card-on-dark rounded-xl p-3 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-[#5DB786]/20 flex items-center justify-center">
+                    <TrendingUp className="w-4 h-4 text-[#5DB786]" />
+                  </div>
+                  <div>
+                    <p className="text-xl font-heading font-bold tabular-nums text-white">{user?.total_time_invested || 0}</p>
+                    <p className="text-[10px] text-white/50 uppercase tracking-wider">min investies</p>
+                  </div>
+                </div>
+              </div>
+              <div className="card-on-dark rounded-xl p-3 opacity-0 animate-fade-in" style={{ animationDelay: "150ms" }}>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-[#E48C75]/20 flex items-center justify-center">
+                    <Flame className="w-4 h-4 text-[#E48C75]" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <p className="text-xl font-heading font-bold tabular-nums text-white">{user?.streak_days || 0}</p>
+                      {user?.subscription_tier === "premium" && (
+                        <Shield className="w-3.5 h-3.5 text-[#5DB786]" title="Streak Shield actif" />
+                      )}
+                    </div>
+                    <p className="text-[10px] text-white/50 uppercase tracking-wider">jours streak</p>
+                  </div>
+                </div>
+              </div>
+              <div className="card-on-dark rounded-xl p-3 opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-[#459492]/20 flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-[#55B3AE]" />
+                  </div>
+                  <div>
+                    <p className="text-xl font-heading font-bold tabular-nums text-white">
+                      {user?.subscription_tier === "premium" ? "Pro" : "Free"}
+                    </p>
+                    <p className="text-[10px] text-white/50 uppercase tracking-wider">abonnement</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* === Content below header === */}
+        <div className="px-4 lg:px-8 -mt-4">
+          <div className="max-w-5xl mx-auto space-y-6 pt-2">
 
           {/* Recap Card */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
             <RecapCard />
-            {/* Empty state fallback rendered by RecapCard itself; if nothing shows, provide a subtle placeholder */}
-          </div>
-
-          {/* Stats Overview */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {/* Sessions / Time card */}
-            <Card
-              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#5DB786]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#5DB786] hover:shadow-md hover:shadow-[#5DB786]/10 hover:border-[#5DB786]/30 btn-press transition-all duration-300"
-              style={{ animationDelay: "100ms" }}
-            >
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5DB786]/15 to-[#5DB786]/5 flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-[#5DB786]" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums text-[#141E24]">{user?.total_time_invested || 0}</p>
-                    <p className="text-xs text-[#667085]">min investies</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            {/* Streak card */}
-            <Card
-              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#E48C75]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#E48C75] hover:shadow-md hover:shadow-[#E48C75]/10 hover:border-[#E48C75]/30 btn-press transition-all duration-300"
-              style={{ animationDelay: "150ms" }}
-            >
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/15 to-[#E48C75]/5 flex items-center justify-center">
-                    <Flame className="w-5 h-5 text-[#E48C75]" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-1.5">
-                      <p className="text-2xl font-heading font-bold tabular-nums text-[#141E24]">{user?.streak_days || 0}</p>
-                      {user?.subscription_tier === "premium" && (
-                        <Shield className="w-4 h-4 text-[#5DB786]" title="Streak Shield actif" />
-                      )}
-                    </div>
-                    <p className="text-xs text-[#667085]">jours streak</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            {/* Subscription card */}
-            <Card
-              className="opacity-0 animate-fade-in rounded-2xl bg-white shadow-sm shadow-[#459492]/5 border border-[#E2E6EA] border-l-[3px] border-l-[#459492] hover:shadow-md hover:shadow-[#459492]/10 hover:border-[#459492]/30 btn-press transition-all duration-300"
-              style={{ animationDelay: "200ms" }}
-            >
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#459492]/15 to-[#459492]/5 flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-[#459492]" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums text-[#141E24]">
-                      {user?.subscription_tier === "premium" ? "Pro" : "Free"}
-                    </p>
-                    <p className="text-xs text-[#667085]">abonnement</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* AI Coach — first thing the user sees */}
@@ -507,6 +496,7 @@ export default function Dashboard() {
               </div>
             </div>
           )}
+          </div>
         </div>
       </main>
     </div>

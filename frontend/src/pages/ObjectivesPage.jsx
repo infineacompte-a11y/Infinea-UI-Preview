@@ -233,29 +233,30 @@ export default function ObjectivesPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-2xl mx-auto">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-8 opacity-0 animate-fade-in">
-            <div>
-              <h1 className="font-heading text-3xl font-semibold flex items-center gap-2">
-                <Target className="w-6 h-6 text-primary" />
-                Mes Objectifs
-              </h1>
-              <p className="text-muted-foreground mt-1">
-                Tes parcours de progression personnalisés
-              </p>
-            </div>
-            <Button
-              onClick={() => setShowCreate(true)}
-              disabled={!canCreate}
-              className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
-              size="sm"
-            >
-              <Plus className="w-4 h-4" />
-              Nouvel objectif
-            </Button>
+      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+        <div className="max-w-2xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+              Objectifs
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Définissez et suivez vos objectifs
+            </p>
           </div>
+          <Button
+            onClick={() => setShowCreate(true)}
+            disabled={!canCreate}
+            className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+            size="sm"
+          >
+            <Plus className="w-4 h-4" />
+            Nouvel objectif
+          </Button>
+        </div>
+      </div>
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="px-4 lg:px-8">
+        <div className="max-w-2xl mx-auto">
 
           {/* Loading */}
           {isLoading ? (
@@ -460,6 +461,7 @@ export default function ObjectivesPage() {
               </DialogFooter>
             </DialogContent>
           </Dialog>
+        </div>
         </div>
       </main>
     </div>

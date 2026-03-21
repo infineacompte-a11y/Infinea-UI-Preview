@@ -177,24 +177,26 @@ export default function JournalPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in flex items-center justify-between mb-8" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
-            <div>
-              <h1 className="font-heading text-3xl font-semibold mb-1" data-testid="journal-title">
-                Mon Journal
-              </h1>
-              <p className="text-muted-foreground mt-1">
-                Suivi de tes réflexions et analyse intelligente
-              </p>
-            </div>
-            <Button onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="new-reflection-btn">
-              <Plus className="w-4 h-4 mr-2" />
-              Nouvelle réflexion
-            </Button>
+      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="journal-title">
+              Journal
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Votre espace de réflexion personnelle
+            </p>
           </div>
+          <Button onClick={() => setShowNewReflection(true)} className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="new-reflection-btn">
+            <Plus className="w-4 h-4 mr-2" />
+            Nouvelle réflexion
+          </Button>
+        </div>
+      </div>
+
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="px-4 lg:px-8">
+        <div className="max-w-4xl mx-auto">
 
           {/* ── Tab Switcher ── */}
           <div className="opacity-0 animate-fade-in flex gap-1 p-1 mb-6 bg-muted/30 rounded-xl" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
@@ -440,6 +442,7 @@ export default function JournalPage() {
               )}
             </>
           )}
+        </div>
         </div>
       </main>
 

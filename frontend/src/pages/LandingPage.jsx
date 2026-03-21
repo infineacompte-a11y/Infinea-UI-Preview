@@ -94,86 +94,88 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen app-bg-mesh">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-[#E2E6EA]">
+      {/* Navigation — frosted glass, Revolut-style */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#275255]/80 backdrop-blur-2xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <InFineaLogo size={32} withText animate />
+            <InFineaLogo size={32} withText animate variant="light" />
             <div className="hidden md:flex items-center gap-6">
-              <a href="#features" className="text-[#667085] hover:text-[#141E24] transition-colors">
+              <a href="#features" className="text-white/70 hover:text-white transition-colors text-sm">
                 Fonctionnalités
               </a>
-              <Link to="/pricing" className="text-[#667085] hover:text-[#141E24] transition-colors">
+              <Link to="/pricing" className="text-white/70 hover:text-white transition-colors text-sm">
                 Tarifs
               </Link>
               <Link to="/login">
-                <Button variant="ghost" data-testid="nav-login-btn">Connexion</Button>
+                <Button variant="ghost" data-testid="nav-login-btn" className="text-white/80 hover:text-white hover:bg-white/10">Connexion</Button>
               </Link>
               <Link to="/register">
-                <Button data-testid="nav-register-btn" className="rounded-full">
+                <Button data-testid="nav-register-btn" className="rounded-full bg-white text-[#275255] hover:bg-white/90 font-medium">
                   Commencer gratuitement
                 </Button>
               </Link>
             </div>
             <div className="md:hidden">
               <Link to="/login">
-                <Button size="sm" data-testid="mobile-login-btn">Connexion</Button>
+                <Button size="sm" data-testid="mobile-login-btn" className="rounded-full bg-white text-[#275255] hover:bg-white/90">Connexion</Button>
               </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section — Dark teal gradient with white text for visual impact */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-br from-[#275255] via-[#275255] to-[#459492]">
-        {/* Subtle decorative elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(85,179,174,0.2),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(93,183,134,0.1),transparent_60%)]" />
+      {/* Hero Section — Immersive dark teal, Revolut-level impact */}
+      <section className="relative pt-32 pb-28 px-4 overflow-hidden bg-gradient-to-b from-[#1F3F42] via-[#275255] to-[#2F6669]">
+        {/* Rich decorative gradients */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_20%_80%,rgba(85,179,174,0.20),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_20%,rgba(93,183,134,0.12),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_50%_10%,rgba(69,148,146,0.15),transparent_50%)]" />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8 animate-fade-in">
-              <Sparkles className="w-4 h-4 text-[#55B3AE]" />
-              <span className="text-sm text-white/90">Une IA qui apprend de vous, une bibliothèque qui grandit sans cesse</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/8 border border-white/15 mb-8 animate-fade-in">
+              <Sparkles className="w-4 h-4 text-[#7DD3D0]" />
+              <span className="text-sm text-white/80">Une IA qui apprend de vous, une bibliothèque qui grandit sans cesse</span>
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white animate-fade-in stagger-1">
+            <h1 className="text-display text-5xl sm:text-6xl md:text-8xl font-bold mb-6 text-white animate-fade-in stagger-1">
               Investissez vos
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#55B3AE] via-[#7DD3D0] to-[#5DB786]"> instants perdus</span>
+              <br />
+              <span className="text-gradient-light">instants perdus</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto animate-fade-in stagger-2">
+            <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto animate-fade-in stagger-2 leading-relaxed">
               Transformez votre temps disponible en micro-victoires. Une bibliothèque de micro-actions en perpétuelle évolution,
               portée par une IA qui s'adapte à vos habitudes, votre énergie et votre rythme.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in stagger-3">
               <Link to="/register">
-                <Button size="lg" className="rounded-full px-8 h-12 text-base bg-white text-[#275255] hover:bg-white/90 btn-lift" data-testid="hero-cta-btn">
+                <button className="btn-pill-white h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl" data-testid="hero-cta-btn">
                   Commencer gratuitement
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </Link>
               <a href="#features">
-                <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base border-white/30 text-white hover:bg-white/10 hover:text-white" data-testid="hero-learn-more-btn">
+                <button className="inline-flex items-center gap-2 h-12 px-8 rounded-full border border-white/25 text-white/90 text-base font-medium hover:bg-white/10 hover:border-white/35 transition-all" data-testid="hero-learn-more-btn">
                   En savoir plus
-                </Button>
+                </button>
               </a>
             </div>
           </div>
 
-          {/* Stats — white badge cards on hero */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl py-4 px-3 border border-white/10">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-white">2-15</div>
-              <div className="text-sm text-white/60 mt-1">minutes/session</div>
+          {/* Stats — glass cards on hero */}
+          <div className="grid grid-cols-3 gap-4 md:gap-6 mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
+            <div className="card-on-dark text-center rounded-2xl py-5 px-4">
+              <div className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">2-15</div>
+              <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">minutes/session</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl py-4 px-3 border border-white/10">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-white">700+</div>
-              <div className="text-sm text-white/60 mt-1">micro-actions et +</div>
+            <div className="card-on-dark text-center rounded-2xl py-5 px-4">
+              <div className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">700+</div>
+              <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">micro-actions et +</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl py-4 px-3 border border-white/10">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-white">100%</div>
-              <div className="text-sm text-white/60 mt-1">RGPD conforme</div>
+            <div className="card-on-dark text-center rounded-2xl py-5 px-4">
+              <div className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">100%</div>
+              <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">RGPD conforme</div>
             </div>
           </div>
         </div>
@@ -184,7 +186,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-6 text-[#141E24]">
+              <h2 className="text-display text-3xl md:text-5xl font-semibold mb-6 text-[#141E24]">
                 Le temps, votre ressource la plus précieuse
               </h2>
               <p className="text-[#667085] text-lg mb-8">
@@ -221,11 +223,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section — soft teal background for visual rhythm */}
-      <section id="features" className="py-24 px-4 bg-[#F0F7F7]">
+      {/* Features Section — light teal surface */}
+      <section id="features" className="py-24 px-4 bg-[#F0F7F7] section-edge-top">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4 text-[#141E24]">
+            <h2 className="text-display text-3xl md:text-5xl font-semibold mb-4 text-[#141E24]">
               La solution InFinea
             </h2>
             <p className="text-[#667085] text-lg max-w-2xl mx-auto">
@@ -268,11 +270,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* How it works — white background */}
-      <section className="py-24 px-4 bg-white">
+      {/* How it works — dark teal block for visual rhythm */}
+      <section className="py-24 px-4 bg-gradient-to-b from-[#1F3F42] to-[#275255]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4 text-[#141E24]">
+            <h2 className="text-display text-3xl md:text-5xl font-semibold mb-4 text-white">
               Comment ça marche
             </h2>
           </div>
@@ -285,13 +287,13 @@ export default function LandingPage() {
               { step: "04", title: "Agissez !", desc: "L'IA vous guide" },
             ].map((item, i) => (
               <div key={i} className="relative group">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#459492]/10 to-[#55B3AE]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl font-heading font-bold text-[#459492]">{item.step}</span>
+                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-white/15 transition-colors duration-300">
+                  <span className="text-xl font-heading font-bold text-[#7DD3D0]">{item.step}</span>
                 </div>
-                <h3 className="font-heading text-lg font-semibold mb-2 text-[#141E24]">{item.title}</h3>
-                <p className="text-[#667085] text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="font-heading text-lg font-semibold mb-2 text-white">{item.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                 {i < 3 && (
-                  <ChevronRight className="hidden md:block absolute top-6 -right-4 w-6 h-6 text-[#459492]/30" />
+                  <ChevronRight className="hidden md:block absolute top-6 -right-4 w-6 h-6 text-white/20" />
                 )}
               </div>
             ))}
@@ -299,14 +301,14 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Pricing Section — soft teal background */}
-      <section id="pricing" className="py-24 px-4 bg-[#F0F7F7]">
+      {/* Pricing Section — dark background, white cards (Revolut-style) */}
+      <section id="pricing" className="py-24 px-4 bg-gradient-to-b from-[#275255] to-[#1F3F42]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4 text-[#141E24]">
+            <h2 className="text-display text-3xl md:text-5xl font-semibold mb-4 text-white">
               Tarifs simples et transparents
             </h2>
-            <p className="text-[#667085] text-lg">
+            <p className="text-white/60 text-lg">
               Commencez gratuitement, passez Premium pour une IA qui s'adapte à vous
             </p>
           </div>
@@ -315,11 +317,11 @@ export default function LandingPage() {
             {pricingPlans.map((plan, i) => (
               <Card
                 key={i}
-                className={`relative bg-white hover:shadow-xl rounded-2xl transition-all duration-300 ${plan.popular ? "border-2 border-[#459492] shadow-lg ring-1 ring-[#459492]/10" : "border border-[#E2E6EA] shadow-md"}`}
+                className={`relative bg-white hover:shadow-2xl rounded-2xl transition-all duration-300 hover:-translate-y-1 ${plan.popular ? "border-2 border-[#459492] shadow-xl ring-1 ring-[#459492]/20" : "border border-[#E2E6EA] shadow-lg"}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="premium-badge px-4 py-1 rounded-full text-white text-sm font-medium shadow-md">
+                    <span className="premium-badge px-4 py-1 rounded-full text-white text-sm font-medium shadow-lg">
                       Populaire
                     </span>
                   </div>
@@ -339,12 +341,12 @@ export default function LandingPage() {
                     ))}
                   </ul>
                   <Link to={plan.link || "/register"}>
-                    <Button
-                      className={`w-full rounded-full ${plan.popular ? "" : "bg-[#F0F7F7] text-[#275255] hover:bg-[#E2E6EA]"}`}
+                    <button
+                      className={`w-full h-11 rounded-full font-medium transition-all ${plan.popular ? "btn-pill-primary" : "bg-[#F0F7F7] text-[#275255] hover:bg-[#E2E6EA] rounded-full"}`}
                       data-testid={`pricing-${plan.name.toLowerCase()}-btn`}
                     >
                       {plan.cta}
-                    </Button>
+                    </button>
                   </Link>
                 </CardContent>
               </Card>
@@ -353,26 +355,26 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section — dark gradient for impact */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#275255] via-[#275255] to-[#459492]">
+      {/* CTA Section — immersive dark with glow */}
+      <section className="py-28 px-4 bg-gradient-to-b from-[#1F3F42] to-[#163233] relative overflow-hidden">
+        {/* Ambient glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(85,179,174,0.18),transparent_70%)]" />
         <div className="max-w-4xl mx-auto text-center relative">
-          {/* Subtle decorative glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(85,179,174,0.15),transparent_60%)]" />
-          <div className="relative">
-            <Brain className="w-16 h-16 text-[#55B3AE] mx-auto mb-6" />
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4 text-white">
-              Prêt à investir vos instants perdus ?
-            </h2>
-            <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-              Commencez dès maintenant à transformer votre temps en Capital-Temps.
-            </p>
-            <Link to="/register">
-              <Button size="lg" className="rounded-full px-8 h-12 text-base bg-white text-[#275255] hover:bg-white/90 btn-lift animate-pulse-glow" data-testid="final-cta-btn">
-                Commencer maintenant
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+          <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mx-auto mb-8">
+            <Brain className="w-8 h-8 text-[#7DD3D0]" />
           </div>
+          <h2 className="text-display text-3xl md:text-5xl font-semibold mb-5 text-white">
+            Prêt à investir vos instants perdus ?
+          </h2>
+          <p className="text-white/55 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            Commencez dès maintenant à transformer votre temps en Capital-Temps.
+          </p>
+          <Link to="/register">
+            <button className="btn-pill-white h-13 px-10 text-base font-semibold shadow-lg hover:shadow-2xl" data-testid="final-cta-btn">
+              Commencer maintenant
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </section>
 

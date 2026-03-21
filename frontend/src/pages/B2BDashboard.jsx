@@ -197,31 +197,38 @@ export default function B2BDashboard() {
     return (
       <div className="min-h-screen app-bg-mesh">
         <Sidebar />
-        <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-          <div className="max-w-6xl mx-auto space-y-8">
-            {/* Header skeleton */}
-            <div className="animate-pulse space-y-2">
-              <div className="h-8 w-64 rounded bg-muted" />
-              <div className="h-4 w-48 rounded bg-muted" />
-            </div>
-            {/* KPI skeletons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="rounded-xl border border-border bg-card p-4 animate-pulse">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-muted" />
-                    <div className="space-y-2">
-                      <div className="h-6 w-12 rounded bg-muted" />
-                      <div className="h-3 w-24 rounded bg-muted" />
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+              Entreprise
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Tableau de bord entreprise
+            </p>
+          </div>
+        </div>
+        <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+          <div className="px-4 lg:px-8">
+            <div className="max-w-6xl mx-auto space-y-8">
+              {/* KPI skeletons */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="rounded-xl border border-border bg-card p-4 animate-pulse">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-muted" />
+                      <div className="space-y-2">
+                        <div className="h-6 w-12 rounded bg-muted" />
+                        <div className="h-3 w-24 rounded bg-muted" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            {/* Chart skeleton */}
-            <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
-              <div className="h-5 w-48 rounded bg-muted mb-4" />
-              <div className="h-[200px] rounded bg-muted" />
+                ))}
+              </div>
+              {/* Chart skeleton */}
+              <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
+                <div className="h-5 w-48 rounded bg-muted mb-4" />
+                <div className="h-[200px] rounded bg-muted" />
+              </div>
             </div>
           </div>
         </main>
@@ -292,59 +299,63 @@ export default function B2BDashboard() {
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
-      {/* Main Content */}
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <div>
-              <div className="flex items-center gap-3 mb-2 flex-wrap">
-                <h1 className="font-heading text-2xl sm:text-3xl font-semibold" data-testid="b2b-title">
-                  {company?.name || "Dashboard Entreprise"}
-                </h1>
-                <Badge className="bg-gradient-to-r from-[#275255] to-[#459492] text-white border-[#459492]/30">Manager</Badge>
-              </div>
-              <p className="text-muted-foreground">
-                Analytics d'équipe & ROI bien-être
-              </p>
+      {/* Dark teal header */}
+      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-3 flex-wrap">
+              <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="b2b-title">
+                Entreprise
+              </h1>
+              <Badge className="bg-white/10 text-white border-white/20 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>Manager</Badge>
             </div>
-            <div className="flex gap-2 sm:gap-3 shrink-0">
-              <Button variant="outline" onClick={() => toast.info("Export PDF bientôt disponible")} className="rounded-xl transition-all duration-200 btn-press">
-                <Download className="w-4 h-4 mr-2" />
-                Export
-              </Button>
-              <Dialog open={showInvite} onOpenChange={setShowInvite}>
-                <DialogTrigger asChild>
-                  <Button data-testid="invite-btn" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press">
-                    <UserPlus className="w-4 h-4 mr-2" />
-                    Inviter
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Inviter un collaborateur</DialogTitle>
-                    <DialogDescription>
-                      L'email doit être @{company?.domain}
-                    </DialogDescription>
-                  </DialogHeader>
-                  <form onSubmit={handleInvite} className="space-y-4 mt-4">
-                    <Input
-                      type="email"
-                      placeholder={`collaborateur@${company?.domain}`}
-                      value={inviteEmail}
-                      onChange={(e) => setInviteEmail(e.target.value)}
-                      required
-                      data-testid="invite-email-input"
-                    />
-                    <Button type="submit" className="w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="send-invite-btn">
-                      <Send className="w-4 h-4 mr-2" />
-                      Envoyer l'invitation
-                    </Button>
-                  </form>
-                </DialogContent>
-              </Dialog>
-            </div>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Tableau de bord entreprise
+            </p>
           </div>
+          <div className="flex gap-2 sm:gap-3 shrink-0 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
+            <Button variant="outline" onClick={() => toast.info("Export PDF bientôt disponible")} className="rounded-xl transition-all duration-200 btn-press bg-white/10 hover:bg-white/20 text-white border-white/20">
+              <Download className="w-4 h-4 mr-2" />
+              Export
+            </Button>
+            <Dialog open={showInvite} onOpenChange={setShowInvite}>
+              <DialogTrigger asChild>
+                <Button data-testid="invite-btn" className="rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press bg-white/10 hover:bg-white/20 text-white border-white/20">
+                  <UserPlus className="w-4 h-4 mr-2" />
+                  Inviter
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Inviter un collaborateur</DialogTitle>
+                  <DialogDescription>
+                    L'email doit être @{company?.domain}
+                  </DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleInvite} className="space-y-4 mt-4">
+                  <Input
+                    type="email"
+                    placeholder={`collaborateur@${company?.domain}`}
+                    value={inviteEmail}
+                    onChange={(e) => setInviteEmail(e.target.value)}
+                    required
+                    data-testid="invite-email-input"
+                  />
+                  <Button type="submit" className="w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" data-testid="send-invite-btn">
+                    <Send className="w-4 h-4 mr-2" />
+                    Envoyer l'invitation
+                  </Button>
+                </form>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="px-4 lg:px-8">
+          <div className="max-w-6xl mx-auto">
 
           {/* Overview KPIs */}
           <div className="opacity-0 animate-fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
@@ -731,6 +742,7 @@ export default function B2BDashboard() {
                 </div>
               </TabsContent>
             </Tabs>
+          </div>
           </div>
         </div>
       </main>

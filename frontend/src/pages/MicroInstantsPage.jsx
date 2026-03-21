@@ -1086,27 +1086,22 @@ export default function MicroInstantsPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-      <main className="lg:ml-64 pt-20 lg:pt-8 pb-8 px-4 lg:px-8">
-        <div className="max-w-2xl mx-auto space-y-6">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <h1 className="font-heading text-2xl font-bold text-foreground">
-              {getGreeting(user?.name)}
-            </h1>
-            <p className="text-sm text-muted-foreground mt-1 flex items-center gap-2">
-              <Zap className="w-4 h-4 text-primary" />
-              Tes micro-instants du jour
-              {exploitRate !== null && (
-                <Badge
-                  variant="outline"
-                  className="text-[10px] ml-1 text-primary border-primary/30 tabular-nums"
-                >
-                  <Flame className="w-3 h-3 mr-1" />
-                  {exploitRate}% exploités
-                </Badge>
-              )}
-            </p>
-          </div>
+
+      {/* Dark teal header */}
+      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+            Micro-Instants
+          </h1>
+          <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+            Détection intelligente de vos moments disponibles
+          </p>
+        </div>
+      </div>
+
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="px-4 lg:px-8">
+          <div className="max-w-2xl mx-auto space-y-6">
 
           {loading ? (
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
@@ -1166,6 +1161,7 @@ export default function MicroInstantsPage() {
               </div>
             </>
           )}
+          </div>
         </div>
       </main>
     </div>

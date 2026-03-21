@@ -109,23 +109,23 @@ export default function ProgressStats() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-8 opacity-0 animate-fade-in">
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark Header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-5xl mx-auto flex items-start justify-between">
             <div>
-              <h1 className="font-heading text-3xl font-semibold mb-2" data-testid="progress-title">
-                Votre Capital-Temps
+              <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="progress-title">
+                Progression
               </h1>
-              <p className="text-muted-foreground">
-                Suivez votre progression et vos accomplissements
+              <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+                Suivez vos statistiques et votre évolution
               </p>
             </div>
             {stats && (
               <Button
                 variant="outline"
                 size="sm"
-                className="gap-1.5 shrink-0 rounded-xl bg-card hover:bg-muted border-border hover:border-[#459492]/30 transition-all"
+                className="gap-1.5 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white transition-all"
                 onClick={() => setShareOpen(true)}
               >
                 <Share2 className="w-4 h-4" />
@@ -134,6 +134,10 @@ export default function ProgressStats() {
             )}
             <ShareDialog open={shareOpen} onOpenChange={setShareOpen} shareType="weekly_recap" />
           </div>
+        </div>
+
+        <div className="px-4 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-6 pt-6">
 
           {isLoading ? (
             <div className="space-y-6">
@@ -375,6 +379,7 @@ export default function ProgressStats() {
               </Card>
             </div>
           )}
+        </div>
         </div>
       </main>
     </div>

@@ -41,18 +41,21 @@ export default function ProfilePage() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
-        <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <div className="mb-8 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
-            <h1 className="font-heading text-3xl font-semibold mb-2" data-testid="profile-title">
-              Mon profil
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark Header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="profile-title">
+              Profil
             </h1>
-            <p className="text-muted-foreground">
-              Gérez vos informations et votre abonnement
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Gérez votre compte et vos préférences
             </p>
           </div>
+        </div>
 
+        <div className="px-4 lg:px-8">
+        <div className="max-w-3xl mx-auto">
           {/* Profile Card */}
           <Card className="mb-6 hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
             <CardContent className="p-6">
@@ -199,6 +202,7 @@ export default function ProfilePage() {
               </Button>
             </CardContent>
           </Card>
+        </div>
         </div>
       </main>
     </div>

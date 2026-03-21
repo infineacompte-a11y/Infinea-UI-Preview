@@ -221,15 +221,21 @@ export default function NotesPage() {
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
 
-      <main className="lg:ml-64 pt-20 lg:pt-8 px-4 lg:px-8 pb-8">
+      {/* Dark teal header */}
+      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="opacity-0 animate-fade-in mb-6" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <h1 className="font-heading text-3xl font-bold mb-1">Mes Notes</h1>
-            <p className="text-sm text-muted-foreground">
-              Retrouve et exploite toutes les notes de tes sessions
-            </p>
-          </div>
+          <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+            Notes
+          </h1>
+          <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+            Capturez vos idées et réflexions
+          </p>
+        </div>
+      </div>
+
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
 
           {/* Stats Cards — always visible */}
           {!isLoading && stats && (
@@ -577,6 +583,7 @@ export default function NotesPage() {
               )}
             </>
           )}
+          </div>
         </div>
       </main>
 

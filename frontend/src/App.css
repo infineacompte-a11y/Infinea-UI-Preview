@@ -211,6 +211,67 @@ html {
     background-clip: text;
 }
 
+/* Light gradient text — for dark backgrounds */
+.text-gradient-light {
+    background: linear-gradient(135deg, #7DD3D0, #55B3AE, #5DB786);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Revolut-style pill CTA — deep primary with subtle hover */
+.btn-pill-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    background: #275255;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-pill-primary:hover {
+    background: #1F3F42;
+    box-shadow: 0 4px 16px rgba(39, 82, 85, 0.25);
+}
+
+.btn-pill-primary:active {
+    background: #163233;
+    transform: translateY(1px);
+}
+
+/* Inverted pill CTA — white on dark backgrounds */
+.btn-pill-white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    background: white;
+    color: #275255;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-pill-white:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+.btn-pill-white:active {
+    transform: translateY(1px);
+}
+
 /* Premium badge shimmer */
 .premium-badge {
     background: linear-gradient(135deg, #275255, #459492);
