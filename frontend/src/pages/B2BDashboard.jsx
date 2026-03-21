@@ -197,17 +197,17 @@ export default function B2BDashboard() {
     return (
       <div className="min-h-screen app-bg-mesh">
         <Sidebar />
-        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
-              Entreprise
-            </h1>
-            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
-              Tableau de bord entreprise
-            </p>
-          </div>
-        </div>
         <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+          <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+                Entreprise
+              </h1>
+              <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+                Tableau de bord entreprise
+              </p>
+            </div>
+          </div>
           <div className="px-4 lg:px-8">
             <div className="max-w-6xl mx-auto space-y-8">
               {/* KPI skeletons */}
@@ -298,10 +298,10 @@ export default function B2BDashboard() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-
-      {/* Dark teal header */}
-      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark teal header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 flex-wrap">
               <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="b2b-title">
@@ -352,8 +352,6 @@ export default function B2BDashboard() {
         </div>
       </div>
 
-      {/* Main Content */}
-      <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
         <div className="px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
 

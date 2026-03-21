@@ -512,25 +512,23 @@ export default function IntegrationsPage() {
     return (
       <div className="min-h-screen app-bg-mesh">
         <Sidebar />
-
-        {/* Dark teal header */}
-        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="integrations-title">
-              Intégrations
-            </h1>
-            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
-              Connectez vos outils préférés
-            </p>
-            <div className="flex items-center gap-3 mt-3 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
-              <Badge variant="secondary" className="text-xs tabular-nums bg-white/10 text-white/80 border-white/20">
-                {connectedCount}/{totalCount} connectés
-              </Badge>
+        <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+          {/* Dark teal header */}
+          <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="integrations-title">
+                Intégrations
+              </h1>
+              <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+                Connectez vos outils préférés
+              </p>
+              <div className="flex items-center gap-3 mt-3 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
+                <Badge variant="secondary" className="text-xs tabular-nums bg-white/10 text-white/80 border-white/20">
+                  {connectedCount}/{totalCount} connectés
+                </Badge>
+              </div>
             </div>
           </div>
-        </div>
-
-        <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
           <div className="px-4 lg:px-8">
             <div className="max-w-4xl mx-auto">
 
@@ -895,21 +893,18 @@ export default function IntegrationsPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-
-      {/* Dark teal header */}
-      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="integrations-title">
-            Intégrations
-          </h1>
-          <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
-            Connectez vos outils préférés
-          </p>
-        </div>
-      </div>
-
-      {/* Main Content */}
       <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark teal header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in" data-testid="integrations-title">
+              Intégrations
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Connectez vos outils préférés
+            </p>
+          </div>
+        </div>
         <div className="px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
 

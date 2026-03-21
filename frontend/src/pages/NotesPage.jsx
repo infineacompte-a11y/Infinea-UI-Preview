@@ -220,20 +220,18 @@ export default function NotesPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-
-      {/* Dark teal header */}
-      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
-            Notes
-          </h1>
-          <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
-            Capturez vos idées et réflexions
-          </p>
-        </div>
-      </div>
-
       <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        {/* Dark teal header */}
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+              Notes
+            </h1>
+            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+              Capturez vos idées et réflexions
+            </p>
+          </div>
+        </div>
         <div className="px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
 

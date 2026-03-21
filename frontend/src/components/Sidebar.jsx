@@ -208,7 +208,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 flex-col sidebar-premium border-r border-[#E2E6EA]/60 shadow-[0_0_40px_rgba(39,82,85,0.06)]">
+      <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-64 z-40 flex-col sidebar-premium border-r border-[#E2E6EA]/60 shadow-[0_0_40px_rgba(39,82,85,0.06)]">
         {/* Logo */}
         <div className="px-6 pt-6 pb-4">
           <InFineaLogo size={34} withText />

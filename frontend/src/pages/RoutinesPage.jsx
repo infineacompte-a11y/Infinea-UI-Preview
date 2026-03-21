@@ -593,24 +593,24 @@ export default function RoutinesPage() {
   return (
     <div className="min-h-screen app-bg-mesh">
       <Sidebar />
-      <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
-        <div className="max-w-2xl mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
-              Habitudes
-            </h1>
-            <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
-              Construisez vos routines quotidiennes
-            </p>
-          </div>
-          <Button onClick={() => { setEditingRoutine(null); setForm(emptyForm); setNewItem({ title: "", duration_minutes: 5 }); setShowDialog(true); }}
-            disabled={!canCreate} className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" size="sm">
-            <Plus className="w-4 h-4" />
-            Nouvelle
-          </Button>
-        </div>
-      </div>
       <main className="lg:ml-64 pt-14 lg:pt-0 pb-8">
+        <div className="section-dark-header px-4 lg:px-8 pt-8 lg:pt-10 pb-8">
+          <div className="max-w-2xl mx-auto flex items-center justify-between">
+            <div>
+              <h1 className="text-display text-3xl lg:text-4xl font-semibold text-white opacity-0 animate-fade-in">
+                Habitudes
+              </h1>
+              <p className="text-white/60 text-sm mt-1 opacity-0 animate-fade-in" style={{ animationDelay: "50ms" }}>
+                Construisez vos routines quotidiennes
+              </p>
+            </div>
+            <Button onClick={() => { setEditingRoutine(null); setForm(emptyForm); setNewItem({ title: "", duration_minutes: 5 }); setShowDialog(true); }}
+              disabled={!canCreate} className="gap-1.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press" size="sm">
+              <Plus className="w-4 h-4" />
+              Nouvelle
+            </Button>
+          </div>
+        </div>
         <div className="px-4 lg:px-8">
         <div className="max-w-2xl mx-auto">
 
