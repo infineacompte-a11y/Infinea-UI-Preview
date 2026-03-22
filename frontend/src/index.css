@@ -354,19 +354,32 @@ select:-webkit-autofill {
    PREMIUM VISUAL SYSTEM — Depth, Mesh, Noise, Glow
    ════════════════════════════════════════════════════════════════ */
 
-/* === Gradient mesh background — eliminates flat white === */
+/* === Gradient mesh background — subtle, barely perceptible === */
 .app-bg-mesh {
     background-color: hsl(var(--surface-0));
     background-image:
-        radial-gradient(ellipse 80% 60% at 8% 20%, rgba(69, 148, 146, 0.10) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 88% 12%, rgba(85, 179, 174, 0.08) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 50% at 50% 85%, rgba(93, 183, 134, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 40% at 92% 75%, rgba(228, 140, 117, 0.05) 0%, transparent 45%),
-        radial-gradient(ellipse 50% 50% at 30% 50%, rgba(69, 148, 146, 0.05) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 60% at 8% 20%, rgba(69, 148, 146, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 88% 12%, rgba(85, 179, 174, 0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 50% 85%, rgba(93, 183, 134, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 92% 75%, rgba(228, 140, 117, 0.03) 0%, transparent 45%);
     background-attachment: fixed;
 }
 
-/* === Dark teal section — Revolut-style contrast blocks === */
+/* Surface elevation system — progression de profondeur perceptible */
+.surface-base { background: hsl(var(--surface-0)); }
+.surface-raised {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(14,15,15,0.04), 0 1px 2px rgba(14,15,15,0.02);
+}
+.surface-overlay {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 4px 12px rgba(14,15,15,0.06), 0 12px 32px rgba(14,15,15,0.04);
+}
+
+/* === Dark teal section — contrast blocks === */
 .section-dark {
     background: linear-gradient(135deg, #1F3F42 0%, #275255 40%, #2F6669 100%);
     color: white;
