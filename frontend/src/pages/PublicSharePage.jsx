@@ -58,7 +58,7 @@ export default function PublicSharePage() {
   if (error) {
     return (
       <div className="min-h-screen app-bg-mesh flex flex-col items-center justify-center px-4 text-center animate-fade-in">
-        <div className="w-14 h-14 rounded-2xl bg-[#459492]/10 flex items-center justify-center mb-5">
+        <div className="w-14 h-14 rounded-2xl bg-[#459492]/20 flex items-center justify-center mb-5">
           <Zap className="w-7 h-7 text-[#459492]" />
         </div>
         <h1 className="font-sans font-semibold tracking-tight text-[#141E24] text-xl font-bold mb-2">

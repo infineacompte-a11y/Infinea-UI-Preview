@@ -157,10 +157,10 @@ export default function ProgressStats() {
             <div>
               {/* Stats Overview */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#5DB786]/10 to-transparent hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#5DB786", animationDelay: "0ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#5DB786]/20 to-[#5DB786]/5 hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#5DB786", animationDelay: "0ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[#5DB786]/20 flex items-center justify-center">
                         <TrendingUp className="w-6 h-6 text-[#5DB786]" />
                       </div>
                       <div>
@@ -173,10 +173,10 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#459492]/10 to-transparent hover:shadow-md hover:border-[#459492]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#459492", animationDelay: "50ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#459492]/20 to-[#459492]/5 hover:shadow-md hover:border-[#459492]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#459492", animationDelay: "50ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                         <Clock className="w-6 h-6 text-primary" />
                       </div>
                       <div>
@@ -189,10 +189,10 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#E48C75]/10 to-transparent hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#E48C75", animationDelay: "100ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#E48C75]/20 to-[#E48C75]/5 hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#E48C75", animationDelay: "100ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[#E48C75]/20 flex items-center justify-center">
                         <Flame className="w-6 h-6 text-[#E48C75]" />
                       </div>
                       <div>
@@ -205,10 +205,10 @@ export default function ProgressStats() {
                   </CardContent>
                 </Card>
 
-                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#55B3AE]/10 to-transparent hover:shadow-md hover:border-[#55B3AE]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#55B3AE", animationDelay: "150ms", animationFillMode: "forwards" }}>
+                <Card className="stat-card stat-card-accent bg-gradient-to-br from-[#55B3AE]/20 to-[#55B3AE]/5 hover:shadow-md hover:border-[#55B3AE]/30 transition-all duration-300 opacity-0 animate-fade-in" style={{ "--stat-accent-color": "#55B3AE", animationDelay: "150ms", animationFillMode: "forwards" }}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#459492]/10 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[#459492]/20 flex items-center justify-center">
                         <Sparkles className="w-6 h-6 text-[#459492]" />
                       </div>
                       <div>
@@ -364,7 +364,7 @@ export default function ProgressStats() {
                     </div>
                   ) : (
                     <div className="text-center py-8 text-muted-foreground">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#459492]/20 to-[#55B3AE]/10 flex items-center justify-center mx-auto mb-3">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#459492]/25 to-[#55B3AE]/15 flex items-center justify-center mx-auto mb-3">
                         <Clock className="w-8 h-8 text-[#459492]" />
                       </div>
                       <p>Aucune session complétée</p>

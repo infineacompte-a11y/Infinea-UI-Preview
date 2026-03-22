@@ -159,10 +159,10 @@ function CurriculumStep({ step, index, isNext, onStart }) {
 
 const MASTERY_COLORS = {
   "Non démarré": { bar: "bg-muted", text: "text-muted-foreground", bg: "bg-muted/20" },
-  "Débutant": { bar: "bg-[#459492]", text: "text-[#459492]", bg: "bg-[#459492]/10" },
-  "En progression": { bar: "bg-[#5DB786]", text: "text-[#5DB786]", bg: "bg-[#5DB786]/10" },
-  "Intermédiaire": { bar: "bg-[#E48C75]", text: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
-  "Avancé": { bar: "bg-[#E48C75]", text: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
+  "Débutant": { bar: "bg-[#459492]", text: "text-[#459492]", bg: "bg-[#459492]/20" },
+  "En progression": { bar: "bg-[#5DB786]", text: "text-[#5DB786]", bg: "bg-[#5DB786]/20" },
+  "Intermédiaire": { bar: "bg-[#E48C75]", text: "text-[#E48C75]", bg: "bg-[#E48C75]/20" },
+  "Avancé": { bar: "bg-[#E48C75]", text: "text-[#E48C75]", bg: "bg-[#E48C75]/20" },
   "Maîtrisé": { bar: "bg-primary", text: "text-primary", bg: "bg-primary/10" },
 };
 
@@ -224,7 +224,7 @@ function SkillsTab({ objectiveId }) {
             </div>
           </div>
           {review_needed > 0 && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#E48C75]/10 border border-[#E48C75]/20">
+            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#E48C75]/20 border border-[#E48C75]/20">
               <RotateCcw className="w-3.5 h-3.5 text-[#E48C75]" />
               <span className="text-xs font-medium text-foreground/80 tabular-nums">{review_needed} à réviser</span>
             </div>
@@ -290,9 +290,9 @@ function SkillsTab({ objectiveId }) {
 // ─── InsightsTab ───
 
 const MOMENTUM_CONFIG = {
-  rising: { icon: TrendingUp, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", border: "border-[#5DB786]/20" },
-  stable: { icon: Minus, color: "text-[#459492]", bg: "bg-[#459492]/10", border: "border-[#459492]/20" },
-  declining: { icon: TrendingDown, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", border: "border-[#E48C75]/20" },
+  rising: { icon: TrendingUp, color: "text-[#5DB786]", bg: "bg-[#5DB786]/20", border: "border-[#5DB786]/20" },
+  stable: { icon: Minus, color: "text-[#459492]", bg: "bg-[#459492]/20", border: "border-[#459492]/20" },
+  declining: { icon: TrendingDown, color: "text-[#E48C75]", bg: "bg-[#E48C75]/20", border: "border-[#E48C75]/20" },
 };
 
 const DIFFICULTY_BAR_COLORS = [

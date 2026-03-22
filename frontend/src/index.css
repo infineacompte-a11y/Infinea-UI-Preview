@@ -299,29 +299,29 @@ select:-webkit-autofill {
 /* Stat card colored left border */
 .stat-card-teal {
     border-left: 3px solid #459492;
-    background: rgba(255, 255, 255, 0.6);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.06) 0%, rgba(255, 255, 255, 0.7) 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 1px 3px rgba(69, 148, 146, 0.08), 0 4px 12px rgba(69, 148, 146, 0.04);
+    box-shadow: 0 1px 3px rgba(69, 148, 146, 0.10), 0 4px 12px rgba(69, 148, 146, 0.05);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stat-card-teal:hover {
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 4px 16px rgba(69, 148, 146, 0.12), 0 12px 32px rgba(69, 148, 146, 0.06);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.10) 0%, rgba(255, 255, 255, 0.85) 100%);
+    box-shadow: 0 4px 16px rgba(69, 148, 146, 0.15), 0 12px 32px rgba(69, 148, 146, 0.08);
+    transform: translateY(-2px);
 }
 .stat-card-coral {
     border-left: 3px solid #E48C75;
-    background: rgba(255, 255, 255, 0.6);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.06) 0%, rgba(255, 255, 255, 0.7) 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 1px 3px rgba(228, 140, 117, 0.08), 0 4px 12px rgba(228, 140, 117, 0.04);
+    box-shadow: 0 1px 3px rgba(228, 140, 117, 0.10), 0 4px 12px rgba(228, 140, 117, 0.05);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stat-card-coral:hover {
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 4px 16px rgba(228, 140, 117, 0.12), 0 12px 32px rgba(228, 140, 117, 0.06);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.10) 0%, rgba(255, 255, 255, 0.85) 100%);
+    box-shadow: 0 4px 16px rgba(228, 140, 117, 0.15), 0 12px 32px rgba(228, 140, 117, 0.08);
+    transform: translateY(-2px);
 }
 
 /* Badge progress gradient bar */
@@ -391,11 +391,11 @@ select:-webkit-autofill {
 .app-bg-mesh {
     background-color: hsl(var(--surface-0));
     background-image:
-        radial-gradient(ellipse 90% 70% at 5% 15%, rgba(69, 148, 146, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 60% at 92% 8%, rgba(85, 179, 174, 0.09) 0%, transparent 50%),
-        radial-gradient(ellipse 80% 60% at 45% 92%, rgba(93, 183, 134, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 50% at 95% 80%, rgba(228, 140, 117, 0.06) 0%, transparent 45%),
-        radial-gradient(ellipse 60% 60% at 50% 40%, rgba(69, 148, 146, 0.05) 0%, transparent 55%);
+        radial-gradient(ellipse 90% 70% at 5% 15%, rgba(69, 148, 146, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 60% at 92% 8%, rgba(85, 179, 174, 0.14) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 45% 92%, rgba(93, 183, 134, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 95% 80%, rgba(228, 140, 117, 0.10) 0%, transparent 45%),
+        radial-gradient(ellipse 60% 60% at 50% 40%, rgba(69, 148, 146, 0.08) 0%, transparent 55%);
     background-attachment: fixed;
     min-height: 100vh;
 }
@@ -431,12 +431,12 @@ select:-webkit-autofill {
 
 /* Dark section with rounded bottom — page header pattern */
 .section-dark-header {
-    background: linear-gradient(160deg, #163233 0%, #1F3F42 25%, #275255 50%, #2F6669 100%);
+    background: linear-gradient(160deg, #163233 0%, #1F3F42 20%, #275255 45%, #336E6D 80%, #3A7D7A 100%);
     color: white;
     border-radius: 0 0 2rem 2rem;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(39,82,85,0.15), 0 2px 8px rgba(39,82,85,0.08);
+    box-shadow: 0 8px 32px rgba(39,82,85,0.20), 0 2px 8px rgba(39,82,85,0.12);
 }
 
 .section-dark-header::before {
@@ -444,9 +444,9 @@ select:-webkit-autofill {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 60% 80% at 15% 85%, rgba(85, 179, 174, 0.2) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 60% at 85% 15%, rgba(93, 183, 134, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(69, 148, 146, 0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 80% at 15% 85%, rgba(85, 179, 174, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 60% at 85% 15%, rgba(93, 183, 134, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(69, 148, 146, 0.12) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -496,7 +496,7 @@ select:-webkit-autofill {
     left: -10%;
     width: 55%;
     height: 55%;
-    background: radial-gradient(circle, rgba(69, 148, 146, 0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(69, 148, 146, 0.12) 0%, transparent 70%);
     border-radius: 50%;
     animation: orb-float-1 25s ease-in-out infinite;
 }
@@ -508,7 +508,7 @@ select:-webkit-autofill {
     right: -10%;
     width: 45%;
     height: 45%;
-    background: radial-gradient(circle, rgba(85, 179, 174, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(85, 179, 174, 0.10) 0%, transparent 70%);
     border-radius: 50%;
     animation: orb-float-2 30s ease-in-out infinite;
 }
@@ -613,11 +613,11 @@ select:-webkit-autofill {
 
 /* === Sidebar premium gradient === */
 .sidebar-premium {
-    background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(245,248,248,0.88) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(240,247,247,0.92) 100%);
     backdrop-filter: blur(32px) saturate(1.8);
     -webkit-backdrop-filter: blur(32px) saturate(1.8);
-    border-right: 1px solid rgba(69,148,146,0.08);
-    box-shadow: 4px 0 24px rgba(39,82,85,0.04);
+    border-right: 1px solid rgba(69,148,146,0.12);
+    box-shadow: 4px 0 24px rgba(39,82,85,0.06), inset -1px 0 0 rgba(69,148,146,0.05);
 }
 
 /* === Stat card with colored top accent === */

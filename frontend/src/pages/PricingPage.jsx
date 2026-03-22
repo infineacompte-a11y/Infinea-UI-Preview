@@ -247,7 +247,7 @@ export default function PricingPage() {
           {/* Header */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E48C75]/10 border border-[#E48C75]/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E48C75]/20 border border-[#E48C75]/20 mb-6">
                 <Crown className="w-4 h-4 text-[#E48C75]" />
                 <span className="text-sm text-[#E48C75]">Investissez dans votre temps</span>
               </div>
@@ -387,14 +387,14 @@ export default function PricingPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { icon: Palette, name: "Créativité", color: "text-[#55B3AE]", bg: "bg-[#55B3AE]/10" },
-                  { icon: Dumbbell, name: "Fitness", color: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
-                  { icon: Leaf, name: "Mindfulness", color: "text-[#459492]", bg: "bg-[#459492]/10" },
+                  { icon: Palette, name: "Créativité", color: "text-[#55B3AE]", bg: "bg-[#55B3AE]/20" },
+                  { icon: Dumbbell, name: "Fitness", color: "text-[#E48C75]", bg: "bg-[#E48C75]/20" },
+                  { icon: Leaf, name: "Mindfulness", color: "text-[#459492]", bg: "bg-[#459492]/20" },
                   { icon: Crown, name: "Leadership", color: "text-[#7B8FA1]", bg: "bg-[#7B8FA1]/10" },
                   { icon: Zap, name: "Finance", color: "text-[#2E9B6A]", bg: "bg-[#2E9B6A]/10" },
                   { icon: Sparkles, name: "Relations", color: "text-[#C4806E]", bg: "bg-[#C4806E]/10" },
                   { icon: Brain, name: "Santé mentale", color: "text-[#6EAAA8]", bg: "bg-[#6EAAA8]/10" },
-                  { icon: Trophy, name: "Entrepreneuriat", color: "text-[#E48C75]", bg: "bg-[#E48C75]/10" },
+                  { icon: Trophy, name: "Entrepreneuriat", color: "text-[#E48C75]", bg: "bg-[#E48C75]/20" },
                 ].map(({ icon: Icon, name, color, bg }, idx) => (
                   <div
                     key={name}
@@ -434,14 +434,14 @@ export default function PricingPage() {
                   {
                     icon: Zap,
                     iconColor: "text-[#E48C75]",
-                    iconBg: "bg-[#E48C75]/10",
+                    iconBg: "bg-[#E48C75]/20",
                     title: "Bibliothèque infinie",
                     desc: "700+ micro-actions dans 11 catégories, enrichie en continu pour ne jamais manquer d'inspiration",
                   },
                   {
                     icon: Shield,
                     iconColor: "text-[#5DB786]",
-                    iconBg: "bg-[#5DB786]/10",
+                    iconBg: "bg-[#5DB786]/20",
                     title: "Bouclier de Streak",
                     desc: "Protégez votre streak une fois par semaine si vous manquez un jour",
                   },

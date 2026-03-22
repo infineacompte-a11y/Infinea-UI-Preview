@@ -58,17 +58,17 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#459492] bg-[#459492]/10",
-  productivity: "text-[#E48C75] bg-[#E48C75]/10",
-  well_being: "text-[#5DB786] bg-[#5DB786]/10",
-  creativity: "text-[#55B3AE] bg-[#55B3AE]/10",
-  fitness: "text-[#E48C75] bg-[#E48C75]/10",
-  mindfulness: "text-[#459492] bg-[#459492]/10",
-  leadership: "text-[#7B8FA1] bg-[#7B8FA1]/10",
-  finance: "text-[#2E9B6A] bg-[#2E9B6A]/10",
-  relations: "text-[#C4806E] bg-[#C4806E]/10",
-  mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/10",
-  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/10",
+  learning: "text-[#459492] bg-[#459492]/20",
+  productivity: "text-[#E48C75] bg-[#E48C75]/20",
+  well_being: "text-[#5DB786] bg-[#5DB786]/20",
+  creativity: "text-[#55B3AE] bg-[#55B3AE]/20",
+  fitness: "text-[#E48C75] bg-[#E48C75]/20",
+  mindfulness: "text-[#459492] bg-[#459492]/20",
+  leadership: "text-[#7B8FA1] bg-[#7B8FA1]/20",
+  finance: "text-[#2E9B6A] bg-[#2E9B6A]/20",
+  relations: "text-[#C4806E] bg-[#C4806E]/20",
+  mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/20",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/20",
 };
 
 const categoryLabels = {
@@ -274,7 +274,7 @@ export default function Dashboard() {
             style={{ animationDelay: "400ms" }}
           >
             <CardHeader className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#459492]/[0.03] to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#459492]/[0.08] to-transparent pointer-events-none" />
               <CardTitle className="relative font-sans font-semibold tracking-tight text-xl flex items-center gap-2 text-[#141E24]">
                 <Zap className="w-5 h-5 text-[#459492]" />
                 Configurez votre micro-action
@@ -309,9 +309,9 @@ export default function Dashboard() {
                 <span className="font-sans font-semibold tracking-tight text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Niveau d'énergie</span>
                 <div className="flex gap-3">
                   {[
-                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/10", border: "border-[#459492]", ring: "ring-[#459492]" },
-                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", border: "border-[#E48C75]", ring: "ring-[#E48C75]" },
-                    { value: "high", label: "Haute", icon: BatteryFull, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", border: "border-[#5DB786]", ring: "ring-[#5DB786]" },
+                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/20", border: "border-[#459492]", ring: "ring-[#459492]" },
+                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#E48C75]", bg: "bg-[#E48C75]/20", border: "border-[#E48C75]", ring: "ring-[#E48C75]" },
+                    { value: "high", label: "Haute", icon: BatteryFull, color: "text-[#5DB786]", bg: "bg-[#5DB786]/20", border: "border-[#5DB786]", ring: "ring-[#5DB786]" },
                   ].map((level) => (
                     <button
                       key={level.value}
@@ -390,7 +390,7 @@ export default function Dashboard() {
               </div>
 
               {suggestions.reasoning && (
-                <Card className="bg-gradient-to-r from-[#459492]/[0.07] to-[#55B3AE]/[0.03] border-[#459492]/20 rounded-2xl">
+                <Card className="bg-gradient-to-r from-[#459492]/[0.12] to-[#55B3AE]/[0.06] border-[#459492]/25 rounded-2xl">
                   <CardContent className="p-4 flex items-start gap-3">
                     <Sparkles className="w-5 h-5 text-[#459492] mt-0.5" />
                     <p className="text-sm text-[#141E24]">{suggestions.reasoning}</p>
@@ -438,7 +438,7 @@ export default function Dashboard() {
                                   <Badge variant="secondary" className="text-xs">Premium</Badge>
                                 )}
                                 {i === 0 && (
-                                  <Badge className="text-xs bg-[#459492]/10 text-[#275255] border border-[#459492]/30 shadow-sm">Recommandé</Badge>
+                                  <Badge className="text-xs bg-[#459492]/20 text-[#275255] border border-[#459492]/30 shadow-sm">Recommandé</Badge>
                                 )}
                                 {suggestions.scoring_metadata?.scored && (
                                   <Badge variant="outline" className="text-xs border-[#459492]/40 text-[#459492]">Personnalisé</Badge>

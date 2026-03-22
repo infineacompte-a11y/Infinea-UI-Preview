@@ -106,14 +106,14 @@ function NavItem({ to, label, icon: Icon, isActive, isNotif, unreadCount, mobile
       to={to}
       className={`nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492]/50 focus-visible:outline-none ${
         isActive
-          ? "bg-gradient-to-r from-[#459492]/10 to-[#55B3AE]/5 text-[#275255] font-semibold shadow-sm border border-[#459492]/15"
-          : "text-[#667085] hover:text-[#275255] hover:bg-[#F0F7F7] border border-transparent"
+          ? "bg-gradient-to-r from-[#459492]/15 to-[#55B3AE]/8 text-[#275255] font-semibold shadow-sm border border-[#459492]/20 border-l-[3px] border-l-[#459492]"
+          : "text-[#667085] hover:text-[#275255] hover:bg-[#459492]/[0.06] border border-transparent"
       }`}
       style={animDelay != null ? { animationDelay: `${animDelay}ms`, animationFillMode: "forwards" } : undefined}
       onClick={() => mobile && onNavigate?.()}
     >
       <div className={`relative flex items-center justify-center w-8 h-8 rounded-lg transition-colors ${
-        isActive ? "bg-[#459492]/10" : "group-hover:bg-[#459492]/5"
+        isActive ? "bg-[#459492]/15" : "group-hover:bg-[#459492]/8"
       }`}>
         <Icon className={`w-[18px] h-[18px] ${isActive ? "text-[#459492]" : ""}`} />
         {isNotif && unreadCount > 0 && (

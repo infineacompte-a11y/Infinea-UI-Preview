@@ -98,7 +98,7 @@ export default function ProfilePage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-br from-[#459492]/10 to-transparent border border-border/50 mb-4">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-br from-[#459492]/20 to-transparent border border-border/50 mb-4">
                 <div>
                   <p className="font-medium mb-1">
                     {user?.subscription_tier === "premium" ? "Plan Premium" : "Plan Gratuit"}
@@ -157,13 +157,13 @@ export default function ProfilePage() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
-                <div className="stat-card-teal p-4 rounded-xl bg-gradient-to-br from-[#459492]/10 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="stat-card-teal p-4 rounded-xl bg-gradient-to-br from-[#459492]/20 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
                   <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-primary tabular-nums">
                     {user?.total_time_invested || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">minutes investies</p>
                 </div>
-                <div className="stat-card-coral p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="stat-card-coral p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
                   <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-[#E48C75] tabular-nums">
                     {user?.streak_days || 0}
                   </p>

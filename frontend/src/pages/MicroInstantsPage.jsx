@@ -50,19 +50,19 @@ const SOURCE_CONFIG = {
     icon: Calendar,
     label: "Calendrier",
     color: "text-[#55B3AE]",
-    bgColor: "bg-[#55B3AE]/10",
+    bgColor: "bg-[#55B3AE]/20",
   },
   routine_window: {
     icon: Repeat,
     label: "Routine",
     color: "text-[#5DB786]",
-    bgColor: "bg-[#5DB786]/10",
+    bgColor: "bg-[#5DB786]/20",
   },
   behavioral_pattern: {
     icon: TrendingUp,
     label: "Pattern détecté",
     color: "text-[#459492]",
-    bgColor: "bg-[#459492]/10",
+    bgColor: "bg-[#459492]/20",
   },
 };
 
@@ -561,10 +561,10 @@ function WeeklyTrendBadge({ trend, thisWeekRate, lastWeekRate }) {
   const isFlat = pct === 0;
   const Icon = isUp ? ArrowUpRight : isFlat ? Minus : ArrowDownRight;
   const color = isUp
-    ? "text-[#5DB786] bg-[#5DB786]/10"
+    ? "text-[#5DB786] bg-[#5DB786]/20"
     : isFlat
     ? "text-muted-foreground bg-muted/10"
-    : "text-[#E48C75] bg-[#E48C75]/10";
+    : "text-[#E48C75] bg-[#E48C75]/20";
 
   return (
     <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium tabular-nums ${color}`}>
@@ -832,7 +832,7 @@ function StreakConsistencyCard({ streak, avgPerDay, activeDays, totalMinutes }) 
     <Card className="border-border/30 hover:shadow-md transition-all duration-200">
       <CardContent className="p-4">
         <div className="grid grid-cols-2 gap-3">
-          <div className="text-center p-3 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-[#E48C75]/5 border border-[#E48C75]/20">
+          <div className="text-center p-3 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-[#E48C75]/5 border border-[#E48C75]/20">
             <Flame className="w-5 h-5 text-[#E48C75] mx-auto mb-1" />
             <p className="text-2xl font-bold text-foreground tabular-nums">{streak}</p>
             <p className="text-[10px] text-muted-foreground">Jours consécutifs</p>

@@ -39,9 +39,9 @@ import {
 } from "@/components/ui/select";
 
 const moodIcons = {
-  positive: { icon: Smile, color: "text-[#5DB786]", bg: "bg-[#5DB786]/10", label: "Positif" },
-  neutral: { icon: Meh, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", label: "Neutre" },
-  negative: { icon: Frown, color: "text-[#E48C75]", bg: "bg-[#E48C75]/10", label: "Difficile" },
+  positive: { icon: Smile, color: "text-[#5DB786]", bg: "bg-[#5DB786]/20", label: "Positif" },
+  neutral: { icon: Meh, color: "text-[#E48C75]", bg: "bg-[#E48C75]/20", label: "Neutre" },
+  negative: { icon: Frown, color: "text-[#E48C75]", bg: "bg-[#E48C75]/20", label: "Difficile" },
 };
 
 const categoryLabels = {
@@ -337,7 +337,7 @@ export default function JournalPage() {
                         <div className="opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
                           <Card className="p-4 border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/5 to-transparent hover:shadow-lg hover:border-[#E48C75]/30 transition-all duration-200">
                             <div className="flex items-start gap-3">
-                              <div className="w-8 h-8 rounded-lg bg-[#E48C75]/10 flex items-center justify-center shrink-0">
+                              <div className="w-8 h-8 rounded-lg bg-[#E48C75]/20 flex items-center justify-center shrink-0">
                                 <Lightbulb className="w-4 h-4 text-[#E48C75]" />
                               </div>
                               <div>

@@ -7,15 +7,15 @@
 
 /* Category card backgrounds */
 .category-card-learning {
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.06) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.12) 0%, rgba(69, 148, 146, 0.02) 100%);
 }
 
 .category-card-productivity {
-    background: linear-gradient(135deg, rgba(228, 140, 117, 0.06) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.12) 0%, rgba(228, 140, 117, 0.02) 100%);
 }
 
 .category-card-well-being {
-    background: linear-gradient(135deg, rgba(93, 183, 134, 0.06) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(93, 183, 134, 0.12) 0%, rgba(93, 183, 134, 0.02) 100%);
 }
 
 /* Timer circle */
@@ -74,7 +74,7 @@
 
 /* Stat card */
 .stat-card {
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.03) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.08) 0%, rgba(69, 148, 146, 0.01) 100%);
 }
 
 /* Progress ring animation */
@@ -172,7 +172,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(69, 148, 146, 0.08);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.15), rgba(85, 179, 174, 0.08));
     margin-bottom: 1.5rem;
 }
 
@@ -207,7 +207,7 @@
 
 /* Selection color — brand teal */
 ::selection {
-    background: rgba(69, 148, 146, 0.2);
+    background: rgba(69, 148, 146, 0.25);
     color: #141E24;
 }
 

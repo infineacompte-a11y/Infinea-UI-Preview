@@ -123,7 +123,7 @@ export default function BadgesPage() {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-xl bg-[#5DB786]/20 flex items-center justify-center">
                           <Trophy className="w-6 h-6 text-[#5DB786]" />
                         </div>
                         <div>
@@ -157,7 +157,7 @@ export default function BadgesPage() {
                       key={badge.badge_id}
                       className={`opacity-0 animate-fade-in relative group hover:-translate-y-1 btn-press transition-all duration-300 ${
                         isEarned
-                          ? "badge-unlocked-glow bg-gradient-to-br from-[#5DB786]/10 to-[#459492]/10 border-[#5DB786]/30 hover:border-[#5DB786]/50"
+                          ? "badge-unlocked-glow bg-gradient-to-br from-[#5DB786]/15 to-[#459492]/10 border-[#5DB786]/30 hover:border-[#5DB786]/50"
                           : "badge-locked opacity-60 hover:border-[#459492]/30 border-dashed"
                       }`}
                       style={{ animationDelay: `${index * 50}ms`, animationFillMode: "forwards" }}
@@ -167,7 +167,7 @@ export default function BadgesPage() {
                         <div
                           className={`w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center transition-all duration-300 ${
                             isEarned
-                              ? "badge-icon-pulse bg-[#5DB786]/20 group-hover:bg-[#5DB786]/30"
+                              ? "badge-icon-pulse bg-[#5DB786]/25 group-hover:bg-[#5DB786]/35"
                               : "bg-muted group-hover:bg-muted/80"
                           }`}
                         >
@@ -180,7 +180,7 @@ export default function BadgesPage() {
                         <h3 className={`font-sans font-semibold tracking-tight font-medium mb-1 ${!isEarned ? "text-muted-foreground" : ""}`}>{badge.name}</h3>
                         <p className="text-xs text-muted-foreground mb-2">{badge.description}</p>
                         {isEarned && earnedData?.earned_at && (
-                          <Badge variant="secondary" className="text-xs rounded-lg bg-[#5DB786]/10 text-[#5DB786] border-0">
+                          <Badge variant="secondary" className="text-xs rounded-lg bg-[#5DB786]/20 text-[#5DB786] border-0">
                             {new Date(earnedData.earned_at).toLocaleDateString("fr-FR")}
                           </Badge>
                         )}
@@ -200,7 +200,7 @@ export default function BadgesPage() {
                         <div className="premium-section-border">
                           <div className="premium-section-inner">
                             <div className="flex items-center gap-3 mb-6">
-                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-[#459492]/10 flex items-center justify-center shadow-sm">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E48C75]/25 to-[#459492]/15 flex items-center justify-center shadow-sm">
                                 <Crown className="w-5 h-5 text-[#E48C75]" />
                               </div>
                               <div>

@@ -73,7 +73,7 @@ export default function PremiumAnalytics() {
     return (
       <Card className="border-[#E48C75]/30 bg-gradient-to-br from-[#E48C75]/5 to-[#E48C75]/5">
         <CardContent className="p-6 text-center">
-          <div className="w-14 h-14 rounded-full bg-[#E48C75]/10 flex items-center justify-center mx-auto mb-4">
+          <div className="w-14 h-14 rounded-full bg-[#E48C75]/20 flex items-center justify-center mx-auto mb-4">
             <Lock className="w-7 h-7 text-[#E48C75]" />
           </div>
           <h3 className="font-sans font-semibold tracking-tight text-lg font-semibold mb-2">
@@ -84,7 +84,7 @@ export default function PremiumAnalytics() {
             et des insights personnalisés avec Premium.
           </p>
           <Link to="/pricing">
-            <Button variant="outline" className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/10">
+            <Button variant="outline" className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/20">
               <Crown className="w-4 h-4 mr-2" />
               Découvrir Premium
             </Button>
@@ -141,7 +141,7 @@ export default function PremiumAnalytics() {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#5DB786]/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#5DB786]/20 flex items-center justify-center">
                 <Calendar className="w-5 h-5 text-[#5DB786]" />
               </div>
               <div>
@@ -158,7 +158,7 @@ export default function PremiumAnalytics() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E48C75]/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#E48C75]/20 flex items-center justify-center">
                   <Target className="w-5 h-5 text-[#E48C75]" />
                 </div>
                 <div>

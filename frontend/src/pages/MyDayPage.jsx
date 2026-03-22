@@ -32,9 +32,9 @@ import { toast } from "sonner";
 
 // ─── Time of day helpers ──────────────────────────────────
 const TIME_SECTIONS = [
-  { key: "morning", label: "Matin", icon: Sunrise, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/10" },
-  { key: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/10" },
-  { key: "evening", label: "Soir", icon: Moon, color: "text-[#459492]", bgColor: "bg-[#459492]/10" },
+  { key: "morning", label: "Matin", icon: Sunrise, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/20" },
+  { key: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75]", bgColor: "bg-[#E48C75]/20" },
+  { key: "evening", label: "Soir", icon: Moon, color: "text-[#459492]", bgColor: "bg-[#459492]/20" },
 ];
 
 function getCurrentTimeOfDay() {
@@ -201,8 +201,8 @@ function SmartCTAs({ routines, objectives, routinesCompletedToday, todaySessions
 
 // ─── Micro-Instants Section ───────────────────────────────
 const MI_SOURCE_CONFIG = {
-  calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-[#459492]", bgColor: "bg-[#459492]/10" },
-  routine_window: { icon: Repeat, label: "Routine", color: "text-[#5DB786]", bgColor: "bg-[#5DB786]/10" },
+  calendar_gap: { icon: Calendar, label: "Calendrier", color: "text-[#459492]", bgColor: "bg-[#459492]/20" },
+  routine_window: { icon: Repeat, label: "Routine", color: "text-[#5DB786]", bgColor: "bg-[#5DB786]/20" },
   behavioral_pattern: { icon: TrendingUp, label: "Pattern", color: "text-brand-secondary", bgColor: "bg-brand-secondary/10" },
 };
 
@@ -660,7 +660,7 @@ export default function MyDayPage() {
                                       Fait
                                     </Button>
                                   ) : (
-                                    <Badge variant="outline" className="text-[10px] bg-[#5DB786]/10 text-[#5DB786] border-[#5DB786]/20 shrink-0">
+                                    <Badge variant="outline" className="text-[10px] bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/20 shrink-0">
                                       Complétée
                                     </Badge>
                                   )}

@@ -50,17 +50,17 @@ const ENERGY_LEVELS = [
 ];
 
 const INTERESTS = [
-  { id: "learning", label: "Apprentissage", color: "text-[#459492] bg-[#459492]/10" },
-  { id: "productivity", label: "Productivité", color: "text-[#E48C75] bg-[#E48C75]/10" },
-  { id: "well_being", label: "Bien-être", color: "text-[#5DB786] bg-[#5DB786]/10" },
-  { id: "creativity", label: "Créativité", color: "text-[#55B3AE] bg-[#55B3AE]/10" },
-  { id: "fitness", label: "Forme physique", color: "text-[#E48C75] bg-[#E48C75]/10" },
-  { id: "mindfulness", label: "Pleine conscience", color: "text-[#459492] bg-[#459492]/10" },
+  { id: "learning", label: "Apprentissage", color: "text-[#459492] bg-[#459492]/20" },
+  { id: "productivity", label: "Productivité", color: "text-[#E48C75] bg-[#E48C75]/20" },
+  { id: "well_being", label: "Bien-être", color: "text-[#5DB786] bg-[#5DB786]/20" },
+  { id: "creativity", label: "Créativité", color: "text-[#55B3AE] bg-[#55B3AE]/20" },
+  { id: "fitness", label: "Forme physique", color: "text-[#E48C75] bg-[#E48C75]/20" },
+  { id: "mindfulness", label: "Pleine conscience", color: "text-[#459492] bg-[#459492]/20" },
   { id: "leadership", label: "Leadership", color: "text-[#7B8FA1] bg-[#7B8FA1]/10" },
   { id: "finance", label: "Finance", color: "text-[#2E9B6A] bg-[#2E9B6A]/10" },
   { id: "relations", label: "Relations", color: "text-[#C4806E] bg-[#C4806E]/10" },
   { id: "mental_health", label: "Santé mentale", color: "text-[#6EAAA8] bg-[#6EAAA8]/10" },
-  { id: "entrepreneurship", label: "Entrepreneuriat", color: "text-[#E48C75] bg-[#E48C75]/10" },
+  { id: "entrepreneurship", label: "Entrepreneuriat", color: "text-[#E48C75] bg-[#E48C75]/20" },
 ];
 
 export default function OnboardingPage() {
@@ -144,7 +144,7 @@ export default function OnboardingPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#F8FAFB] via-white to-[#F0F7F7] flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center animate-fade-in">
-          <div className="w-20 h-20 rounded-full bg-[#459492]/10 flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 rounded-full bg-[#459492]/20 flex items-center justify-center mx-auto mb-6">
             <Sparkles className="w-10 h-10 text-[#459492]" />
           </div>
           <h1 className="font-sans font-semibold tracking-tight text-3xl font-bold text-[#141E24] mb-4">

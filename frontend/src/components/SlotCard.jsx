@@ -23,9 +23,9 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#459492] bg-[#459492]/10",
-  productivity: "text-[#E48C75] bg-[#E48C75]/10",
-  well_being: "text-[#5DB786] bg-[#5DB786]/10",
+  learning: "text-[#459492] bg-[#459492]/20",
+  productivity: "text-[#E48C75] bg-[#E48C75]/20",
+  well_being: "text-[#5DB786] bg-[#5DB786]/20",
 };
 
 const categoryLabels = {
