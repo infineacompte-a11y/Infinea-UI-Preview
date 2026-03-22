@@ -194,7 +194,7 @@ export default function Dashboard() {
                     <TrendingUp className="w-4 h-4 text-[#5DB786]" />
                   </div>
                   <div>
-                    <p className="text-xl font-heading font-bold tabular-nums text-white">{user?.total_time_invested || 0}</p>
+                    <p className="text-xl font-sans font-semibold tracking-tight font-bold tabular-nums text-white">{user?.total_time_invested || 0}</p>
                     <p className="text-[10px] text-white/50 uppercase tracking-wider">min investies</p>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export default function Dashboard() {
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <p className="text-xl font-heading font-bold tabular-nums text-white">{user?.streak_days || 0}</p>
+                      <p className="text-xl font-sans font-semibold tracking-tight font-bold tabular-nums text-white">{user?.streak_days || 0}</p>
                       {user?.subscription_tier === "premium" && (
                         <Shield className="w-3.5 h-3.5 text-[#5DB786]" title="Streak Shield actif" />
                       )}
@@ -221,7 +221,7 @@ export default function Dashboard() {
                     <Sparkles className="w-4 h-4 text-[#55B3AE]" />
                   </div>
                   <div>
-                    <p className="text-xl font-heading font-bold tabular-nums text-white">
+                    <p className="text-xl font-sans font-semibold tracking-tight font-bold tabular-nums text-white">
                       {user?.subscription_tier === "premium" ? "Pro" : "Free"}
                     </p>
                     <p className="text-[10px] text-white/50 uppercase tracking-wider">abonnement</p>
@@ -275,7 +275,7 @@ export default function Dashboard() {
           >
             <CardHeader className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#459492]/[0.03] to-transparent pointer-events-none" />
-              <CardTitle className="relative font-heading text-xl flex items-center gap-2 text-[#141E24]">
+              <CardTitle className="relative font-sans font-semibold tracking-tight text-xl flex items-center gap-2 text-[#141E24]">
                 <Zap className="w-5 h-5 text-[#459492]" />
                 Configurez votre micro-action
               </CardTitle>
@@ -284,7 +284,7 @@ export default function Dashboard() {
               {/* Time Slider */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-heading text-sm font-semibold uppercase tracking-wider text-[#667085]">Temps disponible</span>
+                  <span className="font-sans font-semibold tracking-tight text-sm font-semibold uppercase tracking-wider text-[#667085]">Temps disponible</span>
                   <Badge variant="secondary" className="font-mono">
                     {availableTime} min
                   </Badge>
@@ -306,7 +306,7 @@ export default function Dashboard() {
 
               {/* Energy Level */}
               <div>
-                <span className="font-heading text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Niveau d'énergie</span>
+                <span className="font-sans font-semibold tracking-tight text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Niveau d'énergie</span>
                 <div className="flex gap-3">
                   {[
                     { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/10", border: "border-[#459492]", ring: "ring-[#459492]" },
@@ -332,7 +332,7 @@ export default function Dashboard() {
 
               {/* Category Filter */}
               <div>
-                <span className="font-heading text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Catégorie (optionnel)</span>
+                <span className="font-sans font-semibold tracking-tight text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Catégorie (optionnel)</span>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                   {Object.entries(categoryLabels).map(([key, label]) => {
                     const Icon = categoryIcons[key];
@@ -385,7 +385,7 @@ export default function Dashboard() {
               data-testid="suggestions-container"
             >
               <div className="flex items-center justify-between">
-                <h2 className="font-heading text-xl font-semibold text-[#141E24]">Suggestions pour vous</h2>
+                <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold text-[#141E24]">Suggestions pour vous</h2>
                 <span className="text-sm text-[#667085]">{availableTime} min • Énergie {energyLevel}</span>
               </div>
 
@@ -465,7 +465,7 @@ export default function Dashboard() {
           {/* Quick Actions */}
           {!suggestions && (
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "450ms" }}>
-              <h2 className="font-heading text-lg font-semibold text-[#667085] mb-4">Explorez nos catégories</h2>
+              <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold text-[#667085] mb-4">Explorez nos catégories</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(categoryLabels).map(([key, label]) => {
                   const Icon = categoryIcons[key];
@@ -483,7 +483,7 @@ export default function Dashboard() {
                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${categoryColors[key]} mb-4`}>
                           <Icon className="w-5 h-5" />
                         </div>
-                        <h3 className="font-heading text-lg font-medium mb-2 text-[#141E24]">{label}</h3>
+                        <h3 className="font-sans font-semibold tracking-tight text-lg font-medium mb-2 text-[#141E24]">{label}</h3>
                         <p className="text-sm text-[#667085]">
                           {key === "learning" && "Vocabulaire, lecture, concepts..."}
                           {key === "productivity" && "Planning, emails, brainstorm..."}

@@ -79,7 +79,7 @@ export default function LoginPage() {
 
         <Card className="bg-white shadow-xl rounded-2xl border border-[#E2E6EA]/50 opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
           <CardHeader className="text-center pb-2">
-            <CardTitle className="font-heading text-2xl text-[#141E24]">Bon retour parmi nous</CardTitle>
+            <CardTitle className="font-sans font-semibold tracking-tight text-2xl text-[#141E24]">Bon retour parmi nous</CardTitle>
             <p className="text-[#667085] mt-2">
               Connectez-vous pour continuer votre progression
             </p>

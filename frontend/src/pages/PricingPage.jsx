@@ -205,7 +205,7 @@ export default function PricingPage() {
       <div className="min-h-screen app-bg-mesh flex items-center justify-center p-4">
         <div className="text-center">
           <Loader2 className="w-12 h-12 animate-spin text-primary mx-auto mb-4" />
-          <h2 className="font-heading text-2xl mb-2">Vérification du paiement...</h2>
+          <h2 className="font-sans font-semibold tracking-tight text-2xl mb-2">Vérification du paiement...</h2>
           <p className="text-muted-foreground">Merci de patienter quelques instants</p>
         </div>
       </div>
@@ -251,7 +251,7 @@ export default function PricingPage() {
                 <Crown className="w-4 h-4 text-[#E48C75]" />
                 <span className="text-sm text-[#E48C75]">Investissez dans votre temps</span>
               </div>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4" data-testid="pricing-title">
+              <h1 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl font-bold mb-4" data-testid="pricing-title">
                 Choisissez votre plan
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -284,10 +284,10 @@ export default function PricingPage() {
                       </div>
                     )}
                     <CardContent className="p-8">
-                      <h3 className="font-heading text-2xl font-semibold mb-2">{plan.name}</h3>
+                      <h3 className="font-sans font-semibold tracking-tight text-2xl font-semibold mb-2">{plan.name}</h3>
                       <p className="text-muted-foreground mb-4">{plan.description}</p>
                       <div className="flex items-baseline gap-1 mb-6">
-                        <span className="text-5xl font-heading font-bold tabular-nums">{plan.price}</span>
+                        <span className="text-5xl font-sans font-semibold tracking-tight font-bold tabular-nums">{plan.price}</span>
                         <span className="text-muted-foreground">{plan.period}</span>
                       </div>
                       <ul className="space-y-3 mb-8">
@@ -382,7 +382,7 @@ export default function PricingPage() {
           {/* Premium Categories Showcase */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "600ms", animationFillMode: "forwards" }}>
             <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="font-heading text-2xl font-semibold text-center mb-8">
+              <h2 className="font-sans font-semibold tracking-tight text-2xl font-semibold text-center mb-8">
                 8 catégories exclusives Premium
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -419,7 +419,7 @@ export default function PricingPage() {
           {/* Features Comparison */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "800ms", animationFillMode: "forwards" }}>
             <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="font-heading text-2xl font-semibold text-center mb-8">
+              <h2 className="font-sans font-semibold tracking-tight text-2xl font-semibold text-center mb-8">
                 Pourquoi passer à Premium ?
               </h2>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -458,7 +458,7 @@ export default function PricingPage() {
                           <div className={`w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
                             <FeatureIcon className={`w-6 h-6 ${item.iconColor}`} />
                           </div>
-                          <h3 className="font-heading text-lg font-medium mb-2">{item.title}</h3>
+                          <h3 className="font-sans font-semibold tracking-tight text-lg font-medium mb-2">{item.title}</h3>
                           <p className="text-sm text-muted-foreground">{item.desc}</p>
                         </CardContent>
                       </Card>
@@ -474,9 +474,9 @@ export default function PricingPage() {
                     <table className="w-full">
                       <thead>
                         <tr className="border-b">
-                          <th className="text-left p-4 font-heading font-semibold">Fonctionnalité</th>
-                          <th className="text-center p-4 font-heading font-semibold">Gratuit</th>
-                          <th className="text-center p-4 font-heading font-semibold text-[#E48C75]">
+                          <th className="text-left p-4 font-sans font-semibold tracking-tight font-semibold">Fonctionnalité</th>
+                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold">Gratuit</th>
+                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold text-[#E48C75]">
                             <div className="flex items-center justify-center gap-1">
                               <Crown className="w-4 h-4 text-[#E48C75]" /> Premium
                             </div>

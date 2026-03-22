@@ -61,7 +61,7 @@ export default function PublicSharePage() {
         <div className="w-14 h-14 rounded-2xl bg-[#459492]/10 flex items-center justify-center mb-5">
           <Zap className="w-7 h-7 text-[#459492]" />
         </div>
-        <h1 className="font-heading text-[#141E24] text-xl font-bold mb-2">
+        <h1 className="font-sans font-semibold tracking-tight text-[#141E24] text-xl font-bold mb-2">
           {error === "expired" ? "Ce partage a expiré" : "Partage introuvable"}
         </h1>
         <p className="text-[#667085] text-sm mb-6 max-w-xs">

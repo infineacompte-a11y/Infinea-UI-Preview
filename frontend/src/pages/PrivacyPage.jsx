@@ -25,11 +25,11 @@ export default function PrivacyPage() {
       {/* Content */}
       <main className="pt-24 pb-16 px-4 animate-fade-in">
         <div className="max-w-3xl mx-auto prose prose-sm">
-          <h1 className="font-heading text-3xl font-bold mb-2 text-[#141E24]">Politique de Confidentialité</h1>
+          <h1 className="font-sans font-semibold tracking-tight text-3xl font-bold mb-2 text-[#141E24]">Politique de Confidentialité</h1>
           <p className="text-[#667085] mb-8">Dernière mise à jour : 7 mars 2026</p>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">1. Responsable du traitement</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">1. Responsable du traitement</h2>
             <p className="text-[#667085] leading-relaxed">
               Le responsable du traitement des données collectées sur InFinea est :<br />
               <strong className="text-[#141E24]">InFinea</strong><br />
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">2. Données collectées</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">2. Données collectées</h2>
             <p className="text-[#667085] leading-relaxed mb-3">
               Dans le cadre de l'utilisation du service, nous collectons les données suivantes :
             </p>
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">3. Utilisation des données Google</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">3. Utilisation des données Google</h2>
             <p className="text-[#667085] leading-relaxed mb-3">
               InFinea utilise l'API Google Calendar avec un accès <strong className="text-[#141E24]">en lecture seule</strong> (scope <code className="text-xs bg-[#F0F7F7] px-1.5 py-0.5 rounded text-[#275255]">calendar.readonly</code>). Cet accès est strictement limité aux finalités suivantes :
             </p>
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">4. Finalités du traitement</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">4. Finalités du traitement</h2>
             <ul className="text-[#667085] space-y-2 list-disc list-inside">
               <li>Fourniture et personnalisation du service (suggestions IA, micro-actions)</li>
               <li>Gestion de votre compte utilisateur</li>
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">5. Base légale du traitement</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">5. Base légale du traitement</h2>
             <ul className="text-[#667085] space-y-2 list-disc list-inside">
               <li><strong className="text-[#141E24]">Exécution du contrat :</strong> traitement nécessaire à la fourniture du service (article 6.1.b du RGPD)</li>
               <li><strong className="text-[#141E24]">Consentement :</strong> pour les cookies analytiques et les communications optionnelles (article 6.1.a)</li>
@@ -107,14 +107,14 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">6. Durée de conservation</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">6. Durée de conservation</h2>
             <p className="text-[#667085] leading-relaxed">
               Vos données sont conservées pendant la durée de votre utilisation du service. En cas de suppression de votre compte, vos données personnelles sont supprimées dans un délai de 30 jours, à l'exception des données nécessaires au respect de nos obligations légales (données de facturation : 10 ans).
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">7. Vos droits</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">7. Vos droits</h2>
             <p className="text-[#667085] leading-relaxed mb-3">
               Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :
             </p>
@@ -134,7 +134,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">8. Suppression de vos données</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">8. Suppression de vos données</h2>
             <p className="text-[#667085] leading-relaxed mb-3">
               Vous pouvez demander la suppression de vos données de plusieurs manières :
             </p>
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">9. Hébergement et sécurité</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">9. Hébergement et sécurité</h2>
             <p className="text-[#667085] leading-relaxed mb-3">Vos données sont hébergées chez les prestataires suivants :</p>
             <ul className="text-[#667085] space-y-2 list-disc list-inside">
               <li><strong className="text-[#141E24]">MongoDB Atlas</strong> (base de données) — hébergement AWS, région EU</li>
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">10. Cookies et traceurs</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">10. Cookies et traceurs</h2>
             <p className="text-[#667085] leading-relaxed mb-3">InFinea utilise les cookies suivants :</p>
             <ul className="text-[#667085] space-y-2 list-disc list-inside">
               <li><strong className="text-[#141E24]">Cookies essentiels :</strong> authentification (JWT), préférences de session</li>
@@ -174,14 +174,14 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">11. Transferts de données</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">11. Transferts de données</h2>
             <p className="text-[#667085] leading-relaxed">
               Certaines données peuvent être transférées vers les États-Unis (Render, Vercel). Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne et/ou le Data Privacy Framework EU-US.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-heading text-xl font-semibold mb-3 text-[#141E24]">12. Contact et réclamation</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-3 text-[#141E24]">12. Contact et réclamation</h2>
             <p className="text-[#667085] leading-relaxed">
               Pour toute question relative à la protection de vos données, contactez-nous à{" "}
               <a href="mailto:infinea.compte@gmail.com" className="text-[#459492] hover:text-[#55B3AE] hover:underline transition-colors">infinea.compte@gmail.com</a>.

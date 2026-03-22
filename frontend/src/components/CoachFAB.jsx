@@ -169,7 +169,7 @@ export default function CoachFAB() {
                 <Brain className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-sm text-white">Coach IA</h3>
+                <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm text-white">Coach IA</h3>
                 <div className="flex items-center gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   <span className="text-[10px] text-white/70">En ligne</span>
@@ -214,7 +214,7 @@ export default function CoachFAB() {
                 <div className="w-16 h-16 rounded-2xl bg-[#459492]/10 flex items-center justify-center mb-4">
                   <Brain className="w-8 h-8 text-[#459492]" />
                 </div>
-                <h4 className="font-heading font-semibold text-base mb-1 text-[#141E24]">Ton coach personnel</h4>
+                <h4 className="font-sans font-semibold tracking-tight font-semibold text-base mb-1 text-[#141E24]">Ton coach personnel</h4>
                 <p className="text-sm text-[#667085] mb-6 leading-relaxed">
                   Pose-moi une question, demande un conseil, ou dis-moi comment tu te sens.
                 </p>

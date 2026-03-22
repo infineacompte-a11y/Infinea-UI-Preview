@@ -285,7 +285,7 @@ export default function ActionsLibrary() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#459492]/20 to-transparent flex items-center justify-center mx-auto mb-4">
                   <Plus className="w-8 h-8 text-primary animate-pulse" />
                 </div>
-                <h3 className="font-heading text-xl mb-2">Aucune action personnalisée</h3>
+                <h3 className="font-sans font-semibold tracking-tight text-xl mb-2">Aucune action personnalisée</h3>
                 <p className="text-muted-foreground mb-6">
                   Créez votre première action avec l'IA, elle apparaîtra ici.
                 </p>
@@ -308,7 +308,7 @@ export default function ActionsLibrary() {
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${categoryColors[cat] || "bg-muted"}`}>
                           <CatIcon className="w-4 h-4" />
                         </div>
-                        <h2 className="font-heading font-semibold text-lg">{catLabel}</h2>
+                        <h2 className="font-sans font-semibold tracking-tight font-semibold text-lg">{catLabel}</h2>
                         <Badge variant="secondary" className="text-xs">{catActions.length}</Badge>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -426,7 +426,7 @@ export default function ActionsLibrary() {
               <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl p-4 w-fit mx-auto mb-4">
                 <Sparkles className="w-12 h-12 text-muted-foreground animate-pulse" />
               </div>
-              <h3 className="font-heading text-xl mb-2">Aucune action trouvée</h3>
+              <h3 className="font-sans font-semibold tracking-tight text-xl mb-2">Aucune action trouvée</h3>
               <p className="text-muted-foreground">Essayez une autre catégorie</p>
             </div>
           )}

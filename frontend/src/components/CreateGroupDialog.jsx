@@ -70,7 +70,7 @@ export default function CreateGroupDialog({ open, onOpenChange, onCreated }) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-md bg-card border-border">
         <DialogHeader>
-          <DialogTitle className="font-heading flex items-center gap-2">
+          <DialogTitle className="font-sans font-semibold tracking-tight flex items-center gap-2">
             <Users className="w-5 h-5 text-primary" />
             Créer un groupe
           </DialogTitle>

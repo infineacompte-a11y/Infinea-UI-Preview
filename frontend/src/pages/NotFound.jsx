@@ -13,14 +13,14 @@ export default function NotFound() {
       </div>
 
       {/* 404 number with brand teal accent */}
-      <h1 className="font-heading text-8xl sm:text-9xl font-bold tracking-tighter mb-2">
+      <h1 className="font-sans font-semibold tracking-tight text-8xl sm:text-9xl font-bold tracking-tighter mb-2">
         <span className="text-[#459492]">4</span>
         <span className="text-[#141E24]/20">0</span>
         <span className="text-[#459492]">4</span>
       </h1>
 
       {/* Message */}
-      <p className="font-heading text-xl text-[#141E24] mb-2">
+      <p className="font-sans font-semibold tracking-tight text-xl text-[#141E24] mb-2">
         Page introuvable
       </p>
       <p className="text-[#667085] text-sm mb-10 text-center max-w-sm leading-relaxed">

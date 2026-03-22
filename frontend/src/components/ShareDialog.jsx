@@ -150,7 +150,7 @@ export default function ShareDialog({ open, onOpenChange, shareType = "weekly_re
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="max-w-[460px] p-0 gap-0 overflow-hidden bg-card border-border">
         <DialogHeader className="px-6 pt-6 pb-0">
-          <DialogTitle className="font-heading text-lg">Partager ma progression</DialogTitle>
+          <DialogTitle className="font-sans font-semibold tracking-tight text-lg">Partager ma progression</DialogTitle>
         </DialogHeader>
 
         <div className="px-6 py-5">

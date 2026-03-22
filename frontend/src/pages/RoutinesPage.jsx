@@ -210,7 +210,7 @@ function ExecutionDialog({ routine, open, onClose, onComplete }) {
             <Badge variant="outline" className="text-[10px] mb-3 rounded-lg">
               Étape {currentStep + 1}/{totalSteps}
             </Badge>
-            <h3 className="font-heading font-semibold text-lg mb-1">{current.title}</h3>
+            <h3 className="font-sans font-semibold tracking-tight font-semibold text-lg mb-1">{current.title}</h3>
             <p className="text-xs text-muted-foreground"><span className="tabular-nums">{current.duration_minutes}</span> min prévues</p>
           </div>
 
@@ -306,7 +306,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch, index = 0 
               </Badge>
             )}
           </div>
-          <h3 className="font-heading font-semibold text-base">{routine.name}</h3>
+          <h3 className="font-sans font-semibold tracking-tight font-semibold text-base">{routine.name}</h3>
           {routine.description && (
             <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{routine.description}</p>
           )}
@@ -656,7 +656,7 @@ export default function RoutinesPage() {
                 <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <CalendarClock className="w-8 h-8 text-[#459492]" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">
+                <h3 className="font-sans font-semibold tracking-tight font-semibold text-lg mb-2">
                   Crée ta première habitude
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto leading-relaxed">

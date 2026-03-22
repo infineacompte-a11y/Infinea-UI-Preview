@@ -164,7 +164,7 @@ export default function ProgressStats() {
                         <TrendingUp className="w-6 h-6 text-[#5DB786]" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold tabular-nums" data-testid="total-sessions">
+                        <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums" data-testid="total-sessions">
                           {stats?.total_sessions || 0}
                         </p>
                         <p className="text-xs text-muted-foreground">sessions</p>
@@ -180,7 +180,7 @@ export default function ProgressStats() {
                         <Clock className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold tabular-nums" data-testid="total-time">
+                        <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums" data-testid="total-time">
                           {stats?.total_time_invested || 0}
                         </p>
                         <p className="text-xs text-muted-foreground">minutes totales</p>
@@ -196,7 +196,7 @@ export default function ProgressStats() {
                         <Flame className="w-6 h-6 text-[#E48C75]" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold tabular-nums" data-testid="streak-days">
+                        <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums" data-testid="streak-days">
                           {stats?.streak_days || 0}
                         </p>
                         <p className="text-xs text-muted-foreground">jours streak</p>
@@ -212,7 +212,7 @@ export default function ProgressStats() {
                         <Sparkles className="w-6 h-6 text-[#459492]" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold tabular-nums">
+                        <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums">
                           {Math.round((stats?.total_time_invested || 0) / 60)}h
                         </p>
                         <p className="text-xs text-muted-foreground">heures investies</p>
@@ -227,7 +227,7 @@ export default function ProgressStats() {
                 {/* Time by Category */}
                 <Card className="chart-card hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="font-heading text-lg section-header-accent">Temps par catégorie</CardTitle>
+                    <CardTitle className="font-sans font-semibold tracking-tight text-lg section-header-accent">Temps par catégorie</CardTitle>
                   </CardHeader>
                   <CardContent className="relative z-[1]">
                     {barData.length > 0 ? (
@@ -258,7 +258,7 @@ export default function ProgressStats() {
                 {/* Sessions Distribution */}
                 <Card className="chart-card hover:border-[#459492]/20 hover:shadow-md transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="font-heading text-lg section-header-accent">Répartition des sessions</CardTitle>
+                    <CardTitle className="font-sans font-semibold tracking-tight text-lg section-header-accent">Répartition des sessions</CardTitle>
                   </CardHeader>
                   <CardContent className="relative z-[1]">
                     {pieData.length > 0 ? (
@@ -313,7 +313,7 @@ export default function ProgressStats() {
               {/* Recent Sessions */}
               <Card className="hover:border-[#459492]/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                 <CardHeader>
-                  <CardTitle className="font-heading text-lg section-header-accent">Sessions récentes</CardTitle>
+                  <CardTitle className="font-sans font-semibold tracking-tight text-lg section-header-accent">Sessions récentes</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {stats?.recent_sessions?.length > 0 ? (

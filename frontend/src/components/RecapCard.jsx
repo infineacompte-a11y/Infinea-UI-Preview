@@ -86,7 +86,7 @@ export default function RecapCard() {
       {/* Premium gradient header */}
       <div className="px-5 pt-5 pb-4 bg-gradient-to-r from-[#459492]/[0.04] via-[#55B3AE]/[0.02] to-transparent">
         <div className="flex items-center justify-between">
-          <h2 className="font-heading font-semibold text-base flex items-center gap-2">
+          <h2 className="font-sans font-semibold tracking-tight font-semibold text-base flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-[#459492]" />
             Mon récap
           </h2>

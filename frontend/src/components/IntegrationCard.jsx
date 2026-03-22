@@ -90,7 +90,7 @@ export default function IntegrationCard({
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-heading font-semibold text-sm sm:text-base">{name}</h3>
+              <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm sm:text-base">{name}</h3>
               <Badge className={`text-[10px] sm:text-xs ${statusInfo.badgeClass}`}>
                 <StatusIcon className={`w-3 h-3 mr-1 ${currentStatus === "syncing" ? "animate-spin" : ""}`} />
                 {statusInfo.label}

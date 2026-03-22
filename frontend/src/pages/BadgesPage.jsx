@@ -127,7 +127,7 @@ export default function BadgesPage() {
                           <Trophy className="w-6 h-6 text-[#5DB786]" />
                         </div>
                         <div>
-                          <p className="font-heading text-2xl font-bold tabular-nums">
+                          <p className="font-sans font-semibold tracking-tight text-2xl font-bold tabular-nums">
                             {userBadges.earned?.length || 0} / {allBadges.length}
                           </p>
                           <p className="text-sm text-muted-foreground">badges obtenus</p>
@@ -177,7 +177,7 @@ export default function BadgesPage() {
                             <Lock className="w-6 h-6 text-muted-foreground/60" />
                           )}
                         </div>
-                        <h3 className={`font-heading font-medium mb-1 ${!isEarned ? "text-muted-foreground" : ""}`}>{badge.name}</h3>
+                        <h3 className={`font-sans font-semibold tracking-tight font-medium mb-1 ${!isEarned ? "text-muted-foreground" : ""}`}>{badge.name}</h3>
                         <p className="text-xs text-muted-foreground mb-2">{badge.description}</p>
                         {isEarned && earnedData?.earned_at && (
                           <Badge variant="secondary" className="text-xs rounded-lg bg-[#5DB786]/10 text-[#5DB786] border-0">
@@ -204,7 +204,7 @@ export default function BadgesPage() {
                                 <Crown className="w-5 h-5 text-[#E48C75]" />
                               </div>
                               <div>
-                                <h2 className="font-heading text-xl font-semibold flex items-center gap-2">
+                                <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold flex items-center gap-2">
                                   Badges Premium
                                   <Sparkles className="w-4 h-4 text-[#E48C75]/60" />
                                 </h2>

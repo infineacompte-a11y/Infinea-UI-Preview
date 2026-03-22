@@ -70,7 +70,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1">
-                    <h2 className="font-heading text-2xl font-semibold" data-testid="profile-name">
+                    <h2 className="font-sans font-semibold tracking-tight text-2xl font-semibold" data-testid="profile-name">
                       {user?.name || "Utilisateur"}
                     </h2>
                     {user?.subscription_tier === "premium" && (
@@ -92,7 +92,7 @@ export default function ProfilePage() {
           {/* Subscription Card */}
           <Card className="mb-6 hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
             <CardHeader>
-              <CardTitle className="font-heading text-lg flex items-center gap-2">
+              <CardTitle className="font-sans font-semibold tracking-tight text-lg flex items-center gap-2">
                 <CreditCard className="w-5 h-5" />
                 Abonnement
               </CardTitle>
@@ -153,18 +153,18 @@ export default function ProfilePage() {
           {/* Stats Summary */}
           <Card className="mb-6 hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
             <CardHeader>
-              <CardTitle className="font-heading text-lg">Résumé</CardTitle>
+              <CardTitle className="font-sans font-semibold tracking-tight text-lg">Résumé</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
                 <div className="stat-card-teal p-4 rounded-xl bg-gradient-to-br from-[#459492]/10 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
-                  <p className="text-2xl font-heading font-bold text-primary tabular-nums">
+                  <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-primary tabular-nums">
                     {user?.total_time_invested || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">minutes investies</p>
                 </div>
                 <div className="stat-card-coral p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/10 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
-                  <p className="text-2xl font-heading font-bold text-[#E48C75] tabular-nums">
+                  <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-[#E48C75] tabular-nums">
                     {user?.streak_days || 0}
                   </p>
                   <p className="text-sm text-muted-foreground">jours de streak</p>
@@ -176,7 +176,7 @@ export default function ProfilePage() {
           {/* Actions */}
           <Card className="hover:border-[#459492]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
             <CardHeader>
-              <CardTitle className="font-heading text-lg">Actions</CardTitle>
+              <CardTitle className="font-sans font-semibold tracking-tight text-lg">Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <Link to="/progress">

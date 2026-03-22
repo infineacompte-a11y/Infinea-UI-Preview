@@ -236,7 +236,7 @@ export default function JournalPage() {
               {activeTab === "reflexions" && (
                 <div className="opacity-0 animate-fade-in space-y-4" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
                   <div className="flex items-center justify-between">
-                    <h2 className="font-heading text-lg font-semibold">Mes réflexions</h2>
+                    <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold">Mes réflexions</h2>
                     <Badge variant="secondary" className="rounded-lg tabular-nums">{reflections.length} entrées</Badge>
                   </div>
 
@@ -307,7 +307,7 @@ export default function JournalPage() {
                 <div className="opacity-0 animate-fade-in space-y-4" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
                   {/* Generate button */}
                   <div className="flex items-center justify-between">
-                    <h2 className="font-heading text-lg font-semibold">Analyse IA</h2>
+                    <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold">Analyse IA</h2>
                     <Button
                       variant="outline"
                       size="sm"
@@ -423,7 +423,7 @@ export default function JournalPage() {
                       <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
                         <Brain className="w-8 h-8 text-[#459492]" />
                       </div>
-                      <h3 className="font-heading font-semibold text-sm mb-2">Analyse non disponible</h3>
+                      <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-2">Analyse non disponible</h3>
                       <p className="text-xs text-muted-foreground mb-4 max-w-sm mx-auto">
                         Ajoute quelques réflexions dans l'onglet "Réflexions" puis clique sur "Générer l'analyse" pour obtenir des insights personnalisés.
                       </p>

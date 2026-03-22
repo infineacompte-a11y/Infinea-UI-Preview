@@ -76,7 +76,7 @@ export default function PremiumAnalytics() {
           <div className="w-14 h-14 rounded-full bg-[#E48C75]/10 flex items-center justify-center mx-auto mb-4">
             <Lock className="w-7 h-7 text-[#E48C75]" />
           </div>
-          <h3 className="font-heading text-lg font-semibold mb-2">
+          <h3 className="font-sans font-semibold tracking-tight text-lg font-semibold mb-2">
             Analytics Avancées
           </h3>
           <p className="text-sm text-muted-foreground mb-4">
@@ -115,7 +115,7 @@ export default function PremiumAnalytics() {
           <Crown className="w-5 h-5 text-[#459492]" />
         </div>
         <div>
-          <h2 className="font-heading text-xl font-semibold">Analytics Premium</h2>
+          <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold">Analytics Premium</h2>
           <p className="text-sm text-muted-foreground">Insights avancés sur vos habitudes</p>
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function PremiumAnalytics() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Meilleur moment</p>
-                <p className="font-heading font-bold">
+                <p className="font-sans font-semibold tracking-tight font-bold">
                   {timeLabels[analytics.best_time_of_day] || analytics.best_time_of_day || "—"}
                 </p>
               </div>
@@ -146,7 +146,7 @@ export default function PremiumAnalytics() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Jour le + productif</p>
-                <p className="font-heading font-bold">
+                <p className="font-sans font-semibold tracking-tight font-bold">
                   {dayLabels[analytics.most_productive_day] || analytics.most_productive_day || "—"}
                 </p>
               </div>
@@ -163,7 +163,7 @@ export default function PremiumAnalytics() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Prochain palier</p>
-                  <p className="font-heading font-bold">{analytics.milestones.next}</p>
+                  <p className="font-sans font-semibold tracking-tight font-bold">{analytics.milestones.next}</p>
                   {analytics.milestones.eta_days && (
                     <p className="text-xs text-muted-foreground">
                       ~{analytics.milestones.eta_days}j restants
@@ -180,7 +180,7 @@ export default function PremiumAnalytics() {
       {analytics.daily_activity?.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="font-heading text-lg flex items-center gap-2">
+            <CardTitle className="font-sans font-semibold tracking-tight text-lg flex items-center gap-2">
               <Flame className="w-5 h-5 text-[#E48C75]" />
               Activité des 30 derniers jours
             </CardTitle>
@@ -227,7 +227,7 @@ export default function PremiumAnalytics() {
       {analytics.streak_history?.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="font-heading text-lg flex items-center gap-2">
+            <CardTitle className="font-sans font-semibold tracking-tight text-lg flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-[#5DB786]" />
               Historique des streaks
             </CardTitle>

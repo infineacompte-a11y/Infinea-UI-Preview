@@ -147,7 +147,7 @@ export default function OnboardingPage() {
           <div className="w-20 h-20 rounded-full bg-[#459492]/10 flex items-center justify-center mx-auto mb-6">
             <Sparkles className="w-10 h-10 text-[#459492]" />
           </div>
-          <h1 className="font-heading text-3xl font-bold text-[#141E24] mb-4">
+          <h1 className="font-sans font-semibold tracking-tight text-3xl font-bold text-[#141E24] mb-4">
             Bienvenue, {user?.name?.split(" ")[0] || "Utilisateur"} !
           </h1>
           <Card className="mb-8 text-left rounded-2xl shadow-xl bg-white border border-[#E2E6EA]/50">
@@ -200,7 +200,7 @@ export default function OnboardingPage() {
             <Badge className="mb-4 bg-[#F0F7F7] text-[#459492] border-[#459492]/20 hover:bg-[#F0F7F7] font-medium">
               {currentStep + 1} / {STEPS.length}
             </Badge>
-            <h1 className="font-heading text-2xl font-bold text-[#141E24] mb-2">
+            <h1 className="font-sans font-semibold tracking-tight text-2xl font-bold text-[#141E24] mb-2">
               {STEPS[currentStep].title}
             </h1>
             <p className="text-[#667085]">{STEPS[currentStep].subtitle}</p>

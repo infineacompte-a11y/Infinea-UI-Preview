@@ -314,7 +314,7 @@ export default function NotesPage() {
               {activeTab === "notes" && (
                 <div className="opacity-0 animate-fade-in space-y-4" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                   <div className="flex items-center justify-between">
-                    <h2 className="font-heading text-lg font-semibold">Toutes mes notes</h2>
+                    <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold">Toutes mes notes</h2>
                     {stats?.categories && Object.keys(stats.categories).length > 1 && (
                       <Select value={categoryFilter} onValueChange={handleCategoryFilter}>
                         <SelectTrigger className="w-[180px]">
@@ -406,7 +406,7 @@ export default function NotesPage() {
                 <div className="opacity-0 animate-fade-in space-y-4" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
                   {/* Header with generate button */}
                   <div className="flex items-center justify-between">
-                    <h2 className="font-heading text-lg font-semibold">Analyse de tes notes</h2>
+                    <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold">Analyse de tes notes</h2>
                     <Button
                       variant="outline"
                       size="sm"
@@ -561,7 +561,7 @@ export default function NotesPage() {
                       <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-muted/40 to-transparent flex items-center justify-center mx-auto mb-4">
                         <Brain className="w-8 h-8 text-muted-foreground/30" />
                       </div>
-                      <h4 className="font-heading font-semibold text-sm mb-2">Analyse non disponible</h4>
+                      <h4 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-2">Analyse non disponible</h4>
                       <p className="text-xs text-muted-foreground mb-4 max-w-sm mx-auto">
                         {stats?.total_notes >= 3
                           ? "Clique sur \"Générer l'analyse\" pour obtenir des insights personnalisés sur tes notes."

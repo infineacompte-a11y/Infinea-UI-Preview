@@ -580,7 +580,7 @@ export default function IntegrationsPage() {
                 {/* Integration cards by category */}
                 {Object.entries(categories).map(([category, services], catIdx) => (
                   <div key={category} className="opacity-0 animate-fade-in" style={{ animationDelay: `${(catIdx + 1) * 100 + 200}ms`, animationFillMode: "forwards" }}>
-                    <h2 className="text-sm font-heading font-medium text-muted-foreground mb-4 capitalize">
+                    <h2 className="text-sm font-sans font-semibold tracking-tight font-medium text-muted-foreground mb-4 capitalize">
                       {category}
                     </h2>
                     <div className="grid gap-4">
@@ -619,7 +619,7 @@ export default function IntegrationsPage() {
                   <div className="opacity-0 animate-fade-in" style={{ animationDelay: "600ms", animationFillMode: "forwards" }}>
                     <Card className="rounded-xl">
                       <CardHeader>
-                        <CardTitle className="font-heading text-lg flex items-center gap-2">
+                        <CardTitle className="font-sans font-semibold tracking-tight text-lg flex items-center gap-2">
                           <Clock className="w-5 h-5" />
                           Détection des créneaux
                         </CardTitle>
@@ -967,7 +967,7 @@ export default function IntegrationsPage() {
 
                 return (
                   <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
-                    <h2 className="text-sm font-heading font-medium text-muted-foreground mb-4 flex items-center gap-2">
+                    <h2 className="text-sm font-sans font-semibold tracking-tight font-medium text-muted-foreground mb-4 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#5DB786]" />
                       Connectés ({connectedServices.length})
                     </h2>
@@ -991,7 +991,7 @@ export default function IntegrationsPage() {
                                   </div>
                                   <div>
                                     <div className="flex items-center gap-2 mb-1">
-                                      <h3 className="font-heading font-semibold">{config.name}</h3>
+                                      <h3 className="font-sans font-semibold tracking-tight font-semibold">{config.name}</h3>
                                       <Badge className="bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30">
                                         <CheckCircle2 className="w-3 h-3 mr-1" />
                                         Connecté
@@ -1054,7 +1054,7 @@ export default function IntegrationsPage() {
 
                   return (
                     <div key={category} className="opacity-0 animate-fade-in" style={{ animationDelay: `${(catIdx + 2) * 100 + 200}ms`, animationFillMode: "forwards" }}>
-                      <h2 className="text-sm font-heading font-medium text-muted-foreground mb-4 capitalize">
+                      <h2 className="text-sm font-sans font-semibold tracking-tight font-medium text-muted-foreground mb-4 capitalize">
                         {category}
                       </h2>
                       <div className="grid md:grid-cols-2 gap-4">
@@ -1079,7 +1079,7 @@ export default function IntegrationsPage() {
                                   </div>
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-1">
-                                      <h3 className="font-heading font-semibold">{int.name}</h3>
+                                      <h3 className="font-sans font-semibold tracking-tight font-semibold">{int.name}</h3>
                                       {int.status === "coming_soon" && (
                                         <Badge variant="secondary" className="text-xs">
                                           Bientôt
@@ -1145,7 +1145,7 @@ export default function IntegrationsPage() {
                 <div className="opacity-0 animate-fade-in" style={{ animationDelay: "600ms", animationFillMode: "forwards" }}>
                   <Card className="rounded-xl">
                     <CardHeader>
-                      <CardTitle className="font-heading text-lg flex items-center gap-2">
+                      <CardTitle className="font-sans font-semibold tracking-tight text-lg flex items-center gap-2">
                         <Clock className="w-5 h-5" />
                         Détection des créneaux
                       </CardTitle>

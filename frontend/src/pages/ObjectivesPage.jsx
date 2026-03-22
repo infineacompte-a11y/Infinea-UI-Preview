@@ -123,7 +123,7 @@ function ObjectiveCard({ objective, onClick, index = 0 }) {
               {status.label}
             </Badge>
           </div>
-          <h3 className="font-heading font-semibold text-base truncate group-hover:text-primary transition-colors">
+          <h3 className="font-sans font-semibold tracking-tight font-semibold text-base truncate group-hover:text-primary transition-colors">
             {objective.title}
           </h3>
           {objective.description && (
@@ -267,7 +267,7 @@ export default function ObjectivesPage() {
               <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Target className="w-8 h-8 text-[#459492]" />
               </div>
-              <h3 className="font-heading font-semibold text-lg mb-2">
+              <h3 className="font-sans font-semibold tracking-tight font-semibold text-lg mb-2">
                 Définis ton premier objectif
               </h3>
               <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto leading-relaxed">

@@ -82,7 +82,7 @@ export default function GroupsPage() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 ring-1 ring-primary/10">
                   <UsersRound className="w-8 h-8 text-primary" />
                 </div>
-                <h2 className="text-lg font-heading font-semibold text-foreground mb-2">
+                <h2 className="text-lg font-sans font-semibold tracking-tight font-semibold text-foreground mb-2">
                   Aucun groupe pour l'instant
                 </h2>
                 <p className="text-muted-foreground text-sm max-w-sm mb-6">

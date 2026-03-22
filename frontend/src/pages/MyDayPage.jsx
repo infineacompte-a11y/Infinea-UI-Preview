@@ -498,7 +498,7 @@ export default function MyDayPage() {
           {/* Greeting */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
             <div className="mb-6 mt-6">
-              <h2 className="font-heading text-2xl font-bold">
+              <h2 className="font-sans font-semibold tracking-tight text-2xl font-bold">
                 {getGreeting(user?.name)}
               </h2>
               <p className="text-sm text-muted-foreground mt-0.5 capitalize">
@@ -518,7 +518,7 @@ export default function MyDayPage() {
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mx-auto mb-4 ring-1 ring-primary/10">
                   <Zap className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">
+                <h3 className="font-sans font-semibold tracking-tight font-semibold text-lg mb-2">
                   Ta journée est vide
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto leading-relaxed">

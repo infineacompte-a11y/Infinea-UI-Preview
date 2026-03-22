@@ -165,7 +165,7 @@ export default function GroupDetailPage() {
 
               <div className="flex items-start justify-between">
                 <div>
-                  <h1 className="text-2xl font-heading font-bold text-foreground">
+                  <h1 className="text-2xl font-sans font-semibold tracking-tight font-bold text-foreground">
                     {group.name}
                   </h1>
                   {group.description && (
@@ -213,7 +213,7 @@ export default function GroupDetailPage() {
           {/* Leaderboard */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
             <div className="mb-6">
-              <h2 className="text-sm font-heading font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+              <h2 className="text-sm font-sans font-semibold tracking-tight font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
                 <Users className="w-4 h-4" />
                 Classement cette semaine
               </h2>
@@ -302,7 +302,7 @@ export default function GroupDetailPage() {
           {feed.length > 0 && (
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
               <div>
-                <h2 className="text-sm font-heading font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+                <h2 className="text-sm font-sans font-semibold tracking-tight font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
                   <Activity className="w-4 h-4" />
                   Activité récente
                 </h2>

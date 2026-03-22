@@ -244,7 +244,7 @@ export default function B2BDashboard() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mx-auto mb-4">
               <Building2 className="w-8 h-8 text-primary" />
             </div>
-            <CardTitle className="font-heading text-2xl">Créer votre espace entreprise</CardTitle>
+            <CardTitle className="font-sans font-semibold tracking-tight text-2xl">Créer votre espace entreprise</CardTitle>
             <CardDescription>
               Suivez la progression de votre équipe et mesurez l'impact QVT
             </CardDescription>
@@ -364,7 +364,7 @@ export default function B2BDashboard() {
                     <Users className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums">
+                    <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums">
                       {dashboard?.employee_count || 0}
                     </p>
                     <p className="text-xs text-muted-foreground">collaborateurs actifs</p>
@@ -380,7 +380,7 @@ export default function B2BDashboard() {
                     <Activity className="w-6 h-6 text-[#5DB786]" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums">
+                    <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums">
                       {dashboard?.engagement_rate || 0}%
                     </p>
                     <p className="text-xs text-muted-foreground">taux d'engagement</p>
@@ -396,7 +396,7 @@ export default function B2BDashboard() {
                     <Clock className="w-6 h-6 text-[#E48C75]" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums">
+                    <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums">
                       {Math.round((dashboard?.total_time_minutes || 0) / 60)}h
                     </p>
                     <p className="text-xs text-muted-foreground">temps total investi</p>
@@ -412,7 +412,7 @@ export default function B2BDashboard() {
                     <TrendingUp className="w-6 h-6 text-[#459492]" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold tabular-nums">
+                    <p className="text-2xl font-sans font-semibold tracking-tight font-bold tabular-nums">
                       {dashboard?.qvt_score || 0}
                     </p>
                     <p className="text-xs text-muted-foreground">score QVT</p>
@@ -431,7 +431,7 @@ export default function B2BDashboard() {
                     <Zap className="w-5 h-5 text-[#5DB786]" />
                   </div>
                   <div>
-                    <CardTitle className="font-heading text-lg">ROI Bien-être</CardTitle>
+                    <CardTitle className="font-sans font-semibold tracking-tight text-lg">ROI Bien-être</CardTitle>
                     <CardDescription>Impact mesurable sur la productivité</CardDescription>
                   </div>
                 </div>
@@ -440,17 +440,17 @@ export default function B2BDashboard() {
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center p-4 rounded-xl bg-[#F8FAFB] border border-[#E2E6EA] hover:shadow-sm transition-all duration-200">
                     <Heart className="w-8 h-8 text-[#5DB786] mx-auto mb-2" />
-                    <p className="text-3xl font-heading font-bold text-[#5DB786] tabular-nums">{roi.wellbeingHours}h</p>
+                    <p className="text-3xl font-sans font-semibold tracking-tight font-bold text-[#5DB786] tabular-nums">{roi.wellbeingHours}h</p>
                     <p className="text-sm text-muted-foreground">en bien-être ce mois</p>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-[#F8FAFB] border border-[#E2E6EA] hover:shadow-sm transition-all duration-200">
                     <TrendingUp className="w-8 h-8 text-[#459492] mx-auto mb-2" />
-                    <p className="text-3xl font-heading font-bold text-[#459492] tabular-nums">+{roi.estimatedProductivityGain}%</p>
+                    <p className="text-3xl font-sans font-semibold tracking-tight font-bold text-[#459492] tabular-nums">+{roi.estimatedProductivityGain}%</p>
                     <p className="text-sm text-muted-foreground">productivité estimée</p>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-[#F8FAFB] border border-[#E2E6EA] hover:shadow-sm transition-all duration-200">
                     <Trophy className="w-8 h-8 text-[#E48C75] mx-auto mb-2" />
-                    <p className="text-3xl font-heading font-bold text-[#E48C75] tabular-nums">{dashboard?.total_sessions || 0}</p>
+                    <p className="text-3xl font-sans font-semibold tracking-tight font-bold text-[#E48C75] tabular-nums">{dashboard?.total_sessions || 0}</p>
                     <p className="text-sm text-muted-foreground">sessions complétées</p>
                   </div>
                 </div>
@@ -472,7 +472,7 @@ export default function B2BDashboard() {
                 {/* Activity Chart */}
                 <Card className="rounded-xl hover:shadow-md transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="font-heading text-lg">Activité (28 derniers jours)</CardTitle>
+                    <CardTitle className="font-sans font-semibold tracking-tight text-lg">Activité (28 derniers jours)</CardTitle>
                   </CardHeader>
                   <CardContent>
                     {dashboard?.daily_activity?.length > 0 ? (
@@ -519,7 +519,7 @@ export default function B2BDashboard() {
                 {/* Category Distribution */}
                 <Card className="rounded-xl hover:shadow-md transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="font-heading text-lg">Répartition par catégorie</CardTitle>
+                    <CardTitle className="font-sans font-semibold tracking-tight text-lg">Répartition par catégorie</CardTitle>
                   </CardHeader>
                   <CardContent>
                     {pieData.length > 0 ? (
@@ -582,7 +582,7 @@ export default function B2BDashboard() {
               <TabsContent value="team" className="space-y-6">
                 {/* Leaderboard Toggle */}
                 <div className="flex items-center justify-between">
-                  <h2 className="font-heading text-lg font-semibold text-foreground">Classement de l'équipe</h2>
+                  <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold text-foreground">Classement de l'équipe</h2>
                   <div className="flex items-center gap-2">
                     <Label htmlFor="leaderboard-toggle" className="text-sm text-muted-foreground">
                       Classement gamifié
@@ -716,7 +716,7 @@ export default function B2BDashboard() {
                             >
                               <Icon className="w-6 h-6" style={{ color }} />
                             </div>
-                            <h3 className="font-heading text-lg font-semibold">{label}</h3>
+                            <h3 className="font-sans font-semibold tracking-tight text-lg font-semibold">{label}</h3>
                           </div>
                           <div className="space-y-3">
                             <div className="flex justify-between">

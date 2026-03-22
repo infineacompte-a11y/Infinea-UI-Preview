@@ -26,7 +26,7 @@ export default function InFineaLogo({ size = 32, withText = false, variant = "de
 
       {withText && (
         <span
-          className="font-heading font-bold tracking-tight leading-none"
+          className="font-sans font-semibold tracking-tight font-bold tracking-tight leading-none"
           style={{
             fontSize: size * 0.5,
             background: variant === "light"

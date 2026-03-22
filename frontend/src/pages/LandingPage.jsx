@@ -166,15 +166,15 @@ export default function LandingPage() {
           {/* Stats — glass cards on hero */}
           <div className="grid grid-cols-3 gap-4 md:gap-6 mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
             <div className="card-on-dark text-center rounded-2xl py-5 px-4">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">2-15</div>
+              <div className="text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">2-15</div>
               <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">minutes/session</div>
             </div>
             <div className="card-on-dark text-center rounded-2xl py-5 px-4">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">700+</div>
+              <div className="text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">700+</div>
               <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">micro-actions et +</div>
             </div>
             <div className="card-on-dark text-center rounded-2xl py-5 px-4">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">100%</div>
+              <div className="text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">100%</div>
               <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">RGPD conforme</div>
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function LandingPage() {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#459492]/10 to-[#55B3AE]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="w-6 h-6 text-[#459492]" />
                   </div>
-                  <h3 className="font-heading text-xl font-semibold mb-2 text-[#141E24]">{feature.title}</h3>
+                  <h3 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-2 text-[#141E24]">{feature.title}</h3>
                   <p className="text-[#667085] leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
@@ -255,7 +255,7 @@ export default function LandingPage() {
               <Card key={i} className="bg-white shadow-md hover:shadow-lg rounded-2xl border border-[#E2E6EA]/50 transition-all duration-300">
                 <CardContent className="p-6">
                   <cat.icon className={`w-8 h-8 ${cat.color} mb-4`} />
-                  <h3 className="font-heading text-xl font-medium mb-3 text-[#141E24]">{cat.name}</h3>
+                  <h3 className="font-sans font-semibold tracking-tight text-xl font-medium mb-3 text-[#141E24]">{cat.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.examples.map((ex, j) => (
                       <span key={j} className="px-3 py-1 rounded-full bg-[#F8FAFB] border border-[#E2E6EA] text-sm text-[#667085]">
@@ -288,9 +288,9 @@ export default function LandingPage() {
             ].map((item, i) => (
               <div key={i} className="relative group">
                 <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-white/15 transition-colors duration-300">
-                  <span className="text-xl font-heading font-bold text-[#7DD3D0]">{item.step}</span>
+                  <span className="text-xl font-sans font-semibold tracking-tight font-bold text-[#7DD3D0]">{item.step}</span>
                 </div>
-                <h3 className="font-heading text-lg font-semibold mb-2 text-white">{item.title}</h3>
+                <h3 className="font-sans font-semibold tracking-tight text-lg font-semibold mb-2 text-white">{item.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                 {i < 3 && (
                   <ChevronRight className="hidden md:block absolute top-6 -right-4 w-6 h-6 text-white/20" />
@@ -327,9 +327,9 @@ export default function LandingPage() {
                   </div>
                 )}
                 <CardContent className="p-8">
-                  <h3 className="font-heading text-2xl font-semibold mb-2 text-[#141E24]">{plan.name}</h3>
+                  <h3 className="font-sans font-semibold tracking-tight text-2xl font-semibold mb-2 text-[#141E24]">{plan.name}</h3>
                   <div className="flex items-baseline gap-1 mb-6">
-                    <span className="text-4xl font-heading font-bold text-[#141E24]">{plan.price}</span>
+                    <span className="text-4xl font-sans font-semibold tracking-tight font-bold text-[#141E24]">{plan.price}</span>
                     <span className="text-[#667085]">{plan.period}</span>
                   </div>
                   <ul className="space-y-3 mb-8">

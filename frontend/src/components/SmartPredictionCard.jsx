@@ -133,7 +133,7 @@ export default function SmartPredictionCard() {
               <Plug className="w-5 h-5 text-muted-foreground" />
             </div>
             <div className="flex-1">
-              <h3 className="font-heading font-semibold text-sm mb-1">Prédictions intelligentes</h3>
+              <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-1">Prédictions intelligentes</h3>
               <p className="text-sm text-muted-foreground mb-3">
                 Connectez votre calendrier pour que l'IA prédise vos prochains moments disponibles.
               </p>
@@ -161,7 +161,7 @@ export default function SmartPredictionCard() {
             </div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-1">
-                <h3 className="font-heading font-semibold text-sm">Prédictions intelligentes</h3>
+                <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm">Prédictions intelligentes</h3>
                 <Button variant="ghost" size="icon" className="h-7 w-7" onClick={fetchPredictions}>
                   <RefreshCw className="w-3.5 h-3.5" />
                 </Button>
@@ -195,7 +195,7 @@ export default function SmartPredictionCard() {
               <Brain className="w-5 h-5 text-brand-teal" />
             </div>
             <div>
-              <h3 className="font-heading font-semibold text-sm">Prédictions intelligentes</h3>
+              <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm">Prédictions intelligentes</h3>
               <p className="text-xs text-muted-foreground">
                 {context.total_slots_today} {"créneau"}{context.total_slots_today > 1 ? "x" : ""} &bull; {context.total_free_minutes} min disponibles
               </p>

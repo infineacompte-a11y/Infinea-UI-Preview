@@ -141,7 +141,7 @@ export default function ActiveSession() {
           </div>
 
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
-            <h1 className="font-heading text-3xl font-bold mb-2" data-testid="completion-title">
+            <h1 className="font-sans font-semibold tracking-tight text-3xl font-bold mb-2" data-testid="completion-title">
               Félicitations ! 🎉
             </h1>
             <p className="text-muted-foreground mb-8">
@@ -153,7 +153,7 @@ export default function ActiveSession() {
             <div className="grid grid-cols-2 gap-4 mb-8">
               <Card className="stat-card hover:shadow-md transition-all duration-200">
                 <CardContent className="p-4 text-center">
-                  <p className="text-2xl font-heading font-bold text-primary tabular-nums">
+                  <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-primary tabular-nums">
                     +{completionData?.time_added || Math.ceil(elapsedTime / 60)}
                   </p>
                   <p className="text-xs text-muted-foreground">minutes ajoutées</p>
@@ -161,7 +161,7 @@ export default function ActiveSession() {
               </Card>
               <Card className="stat-card hover:shadow-md transition-all duration-200">
                 <CardContent className="p-4 text-center">
-                  <p className="text-2xl font-heading font-bold text-[#E48C75] tabular-nums">
+                  <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-[#E48C75] tabular-nums">
                     {completionData?.new_streak || 1}
                   </p>
                   <p className="text-xs text-muted-foreground">jours de streak</p>
@@ -289,7 +289,7 @@ export default function ActiveSession() {
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h2 className="font-heading text-xl font-semibold">{action.title}</h2>
+                    <h2 className="font-sans font-semibold tracking-tight text-xl font-semibold">{action.title}</h2>
                     <p className="text-sm text-muted-foreground">{action.description}</p>
                   </div>
                 </div>

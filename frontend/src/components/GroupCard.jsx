@@ -38,7 +38,7 @@ export default function GroupCard({ group }) {
           {/* Header: name + member count */}
           <div className="flex items-start justify-between mb-4">
             <div className="flex-1 min-w-0">
-              <h3 className="text-foreground font-heading font-semibold text-base truncate">
+              <h3 className="text-foreground font-sans font-semibold tracking-tight font-semibold text-base truncate">
                 {group.name}
               </h3>
               {group.description && (

@@ -83,7 +83,7 @@ export default function SessionDebrief({ sessionId, duration, notes, onStartActi
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-heading font-semibold text-sm">Debrief IA</h3>
+                <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm">Debrief IA</h3>
                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary/10 text-[10px] font-medium text-primary">
                   <Sparkles className="w-2.5 h-2.5" />
                   Analyse

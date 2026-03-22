@@ -198,7 +198,7 @@ function SkillsTab({ objectiveId }) {
         <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-3">
           <Brain className="w-8 h-8 text-[#459492]" />
         </div>
-        <h3 className="font-heading font-semibold mb-1">Pas encore de compétences</h3>
+        <h3 className="font-sans font-semibold tracking-tight font-semibold mb-1">Pas encore de compétences</h3>
         <p className="text-sm text-muted-foreground">
           Complète quelques sessions pour voir ta carte de compétences.
         </p>
@@ -343,7 +343,7 @@ function InsightsTab({ objectiveId }) {
         <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-3">
           <BarChart3 className="w-8 h-8 text-[#459492]" />
         </div>
-        <h4 className="font-heading font-semibold text-sm mb-1">Pas encore d'insights</h4>
+        <h4 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-1">Pas encore d'insights</h4>
         <p className="text-xs text-muted-foreground">
           Complète quelques sessions pour débloquer l'analyse de ta progression.
         </p>
@@ -412,7 +412,7 @@ function InsightsTab({ objectiveId }) {
                 <div className="w-7 h-7 rounded-xl bg-primary/15 flex items-center justify-center">
                   <Brain className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-sm">Analyse IA</h3>
+                <h3 className="font-sans font-semibold tracking-tight font-semibold text-sm">Analyse IA</h3>
                 {ai_analysis.momentum && (() => {
                   const mc = MOMENTUM_CONFIG[ai_analysis.momentum] || MOMENTUM_CONFIG.stable;
                   const Icon = mc.icon;
@@ -496,7 +496,7 @@ function InsightsTab({ objectiveId }) {
           {/* Weekly Activity */}
           {weekly_activity?.length > 0 && (
             <Card className="p-4 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
-              <h4 className="font-heading font-semibold text-sm mb-3 flex items-center gap-2">
+              <h4 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-3 flex items-center gap-2">
                 <BarChart3 className="w-4 h-4 text-primary" />
                 Activité hebdomadaire
               </h4>
@@ -530,7 +530,7 @@ function InsightsTab({ objectiveId }) {
           {/* Difficulty Progression */}
           {difficulty_curve?.length > 1 && (
             <Card className="p-4 opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
-              <h4 className="font-heading font-semibold text-sm mb-3 flex items-center gap-2">
+              <h4 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-3 flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-primary" />
                 Progression de difficulté
               </h4>
@@ -566,7 +566,7 @@ function InsightsTab({ objectiveId }) {
           {/* Full Timeline */}
           {insights.timeline?.length > 0 && (
             <Card className="p-4 opacity-0 animate-fade-in" style={{ animationDelay: "300ms" }}>
-              <h4 className="font-heading font-semibold text-sm mb-3 flex items-center gap-2">
+              <h4 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-3 flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />
                 Historique des sessions
                 <span className="text-[10px] text-muted-foreground font-normal ml-auto tabular-nums">{insights.timeline.length} sessions</span>
@@ -627,7 +627,7 @@ function InsightsTab({ objectiveId }) {
               <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-3">
                 <MessageSquare className="w-8 h-8 text-[#459492]" />
               </div>
-              <h4 className="font-heading font-semibold text-sm mb-1">Aucune note pour l'instant</h4>
+              <h4 className="font-sans font-semibold tracking-tight font-semibold text-sm mb-1">Aucune note pour l'instant</h4>
               <p className="text-xs text-muted-foreground">
                 Ajoute des notes lors de tes sessions pour les retrouver ici.
               </p>
@@ -797,7 +797,7 @@ export default function ObjectiveDetailPage() {
           <Card className="p-5 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h1 className="font-heading text-xl font-bold">{objective.title}</h1>
+                <h1 className="font-sans font-semibold tracking-tight text-xl font-bold">{objective.title}</h1>
                 {objective.description && (
                   <p className="text-sm text-muted-foreground mt-1">{objective.description}</p>
                 )}
@@ -926,7 +926,7 @@ export default function ObjectiveDetailPage() {
             <>
               {/* Curriculum header */}
               <div className="mb-4 flex items-center justify-between opacity-0 animate-fade-in" style={{ animationDelay: "300ms" }}>
-                <h2 className="font-heading font-semibold text-base">
+                <h2 className="font-sans font-semibold tracking-tight font-semibold text-base">
                   {isGenerating ? "Génération en cours..." : "Mon parcours"}
                 </h2>
                 {!isGenerating && (
@@ -967,7 +967,7 @@ export default function ObjectiveDetailPage() {
               {percent >= 100 && (
                 <Card className="p-6 mt-6 text-center border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/10 to-[#E48C75]/5 animate-fade-in">
                   <Trophy className="w-12 h-12 text-[#E48C75] mx-auto mb-3" />
-                  <h3 className="font-heading font-bold text-lg">Parcours terminé !</h3>
+                  <h3 className="font-sans font-semibold tracking-tight font-bold text-lg">Parcours terminé !</h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     Tu as complété {completedSteps} sessions et investi {objective.total_minutes || 0} minutes.
                   </p>

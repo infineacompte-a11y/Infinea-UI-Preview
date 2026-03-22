@@ -147,7 +147,7 @@ export default function GoogleCalendarGuide({ open, onOpenChange, onConnected })
             </div>
             <div>
               <p className="text-xs text-muted-foreground">Étape {currentStep + 1}/{STEPS.length}</p>
-              <h3 className="font-heading font-semibold">{step.title}</h3>
+              <h3 className="font-sans font-semibold tracking-tight font-semibold">{step.title}</h3>
             </div>
           </div>
 

@@ -97,7 +97,7 @@ export default function ChallengesPage() {
           {/* Header */}
           <div className="opacity-0 animate-fade-in flex items-center justify-between mb-6" style={{ animationDelay: "0ms", animationFillMode: "forwards" }}>
             <div>
-              <h1 className="font-heading text-3xl font-semibold flex items-center gap-2">
+              <h1 className="font-sans font-semibold tracking-tight text-3xl font-semibold flex items-center gap-2">
                 <Trophy className="w-6 h-6 text-primary" />
                 Défis
               </h1>
@@ -162,7 +162,7 @@ export default function ChallengesPage() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
-                              <h3 className="font-heading font-medium text-sm">{ch.title}</h3>
+                              <h3 className="font-sans font-semibold tracking-tight font-medium text-sm">{ch.title}</h3>
                               {ch.completed && (
                                 <Badge variant="outline" className="text-[9px] rounded-lg bg-[#5DB786]/15 text-[#5DB786] border-[#5DB786]/20">
                                   Complété
@@ -211,7 +211,7 @@ export default function ChallengesPage() {
                   <div className="bg-gradient-to-br from-[#459492]/20 to-transparent rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <Lock className="w-8 h-8 text-[#E48C75]" />
                   </div>
-                  <h3 className="font-heading font-semibold text-lg mb-2">Défis Premium</h3>
+                  <h3 className="font-sans font-semibold tracking-tight font-semibold text-lg mb-2">Défis Premium</h3>
                   <p className="text-sm text-muted-foreground mb-6 max-w-sm mx-auto">
                     6 défis mensuels exclusifs avec badges et récompenses. Passe en Premium pour les débloquer.
                   </p>
@@ -246,7 +246,7 @@ export default function ChallengesPage() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
-                              <h3 className="font-heading font-medium text-sm">{ch.title}</h3>
+                              <h3 className="font-sans font-semibold tracking-tight font-medium text-sm">{ch.title}</h3>
                               {ch.completed && (
                                 <Badge className="text-[9px] rounded-lg bg-[#5DB786]/15 text-[#5DB786]">Complété</Badge>
                               )}

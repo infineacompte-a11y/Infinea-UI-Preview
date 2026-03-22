@@ -96,7 +96,7 @@ export default function RegisterPage() {
 
         <Card className="bg-white shadow-xl rounded-2xl border border-[#E2E6EA]/50 opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
           <CardHeader className="text-center pb-2">
-            <CardTitle className="font-heading text-2xl text-[#141E24]">Créez votre compte</CardTitle>
+            <CardTitle className="font-sans font-semibold tracking-tight text-2xl text-[#141E24]">Créez votre compte</CardTitle>
             <p className="text-[#667085] mt-2">
               Commencez à investir vos instants perdus
             </p>

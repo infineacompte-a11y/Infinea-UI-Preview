@@ -353,7 +353,7 @@ export default function NotificationsPage() {
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#5DB786]/20 to-[#5DB786]/5 flex items-center justify-center mx-auto mb-3">
                     <Check className="w-8 h-8 text-[#5DB786]" />
                   </div>
-                  <h3 className="font-heading font-semibold mb-1">Tout est en ordre !</h3>
+                  <h3 className="font-sans font-semibold tracking-tight font-semibold mb-1">Tout est en ordre !</h3>
                   <p className="text-sm text-muted-foreground">
                     Aucune suggestion pour le moment. Continue comme ça !
                   </p>
@@ -440,7 +440,7 @@ export default function NotificationsPage() {
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-muted/40 to-transparent flex items-center justify-center mx-auto mb-3">
                     <Bell className="w-8 h-8 text-muted-foreground/30" />
                   </div>
-                  <h3 className="font-heading font-semibold mb-1">Aucune notification</h3>
+                  <h3 className="font-sans font-semibold tracking-tight font-semibold mb-1">Aucune notification</h3>
                   <p className="text-sm text-muted-foreground">
                     Tes notifications apparaîtront ici
                   </p>
@@ -454,7 +454,7 @@ export default function NotificationsPage() {
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
               <Card className="rounded-xl">
                 <CardHeader>
-                  <CardTitle className="font-heading text-lg">Préférences</CardTitle>
+                  <CardTitle className="font-sans font-semibold tracking-tight text-lg">Préférences</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-5">
                   {/* Push Notifications */}

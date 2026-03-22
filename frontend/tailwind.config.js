@@ -8,8 +8,9 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['DM Sans', 'sans-serif'],
-                heading: ['Outfit', 'sans-serif'],
+                sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                heading: ['Inter', 'sans-serif'],
+                serif: ['Instrument Serif', 'Georgia', 'serif'],
                 mono: ['JetBrains Mono', 'monospace'],
             },
             borderRadius: {
