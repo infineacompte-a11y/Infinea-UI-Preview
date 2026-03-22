@@ -469,13 +469,13 @@ export default function PricingPage() {
 
               {/* Detailed comparison table */}
               <div className="relative">
-                <div className="overflow-x-auto rounded-xl border border-[#E2E6EA] bg-white shadow-sm">
-                  <table className="w-full min-w-[520px]">
+                <div className="rounded-xl border border-[#E2E6EA] bg-white shadow-sm">
+                  <table className="w-full table-fixed">
                     <thead>
                       <tr className="border-b bg-[#F8FAFB]">
-                        <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold whitespace-nowrap w-[35%]">Fonctionnalité</th>
-                        <th className="text-center p-3 sm:p-4 text-xs sm:text-sm font-semibold whitespace-nowrap w-[30%]">Gratuit</th>
-                        <th className="text-center p-3 sm:p-4 text-xs sm:text-sm font-semibold text-[#E48C75] whitespace-nowrap w-[35%]">
+                        <th className="text-left p-2.5 sm:p-4 text-xs sm:text-sm font-semibold w-[38%]">Fonctionnalité</th>
+                        <th className="text-center p-2.5 sm:p-4 text-xs sm:text-sm font-semibold w-[28%]">Gratuit</th>
+                        <th className="text-center p-2.5 sm:p-4 text-xs sm:text-sm font-semibold text-[#E48C75] w-[34%]">
                           <div className="flex items-center justify-center gap-1">
                             <Crown className="w-3.5 h-3.5 text-[#E48C75]" /> Premium
                           </div>
@@ -485,8 +485,8 @@ export default function PricingPage() {
                     <tbody>
                       {comparisonFeatures.map((feature, i) => (
                         <tr key={i} className={`transition-colors hover:bg-muted/30 ${i < comparisonFeatures.length - 1 ? "border-b border-border/50" : ""}`}>
-                          <td className="p-3 sm:p-4 text-xs sm:text-sm font-medium">{feature.name}</td>
-                          <td className="p-3 sm:p-4 text-center text-xs sm:text-sm">
+                          <td className="p-2.5 sm:p-4 text-[11px] sm:text-sm font-medium">{feature.name}</td>
+                          <td className="p-2.5 sm:p-4 text-center text-[11px] sm:text-sm">
                             {typeof feature.free === "boolean" ? (
                               feature.free ? (
                                 <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#5DB786] mx-auto" />
@@ -497,7 +497,7 @@ export default function PricingPage() {
                               <span className="text-muted-foreground">{feature.free}</span>
                             )}
                           </td>
-                          <td className="p-3 sm:p-4 text-center text-xs sm:text-sm">
+                          <td className="p-2.5 sm:p-4 text-center text-[11px] sm:text-sm">
                             {typeof feature.premium === "boolean" ? (
                               feature.premium ? (
                                 <Check className="w-4 h-4 sm:w-5 sm:h-5 text-primary mx-auto" />
