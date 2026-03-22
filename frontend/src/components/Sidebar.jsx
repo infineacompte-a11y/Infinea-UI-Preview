@@ -237,7 +237,7 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E2E6EA]/80 shadow-[0_1px_12px_rgba(39,82,85,0.06)]">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-2xl backdrop-saturate-[1.8] border-b border-white/60 shadow-[0_1px_20px_rgba(39,82,85,0.06)]">
         <div className="flex items-center justify-between px-4 h-14">
           <InFineaLogo size={26} withText />
 
