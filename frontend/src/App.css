@@ -221,7 +221,7 @@ html {
     background-clip: text;
 }
 
-/* Revolut-style pill CTA — deep primary with subtle hover */
+/* Pill CTA — deep primary with premium depth */
 .btn-pill-primary {
     display: inline-flex;
     align-items: center;
@@ -232,20 +232,24 @@ html {
     background: #275255;
     color: white;
     font-weight: 500;
-    font-size: 1rem;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     border: none;
+    box-shadow: 0 1px 2px rgba(39,82,85,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 .btn-pill-primary:hover {
     background: #1F3F42;
-    box-shadow: 0 4px 16px rgba(39, 82, 85, 0.25);
+    box-shadow: 0 4px 12px rgba(39,82,85,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+    transform: translateY(-1px);
 }
 
 .btn-pill-primary:active {
     background: #163233;
-    transform: translateY(1px);
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(39,82,85,0.15);
 }
 
 /* Inverted pill CTA — white on dark backgrounds */
@@ -304,8 +308,8 @@ html {
 
 /* Premium button — elevated CTA */
 .btn-premium {
-    background: linear-gradient(135deg, #275255 0%, #459492 100%);
-    box-shadow: 0 2px 12px rgba(39, 82, 85, 0.25);
+    background: linear-gradient(135deg, #275255 0%, #336E6D 100%);
+    box-shadow: 0 2px 8px rgba(39,82,85,0.2), 0 0 0 1px rgba(39,82,85,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
@@ -313,12 +317,12 @@ html {
 
 .btn-premium:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.35);
+    box-shadow: 0 4px 16px rgba(39,82,85,0.3), 0 0 0 1px rgba(39,82,85,0.15), inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .btn-premium:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(39, 82, 85, 0.2);
+    box-shadow: 0 1px 4px rgba(39,82,85,0.15);
 }
 
 /* Stat card with left accent border */
