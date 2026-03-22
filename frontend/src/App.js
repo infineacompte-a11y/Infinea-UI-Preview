@@ -300,6 +300,15 @@ const ProtectedRoute = ({ children }) => {
   );
 };
 
+// Scroll to top on route change — prevents stale scroll position
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 // App Router
 function AppRouter() {
   const location = useLocation();
@@ -521,6 +530,7 @@ function App() {
       <AuthProvider>
         <div className="app-noise-overlay" aria-hidden="true" />
         <div className="app-orbs-overlay" aria-hidden="true" />
+        <ScrollToTop />
         <MicroInstantBanner />
         <AppRouter />
         <Toaster position="top-right" richColors />

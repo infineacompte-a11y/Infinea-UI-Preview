@@ -242,19 +242,19 @@ export default function PricingPage() {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-32 pb-20 px-4">
+      <main className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E48C75]/40 border border-[#E48C75]/20 mb-6">
-                <Crown className="w-4 h-4 text-[#E48C75]" />
-                <span className="text-sm text-[#E48C75]">Investissez dans votre temps</span>
+            <div className="text-center mb-10 sm:mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#E48C75]/40 border border-[#E48C75]/20 mb-5 sm:mb-6">
+                <Crown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E48C75]" />
+                <span className="text-xs sm:text-sm text-[#E48C75]">Investissez dans votre temps</span>
               </div>
-              <h1 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl font-bold mb-4" data-testid="pricing-title">
+              <h1 className="font-sans font-semibold tracking-tight text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4" data-testid="pricing-title">
                 Choisissez votre plan
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Commencez gratuitement et passez à Premium pour une IA qui apprend de vous et une bibliothèque de micro-actions en perpétuelle évolution.
               </p>
             </div>
@@ -262,7 +262,7 @@ export default function PricingPage() {
 
           {/* Pricing Cards */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto mb-10 sm:mb-16">
               {plans.map((plan, i) => (
                 <div
                   key={i}
@@ -283,18 +283,18 @@ export default function PricingPage() {
                         </span>
                       </div>
                     )}
-                    <CardContent className="p-8">
-                      <h3 className="font-sans font-semibold tracking-tight text-2xl font-semibold mb-2">{plan.name}</h3>
-                      <p className="text-muted-foreground mb-4">{plan.description}</p>
-                      <div className="flex items-baseline gap-1 mb-6">
-                        <span className="text-5xl font-sans font-semibold tracking-tight font-bold tabular-nums">{plan.price}</span>
+                    <CardContent className="p-5 sm:p-8">
+                      <h3 className="font-sans font-semibold tracking-tight text-xl sm:text-2xl font-semibold mb-1.5 sm:mb-2">{plan.name}</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">{plan.description}</p>
+                      <div className="flex items-baseline gap-1 mb-4 sm:mb-6">
+                        <span className="text-4xl sm:text-5xl font-sans font-semibold tracking-tight font-bold tabular-nums">{plan.price}</span>
                         <span className="text-muted-foreground">{plan.period}</span>
                       </div>
-                      <ul className="space-y-3 mb-8">
+                      <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
                         {plan.features.map((feature, j) => (
-                          <li key={j} className="flex items-center gap-3">
-                            <Check className="w-5 h-5 text-[#5DB786] flex-shrink-0" />
-                            <span className="text-muted-foreground">{feature}</span>
+                          <li key={j} className="flex items-start gap-2.5 sm:gap-3">
+                            <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#5DB786] flex-shrink-0 mt-0.5" />
+                            <span className="text-sm sm:text-base text-muted-foreground">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -381,11 +381,11 @@ export default function PricingPage() {
 
           {/* Premium Categories Showcase */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "600ms", animationFillMode: "forwards" }}>
-            <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="font-sans font-semibold tracking-tight text-2xl font-semibold text-center mb-8">
+            <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
+              <h2 className="font-sans font-semibold tracking-tight text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8">
                 8 catégories exclusives Premium
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {[
                   { icon: Palette, name: "Créativité", color: "text-[#55B3AE]", bg: "bg-[#55B3AE]/40" },
                   { icon: Dumbbell, name: "Fitness", color: "text-[#E48C75]", bg: "bg-[#E48C75]/40" },
@@ -418,11 +418,11 @@ export default function PricingPage() {
 
           {/* Features Comparison */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "800ms", animationFillMode: "forwards" }}>
-            <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="font-sans font-semibold tracking-tight text-2xl font-semibold text-center mb-8">
+            <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
+              <h2 className="font-sans font-semibold tracking-tight text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8">
                 Pourquoi passer à Premium ?
               </h2>
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {[
                   {
                     icon: Sparkles,
@@ -468,60 +468,58 @@ export default function PricingPage() {
               </div>
 
               {/* Detailed comparison table */}
-              <Card className="bg-white shadow-sm border border-[#E2E6EA] hover:border-[#459492]/20 transition-all duration-200">
-                <CardContent className="p-0">
-                  <div className="overflow-x-auto -mx-px">
-                    <table className="w-full min-w-[540px]">
-                      <thead>
-                        <tr className="border-b">
-                          <th className="text-left p-4 font-sans font-semibold tracking-tight font-semibold whitespace-nowrap">Fonctionnalité</th>
-                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold whitespace-nowrap">Gratuit</th>
-                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold text-[#E48C75] whitespace-nowrap">
-                            <div className="flex items-center justify-center gap-1">
-                              <Crown className="w-4 h-4 text-[#E48C75]" /> Premium
-                            </div>
-                          </th>
+              <div className="relative">
+                <div className="overflow-x-auto rounded-xl border border-[#E2E6EA] bg-white shadow-sm">
+                  <table className="w-full min-w-[520px]">
+                    <thead>
+                      <tr className="border-b bg-[#F8FAFB]">
+                        <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold whitespace-nowrap w-[35%]">Fonctionnalité</th>
+                        <th className="text-center p-3 sm:p-4 text-xs sm:text-sm font-semibold whitespace-nowrap w-[30%]">Gratuit</th>
+                        <th className="text-center p-3 sm:p-4 text-xs sm:text-sm font-semibold text-[#E48C75] whitespace-nowrap w-[35%]">
+                          <div className="flex items-center justify-center gap-1">
+                            <Crown className="w-3.5 h-3.5 text-[#E48C75]" /> Premium
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparisonFeatures.map((feature, i) => (
+                        <tr key={i} className={`transition-colors hover:bg-muted/30 ${i < comparisonFeatures.length - 1 ? "border-b border-border/50" : ""}`}>
+                          <td className="p-3 sm:p-4 text-xs sm:text-sm font-medium">{feature.name}</td>
+                          <td className="p-3 sm:p-4 text-center text-xs sm:text-sm">
+                            {typeof feature.free === "boolean" ? (
+                              feature.free ? (
+                                <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#5DB786] mx-auto" />
+                              ) : (
+                                <X className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/40 mx-auto" />
+                              )
+                            ) : (
+                              <span className="text-muted-foreground">{feature.free}</span>
+                            )}
+                          </td>
+                          <td className="p-3 sm:p-4 text-center text-xs sm:text-sm">
+                            {typeof feature.premium === "boolean" ? (
+                              feature.premium ? (
+                                <Check className="w-4 h-4 sm:w-5 sm:h-5 text-primary mx-auto" />
+                              ) : (
+                                <X className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/40 mx-auto" />
+                              )
+                            ) : (
+                              <span className="text-primary font-medium">{feature.premium}</span>
+                            )}
+                          </td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {comparisonFeatures.map((feature, i) => (
-                          <tr key={i} className={`transition-colors hover:bg-muted/30 ${i < comparisonFeatures.length - 1 ? "border-b border-border/50" : ""}`}>
-                            <td className="p-4 text-sm font-medium">{feature.name}</td>
-                            <td className="p-4 text-center text-sm">
-                              {typeof feature.free === "boolean" ? (
-                                feature.free ? (
-                                  <Check className="w-5 h-5 text-[#5DB786] mx-auto" />
-                                ) : (
-                                  <X className="w-5 h-5 text-muted-foreground/40 mx-auto" />
-                                )
-                              ) : (
-                                <span className="text-muted-foreground">{feature.free}</span>
-                              )}
-                            </td>
-                            <td className="p-4 text-center text-sm">
-                              {typeof feature.premium === "boolean" ? (
-                                feature.premium ? (
-                                  <Check className="w-5 h-5 text-primary mx-auto" />
-                                ) : (
-                                  <X className="w-5 h-5 text-muted-foreground/40 mx-auto" />
-                                )
-                              ) : (
-                                <span className="text-primary font-medium">{feature.premium}</span>
-                              )}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </CardContent>
-              </Card>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* FAQ or Trust signals */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "1000ms", animationFillMode: "forwards" }}>
-            <div className="mt-16 text-center">
+            <div className="mt-10 sm:mt-16 text-center">
               <p className="text-sm text-muted-foreground mb-4">
                 Paiement sécurisé par Stripe • Annulez à tout moment • Sans engagement
               </p>
