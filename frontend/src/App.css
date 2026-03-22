@@ -198,10 +198,11 @@
     color: #141E24;
 }
 
-/* Focus ring — brand teal */
+/* Focus ring — brand teal, visible uniquement au clavier */
 *:focus-visible {
     outline: 2px solid rgba(69, 148, 146, 0.5);
     outline-offset: 2px;
+    border-radius: 4px;
 }
 
 /* Smooth scroll */
