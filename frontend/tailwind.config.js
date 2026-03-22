@@ -93,16 +93,21 @@ module.exports = {
                 },
             },
             boxShadow: {
-                'card': '0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04)',
-                'card-hover': '0 4px 12px rgba(39,82,85,0.1), 0 8px 24px rgba(39,82,85,0.06)',
-                'card-elevated': '0 8px 30px rgba(39,82,85,0.12), 0 2px 8px rgba(39,82,85,0.08)',
-                'premium': '0 4px 20px rgba(39,82,85,0.15), 0 1px 3px rgba(39,82,85,0.1)',
-                'inner-highlight': 'inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(39,82,85,0.04), 0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04)',
-                'glow-teal': '0 0 30px rgba(69,148,146,0.15)',
-                'glow-coral': '0 0 30px rgba(228,140,117,0.15)',
-                'dark-card': '0 2px 8px rgba(0,0,0,0.15), 0 8px 30px rgba(0,0,0,0.1)',
-                'stat': '0 1px 3px rgba(39,82,85,0.08), 0 6px 20px rgba(39,82,85,0.06)',
-                'stat-hover': '0 4px 12px rgba(39,82,85,0.12), 0 12px 36px rgba(39,82,85,0.08)',
+                /* Système d'élévation progressif */
+                'xs': '0 1px 2px rgba(14,15,15,0.04)',
+                'card': '0 1px 3px rgba(14,15,15,0.04), 0 1px 2px rgba(14,15,15,0.02)',
+                'card-hover': '0 4px 8px rgba(14,15,15,0.06), 0 2px 4px rgba(14,15,15,0.04), 0 0 0 1px rgba(69,148,146,0.08)',
+                'card-elevated': '0 8px 24px rgba(14,15,15,0.08), 0 4px 8px rgba(14,15,15,0.04), 0 0 0 1px rgba(14,15,15,0.03)',
+                'premium': '0 12px 40px rgba(39,82,85,0.12), 0 4px 12px rgba(39,82,85,0.06), 0 0 0 1px rgba(69,148,146,0.1)',
+                'stat': '0 1px 3px rgba(14,15,15,0.04), 0 0 0 1px rgba(14,15,15,0.02)',
+                'stat-hover': '0 4px 12px rgba(14,15,15,0.06), 0 0 0 1px rgba(69,148,146,0.1)',
+                'dark-card': '0 2px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08)',
+                /* Glows subtils — brand-aligned */
+                'glow-teal': '0 0 0 1px rgba(69,148,146,0.15), 0 4px 20px rgba(69,148,146,0.08)',
+                'glow-coral': '0 0 0 1px rgba(228,140,117,0.15), 0 4px 20px rgba(228,140,117,0.08)',
+                /* Inner highlights — effet de profondeur */
+                'inner-highlight': 'inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 3px rgba(14,15,15,0.04), 0 4px 12px rgba(14,15,15,0.03)',
+                'inner-highlight-hover': 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 12px rgba(14,15,15,0.06), 0 8px 24px rgba(14,15,15,0.04)',
             },
             keyframes: {
                 'accordion-down': {

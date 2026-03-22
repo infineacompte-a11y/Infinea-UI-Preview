@@ -32,8 +32,8 @@
 
 .action-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(39, 82, 85, 0.1);
-    border-color: rgba(69, 148, 146, 0.2);
+    box-shadow: 0 8px 24px rgba(14,15,15,0.08), 0 4px 8px rgba(14,15,15,0.04), 0 0 0 1px rgba(69,148,146,0.12);
+    border-color: rgba(69,148,146,0.2);
 }
 
 /* Energy indicator — brand-aligned */
@@ -101,13 +101,15 @@
 /* Bento grid item */
 .bento-item {
     background: #FFFFFF;
-    border: 1px solid hsl(210, 15%, 90%);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(214,219,218,0.8);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(14,15,15,0.03);
 }
 
 .bento-item:hover {
-    border-color: rgba(69, 148, 146, 0.25);
-    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.08);
+    border-color: rgba(69,148,146,0.25);
+    box-shadow: 0 8px 24px rgba(14,15,15,0.06), 0 0 0 1px rgba(69,148,146,0.1);
+    transform: translateY(-2px);
 }
 
 /* Chart tooltip */
