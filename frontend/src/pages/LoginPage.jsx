@@ -89,7 +89,7 @@ export default function LoginPage() {
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
               <Button
                 variant="outline"
-                className="w-full h-12 rounded-xl bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 btn-press"
+                className="w-full h-12 rounded-xl bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] hover:text-[#141E24] shadow-sm hover:shadow-md transition-all duration-200 btn-press"
                 onClick={handleGoogleLogin}
                 data-testid="google-login-btn"
               >
