@@ -520,6 +520,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <div className="app-noise-overlay" aria-hidden="true" />
+        <div className="app-orbs-overlay" aria-hidden="true" />
         <MicroInstantBanner />
         <AppRouter />
         <Toaster position="top-right" richColors />

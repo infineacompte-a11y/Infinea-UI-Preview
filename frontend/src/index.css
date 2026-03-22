@@ -392,62 +392,12 @@ select:-webkit-autofill {
     background-color: hsl(var(--surface-0));
     background-image:
         radial-gradient(ellipse 90% 70% at 5% 15%, rgba(69, 148, 146, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 60% at 90% 8%, rgba(85, 179, 174, 0.09) 0%, transparent 50%),
-        radial-gradient(ellipse 80% 60% at 45% 90%, rgba(93, 183, 134, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 60% at 92% 8%, rgba(85, 179, 174, 0.09) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 45% 92%, rgba(93, 183, 134, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse 50% 50% at 95% 80%, rgba(228, 140, 117, 0.06) 0%, transparent 45%),
         radial-gradient(ellipse 60% 60% at 50% 40%, rgba(69, 148, 146, 0.05) 0%, transparent 55%);
     background-attachment: fixed;
     min-height: 100vh;
-    position: relative;
-}
-
-/* Animated floating orbs — living background */
-.app-bg-mesh::before {
-    content: '';
-    position: fixed;
-    top: -20%;
-    left: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(69, 148, 146, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: orb-float-1 25s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.app-bg-mesh::after {
-    content: '';
-    position: fixed;
-    bottom: -20%;
-    right: -10%;
-    width: 50%;
-    height: 50%;
-    background: radial-gradient(circle, rgba(85, 179, 174, 0.07) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: orb-float-2 30s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes orb-float-1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(10%, 15%) scale(1.1); }
-    50% { transform: translate(5%, 5%) scale(0.95); }
-    75% { transform: translate(-5%, 10%) scale(1.05); }
-}
-
-@keyframes orb-float-2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-8%, -10%) scale(1.05); }
-    50% { transform: translate(-3%, -5%) scale(1.1); }
-    75% { transform: translate(5%, -8%) scale(0.95); }
-}
-
-/* Ensure content sits above orbs */
-.app-bg-mesh > * {
-    position: relative;
-    z-index: 1;
 }
 
 /* Surface elevation system — progression de profondeur perceptible */
@@ -528,6 +478,53 @@ select:-webkit-autofill {
     inset: 0;
     background: radial-gradient(ellipse at 70% 30%, rgba(85, 179, 174, 0.12) 0%, transparent 60%);
     pointer-events: none;
+}
+
+/* === Animated floating orbs — living background overlay === */
+.app-orbs-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.app-orbs-overlay::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: -10%;
+    width: 55%;
+    height: 55%;
+    background: radial-gradient(circle, rgba(69, 148, 146, 0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: orb-float-1 25s ease-in-out infinite;
+}
+
+.app-orbs-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    right: -10%;
+    width: 45%;
+    height: 45%;
+    background: radial-gradient(circle, rgba(85, 179, 174, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: orb-float-2 30s ease-in-out infinite;
+}
+
+@keyframes orb-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(10%, 15%) scale(1.1); }
+    50% { transform: translate(5%, 5%) scale(0.95); }
+    75% { transform: translate(-5%, 10%) scale(1.05); }
+}
+
+@keyframes orb-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-8%, -10%) scale(1.05); }
+    50% { transform: translate(-3%, -5%) scale(1.1); }
+    75% { transform: translate(5%, -8%) scale(0.95); }
 }
 
 /* === SVG noise texture overlay — analog grain === */
