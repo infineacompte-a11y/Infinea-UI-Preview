@@ -53,31 +53,31 @@ const categoryLabels = {
 };
 
 const categoryColors = {
-  learning: "text-[#55B3AE] bg-[#55B3AE]/20",
-  productivity: "text-[#E48C75] bg-[#E48C75]/20",
-  well_being: "text-[#5DB786] bg-[#5DB786]/20",
-  creativity: "text-[#55B3AE] bg-[#55B3AE]/20",
-  fitness: "text-[#E48C75] bg-[#E48C75]/20",
-  mindfulness: "text-[#459492] bg-[#459492]/20",
-  leadership: "text-[#459492] bg-[#459492]/20",
-  finance: "text-[#5DB786] bg-[#5DB786]/20",
-  relations: "text-[#E48C75] bg-[#E48C75]/20",
-  mental_health: "text-[#55B3AE] bg-[#55B3AE]/20",
-  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/20",
+  learning: "text-[#55B3AE] bg-[#55B3AE]/30",
+  productivity: "text-[#E48C75] bg-[#E48C75]/30",
+  well_being: "text-[#5DB786] bg-[#5DB786]/30",
+  creativity: "text-[#55B3AE] bg-[#55B3AE]/30",
+  fitness: "text-[#E48C75] bg-[#E48C75]/30",
+  mindfulness: "text-[#459492] bg-[#459492]/30",
+  leadership: "text-[#459492] bg-[#459492]/30",
+  finance: "text-[#5DB786] bg-[#5DB786]/30",
+  relations: "text-[#E48C75] bg-[#E48C75]/30",
+  mental_health: "text-[#55B3AE] bg-[#55B3AE]/30",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/30",
 };
 
 const categoryBadgeColors = {
-  learning: "bg-[#55B3AE]/20 text-[#55B3AE] border-[#55B3AE]/20",
-  productivity: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20",
-  well_being: "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/20",
-  creativity: "bg-[#55B3AE]/20 text-[#55B3AE] border-[#55B3AE]/20",
-  fitness: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20",
-  mindfulness: "bg-[#459492]/20 text-[#459492] border-[#459492]/20",
-  leadership: "bg-[#459492]/20 text-[#459492] border-[#459492]/20",
-  finance: "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/20",
-  relations: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20",
-  mental_health: "bg-[#55B3AE]/20 text-[#55B3AE] border-[#55B3AE]/20",
-  entrepreneurship: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20",
+  learning: "bg-[#55B3AE]/30 text-[#55B3AE] border-[#55B3AE]/20",
+  productivity: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20",
+  well_being: "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/20",
+  creativity: "bg-[#55B3AE]/30 text-[#55B3AE] border-[#55B3AE]/20",
+  fitness: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20",
+  mindfulness: "bg-[#459492]/30 text-[#459492] border-[#459492]/20",
+  leadership: "bg-[#459492]/30 text-[#459492] border-[#459492]/20",
+  finance: "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/20",
+  relations: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20",
+  mental_health: "bg-[#55B3AE]/30 text-[#55B3AE] border-[#55B3AE]/20",
+  entrepreneurship: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20",
 };
 
 const NOTES_TABS = [
@@ -239,21 +239,21 @@ export default function NotesPage() {
           {!isLoading && stats && (
             <div className="opacity-0 animate-fade-in grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
               <Card className="group p-3 text-center bg-gradient-to-br from-[#459492]/10 to-transparent border-border hover:shadow-md hover:border-[#459492]/30 transition-all duration-300 rounded-xl">
-                <div className="w-8 h-8 rounded-lg bg-[#459492]/20 flex items-center justify-center mx-auto mb-1">
+                <div className="w-8 h-8 rounded-lg bg-[#459492]/30 flex items-center justify-center mx-auto mb-1">
                   <FileText className="w-4 h-4 text-[#459492]" />
                 </div>
                 <div className="text-lg font-bold tabular-nums">{stats.total_notes || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Notes totales</div>
               </Card>
               <Card className="group p-3 text-center bg-gradient-to-br from-[#5DB786]/10 to-transparent border-border hover:shadow-md hover:border-[#5DB786]/30 transition-all duration-300 rounded-xl">
-                <div className="w-8 h-8 rounded-lg bg-[#5DB786]/20 flex items-center justify-center mx-auto mb-1">
+                <div className="w-8 h-8 rounded-lg bg-[#5DB786]/30 flex items-center justify-center mx-auto mb-1">
                   <TrendingUp className="w-4 h-4 text-[#5DB786]" />
                 </div>
                 <div className="text-lg font-bold tabular-nums">{stats.notes_this_week || 0}</div>
                 <div className="text-[10px] text-muted-foreground">Cette semaine</div>
               </Card>
               <Card className="group p-3 text-center bg-gradient-to-br from-[#E48C75]/10 to-transparent border-border hover:shadow-md hover:border-[#E48C75]/30 transition-all duration-300 rounded-xl">
-                <div className="w-8 h-8 rounded-lg bg-[#E48C75]/20 flex items-center justify-center mx-auto mb-1">
+                <div className="w-8 h-8 rounded-lg bg-[#E48C75]/30 flex items-center justify-center mx-auto mb-1">
                   <Sparkles className="w-4 h-4 text-[#E48C75]" />
                 </div>
                 <div className="text-lg font-bold tabular-nums">{stats.avg_note_length || 0}</div>
@@ -446,7 +446,7 @@ export default function NotesPage() {
                       {analysis.analysis.key_insight && (
                         <Card className="opacity-0 animate-fade-in p-4 border-[#E48C75]/20 bg-gradient-to-br from-[#E48C75]/5 to-transparent rounded-xl hover:shadow-md transition-all duration-200" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
                           <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/20 flex items-center justify-center shrink-0">
+                            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/30 flex items-center justify-center shrink-0">
                               <Lightbulb className="w-4 h-4 text-[#E48C75]" />
                             </div>
                             <div>

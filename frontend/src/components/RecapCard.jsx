@@ -24,9 +24,9 @@ const HIGHLIGHT_ICONS = {
 };
 
 const HIGHLIGHT_COLORS = {
-  streak: "text-[#E48C75] bg-[#E48C75]/20",
-  productive: "text-[#5DB786] bg-[#5DB786]/20",
-  milestone: "text-[#459492] bg-[#459492]/20",
+  streak: "text-[#E48C75] bg-[#E48C75]/30",
+  productive: "text-[#5DB786] bg-[#5DB786]/30",
+  milestone: "text-[#459492] bg-[#459492]/30",
   focus: "text-primary bg-primary/10",
 };
 

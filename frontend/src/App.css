@@ -1,21 +1,21 @@
 /* InFinea Design System v2.0 — App Styles (Light Mode Premium) */
 
-/* Hero glow effect — soft teal radiance */
+/* Hero glow effect — intense teal radiance */
 .hero-glow {
-    background: radial-gradient(ellipse at center, rgba(69, 148, 146, 0.10) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(69, 148, 146, 0.20) 0%, rgba(85, 179, 174, 0.08) 50%, transparent 75%);
 }
 
 /* Category card backgrounds */
 .category-card-learning {
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.12) 0%, rgba(69, 148, 146, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.18) 0%, rgba(69, 148, 146, 0.04) 100%);
 }
 
 .category-card-productivity {
-    background: linear-gradient(135deg, rgba(228, 140, 117, 0.12) 0%, rgba(228, 140, 117, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.18) 0%, rgba(228, 140, 117, 0.04) 100%);
 }
 
 .category-card-well-being {
-    background: linear-gradient(135deg, rgba(93, 183, 134, 0.12) 0%, rgba(93, 183, 134, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(93, 183, 134, 0.18) 0%, rgba(93, 183, 134, 0.04) 100%);
 }
 
 /* Timer circle */
@@ -25,20 +25,21 @@
     transition: stroke-dashoffset 1s linear;
 }
 
-/* Action card hover effect — elegant lift */
+/* Action card hover effect — glass with teal depth */
 .action-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(16px) saturate(1.6);
+    -webkit-backdrop-filter: blur(16px) saturate(1.6);
+    border: 1px solid rgba(69, 148, 146, 0.10);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 3px rgba(39,82,85,0.04), inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
 .action-card:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.65);
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(14,15,15,0.08), 0 4px 12px rgba(14,15,15,0.04), 0 0 0 1px rgba(69,148,146,0.1);
-    border-color: rgba(69,148,146,0.15);
+    box-shadow: 0 12px 32px rgba(39,82,85,0.10), 0 4px 12px rgba(39,82,85,0.06), 0 0 0 1px rgba(69,148,146,0.15), 0 0 20px rgba(69,148,146,0.06);
+    border-color: rgba(69,148,146,0.20);
 }
 
 /* Energy indicator — brand-aligned */
@@ -72,9 +73,9 @@
     box-shadow: inset 0 0 0 1px rgba(69, 148, 146, 0.12);
 }
 
-/* Stat card */
+/* Stat card — stronger teal presence */
 .stat-card {
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.08) 0%, rgba(69, 148, 146, 0.01) 100%);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.14) 0%, rgba(85, 179, 174, 0.04) 100%);
 }
 
 /* Progress ring animation */
@@ -84,15 +85,15 @@
     }
 }
 
-/* Floating action button */
+/* Floating action button — strong teal glow */
 .fab {
-    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.2);
+    box-shadow: 0 4px 20px rgba(39, 82, 85, 0.25), 0 0 0 1px rgba(69,148,146,0.15);
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fab:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 30px rgba(69, 148, 146, 0.3);
+    box-shadow: 0 8px 36px rgba(69, 148, 146, 0.35), 0 0 0 1px rgba(69,148,146,0.20), 0 0 24px rgba(69,148,146,0.12);
 }
 
 /* Pricing card — premium teal gradient */
@@ -107,20 +108,20 @@
     backdrop-filter: blur(8px);
 }
 
-/* Bento grid item */
+/* Bento grid item — glass with teal depth */
 .bento-item {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(16px) saturate(1.6);
+    -webkit-backdrop-filter: blur(16px) saturate(1.6);
+    border: 1px solid rgba(69, 148, 146, 0.08);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 1px 3px rgba(14,15,15,0.03), inset 0 1px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 3px rgba(39,82,85,0.04), inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
 .bento-item:hover {
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(69,148,146,0.15);
-    box-shadow: 0 8px 32px rgba(14,15,15,0.06), 0 0 0 1px rgba(69,148,146,0.1), 0 0 20px rgba(69,148,146,0.04);
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(69,148,146,0.20);
+    box-shadow: 0 8px 32px rgba(39,82,85,0.08), 0 0 0 1px rgba(69,148,146,0.15), 0 0 24px rgba(69,148,146,0.06);
     transform: translateY(-2px);
 }
 
@@ -172,8 +173,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.15), rgba(85, 179, 174, 0.08));
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.22), rgba(85, 179, 174, 0.12));
     margin-bottom: 1.5rem;
+    box-shadow: 0 0 16px rgba(69,148,146,0.08);
 }
 
 /* Skeleton loading — light shimmer */
@@ -184,20 +186,21 @@
     border-radius: 0.75rem;
 }
 
-/* Card interactive — base hover lift */
+/* Card interactive — glass with teal depth */
 .card-interactive {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px) saturate(1.6);
+    -webkit-backdrop-filter: blur(14px) saturate(1.6);
+    border: 1px solid rgba(69, 148, 146, 0.08);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(39,82,85,0.03), inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
 .card-interactive:hover {
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.60);
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(14,15,15,0.06), 0 0 0 1px rgba(69,148,146,0.08);
-    border-color: rgba(69, 148, 146, 0.12);
+    box-shadow: 0 12px 32px rgba(39,82,85,0.08), 0 0 0 1px rgba(69,148,146,0.15), 0 0 20px rgba(69,148,146,0.05);
+    border-color: rgba(69, 148, 146, 0.18);
 }
 
 /* Page enter transition */
@@ -351,7 +354,7 @@ html {
 
 .stat-card-accent:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(39, 82, 85, 0.08);
+    box-shadow: 0 8px 24px rgba(39, 82, 85, 0.12), 0 0 0 1px rgba(69,148,146,0.10), 0 0 16px rgba(69,148,146,0.06);
 }
 
 /* Chart card — subtle background pattern */

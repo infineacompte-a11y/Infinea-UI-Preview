@@ -102,7 +102,7 @@ export default function TodoistGuide({ open, onOpenChange, onConnected }) {
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/20 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#E48C75]/30 flex items-center justify-center">
               <ListTodo className="w-4 h-4 text-[#E48C75]" />
             </div>
             Connecter Todoist

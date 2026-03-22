@@ -35,17 +35,17 @@ import { API, authFetch, useAuth } from "@/App";
 import { toast } from "sonner";
 
 const CATEGORY_MAP = {
-  learning: { label: "Apprentissage", color: "bg-[#459492]/20 text-[#459492] border-[#459492]/20" },
-  productivity: { label: "Productivité", color: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20" },
-  well_being: { label: "Bien-être", color: "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/20" },
-  creativity: { label: "Créativité", color: "bg-[#55B3AE]/20 text-[#55B3AE] border-[#55B3AE]/20" },
-  fitness: { label: "Fitness", color: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20" },
-  mindfulness: { label: "Pleine conscience", color: "bg-[#459492]/20 text-[#459492] border-[#459492]/20" },
+  learning: { label: "Apprentissage", color: "bg-[#459492]/30 text-[#459492] border-[#459492]/20" },
+  productivity: { label: "Productivité", color: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20" },
+  well_being: { label: "Bien-être", color: "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/20" },
+  creativity: { label: "Créativité", color: "bg-[#55B3AE]/30 text-[#55B3AE] border-[#55B3AE]/20" },
+  fitness: { label: "Fitness", color: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20" },
+  mindfulness: { label: "Pleine conscience", color: "bg-[#459492]/30 text-[#459492] border-[#459492]/20" },
   leadership: { label: "Leadership", color: "bg-[#7B8FA1]/15 text-[#7B8FA1] border-[#7B8FA1]/20" },
   finance: { label: "Finance", color: "bg-[#2E9B6A]/15 text-[#2E9B6A] border-[#2E9B6A]/20" },
   relations: { label: "Relations", color: "bg-[#C4806E]/15 text-[#C4806E] border-[#C4806E]/20" },
   mental_health: { label: "Santé mentale", color: "bg-[#6EAAA8]/15 text-[#6EAAA8] border-[#6EAAA8]/20" },
-  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20" },
+  entrepreneurship: { label: "Entrepreneuriat", color: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20" },
 };
 
 // Duration presets: 2 weeks to 12 months
@@ -91,10 +91,10 @@ function durationValueToSlider(days) {
 }
 
 const STATUS_MAP = {
-  active: { label: "En cours", color: "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/20", icon: Play },
-  paused: { label: "En pause", color: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20", icon: Pause },
-  completed: { label: "Terminé", color: "bg-[#459492]/20 text-[#459492] border-[#459492]/20", icon: CheckCircle2 },
-  abandoned: { label: "Abandonné", color: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/20", icon: Target },
+  active: { label: "En cours", color: "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/20", icon: Play },
+  paused: { label: "En pause", color: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20", icon: Pause },
+  completed: { label: "Terminé", color: "bg-[#459492]/30 text-[#459492] border-[#459492]/20", icon: CheckCircle2 },
+  abandoned: { label: "Abandonné", color: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/20", icon: Target },
 };
 
 function ObjectiveCard({ objective, onClick, index = 0 }) {
@@ -325,7 +325,7 @@ export default function ObjectivesPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => navigate("/pricing")}
-                    className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/20 rounded-xl transition-all duration-200"
+                    className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/30 rounded-xl transition-all duration-200"
                   >
                     <Crown className="w-3.5 h-3.5 mr-1.5 text-[#E48C75]" />
                     Passer en Premium

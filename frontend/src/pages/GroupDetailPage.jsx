@@ -236,11 +236,11 @@ export default function GroupDetailPage() {
                         <div
                           className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 tabular-nums ${
                             i === 0
-                              ? "bg-[#E48C75]/20 text-[#E48C75]"
+                              ? "bg-[#E48C75]/30 text-[#E48C75]"
                               : i === 1
                                 ? "bg-[#9A9A9A]/20 text-muted-foreground"
                                 : i === 2
-                                  ? "bg-[#E48C75]/20 text-[#E48C75]"
+                                  ? "bg-[#E48C75]/30 text-[#E48C75]"
                                   : "bg-muted text-muted-foreground"
                           }`}
                         >

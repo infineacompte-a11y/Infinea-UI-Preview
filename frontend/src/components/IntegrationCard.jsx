@@ -19,13 +19,13 @@ const statusConfig = {
   connected: {
     label: "Connecte",
     color: "bg-[#5DB786]",
-    badgeClass: "bg-[#5DB786]/20 text-[#5DB786] border-[#5DB786]/30",
+    badgeClass: "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/30",
     Icon: CheckCircle2,
   },
   error: {
     label: "Erreur",
     color: "bg-[#E48C75]",
-    badgeClass: "bg-[#E48C75]/20 text-[#E48C75] border-[#E48C75]/30",
+    badgeClass: "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/30",
     Icon: AlertCircle,
   },
   disconnected: {
@@ -37,17 +37,17 @@ const statusConfig = {
   syncing: {
     label: "Sync...",
     color: "bg-[#459492]",
-    badgeClass: "bg-[#459492]/20 text-[#459492] border-[#459492]/30",
+    badgeClass: "bg-[#459492]/30 text-[#459492] border-[#459492]/30",
     Icon: Loader2,
   },
 };
 
 const colorClasses = {
-  blue: { bg: "bg-[#459492]/20", text: "text-[#459492]", border: "border-[#459492]/30" },
+  blue: { bg: "bg-[#459492]/30", text: "text-[#459492]", border: "border-[#459492]/30" },
   gray: { bg: "bg-muted-foreground/10", text: "text-muted-foreground", border: "border-muted-foreground/30" },
-  red: { bg: "bg-[#E48C75]/20", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
+  red: { bg: "bg-[#E48C75]/30", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
   purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
-  orange: { bg: "bg-[#E48C75]/20", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
+  orange: { bg: "bg-[#E48C75]/30", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
 };
 
 export default function IntegrationCard({

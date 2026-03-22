@@ -29,9 +29,9 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#55B3AE] bg-[#55B3AE]/20",
-  productivity: "text-[#E48C75] bg-[#E48C75]/20",
-  well_being: "text-[#5DB786] bg-[#5DB786]/20",
+  learning: "text-[#55B3AE] bg-[#55B3AE]/30",
+  productivity: "text-[#E48C75] bg-[#E48C75]/30",
+  well_being: "text-[#5DB786] bg-[#5DB786]/30",
 };
 
 export default function ActiveSession() {
@@ -308,7 +308,7 @@ export default function ActiveSession() {
                   <div
                     key={i}
                     className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-200 cursor-pointer ${
-                      i === currentStep ? "bg-[#459492]/20 border border-[#459492]/30 shadow-sm" : ""
+                      i === currentStep ? "bg-[#459492]/30 border border-[#459492]/30 shadow-sm" : ""
                     } ${i < currentStep ? "opacity-50" : ""} ${
                       i > currentStep ? "hover:bg-muted/20" : ""
                     }`}

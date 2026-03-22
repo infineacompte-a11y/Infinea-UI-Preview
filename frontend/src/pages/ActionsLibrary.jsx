@@ -44,17 +44,17 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#459492] bg-[#459492]/20",
-  productivity: "text-[#E48C75] bg-[#E48C75]/20",
-  well_being: "text-[#5DB786] bg-[#5DB786]/20",
-  creativity: "text-[#55B3AE] bg-[#55B3AE]/20",
-  fitness: "text-[#E48C75] bg-[#E48C75]/20",
-  mindfulness: "text-[#459492] bg-[#459492]/20",
+  learning: "text-[#459492] bg-[#459492]/30",
+  productivity: "text-[#E48C75] bg-[#E48C75]/30",
+  well_being: "text-[#5DB786] bg-[#5DB786]/30",
+  creativity: "text-[#55B3AE] bg-[#55B3AE]/30",
+  fitness: "text-[#E48C75] bg-[#E48C75]/30",
+  mindfulness: "text-[#459492] bg-[#459492]/30",
   leadership: "text-[#7B8FA1] bg-[#7B8FA1]/20",
   finance: "text-[#2E9B6A] bg-[#2E9B6A]/20",
   relations: "text-[#C4806E] bg-[#C4806E]/20",
   mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/20",
-  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/20",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/30",
 };
 
 const categoryBorderColors = {

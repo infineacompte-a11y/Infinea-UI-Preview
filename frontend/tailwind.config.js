@@ -93,21 +93,22 @@ module.exports = {
                 },
             },
             boxShadow: {
-                /* Système d'élévation progressif */
-                'xs': '0 1px 2px rgba(14,15,15,0.04)',
-                'card': '0 1px 3px rgba(14,15,15,0.04), 0 1px 2px rgba(14,15,15,0.02)',
-                'card-hover': '0 4px 8px rgba(14,15,15,0.06), 0 2px 4px rgba(14,15,15,0.04), 0 0 0 1px rgba(69,148,146,0.08)',
-                'card-elevated': '0 8px 24px rgba(14,15,15,0.08), 0 4px 8px rgba(14,15,15,0.04), 0 0 0 1px rgba(14,15,15,0.03)',
-                'premium': '0 12px 40px rgba(39,82,85,0.12), 0 4px 12px rgba(39,82,85,0.06), 0 0 0 1px rgba(69,148,146,0.1)',
-                'stat': '0 1px 3px rgba(14,15,15,0.04), 0 0 0 1px rgba(14,15,15,0.02)',
-                'stat-hover': '0 4px 12px rgba(14,15,15,0.06), 0 0 0 1px rgba(69,148,146,0.1)',
-                'dark-card': '0 2px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08)',
-                /* Glows subtils — brand-aligned */
-                'glow-teal': '0 0 0 1px rgba(69,148,146,0.15), 0 4px 20px rgba(69,148,146,0.08)',
-                'glow-coral': '0 0 0 1px rgba(228,140,117,0.15), 0 4px 20px rgba(228,140,117,0.08)',
-                /* Inner highlights — effet de profondeur */
-                'inner-highlight': 'inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 3px rgba(14,15,15,0.04), 0 4px 12px rgba(14,15,15,0.03)',
-                'inner-highlight-hover': 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 12px rgba(14,15,15,0.06), 0 8px 24px rgba(14,15,15,0.04)',
+                /* Système d'élévation progressif — teal-tinted */
+                'xs': '0 1px 2px rgba(39,82,85,0.05)',
+                'card': '0 1px 3px rgba(39,82,85,0.05), 0 1px 2px rgba(39,82,85,0.03), 0 0 0 1px rgba(69,148,146,0.06)',
+                'card-hover': '0 4px 12px rgba(39,82,85,0.08), 0 2px 4px rgba(39,82,85,0.05), 0 0 0 1px rgba(69,148,146,0.14)',
+                'card-elevated': '0 8px 28px rgba(39,82,85,0.10), 0 4px 8px rgba(39,82,85,0.05), 0 0 0 1px rgba(69,148,146,0.12)',
+                'premium': '0 12px 40px rgba(39,82,85,0.15), 0 4px 12px rgba(39,82,85,0.08), 0 0 0 1px rgba(69,148,146,0.15), 0 0 24px rgba(69,148,146,0.06)',
+                'stat': '0 1px 3px rgba(39,82,85,0.05), 0 0 0 1px rgba(69,148,146,0.06)',
+                'stat-hover': '0 4px 16px rgba(39,82,85,0.08), 0 0 0 1px rgba(69,148,146,0.14), 0 0 12px rgba(69,148,146,0.05)',
+                'dark-card': '0 2px 8px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.10)',
+                /* Glows — stronger teal presence */
+                'glow-teal': '0 0 0 1px rgba(69,148,146,0.20), 0 4px 24px rgba(69,148,146,0.12), 0 0 16px rgba(69,148,146,0.06)',
+                'glow-coral': '0 0 0 1px rgba(228,140,117,0.20), 0 4px 24px rgba(228,140,117,0.12), 0 0 16px rgba(228,140,117,0.06)',
+                'glow-green': '0 0 0 1px rgba(93,183,134,0.20), 0 4px 24px rgba(93,183,134,0.12), 0 0 16px rgba(93,183,134,0.06)',
+                /* Inner highlights — teal-tinted depth */
+                'inner-highlight': 'inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 3px rgba(39,82,85,0.05), 0 4px 12px rgba(39,82,85,0.04)',
+                'inner-highlight-hover': 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 12px rgba(39,82,85,0.08), 0 8px 24px rgba(39,82,85,0.05), 0 0 0 1px rgba(69,148,146,0.10)',
             },
             keyframes: {
                 'accordion-down': {
