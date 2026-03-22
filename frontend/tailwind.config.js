@@ -145,6 +145,26 @@ module.exports = {
                 'shimmer': {
                     from: { backgroundPosition: '-200% 0' },
                     to: { backgroundPosition: '200% 0' }
+                },
+                'enter': {
+                    from: { opacity: '0', transform: 'translateY(6px) scale(0.98)' },
+                    to: { opacity: '1', transform: 'translateY(0) scale(1)' }
+                },
+                'subtle-bounce': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-3px)' }
+                },
+                'progress-fill': {
+                    from: { width: '0%' },
+                    to: { width: 'var(--progress-width, 100%)' }
+                },
+                'glow-breathe': {
+                    '0%, 100%': { boxShadow: '0 0 0 0 rgba(69, 148, 146, 0)' },
+                    '50%': { boxShadow: '0 0 20px 4px rgba(69, 148, 146, 0.1)' }
+                },
+                'counter-up': {
+                    from: { opacity: '0', transform: 'translateY(8px)' },
+                    to: { opacity: '1', transform: 'translateY(0)' }
                 }
             },
             animation: {
@@ -156,7 +176,12 @@ module.exports = {
                 'scale-in': 'scale-in 0.2s ease-out',
                 'slide-up': 'slide-up 0.4s ease-out forwards',
                 'float': 'float 4s ease-in-out infinite',
-                'shimmer': 'shimmer 2s linear infinite'
+                'shimmer': 'shimmer 2s linear infinite',
+                'enter': 'enter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'subtle-bounce': 'subtle-bounce 3s ease-in-out infinite',
+                'progress-fill': 'progress-fill 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'glow-breathe': 'glow-breathe 3s ease-in-out infinite',
+                'counter-up': 'counter-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards'
             }
         }
     },

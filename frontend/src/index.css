@@ -277,7 +277,7 @@ select:-webkit-autofill {
 .stat-card-teal {
     border-left: 3px solid #459492;
     box-shadow: 0 1px 3px rgba(69, 148, 146, 0.08), 0 4px 12px rgba(69, 148, 146, 0.04);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stat-card-teal:hover {
     box-shadow: 0 4px 12px rgba(69, 148, 146, 0.12), 0 8px 24px rgba(69, 148, 146, 0.06);
@@ -285,7 +285,7 @@ select:-webkit-autofill {
 .stat-card-coral {
     border-left: 3px solid #E48C75;
     box-shadow: 0 1px 3px rgba(228, 140, 117, 0.08), 0 4px 12px rgba(228, 140, 117, 0.04);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stat-card-coral:hover {
     box-shadow: 0 4px 12px rgba(228, 140, 117, 0.12), 0 8px 24px rgba(228, 140, 117, 0.06);
@@ -302,7 +302,7 @@ select:-webkit-autofill {
     box-shadow: 0 0 0 1px rgba(93, 183, 134, 0.2),
                 0 2px 8px rgba(93, 183, 134, 0.1),
                 0 4px 16px rgba(69, 148, 146, 0.06);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .badge-unlocked-glow:hover {
     box-shadow: 0 0 0 1px rgba(93, 183, 134, 0.3),
@@ -313,7 +313,7 @@ select:-webkit-autofill {
 /* Badge card locked state */
 .badge-locked {
     filter: saturate(0.3);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .badge-locked:hover {
     filter: saturate(0.6);

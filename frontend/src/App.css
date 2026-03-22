@@ -27,7 +27,7 @@
 
 /* Action card hover effect — elegant lift */
 .action-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .action-card:hover {
@@ -78,7 +78,7 @@
 /* Floating action button */
 .fab {
     box-shadow: 0 4px 20px rgba(39, 82, 85, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fab:hover {
@@ -122,7 +122,7 @@
 
 /* Button hover lift */
 .btn-lift {
-    transition: transform 0.2s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-lift:hover {
@@ -133,15 +133,15 @@
     transform: translateY(0);
 }
 
-/* Staggered animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-.stagger-6 { animation-delay: 0.6s; }
-.stagger-7 { animation-delay: 0.7s; }
-.stagger-8 { animation-delay: 0.8s; }
+/* Staggered animation delays — 50ms intervals for faster cascade */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+.stagger-6 { animation-delay: 300ms; }
+.stagger-7 { animation-delay: 350ms; }
+.stagger-8 { animation-delay: 400ms; }
 
 /* Empty state illustration area */
 .empty-state {
@@ -174,12 +174,12 @@
 
 /* Card interactive — base hover lift */
 .card-interactive {
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-interactive:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(39, 82, 85, 0.08);
+    box-shadow: 0 8px 24px rgba(14,15,15,0.06), 0 0 0 1px rgba(69,148,146,0.1);
     border-color: rgba(69, 148, 146, 0.2);
 }
 
@@ -306,7 +306,7 @@ html {
 .btn-premium {
     background: linear-gradient(135deg, #275255 0%, #459492 100%);
     box-shadow: 0 2px 12px rgba(39, 82, 85, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
 }
@@ -324,7 +324,7 @@ html {
 /* Stat card with left accent border */
 .stat-card-accent {
     border-left: 3px solid var(--stat-accent-color, #459492);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stat-card-accent:hover {
@@ -368,7 +368,7 @@ html {
 
 /* === Safe button press feedback (replaces active:scale blur) === */
 .btn-press {
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-press:active {
