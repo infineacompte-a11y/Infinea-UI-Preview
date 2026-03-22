@@ -164,18 +164,18 @@ export default function LandingPage() {
           </div>
 
           {/* Stats — glass cards on hero */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
-            <div className="card-on-dark text-center rounded-2xl py-4 px-2 sm:py-5 sm:px-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">2-15</div>
-              <div className="text-[10px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-wider">min/session</div>
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mt-16 sm:mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
+            <div className="card-on-dark text-center rounded-xl sm:rounded-2xl py-3 px-1.5 sm:py-5 sm:px-4">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white">2-15</div>
+              <div className="text-[9px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-normal sm:tracking-wider leading-tight">minutes</div>
             </div>
-            <div className="card-on-dark text-center rounded-2xl py-4 px-2 sm:py-5 sm:px-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">700+</div>
-              <div className="text-[10px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-wider">micro-actions</div>
+            <div className="card-on-dark text-center rounded-xl sm:rounded-2xl py-3 px-1.5 sm:py-5 sm:px-4">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white">700+</div>
+              <div className="text-[9px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-normal sm:tracking-wider leading-tight">actions</div>
             </div>
-            <div className="card-on-dark text-center rounded-2xl py-4 px-2 sm:py-5 sm:px-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">100%</div>
-              <div className="text-[10px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-wider">RGPD conforme</div>
+            <div className="card-on-dark text-center rounded-xl sm:rounded-2xl py-3 px-1.5 sm:py-5 sm:px-4">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white">100%</div>
+              <div className="text-[9px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-normal sm:tracking-wider leading-tight">RGPD</div>
             </div>
           </div>
         </div>
