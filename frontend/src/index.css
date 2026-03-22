@@ -562,6 +562,24 @@ select:-webkit-autofill {
     letter-spacing: 0.01em;
 }
 
+/* Bordures premium — à peine perceptibles */
+.border-subtle { border-color: rgba(14,15,15,0.06); }
+.border-emphasis { border-color: rgba(69,148,146,0.2); }
+
+/* Séparateur premium — gradient horizontal */
+.separator-premium {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(14,15,15,0.08), transparent);
+    border: none;
+}
+
+/* Séparateur teal — pour les sections de marque */
+.separator-brand {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(69,148,146,0.2), transparent);
+    border: none;
+}
+
 /* === Section transition — soft gradient edge between sections === */
 .section-edge-top {
     position: relative;
