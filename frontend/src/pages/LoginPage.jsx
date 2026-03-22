@@ -87,9 +87,9 @@ export default function LoginPage() {
           <CardContent className="space-y-6 pt-4">
             {/* Google Login */}
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
-              <button
-                type="button"
-                className="w-full h-12 rounded-xl bg-white border border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 btn-press inline-flex items-center justify-center gap-2 text-sm font-medium"
+              <Button
+                variant="outline"
+                className="w-full h-12 rounded-xl bg-white border-[#E2E6EA] text-[#141E24] hover:bg-[#F8FAFB] shadow-sm hover:shadow-md transition-all duration-200 btn-press"
                 onClick={handleGoogleLogin}
                 data-testid="google-login-btn"
               >
@@ -112,7 +112,7 @@ export default function LoginPage() {
                   />
                 </svg>
                 Continuer avec Google
-              </button>
+              </Button>
             </div>
 
             <div className="relative">
