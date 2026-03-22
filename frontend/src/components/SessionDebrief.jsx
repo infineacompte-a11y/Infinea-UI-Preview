@@ -120,7 +120,7 @@ export default function SessionDebrief({ sessionId, duration, notes, onStartActi
               {nextActionId && onStartAction && (
                 <Button
                   size="sm"
-                  className="mt-3 w-full gap-2"
+                  className="mt-3 w-full gap-2 shadow-md hover:shadow-lg transition-all duration-200 btn-press"
                   onClick={() => onStartAction(nextActionId)}
                 >
                   <Sparkles className="w-3.5 h-3.5" />

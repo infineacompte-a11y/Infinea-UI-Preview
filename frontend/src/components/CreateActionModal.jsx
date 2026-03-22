@@ -87,7 +87,7 @@ export default function CreateActionModal({ open, onOpenChange, onActionCreated 
             />
             <Button
               onClick={handleGenerate}
-              className="w-full h-11 rounded-xl"
+              className="w-full h-11 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
               disabled={isGenerating || !description.trim()}
             >
               {isGenerating ? (

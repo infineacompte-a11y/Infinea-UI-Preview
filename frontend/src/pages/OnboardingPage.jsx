@@ -215,10 +215,10 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={goal.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl btn-press ${
                       selected
-                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
-                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20 scale-[1.01]"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md hover:scale-[1.01]"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("goals", goal.id)}
@@ -246,10 +246,10 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={slot.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl btn-press ${
                       selected
-                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
-                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20 scale-[1.01]"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md hover:scale-[1.01]"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("preferred_times", slot.id)}
@@ -280,10 +280,10 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={level.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl btn-press ${
                       selected
-                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
-                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20 scale-[1.01]"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md hover:scale-[1.01]"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => setProfile((p) => ({ ...p, energy_level: level.id }))}
@@ -313,10 +313,10 @@ export default function OnboardingPage() {
                 return (
                   <Card
                     key={interest.id}
-                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl ${
+                    className={`cursor-pointer transition-all duration-200 opacity-0 animate-fade-in rounded-xl btn-press ${
                       selected
-                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20"
-                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md"
+                        ? "bg-[#F0F7F7] border-[#459492] shadow-md ring-1 ring-[#459492]/20 scale-[1.01]"
+                        : "bg-white border-[#E2E6EA] shadow-sm hover:border-[#459492]/30 hover:shadow-md hover:scale-[1.01]"
                     }`}
                     style={{ animationDelay: `${100 + index * 50}ms`, animationFillMode: "forwards" }}
                     onClick={() => toggleArrayItem("interests", interest.id)}

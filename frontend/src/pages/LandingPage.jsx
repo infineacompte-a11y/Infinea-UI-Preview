@@ -237,9 +237,9 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {features.map((feature, i) => (
-              <Card key={i} className="group bg-white shadow-md hover:shadow-xl rounded-2xl border border-[#E2E6EA]/50 hover:border-[#459492]/20 transition-all duration-300">
+              <Card key={i} className="group bg-white shadow-md hover:shadow-xl rounded-2xl border border-[#E2E6EA]/50 hover:border-[#459492]/20 hover:-translate-y-1 transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#459492]/10 to-[#55B3AE]/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#459492]/10 to-[#55B3AE]/5 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(69,148,146,0.15)] transition-all duration-300">
                     <feature.icon className="w-6 h-6 text-[#459492]" />
                   </div>
                   <h3 className="font-sans font-semibold tracking-tight text-xl font-semibold mb-2 text-[#141E24]">{feature.title}</h3>
@@ -252,9 +252,9 @@ export default function LandingPage() {
           {/* Categories */}
           <div className="grid md:grid-cols-3 gap-6">
             {categories.map((cat, i) => (
-              <Card key={i} className="bg-white shadow-md hover:shadow-lg rounded-2xl border border-[#E2E6EA]/50 transition-all duration-300">
+              <Card key={i} className="group bg-white shadow-md hover:shadow-lg rounded-2xl border border-[#E2E6EA]/50 hover:-translate-y-1 transition-all duration-300">
                 <CardContent className="p-6">
-                  <cat.icon className={`w-8 h-8 ${cat.color} mb-4`} />
+                  <cat.icon className={`w-8 h-8 ${cat.color} mb-4 group-hover:scale-110 transition-transform duration-300`} />
                   <h3 className="font-sans font-semibold tracking-tight text-xl font-medium mb-3 text-[#141E24]">{cat.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.examples.map((ex, j) => (
@@ -286,8 +286,8 @@ export default function LandingPage() {
               { step: "03", title: "Choisissez l'énergie", desc: "Basse, moyenne ou haute" },
               { step: "04", title: "Agissez !", desc: "L'IA vous guide" },
             ].map((item, i) => (
-              <div key={i} className="relative group">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-white/15 transition-colors duration-300">
+              <div key={i} className="relative group hover:-translate-y-1 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-white/15 group-hover:border-white/20 group-hover:shadow-[0_0_20px_rgba(125,211,208,0.15)] transition-all duration-300">
                   <span className="text-xl font-sans font-semibold tracking-tight font-bold text-[#7DD3D0]">{item.step}</span>
                 </div>
                 <h3 className="font-sans font-semibold tracking-tight text-lg font-semibold mb-2 text-white">{item.title}</h3>
@@ -342,7 +342,7 @@ export default function LandingPage() {
                   </ul>
                   <Link to={plan.link || "/register"}>
                     <button
-                      className={`w-full h-11 rounded-full font-medium transition-all ${plan.popular ? "btn-pill-primary" : "bg-[#F0F7F7] text-[#275255] hover:bg-[#E2E6EA] rounded-full"}`}
+                      className={`w-full h-11 rounded-full font-medium transition-all btn-press ${plan.popular ? "btn-pill-primary" : "bg-[#F0F7F7] text-[#275255] hover:bg-[#E2E6EA] rounded-full"}`}
                       data-testid={`pricing-${plan.name.toLowerCase()}-btn`}
                     >
                       {plan.cta}

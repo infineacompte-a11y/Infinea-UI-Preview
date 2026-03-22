@@ -148,7 +148,7 @@ export default function AICoachCard({ onStartAction }) {
       {/* Gradient background glow — color changes by mode */}
       <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br ${mode.glowFrom} via-primary/10 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500`} />
 
-      <Card className="relative border-primary/20 bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden">
+      <Card className="relative border-primary/20 bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
         <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-full" />
 
         <CardContent className="relative p-6">
@@ -210,7 +210,7 @@ export default function AICoachCard({ onStartAction }) {
                 {actionId && onStartAction && (
                   <Button
                     size="sm"
-                    className="mt-3 w-full gap-2"
+                    className="mt-3 w-full gap-2 shadow-md hover:shadow-lg transition-all duration-200 btn-press"
                     onClick={() => onStartAction(actionId)}
                   >
                     <Sparkles className="w-3.5 h-3.5" />

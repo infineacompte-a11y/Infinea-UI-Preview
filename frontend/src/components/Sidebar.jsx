@@ -104,9 +104,9 @@ function NavItem({ to, label, icon: Icon, isActive, isNotif, unreadCount, mobile
     <Link
       key={to}
       to={to}
-      className={`nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492]/50 focus-visible:outline-none ${
+      className={`nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#459492]/50 focus-visible:outline-none active:scale-[0.98] active:transition-[transform] active:duration-75 ${
         isActive
-          ? "bg-gradient-to-r from-[#459492]/15 to-[#55B3AE]/8 text-[#275255] font-semibold shadow-sm border border-[#459492]/20 border-l-[3px] border-l-[#459492]"
+          ? "bg-gradient-to-r from-[#459492]/15 to-[#55B3AE]/8 text-[#275255] font-semibold shadow-sm shadow-[0_1px_3px_rgba(39,82,85,0.06)] border border-[#459492]/20 border-l-[3px] border-l-[#459492]"
           : "text-[#667085] hover:text-[#275255] hover:bg-[#459492]/[0.06] border border-transparent"
       }`}
       style={animDelay != null ? { animationDelay: `${animDelay}ms`, animationFillMode: "forwards" } : undefined}

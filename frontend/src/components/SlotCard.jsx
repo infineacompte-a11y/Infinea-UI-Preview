@@ -127,7 +127,7 @@ export default function SlotCard({ slot, onDismiss, onRefresh }) {
   const Icon = categoryIcons[category] || Sparkles;
 
   return (
-    <Card className="bg-gradient-to-br from-primary/10 to-brand-secondary/10 border-primary/30 shadow-md animate-fade-in" data-testid="slot-card">
+    <Card className="bg-gradient-to-br from-primary/10 to-brand-secondary/10 border-primary/30 shadow-md animate-fade-in hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" data-testid="slot-card">
       <CardContent className="p-4">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -162,7 +162,7 @@ export default function SlotCard({ slot, onDismiss, onRefresh }) {
         <div className="flex gap-2">
           <Button
             onClick={handleStart}
-            className="flex-1 rounded-xl"
+            className="flex-1 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 btn-press"
             data-testid="start-slot-btn"
           >
             <Play className="w-4 h-4 mr-2" />
@@ -173,7 +173,7 @@ export default function SlotCard({ slot, onDismiss, onRefresh }) {
             size="icon"
             onClick={handleDismiss}
             disabled={isDismissing}
-            className="rounded-xl"
+            className="rounded-xl transition-all duration-200 btn-press"
             data-testid="dismiss-slot-btn"
           >
             <X className="w-4 h-4" />

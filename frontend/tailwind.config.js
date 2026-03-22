@@ -166,6 +166,60 @@ module.exports = {
                 'counter-up': {
                     from: { opacity: '0', transform: 'translateY(8px)' },
                     to: { opacity: '1', transform: 'translateY(0)' }
+                },
+                /* === Micro-interactions keyframes === */
+                'tab-slide-in': {
+                    from: { opacity: '0', transform: 'translateX(8px)' },
+                    to: { opacity: '1', transform: 'translateX(0)' }
+                },
+                'tab-slide-out': {
+                    from: { opacity: '1', transform: 'translateX(0)' },
+                    to: { opacity: '0', transform: 'translateX(-8px)' }
+                },
+                'modal-enter': {
+                    from: { opacity: '0', transform: 'scale(0.96) translateY(8px)' },
+                    to: { opacity: '1', transform: 'scale(1) translateY(0)' }
+                },
+                'modal-overlay-enter': {
+                    from: { opacity: '0', backdropFilter: 'blur(0px)' },
+                    to: { opacity: '1', backdropFilter: 'blur(8px)' }
+                },
+                'ripple': {
+                    to: { transform: 'scale(2.5)', opacity: '0' }
+                },
+                'success-pop': {
+                    '0%': { transform: 'scale(0.8)', opacity: '0' },
+                    '50%': { transform: 'scale(1.08)' },
+                    '100%': { transform: 'scale(1)', opacity: '1' }
+                },
+                'success-check': {
+                    '0%': { strokeDashoffset: '24' },
+                    '100%': { strokeDashoffset: '0' }
+                },
+                'confetti-fall': {
+                    '0%': { transform: 'translateY(-10px) rotate(0deg)', opacity: '1' },
+                    '100%': { transform: 'translateY(40px) rotate(360deg)', opacity: '0' }
+                },
+                'slide-down-fade': {
+                    from: { opacity: '0', transform: 'translateY(-4px)' },
+                    to: { opacity: '1', transform: 'translateY(0)' }
+                },
+                'slide-up-fade': {
+                    from: { opacity: '0', transform: 'translateY(4px)' },
+                    to: { opacity: '1', transform: 'translateY(0)' }
+                },
+                'expand': {
+                    from: { opacity: '0', height: '0', transform: 'scaleY(0.95)' },
+                    to: { opacity: '1', height: 'var(--expand-height, auto)', transform: 'scaleY(1)' }
+                },
+                'number-tick': {
+                    '0%': { transform: 'translateY(100%)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' }
+                },
+                'shake': {
+                    '0%, 100%': { transform: 'translateX(0)' },
+                    '20%, 60%': { transform: 'translateX(-3px)' },
+                    '40%, 80%': { transform: 'translateX(3px)' }
                 }
             },
             animation: {
@@ -182,7 +236,19 @@ module.exports = {
                 'subtle-bounce': 'subtle-bounce 3s ease-in-out infinite',
                 'progress-fill': 'progress-fill 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                 'glow-breathe': 'glow-breathe 3s ease-in-out infinite',
-                'counter-up': 'counter-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                'counter-up': 'counter-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                /* Micro-interactions */
+                'tab-slide-in': 'tab-slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'modal-enter': 'modal-enter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'modal-overlay': 'modal-overlay-enter 0.2s ease-out forwards',
+                'success-pop': 'success-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'success-check': 'success-check 0.3s ease-out 0.2s forwards',
+                'confetti': 'confetti-fall 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'slide-down-fade': 'slide-down-fade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'slide-up-fade': 'slide-up-fade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'expand': 'expand 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'number-tick': 'number-tick 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'shake': 'shake 0.4s ease-in-out'
             }
         }
     },

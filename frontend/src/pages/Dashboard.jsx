@@ -316,10 +316,10 @@ export default function Dashboard() {
                     <button
                       key={level.value}
                       onClick={() => setEnergyLevel(level.value)}
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border hover:scale-105 active:translate-y-0.5 transition-all duration-200 ${
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border btn-press transition-all duration-200 ${
                         energyLevel === level.value
-                          ? `${level.border} ${level.bg} ${level.color} ring-2 ring-offset-2 ring-offset-white ${level.ring} shadow-md`
-                          : "border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F8FAFB]"
+                          ? `${level.border} ${level.bg} ${level.color} ring-2 ring-offset-2 ring-offset-white ${level.ring} shadow-md scale-[1.02]`
+                          : "border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F8FAFB] hover:scale-[1.02]"
                       }`}
                       data-testid={`energy-${level.value}-btn`}
                     >
@@ -415,7 +415,7 @@ export default function Dashboard() {
                 </Link>
               )}
 
-              <div className="grid gap-4">
+              <div className="grid gap-4 stagger-enter">
                 {suggestions.recommended_actions?.map((action, i) => {
                   const Icon = categoryIcons[action.category] || Sparkles;
                   return (
@@ -466,7 +466,7 @@ export default function Dashboard() {
           {!suggestions && (
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "450ms" }}>
               <h2 className="font-sans font-semibold tracking-tight text-lg font-semibold text-[#667085] mb-4">Explorez nos catégories</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 stagger-enter">
                 {Object.entries(categoryLabels).map(([key, label]) => {
                   const Icon = categoryIcons[key];
                   return (

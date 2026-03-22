@@ -135,8 +135,8 @@ export default function ActiveSession() {
         <div className="max-w-md w-full text-center">
           {/* Celebration icon with scale animation */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#5DB786]/20 to-[#5DB786]/5 flex items-center justify-center mx-auto mb-6 ring-2 ring-[#5DB786]/20 animate-[pulse_2s_ease-in-out_1]">
-              <Trophy className="w-12 h-12 text-[#5DB786]" />
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#5DB786]/20 to-[#5DB786]/5 flex items-center justify-center mx-auto mb-6 ring-2 ring-[#5DB786]/20 success-celebrate">
+              <Trophy className="w-12 h-12 text-[#5DB786] animate-success-pop" />
             </div>
           </div>
 
@@ -266,6 +266,7 @@ export default function ActiveSession() {
                     strokeDasharray: circumference,
                     strokeDashoffset: strokeDashoffset,
                     transition: "stroke-dashoffset 1s linear",
+                    filter: "drop-shadow(0 0 6px rgba(69, 148, 146, 0.3))",
                   }}
                 />
               </svg>
@@ -307,10 +308,10 @@ export default function ActiveSession() {
                 {action.instructions.map((instruction, i) => (
                   <div
                     key={i}
-                    className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-200 cursor-pointer ${
-                      i === currentStep ? "bg-[#459492]/40 border border-[#459492]/30 shadow-sm" : ""
-                    } ${i < currentStep ? "opacity-50" : ""} ${
-                      i > currentStep ? "hover:bg-muted/20" : ""
+                    className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${
+                      i === currentStep ? "bg-[#459492]/40 border border-[#459492]/30 shadow-sm scale-[1.01]" : ""
+                    } ${i < currentStep ? "opacity-50 scale-[0.99]" : ""} ${
+                      i > currentStep ? "hover:bg-muted/20 hover:scale-[1.005]" : ""
                     }`}
                     onClick={() => setCurrentStep(i)}
                   >
