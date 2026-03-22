@@ -156,18 +156,18 @@ export default function ProfilePage() {
               <CardTitle className="font-sans font-semibold tracking-tight text-lg">Résumé</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="stat-card-teal p-4 rounded-xl bg-gradient-to-br from-[#459492]/20 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="stat-card-teal p-3 sm:p-4 rounded-xl bg-gradient-to-br from-[#459492]/20 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
                   <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-primary tabular-nums">
                     {user?.total_time_invested || 0}
                   </p>
-                  <p className="text-sm text-muted-foreground">minutes investies</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">minutes investies</p>
                 </div>
-                <div className="stat-card-coral p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="stat-card-coral p-3 sm:p-4 rounded-xl bg-gradient-to-br from-[#E48C75]/20 to-transparent border border-border/50 hover:-translate-y-0.5 transition-all duration-300">
                   <p className="text-2xl font-sans font-semibold tracking-tight font-bold text-[#E48C75] tabular-nums">
                     {user?.streak_days || 0}
                   </p>
-                  <p className="text-sm text-muted-foreground">jours de streak</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">jours de streak</p>
                 </div>
               </div>
             </CardContent>

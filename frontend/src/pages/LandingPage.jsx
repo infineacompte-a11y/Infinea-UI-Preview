@@ -164,18 +164,18 @@ export default function LandingPage() {
           </div>
 
           {/* Stats — glass cards on hero */}
-          <div className="grid grid-cols-3 gap-4 md:gap-6 mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
-            <div className="card-on-dark text-center rounded-2xl py-5 px-4">
-              <div className="text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">2-15</div>
-              <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">minutes/session</div>
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mt-20 max-w-3xl mx-auto animate-fade-in stagger-4">
+            <div className="card-on-dark text-center rounded-2xl py-4 px-2 sm:py-5 sm:px-4">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">2-15</div>
+              <div className="text-[10px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-wider">min/session</div>
             </div>
-            <div className="card-on-dark text-center rounded-2xl py-5 px-4">
-              <div className="text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">700+</div>
-              <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">micro-actions et +</div>
+            <div className="card-on-dark text-center rounded-2xl py-4 px-2 sm:py-5 sm:px-4">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">700+</div>
+              <div className="text-[10px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-wider">micro-actions</div>
             </div>
-            <div className="card-on-dark text-center rounded-2xl py-5 px-4">
-              <div className="text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">100%</div>
-              <div className="text-xs text-white/50 mt-1.5 uppercase tracking-wider">RGPD conforme</div>
+            <div className="card-on-dark text-center rounded-2xl py-4 px-2 sm:py-5 sm:px-4">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight font-bold text-white tracking-tight">100%</div>
+              <div className="text-[10px] sm:text-xs text-white/50 mt-1 sm:mt-1.5 uppercase tracking-wider">RGPD conforme</div>
             </div>
           </div>
         </div>
@@ -383,7 +383,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <InFineaLogo size={32} withText variant="light" />
-            <div className="flex items-center gap-6 text-sm text-white/70">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70">
               <span>&copy; 2025 InFinea</span>
               <Link to="/privacy" className="hover:text-white transition-colors">Confidentialité</Link>
               <Link to="/cgu" className="hover:text-white transition-colors">CGU</Link>

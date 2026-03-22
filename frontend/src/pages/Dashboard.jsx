@@ -307,7 +307,7 @@ export default function Dashboard() {
               {/* Energy Level */}
               <div>
                 <span className="font-sans font-semibold tracking-tight text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Niveau d'énergie</span>
-                <div className="flex gap-3">
+                <div className="flex gap-2 sm:gap-3">
                   {[
                     { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/40", border: "border-[#459492]", ring: "ring-[#459492]" },
                     { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#E48C75]", bg: "bg-[#E48C75]/40", border: "border-[#E48C75]", ring: "ring-[#E48C75]" },
@@ -316,15 +316,15 @@ export default function Dashboard() {
                     <button
                       key={level.value}
                       onClick={() => setEnergyLevel(level.value)}
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border btn-press transition-all duration-200 ${
+                      className={`flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-3 px-2 sm:px-4 rounded-xl border btn-press transition-all duration-200 ${
                         energyLevel === level.value
                           ? `${level.border} ${level.bg} ${level.color} ring-2 ring-offset-2 ring-offset-white ${level.ring} shadow-md scale-[1.02]`
                           : "border-[#E2E6EA] text-[#667085] hover:border-[#459492]/50 hover:bg-[#F8FAFB] hover:scale-[1.02]"
                       }`}
                       data-testid={`energy-${level.value}-btn`}
                     >
-                      <level.icon className="w-5 h-5" />
-                      <span className="text-sm">{level.label}</span>
+                      <level.icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                      <span className="text-xs sm:text-sm">{level.label}</span>
                     </button>
                   ))}
                 </div>

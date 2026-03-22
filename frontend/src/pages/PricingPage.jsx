@@ -470,13 +470,13 @@ export default function PricingPage() {
               {/* Detailed comparison table */}
               <Card className="bg-white shadow-sm border border-[#E2E6EA] hover:border-[#459492]/20 transition-all duration-200">
                 <CardContent className="p-0">
-                  <div className="overflow-x-auto">
-                    <table className="w-full">
+                  <div className="overflow-x-auto -mx-px">
+                    <table className="w-full min-w-[540px]">
                       <thead>
                         <tr className="border-b">
-                          <th className="text-left p-4 font-sans font-semibold tracking-tight font-semibold">Fonctionnalité</th>
-                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold">Gratuit</th>
-                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold text-[#E48C75]">
+                          <th className="text-left p-4 font-sans font-semibold tracking-tight font-semibold whitespace-nowrap">Fonctionnalité</th>
+                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold whitespace-nowrap">Gratuit</th>
+                          <th className="text-center p-4 font-sans font-semibold tracking-tight font-semibold text-[#E48C75] whitespace-nowrap">
                             <div className="flex items-center justify-center gap-1">
                               <Crown className="w-4 h-4 text-[#E48C75]" /> Premium
                             </div>
