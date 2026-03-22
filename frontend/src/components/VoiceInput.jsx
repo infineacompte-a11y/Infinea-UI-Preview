@@ -202,7 +202,7 @@ export default function VoiceInput({
         )}
         {isListening && (
           <>
-            <span className="absolute inset-0 rounded-xl bg-[#E48C75]/30 animate-ping" />
+            <span className="absolute inset-0 rounded-xl bg-[#E48C75]/40 animate-ping" />
             <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-[#E48C75] animate-pulse" />
           </>
         )}

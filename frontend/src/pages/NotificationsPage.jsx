@@ -45,11 +45,11 @@ const SMART_COLOR_MAP = {
 };
 
 const SMART_ICON_COLOR_MAP = {
-  streak_alert: "text-[#E48C75] bg-[#E48C75]/30",
-  objective_nudge: "text-[#55B3AE] bg-[#55B3AE]/30",
+  streak_alert: "text-[#E48C75] bg-[#E48C75]/40",
+  objective_nudge: "text-[#55B3AE] bg-[#55B3AE]/40",
   routine_reminder: "text-primary bg-primary/10",
-  milestone: "text-[#5DB786] bg-[#5DB786]/30",
-  coach_tip: "text-[#459492] bg-[#459492]/30",
+  milestone: "text-[#5DB786] bg-[#5DB786]/40",
+  coach_tip: "text-[#459492] bg-[#459492]/40",
 };
 
 /** Group notifications by date label */
@@ -263,7 +263,7 @@ export default function NotificationsPage() {
                   <Icon className="w-4 h-4" />
                   {tab.label}
                   {tab.badge && (
-                    <Badge className="h-4 px-1.5 text-[9px] bg-[#459492]/30 text-[#459492] border-[#459492]/20 ml-0.5">
+                    <Badge className="h-4 px-1.5 text-[9px] bg-[#459492]/40 text-[#459492] border-[#459492]/20 ml-0.5">
                       {tab.badge}
                     </Badge>
                   )}
@@ -413,7 +413,7 @@ export default function NotificationsPage() {
                             >
                               <div className="flex items-start gap-3">
                                 <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                                  notif.read ? "bg-muted" : "bg-[#E48C75]/30"
+                                  notif.read ? "bg-muted" : "bg-[#E48C75]/40"
                                 }`}>
                                   <Icon className={`w-4 h-4 ${notif.read ? "text-muted-foreground" : "text-[#E48C75]"}`} />
                                 </div>

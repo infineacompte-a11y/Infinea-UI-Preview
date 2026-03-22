@@ -58,17 +58,17 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  learning: "text-[#459492] bg-[#459492]/30",
-  productivity: "text-[#E48C75] bg-[#E48C75]/30",
-  well_being: "text-[#5DB786] bg-[#5DB786]/30",
-  creativity: "text-[#55B3AE] bg-[#55B3AE]/30",
-  fitness: "text-[#E48C75] bg-[#E48C75]/30",
-  mindfulness: "text-[#459492] bg-[#459492]/30",
-  leadership: "text-[#7B8FA1] bg-[#7B8FA1]/30",
-  finance: "text-[#2E9B6A] bg-[#2E9B6A]/30",
-  relations: "text-[#C4806E] bg-[#C4806E]/30",
-  mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/30",
-  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/30",
+  learning: "text-[#459492] bg-[#459492]/40",
+  productivity: "text-[#E48C75] bg-[#E48C75]/40",
+  well_being: "text-[#5DB786] bg-[#5DB786]/40",
+  creativity: "text-[#55B3AE] bg-[#55B3AE]/40",
+  fitness: "text-[#E48C75] bg-[#E48C75]/40",
+  mindfulness: "text-[#459492] bg-[#459492]/40",
+  leadership: "text-[#7B8FA1] bg-[#7B8FA1]/40",
+  finance: "text-[#2E9B6A] bg-[#2E9B6A]/40",
+  relations: "text-[#C4806E] bg-[#C4806E]/40",
+  mental_health: "text-[#6EAAA8] bg-[#6EAAA8]/40",
+  entrepreneurship: "text-[#E48C75] bg-[#E48C75]/40",
 };
 
 const categoryLabels = {
@@ -190,7 +190,7 @@ export default function Dashboard() {
             <div className="grid grid-cols-3 gap-3 mt-6">
               <div className="card-on-dark rounded-xl p-3 opacity-0 animate-fade-in" style={{ animationDelay: "100ms" }}>
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#5DB786]/30 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-lg bg-[#5DB786]/40 flex items-center justify-center">
                     <TrendingUp className="w-4 h-4 text-[#5DB786]" />
                   </div>
                   <div>
@@ -201,7 +201,7 @@ export default function Dashboard() {
               </div>
               <div className="card-on-dark rounded-xl p-3 opacity-0 animate-fade-in" style={{ animationDelay: "150ms" }}>
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#E48C75]/30 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-lg bg-[#E48C75]/40 flex items-center justify-center">
                     <Flame className="w-4 h-4 text-[#E48C75]" />
                   </div>
                   <div>
@@ -217,7 +217,7 @@ export default function Dashboard() {
               </div>
               <div className="card-on-dark rounded-xl p-3 opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#459492]/30 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-lg bg-[#459492]/40 flex items-center justify-center">
                     <Sparkles className="w-4 h-4 text-[#55B3AE]" />
                   </div>
                   <div>
@@ -243,7 +243,7 @@ export default function Dashboard() {
 
           {/* AI Coach — first thing the user sees */}
           <div className="opacity-0 animate-fade-in relative" style={{ animationDelay: "250ms" }}>
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#459492]/18 via-[#55B3AE]/12 to-[#5DB786]/14 blur-2xl pointer-events-none animate-pulse-glow" />
+            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-r from-[#459492]/30 via-[#55B3AE]/20 to-[#5DB786]/24 blur-2xl pointer-events-none animate-pulse-glow" />
             <div className="relative">
               <AICoachCard onStartAction={startSession} />
             </div>
@@ -309,9 +309,9 @@ export default function Dashboard() {
                 <span className="font-sans font-semibold tracking-tight text-sm font-semibold uppercase tracking-wider text-[#667085] block mb-4">Niveau d'énergie</span>
                 <div className="flex gap-3">
                   {[
-                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/30", border: "border-[#459492]", ring: "ring-[#459492]" },
-                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#E48C75]", bg: "bg-[#E48C75]/30", border: "border-[#E48C75]", ring: "ring-[#E48C75]" },
-                    { value: "high", label: "Haute", icon: BatteryFull, color: "text-[#5DB786]", bg: "bg-[#5DB786]/30", border: "border-[#5DB786]", ring: "ring-[#5DB786]" },
+                    { value: "low", label: "Basse", icon: BatteryLow, color: "text-[#459492]", bg: "bg-[#459492]/40", border: "border-[#459492]", ring: "ring-[#459492]" },
+                    { value: "medium", label: "Moyenne", icon: BatteryMedium, color: "text-[#E48C75]", bg: "bg-[#E48C75]/40", border: "border-[#E48C75]", ring: "ring-[#E48C75]" },
+                    { value: "high", label: "Haute", icon: BatteryFull, color: "text-[#5DB786]", bg: "bg-[#5DB786]/40", border: "border-[#5DB786]", ring: "ring-[#5DB786]" },
                   ].map((level) => (
                     <button
                       key={level.value}
@@ -438,7 +438,7 @@ export default function Dashboard() {
                                   <Badge variant="secondary" className="text-xs">Premium</Badge>
                                 )}
                                 {i === 0 && (
-                                  <Badge className="text-xs bg-[#459492]/30 text-[#275255] border border-[#459492]/30 shadow-sm">Recommandé</Badge>
+                                  <Badge className="text-xs bg-[#459492]/40 text-[#275255] border border-[#459492]/30 shadow-sm">Recommandé</Badge>
                                 )}
                                 {suggestions.scoring_metadata?.scored && (
                                   <Badge variant="outline" className="text-xs border-[#459492]/40 text-[#459492]">Personnalisé</Badge>

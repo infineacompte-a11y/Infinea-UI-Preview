@@ -23,7 +23,7 @@ function CoachMessage({ msg }) {
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-3 animate-fade-in`}>
       {!isUser && (
-        <div className="w-7 h-7 rounded-lg bg-[#459492]/30 flex items-center justify-center shrink-0 mr-2 mt-1">
+        <div className="w-7 h-7 rounded-lg bg-[#459492]/40 flex items-center justify-center shrink-0 mr-2 mt-1">
           <Brain className="w-3.5 h-3.5 text-[#459492]" />
         </div>
       )}
@@ -211,7 +211,7 @@ export default function CoachFAB() {
               </div>
             ) : messages.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                <div className="w-16 h-16 rounded-2xl bg-[#459492]/30 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-[#459492]/40 flex items-center justify-center mb-4">
                   <Brain className="w-8 h-8 text-[#459492]" />
                 </div>
                 <h4 className="font-sans font-semibold tracking-tight font-semibold text-base mb-1 text-[#141E24]">Ton coach personnel</h4>
@@ -241,7 +241,7 @@ export default function CoachFAB() {
                 ))}
                 {isSending && (
                   <div className="flex justify-start mb-3">
-                    <div className="w-7 h-7 rounded-lg bg-[#459492]/30 flex items-center justify-center shrink-0 mr-2 mt-1">
+                    <div className="w-7 h-7 rounded-lg bg-[#459492]/40 flex items-center justify-center shrink-0 mr-2 mt-1">
                       <Brain className="w-3.5 h-3.5 text-[#459492]" />
                     </div>
                     <div className="bg-white border border-[#E2E6EA] shadow-sm rounded-2xl rounded-bl-md px-4 py-3">

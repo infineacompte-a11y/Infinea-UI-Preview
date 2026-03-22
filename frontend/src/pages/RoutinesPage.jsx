@@ -46,10 +46,10 @@ import { toast } from "sonner";
 
 // ─── Constants ──────────────────────────────────────────
 const TIME_OF_DAY = [
-  { value: "morning", label: "Matin", icon: Sunrise, color: "text-[#E48C75] bg-[#E48C75]/30 border-[#E48C75]/20" },
-  { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75] bg-[#E48C75]/30 border-[#E48C75]/20" },
+  { value: "morning", label: "Matin", icon: Sunrise, color: "text-[#E48C75] bg-[#E48C75]/40 border-[#E48C75]/20" },
+  { value: "afternoon", label: "Après-midi", icon: Sun, color: "text-[#E48C75] bg-[#E48C75]/40 border-[#E48C75]/20" },
   { value: "evening", label: "Soir", icon: Moon, color: "text-brand-teal bg-brand-teal/10 border-brand-teal/20" },
-  { value: "anytime", label: "Flexible", icon: Infinity, color: "text-[#5DB786] bg-[#5DB786]/30 border-[#5DB786]/20" },
+  { value: "anytime", label: "Flexible", icon: Infinity, color: "text-[#5DB786] bg-[#5DB786]/40 border-[#5DB786]/20" },
 ];
 
 const FREQUENCY_OPTIONS = [
@@ -295,7 +295,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch, index = 0 
               {freqLabel(routine.frequency)}
             </Badge>
             {isDoneToday && (
-              <Badge variant="outline" className="text-[10px] rounded-lg bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/20">
+              <Badge variant="outline" className="text-[10px] rounded-lg bg-[#5DB786]/40 text-[#5DB786] border-[#5DB786]/20">
                 <CheckCircle2 className="w-2.5 h-2.5 mr-0.5" />
                 Fait
               </Badge>
@@ -393,7 +393,7 @@ function HabitCard({ routine, onEdit, onToggle, onComplete, onLaunch, index = 0 
           )}
           {!isDoneToday && routine.is_active && (
             <Button size="sm" variant="outline"
-              className="h-7 text-xs gap-1 rounded-xl border-[#5DB786]/30 text-[#5DB786] hover:bg-[#5DB786]/30 transition-all duration-200 btn-press"
+              className="h-7 text-xs gap-1 rounded-xl border-[#5DB786]/30 text-[#5DB786] hover:bg-[#5DB786]/40 transition-all duration-200 btn-press"
               onClick={(e) => { e.stopPropagation(); onComplete(); }}>
               <CheckCircle2 className="w-3 h-3" />
               Fait
@@ -633,7 +633,7 @@ export default function RoutinesPage() {
                   )}
                 </div>
                 {doneToday === activeRoutines.length && activeRoutines.length > 0 && (
-                  <Badge className="text-[10px] rounded-lg bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/20">
+                  <Badge className="text-[10px] rounded-lg bg-[#5DB786]/40 text-[#5DB786] border-[#5DB786]/20">
                     <Sparkles className="w-2.5 h-2.5 mr-0.5" />
                     Journée parfaite
                   </Badge>
@@ -707,7 +707,7 @@ export default function RoutinesPage() {
                   <Card className="p-4 mt-4 border-[#E48C75]/20 bg-[#E48C75]/5 text-center">
                     <p className="text-sm text-muted-foreground mb-2">Limite de {maxRoutines} habitudes atteinte</p>
                     <Button variant="outline" size="sm"
-                      className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/30 rounded-xl transition-all duration-200 btn-press"
+                      className="border-[#E48C75]/30 text-[#E48C75] hover:bg-[#E48C75]/40 rounded-xl transition-all duration-200 btn-press"
                       onClick={() => window.location.href = "/pricing"}>
                       <Crown className="w-3.5 h-3.5 mr-1.5 text-[#E48C75]" />
                       Passer en Premium
@@ -844,7 +844,7 @@ export default function RoutinesPage() {
                           <span className="flex-1 text-sm truncate">{item.title}</span>
                           <span className="text-xs text-muted-foreground shrink-0 tabular-nums">{item.duration_minutes} min</span>
                           <button type="button" onClick={() => removeItem(idx)}
-                            className="p-1 rounded hover:bg-[#E48C75]/30 text-muted-foreground hover:text-[#E48C75] transition-colors opacity-0 group-hover:opacity-100">
+                            className="p-1 rounded hover:bg-[#E48C75]/40 text-muted-foreground hover:text-[#E48C75] transition-colors opacity-0 group-hover:opacity-100">
                             <X className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -876,7 +876,7 @@ export default function RoutinesPage() {
 
               <DialogFooter className="flex-col sm:flex-row gap-2">
                 {editingRoutine && (
-                  <Button variant="outline" className="text-[#E48C75] border-[#E48C75]/30 hover:bg-[#E48C75]/30 sm:mr-auto rounded-xl transition-all duration-200"
+                  <Button variant="outline" className="text-[#E48C75] border-[#E48C75]/30 hover:bg-[#E48C75]/40 sm:mr-auto rounded-xl transition-all duration-200"
                     onClick={() => { setDeleteConfirm(editingRoutine.routine_id); setShowDialog(false); }}>
                     <Trash2 className="w-4 h-4 mr-1.5" />
                     Supprimer

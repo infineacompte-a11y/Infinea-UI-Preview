@@ -8,24 +8,24 @@
     :root {
         /* === InFinea Design System v2.0 — Light Mode Premium === */
 
-        /* Surfaces & Backgrounds — teal-tinted base */
-        --background: 172 22% 97%;        /* Teal-tinted off-white */
+        /* Surfaces & Backgrounds — immersive teal canvas */
+        --background: 172 35% 93%;        /* Visible mint canvas — no longer white */
         --foreground: 200 25% 10%;         /* #141E24 — rich dark */
-        --card: 170 15% 99%;              /* Very subtle teal-white */
+        --card: 172 25% 97%;              /* Teal-tinted card surface */
         --card-foreground: 200 25% 10%;    /* #141E24 */
-        --popover: 0 0% 100%;             /* #FFFFFF */
+        --popover: 172 20% 98%;           /* Slightly tinted popover */
         --popover-foreground: 200 25% 10%; /* #141E24 */
 
         /* Primary — #275255 (dark teal) */
         --primary: 184 37% 24%;
         --primary-foreground: 0 0% 100%;
 
-        /* Secondary — soft teal surface */
-        --secondary: 178 25% 95%;          /* Très léger teal */
+        /* Secondary — visible teal surface */
+        --secondary: 172 30% 92%;          /* Clear teal tint */
         --secondary-foreground: 184 37% 24%;
 
-        /* Muted — subdued elements, teal-tinted */
-        --muted: 172 15% 94%;              /* Teal-tinted muted */
+        /* Muted — teal-infused */
+        --muted: 172 25% 90%;              /* Strong teal muted */
         --muted-foreground: 200 12% 42%;   /* #5E717E */
 
         /* Accent — Brand Teal #459492 */
@@ -37,8 +37,8 @@
         --destructive-foreground: 0 0% 100%;
 
         /* Borders & Inputs — teal-tinted */
-        --border: 172 15% 88%;             /* Teal-tinted border */
-        --input: 172 12% 89%;
+        --border: 172 25% 85%;             /* Visible teal border */
+        --input: 172 20% 87%;
         --ring: 178 36% 43%;               /* Brand Teal focus ring */
 
         /* Charts — brand-aligned palette */
@@ -50,11 +50,11 @@
 
         --radius: 0.75rem;
 
-        /* Surface elevation system — teal-tinted depths */
-        --surface-0: 172 22% 97%;       /* Teal-white base */
-        --surface-1: 172 25% 95%;       /* Visible teal tint */
-        --surface-2: 172 28% 93%;       /* Stronger teal sections */
-        --surface-3: 172 30% 91%;       /* Elevated teal */
+        /* Surface elevation system — immersive teal depths */
+        --surface-0: 172 35% 93%;       /* Mint canvas — matches background */
+        --surface-1: 172 38% 91%;       /* Visibly teal */
+        --surface-2: 172 40% 89%;       /* Strong teal sections */
+        --surface-3: 172 42% 87%;       /* Deep teal elevated */
 
         /* Category semantic colors — brand-aligned */
         --learning: 178 36% 43%;
@@ -148,33 +148,34 @@ select:-webkit-autofill {
 
 /* Glass morphism — light mode, brand-tinted */
 .glass {
-    background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(24px) saturate(1.8);
-    -webkit-backdrop-filter: blur(24px) saturate(1.8);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    box-shadow: 0 1px 3px rgba(39,82,85,0.05), 0 8px 32px rgba(39,82,85,0.04), inset 0 1px 0 rgba(255,255,255,0.7);
+    background: rgba(240, 250, 249, 0.55);
+    backdrop-filter: blur(24px) saturate(2.0);
+    -webkit-backdrop-filter: blur(24px) saturate(2.0);
+    border: 1px solid rgba(69, 148, 146, 0.12);
+    box-shadow: 0 1px 3px rgba(39,82,85,0.06), 0 8px 32px rgba(39,82,85,0.05), inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
 /* Glass card — brand-tinted glass effect */
 .glass-card {
-    background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(20px) saturate(1.6);
-    -webkit-backdrop-filter: blur(20px) saturate(1.6);
-    border: 1px solid rgba(69, 148, 146, 0.10);
+    background: rgba(240, 250, 249, 0.50);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(69, 148, 146, 0.15);
     box-shadow:
-        0 1px 3px rgba(39,82,85,0.05),
-        0 8px 24px rgba(39,82,85,0.04),
-        inset 0 1px 0 rgba(255,255,255,0.8);
+        0 1px 3px rgba(39,82,85,0.06),
+        0 8px 24px rgba(39,82,85,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.7);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-    background: rgba(255, 255, 255, 0.60);
+    background: rgba(240, 250, 249, 0.65);
     box-shadow:
-        0 4px 12px rgba(39,82,85,0.08),
-        0 12px 32px rgba(39,82,85,0.05),
-        0 0 0 1px rgba(69,148,146,0.15),
-        inset 0 1px 0 rgba(255,255,255,0.9);
+        0 4px 16px rgba(39,82,85,0.10),
+        0 12px 32px rgba(39,82,85,0.06),
+        0 0 0 1px rgba(69,148,146,0.22),
+        0 0 20px rgba(69,148,146,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.8);
     transform: translateY(-1px);
 }
 
@@ -299,28 +300,28 @@ select:-webkit-autofill {
 /* Stat card colored left border — visible brand tint */
 .stat-card-teal {
     border-left: 3px solid #459492;
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.12) 0%, rgba(255, 255, 255, 0.55) 100%);
-    backdrop-filter: blur(16px) saturate(1.4);
-    -webkit-backdrop-filter: blur(16px) saturate(1.4);
-    box-shadow: 0 1px 3px rgba(69, 148, 146, 0.10), 0 4px 12px rgba(69, 148, 146, 0.06);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.22) 0%, rgba(240, 250, 249, 0.55) 100%);
+    backdrop-filter: blur(16px) saturate(1.6);
+    -webkit-backdrop-filter: blur(16px) saturate(1.6);
+    box-shadow: 0 1px 3px rgba(69, 148, 146, 0.12), 0 4px 12px rgba(69, 148, 146, 0.08);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stat-card-teal:hover {
-    background: linear-gradient(135deg, rgba(69, 148, 146, 0.18) 0%, rgba(255, 255, 255, 0.65) 100%);
-    box-shadow: 0 4px 16px rgba(69, 148, 146, 0.18), 0 0 24px rgba(69, 148, 146, 0.08);
+    background: linear-gradient(135deg, rgba(69, 148, 146, 0.30) 0%, rgba(240, 250, 249, 0.65) 100%);
+    box-shadow: 0 4px 20px rgba(69, 148, 146, 0.22), 0 0 30px rgba(69, 148, 146, 0.12);
     transform: translateY(-2px);
 }
 .stat-card-coral {
     border-left: 3px solid #E48C75;
-    background: linear-gradient(135deg, rgba(228, 140, 117, 0.12) 0%, rgba(255, 255, 255, 0.55) 100%);
-    backdrop-filter: blur(16px) saturate(1.4);
-    -webkit-backdrop-filter: blur(16px) saturate(1.4);
-    box-shadow: 0 1px 3px rgba(228, 140, 117, 0.10), 0 4px 12px rgba(228, 140, 117, 0.06);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.22) 0%, rgba(240, 250, 249, 0.55) 100%);
+    backdrop-filter: blur(16px) saturate(1.6);
+    -webkit-backdrop-filter: blur(16px) saturate(1.6);
+    box-shadow: 0 1px 3px rgba(228, 140, 117, 0.12), 0 4px 12px rgba(228, 140, 117, 0.08);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stat-card-coral:hover {
-    background: linear-gradient(135deg, rgba(228, 140, 117, 0.18) 0%, rgba(255, 255, 255, 0.65) 100%);
-    box-shadow: 0 4px 16px rgba(228, 140, 117, 0.18), 0 0 24px rgba(228, 140, 117, 0.08);
+    background: linear-gradient(135deg, rgba(228, 140, 117, 0.30) 0%, rgba(240, 250, 249, 0.65) 100%);
+    box-shadow: 0 4px 20px rgba(228, 140, 117, 0.22), 0 0 30px rgba(228, 140, 117, 0.12);
     transform: translateY(-2px);
 }
 
@@ -391,12 +392,13 @@ select:-webkit-autofill {
 .app-bg-mesh {
     background-color: hsl(var(--surface-0));
     background-image:
-        radial-gradient(ellipse 90% 70% at 5% 15%, rgba(69, 148, 146, 0.28) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 60% at 92% 8%, rgba(85, 179, 174, 0.22) 0%, transparent 50%),
-        radial-gradient(ellipse 80% 60% at 45% 92%, rgba(93, 183, 134, 0.18) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 50% at 95% 80%, rgba(228, 140, 117, 0.14) 0%, transparent 45%),
-        radial-gradient(ellipse 60% 60% at 50% 40%, rgba(69, 148, 146, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 20% 60%, rgba(125, 211, 208, 0.10) 0%, transparent 50%);
+        radial-gradient(ellipse 100% 80% at 5% 10%, rgba(69, 148, 146, 0.45) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 70% at 95% 5%, rgba(85, 179, 174, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 90% 70% at 40% 95%, rgba(93, 183, 134, 0.30) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 60% at 95% 75%, rgba(228, 140, 117, 0.22) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 70% at 50% 45%, rgba(69, 148, 146, 0.20) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 15% 65%, rgba(125, 211, 208, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 70% 35%, rgba(93, 183, 134, 0.15) 0%, transparent 50%);
     background-attachment: fixed;
     min-height: 100vh;
 }
@@ -404,17 +406,18 @@ select:-webkit-autofill {
 /* Surface elevation system — brand-tinted depth */
 .surface-base { background: hsl(var(--surface-0)); }
 .surface-raised {
-    background: rgba(255, 255, 255, 0.70);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 1px 3px rgba(39,82,85,0.05), 0 1px 2px rgba(39,82,85,0.03);
+    background: rgba(240, 250, 249, 0.65);
+    backdrop-filter: blur(12px) saturate(1.5);
+    -webkit-backdrop-filter: blur(12px) saturate(1.5);
+    border: 1px solid rgba(69,148,146,0.08);
+    box-shadow: 0 1px 3px rgba(39,82,85,0.06), 0 4px 12px rgba(39,82,85,0.04);
 }
 .surface-overlay {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px) saturate(1.5);
-    -webkit-backdrop-filter: blur(20px) saturate(1.5);
-    border: 1px solid rgba(69,148,146,0.10);
-    box-shadow: 0 4px 12px rgba(39,82,85,0.07), 0 12px 32px rgba(39,82,85,0.04);
+    background: rgba(240, 250, 249, 0.70);
+    backdrop-filter: blur(24px) saturate(1.8);
+    -webkit-backdrop-filter: blur(24px) saturate(1.8);
+    border: 1px solid rgba(69,148,146,0.15);
+    box-shadow: 0 4px 16px rgba(39,82,85,0.08), 0 12px 40px rgba(39,82,85,0.05);
 }
 
 /* === Dark teal section — contrast blocks === */
@@ -495,25 +498,25 @@ select:-webkit-autofill {
 .app-orbs-overlay::before {
     content: '';
     position: absolute;
-    top: -20%;
-    left: -15%;
-    width: 65%;
-    height: 65%;
-    background: radial-gradient(circle, rgba(69, 148, 146, 0.20) 0%, rgba(85, 179, 174, 0.08) 40%, transparent 70%);
+    top: -25%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(69, 148, 146, 0.30) 0%, rgba(85, 179, 174, 0.15) 35%, rgba(93, 183, 134, 0.05) 60%, transparent 75%);
     border-radius: 50%;
-    animation: orb-float-1 30s ease-in-out infinite;
+    animation: orb-float-1 25s ease-in-out infinite;
 }
 
 .app-orbs-overlay::after {
     content: '';
     position: absolute;
-    bottom: -20%;
-    right: -15%;
-    width: 55%;
-    height: 55%;
-    background: radial-gradient(circle, rgba(85, 179, 174, 0.16) 0%, rgba(93, 183, 134, 0.06) 40%, transparent 70%);
+    bottom: -25%;
+    right: -20%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(85, 179, 174, 0.25) 0%, rgba(93, 183, 134, 0.12) 35%, rgba(228, 140, 117, 0.05) 60%, transparent 75%);
     border-radius: 50%;
-    animation: orb-float-2 35s ease-in-out infinite;
+    animation: orb-float-2 30s ease-in-out infinite;
 }
 
 @keyframes orb-float-1 {
@@ -551,26 +554,26 @@ select:-webkit-autofill {
 
 /* === Premium card — brand-tinted glass edge === */
 .card-premium-inner {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(16px) saturate(1.4);
-    -webkit-backdrop-filter: blur(16px) saturate(1.4);
-    border: 1px solid rgba(69, 148, 146, 0.10);
+    background: rgba(240, 250, 249, 0.50);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(69, 148, 146, 0.15);
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        inset 0 -1px 0 rgba(39, 82, 85, 0.03),
-        0 1px 3px rgba(39, 82, 85, 0.05),
-        0 8px 24px rgba(39, 82, 85, 0.04);
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(39, 82, 85, 0.04),
+        0 1px 3px rgba(39, 82, 85, 0.06),
+        0 8px 24px rgba(39, 82, 85, 0.05);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-premium-inner:hover {
-    background: rgba(255, 255, 255, 0.65);
-    border-color: rgba(69, 148, 146, 0.20);
+    background: rgba(240, 250, 249, 0.65);
+    border-color: rgba(69, 148, 146, 0.25);
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        0 4px 16px rgba(39, 82, 85, 0.08),
-        0 16px 40px rgba(39, 82, 85, 0.05),
-        0 0 20px rgba(69, 148, 146, 0.08);
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 4px 20px rgba(39, 82, 85, 0.10),
+        0 16px 48px rgba(39, 82, 85, 0.06),
+        0 0 24px rgba(69, 148, 146, 0.12);
     transform: translateY(-2px);
 }
 
@@ -601,26 +604,26 @@ select:-webkit-autofill {
 .ambient-glow::before {
     content: '';
     position: absolute;
-    inset: -20px;
+    inset: -30px;
     border-radius: 2rem;
     background: radial-gradient(
         ellipse at center,
-        rgba(69, 148, 146, 0.08) 0%,
-        rgba(85, 179, 174, 0.04) 40%,
+        rgba(69, 148, 146, 0.18) 0%,
+        rgba(85, 179, 174, 0.10) 40%,
         transparent 70%
     );
     pointer-events: none;
     z-index: -1;
-    filter: blur(20px);
+    filter: blur(25px);
 }
 
 /* === Sidebar premium gradient — brand-tinted glass === */
 .sidebar-premium {
-    background: linear-gradient(180deg, rgba(240,248,248,0.82) 0%, rgba(232,244,243,0.88) 100%);
-    backdrop-filter: blur(32px) saturate(1.8);
-    -webkit-backdrop-filter: blur(32px) saturate(1.8);
-    border-right: 1px solid rgba(69,148,146,0.15);
-    box-shadow: 4px 0 24px rgba(39,82,85,0.08), inset -1px 0 0 rgba(69,148,146,0.06);
+    background: linear-gradient(180deg, rgba(220,242,240,0.88) 0%, rgba(210,238,236,0.92) 100%);
+    backdrop-filter: blur(32px) saturate(2.0);
+    -webkit-backdrop-filter: blur(32px) saturate(2.0);
+    border-right: 1px solid rgba(69,148,146,0.20);
+    box-shadow: 4px 0 30px rgba(39,82,85,0.10), inset -1px 0 0 rgba(69,148,146,0.10);
 }
 
 /* === Stat card with colored top accent === */

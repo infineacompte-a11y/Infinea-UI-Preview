@@ -50,19 +50,19 @@ const SOURCE_CONFIG = {
     icon: Calendar,
     label: "Calendrier",
     color: "text-[#55B3AE]",
-    bgColor: "bg-[#55B3AE]/30",
+    bgColor: "bg-[#55B3AE]/40",
   },
   routine_window: {
     icon: Repeat,
     label: "Routine",
     color: "text-[#5DB786]",
-    bgColor: "bg-[#5DB786]/30",
+    bgColor: "bg-[#5DB786]/40",
   },
   behavioral_pattern: {
     icon: TrendingUp,
     label: "Pattern détecté",
     color: "text-[#459492]",
-    bgColor: "bg-[#459492]/30",
+    bgColor: "bg-[#459492]/40",
   },
 };
 
@@ -117,7 +117,7 @@ function ConfidenceBadge({ score }) {
   let className = "text-muted-foreground border-border/50";
   if (pct >= 70) {
     variant = "default";
-    className = "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/30";
+    className = "bg-[#5DB786]/40 text-[#5DB786] border-[#5DB786]/30";
   } else if (pct >= 50) {
     className = "text-[#E48C75] border-[#E48C75]/30";
   }
@@ -393,7 +393,7 @@ function InstantCard({ instant, onExploit, onSkip, onUndoSkip, isLoading }) {
           {/* Exploited state — enriched feedback */}
           {exploited && (
             <div className="flex items-center gap-3 p-2.5 rounded-lg bg-[#5DB786]/5 border border-[#5DB786]/20">
-              <div className="w-8 h-8 rounded-full bg-[#5DB786]/30 flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#5DB786]/40 flex items-center justify-center shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#5DB786]" />
               </div>
               <div className="flex-1">
@@ -561,10 +561,10 @@ function WeeklyTrendBadge({ trend, thisWeekRate, lastWeekRate }) {
   const isFlat = pct === 0;
   const Icon = isUp ? ArrowUpRight : isFlat ? Minus : ArrowDownRight;
   const color = isUp
-    ? "text-[#5DB786] bg-[#5DB786]/30"
+    ? "text-[#5DB786] bg-[#5DB786]/40"
     : isFlat
     ? "text-muted-foreground bg-muted/10"
-    : "text-[#E48C75] bg-[#E48C75]/30";
+    : "text-[#E48C75] bg-[#E48C75]/40";
 
   return (
     <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium tabular-nums ${color}`}>
@@ -685,7 +685,7 @@ function HourlyHeatmap({ hourlyRates }) {
                     if (total > 0) {
                       if (rate >= 0.7) bg = "bg-[#5DB786]/70";
                       else if (rate >= 0.4) bg = "bg-[#5DB786]/40";
-                      else if (rate > 0) bg = "bg-[#5DB786]/30";
+                      else if (rate > 0) bg = "bg-[#5DB786]/40";
                       else bg = "bg-[#E48C75]/15";
                     }
 
@@ -713,7 +713,7 @@ function HourlyHeatmap({ hourlyRates }) {
           <span className="text-[9px] text-muted-foreground tabular-nums">0%</span>
           <div className="flex gap-0.5">
             <div className="w-4 h-2.5 rounded-sm bg-muted/20" />
-            <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/30" />
+            <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/40" />
             <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/40" />
             <div className="w-4 h-2.5 rounded-sm bg-[#5DB786]/70" />
           </div>
@@ -752,9 +752,9 @@ function BestSlotsCard({ bestSlots }) {
               <Badge
                 className={`text-xs tabular-nums ${
                   slot.exploitation_rate >= 0.7
-                    ? "bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/30"
+                    ? "bg-[#5DB786]/40 text-[#5DB786] border-[#5DB786]/30"
                     : slot.exploitation_rate >= 0.4
-                    ? "bg-[#E48C75]/30 text-[#E48C75] border-[#E48C75]/30"
+                    ? "bg-[#E48C75]/40 text-[#E48C75] border-[#E48C75]/30"
                     : "text-muted-foreground border-border/50"
                 }`}
                 variant="outline"

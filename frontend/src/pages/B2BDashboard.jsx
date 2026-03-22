@@ -614,7 +614,7 @@ export default function B2BDashboard() {
                               <div className="flex items-center gap-4">
                                 <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                                   isTop3
-                                    ? "bg-[#E48C75]/30 text-2xl"
+                                    ? "bg-[#E48C75]/40 text-2xl"
                                     : "bg-primary/10"
                                 }`}>
                                   {isTop3 ? medals[i] : <span className="font-medium text-muted-foreground tabular-nums">#{i + 1}</span>}

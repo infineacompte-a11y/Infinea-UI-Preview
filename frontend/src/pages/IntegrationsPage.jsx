@@ -117,12 +117,12 @@ const AVAILABLE_INTEGRATIONS = [
 ];
 
 const colorClasses = {
-  blue: { bg: "bg-[#459492]/30", text: "text-[#459492]", border: "border-[#459492]/30" },
+  blue: { bg: "bg-[#459492]/40", text: "text-[#459492]", border: "border-[#459492]/30" },
   gray: { bg: "bg-[#9A9A9A]/10", text: "text-muted-foreground", border: "border-[#9A9A9A]/30" },
-  red: { bg: "bg-[#E48C75]/30", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
+  red: { bg: "bg-[#E48C75]/40", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
   purple: { bg: "bg-brand-secondary/10", text: "text-brand-secondary", border: "border-brand-secondary/30" },
-  green: { bg: "bg-[#5DB786]/30", text: "text-[#5DB786]", border: "border-[#5DB786]/30" },
-  orange: { bg: "bg-[#E48C75]/30", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
+  green: { bg: "bg-[#5DB786]/40", text: "text-[#5DB786]", border: "border-[#5DB786]/30" },
+  orange: { bg: "bg-[#E48C75]/40", text: "text-[#E48C75]", border: "border-[#E48C75]/30" },
 };
 
 // Icon and color maps for backend-driven rendering
@@ -992,7 +992,7 @@ export default function IntegrationsPage() {
                                   <div>
                                     <div className="flex items-center gap-2 mb-1">
                                       <h3 className="font-sans font-semibold tracking-tight font-semibold">{config.name}</h3>
-                                      <Badge className="bg-[#5DB786]/30 text-[#5DB786] border-[#5DB786]/30">
+                                      <Badge className="bg-[#5DB786]/40 text-[#5DB786] border-[#5DB786]/30">
                                         <CheckCircle2 className="w-3 h-3 mr-1" />
                                         Connecté
                                       </Badge>
@@ -1086,7 +1086,7 @@ export default function IntegrationsPage() {
                                         </Badge>
                                       )}
                                       {int.status === "premium" && (
-                                        <Badge className="bg-[#E48C75]/30 text-[#E48C75] text-xs">
+                                        <Badge className="bg-[#E48C75]/40 text-[#E48C75] text-xs">
                                           Premium
                                         </Badge>
                                       )}

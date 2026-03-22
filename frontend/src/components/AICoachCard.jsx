@@ -20,7 +20,7 @@ const COACH_MODES = {
   post_completion: {
     icon: Trophy,
     badge: "Bravo !",
-    badgeColor: "bg-[#5DB786]/30 text-[#5DB786]",
+    badgeColor: "bg-[#5DB786]/40 text-[#5DB786]",
     glowFrom: "from-[#5DB786]/30",
     iconBg: "from-[#5DB786]/20 to-[#5DB786]/5",
     iconRing: "ring-[#5DB786]/10",
@@ -30,7 +30,7 @@ const COACH_MODES = {
   post_abandon: {
     icon: HandHeart,
     badge: "On continue",
-    badgeColor: "bg-[#E48C75]/30 text-[#E48C75]",
+    badgeColor: "bg-[#E48C75]/40 text-[#E48C75]",
     glowFrom: "from-[#E48C75]/30",
     iconBg: "from-[#E48C75]/20 to-[#E48C75]/5",
     iconRing: "ring-[#E48C75]/10",
@@ -40,7 +40,7 @@ const COACH_MODES = {
   streak_milestone: {
     icon: Flame,
     badge: "Milestone !",
-    badgeColor: "bg-[#E48C75]/30 text-[#E48C75]",
+    badgeColor: "bg-[#E48C75]/40 text-[#E48C75]",
     glowFrom: "from-[#E48C75]/30",
     iconBg: "from-[#E48C75]/20 to-[#E48C75]/5",
     iconRing: "ring-[#E48C75]/10",
@@ -50,7 +50,7 @@ const COACH_MODES = {
   comeback: {
     icon: Sunrise,
     badge: "Bon retour",
-    badgeColor: "bg-[#55B3AE]/30 text-[#55B3AE]",
+    badgeColor: "bg-[#55B3AE]/40 text-[#55B3AE]",
     glowFrom: "from-[#55B3AE]/30",
     iconBg: "from-[#55B3AE]/20 to-[#55B3AE]/5",
     iconRing: "ring-[#55B3AE]/10",
@@ -60,7 +60,7 @@ const COACH_MODES = {
   first_visit: {
     icon: Heart,
     badge: "Bienvenue",
-    badgeColor: "bg-[#E48C75]/30 text-[#E48C75]",
+    badgeColor: "bg-[#E48C75]/40 text-[#E48C75]",
     glowFrom: "from-[#E48C75]/30",
     iconBg: "from-[#E48C75]/20 to-[#E48C75]/5",
     iconRing: "ring-[#E48C75]/10",

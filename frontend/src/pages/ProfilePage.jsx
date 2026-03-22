@@ -111,7 +111,7 @@ export default function ProfilePage() {
                 </div>
                 <Badge
                   variant={user?.subscription_tier === "premium" ? "default" : "secondary"}
-                  className={user?.subscription_tier === "premium" ? "bg-[#5DB786]/30 text-[#5DB786] border-0" : ""}
+                  className={user?.subscription_tier === "premium" ? "bg-[#5DB786]/40 text-[#5DB786] border-0" : ""}
                 >
                   {user?.subscription_tier === "premium" ? "Actif" : "Gratuit"}
                 </Badge>

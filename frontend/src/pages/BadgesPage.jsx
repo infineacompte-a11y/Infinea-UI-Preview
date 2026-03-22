@@ -123,7 +123,7 @@ export default function BadgesPage() {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#5DB786]/30 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-xl bg-[#5DB786]/40 flex items-center justify-center">
                           <Trophy className="w-6 h-6 text-[#5DB786]" />
                         </div>
                         <div>
@@ -180,7 +180,7 @@ export default function BadgesPage() {
                         <h3 className={`font-sans font-semibold tracking-tight font-medium mb-1 ${!isEarned ? "text-muted-foreground" : ""}`}>{badge.name}</h3>
                         <p className="text-xs text-muted-foreground mb-2">{badge.description}</p>
                         {isEarned && earnedData?.earned_at && (
-                          <Badge variant="secondary" className="text-xs rounded-lg bg-[#5DB786]/30 text-[#5DB786] border-0">
+                          <Badge variant="secondary" className="text-xs rounded-lg bg-[#5DB786]/40 text-[#5DB786] border-0">
                             {new Date(earnedData.earned_at).toLocaleDateString("fr-FR")}
                           </Badge>
                         )}
